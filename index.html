@@ -403,8 +403,14 @@
     .hero-inner {
       /* kept for legacy selectors */
     }
-    .hero .label { margin-bottom: var(--sp2); }
-    .hero .h-display { color: var(--white); margin-bottom: var(--sp3); }
+    .hero .h-display { color: var(--white); margin-bottom: var(--sp2); }
+    .hero-tagline {
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-weight: 330;
+      color: rgba(255,255,255,0.80);
+      letter-spacing: -0.2px;
+      margin-bottom: var(--sp4);
+    }
     .hero .body-lg {
       color: rgba(255,255,255,0.82);
       max-width: 420px; margin-bottom: var(--sp5);
@@ -783,8 +789,9 @@
   <section class="hero">
     <div class="hero-text">
       <div class="container-left">
-        <h1 class="h-display">Where insight<br>and action<br>meet</h1>
-        <p class="body-lg">Transforming Lives bridges psychoeducation and capability development to help individuals and organisations grow with greater clarity, capability, and confidence.</p>
+        <h1 class="h-display">Transforming Lives</h1>
+        <p class="hero-tagline">Where insight and action meet</p>
+        <p class="body-lg">Bridging psychoeducation and capability development to help individuals and organisations grow with greater clarity, capability, and confidence.</p>
         <div class="hero-actions">
           <button class="btn btn-white btn-lg" onclick="showPage('services')">Explore Services</button>
           <button class="btn btn-glass-light btn-lg" onclick="showPage('about')">Our Story</button>
@@ -1016,7 +1023,7 @@
           <h2 class="h-sub" style="margin-top:12px">Understanding that Empowers</h2>
           <p class="body">Accessible content and resources that build understanding for individuals, parents, professionals, and organisations.</p>
         </div>
-        <div class="service-grid">
+        <div class="service-grid" style="grid-template-columns:repeat(2,1fr)">
           <div class="service-item">
             <div class="service-icon">🏫</div>
             <h3>School &amp; Workplace Awareness</h3>
