@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transforming Lives | Where Insight and Action Meet</title>
+  <!--
+    Design system: DESIGN.md (Figma-inspired)
+    Adaptations for Transforming Lives:
+    - figmaSans → Inter variable font (closest publicly available)
+    - figmaMono → Space Mono for uppercase labels
+    - Interface chrome: strictly #000 / #fff
+    - Brand colours (teal #1F8A8A, gold #C9963A) used ONLY in hero gradient
+      and section accents — never as interface chrome
+    - Pill (50px) buttons, dashed focus rings, negative letter-spacing
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Inter as variable font — enables exact DESIGN.md weight stops 320,330,340,450,480,540,700 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens — strictly per DESIGN.md ────────────────── */
+    :root {
+      /* Interface palette — B&W only, per DESIGN.md */
+      --black:        #000000;
+      --white:        #ffffff;
+      --glass-dark:   rgba(0,0,0,0.08);   /* DESIGN.md Glass Black */
+      --glass-light:  rgba(255,255,255,0.16); /* DESIGN.md Glass White */
+      --subtle:       rgba(0,0,0,0.05);
+      --border:       rgba(0,0,0,0.10);
+      --muted:        rgba(0,0,0,0.45);
+
+      /* Brand — used ONLY in hero/section gradients, never chrome */
+      --teal:         #1F8A8A;
+      --teal-dark:    #146060;
+      --gold:         #C9963A;
+      --gold-dark:    #9C7020;
+
+      /* Typography — DESIGN.md exact values */
+      --font: 'Inter', 'SF Pro Display', system-ui, helvetica, sans-serif;
+      --mono: 'Space Mono', 'SF Mono', menlo, monospace;
+
+      /* DESIGN.md weight stops */
+      --w-thin:    320;
+      --w-light:   330;
+      --w-light2:  340;
+      --w-mid:     450;
+      --w-mid2:    480;
+      --w-semi:    540;
+      --w-bold:    700;
+
+      /* Spacing — 8px base, DESIGN.md scale */
+      --sp1: 8px;  --sp2: 16px; --sp3: 24px; --sp4: 32px;
+      --sp5: 40px; --sp6: 48px; --sp8: 64px; --sp10: 80px;
+
+      /* Radius — DESIGN.md scale */
+      --r-sm:     6px;
+      --r-md:     8px;
+      --r-pill:   50px;
+      --r-circle: 50%;
+    }
+
+    /* ── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-feature-settings: "kern" 1; }
+    body {
+      font-family: var(--font);
+      font-weight: var(--w-light);   /* 330 — DESIGN.md body base */
+      letter-spacing: -0.14px;       /* negative tracking per DESIGN.md */
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5 { font-family: var(--font); }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    /* Dashed focus — DESIGN.md signature */
+    *:focus-visible {
+      outline: 2px dashed var(--black);
+      outline-offset: 3px;
+    }
+
+    /* ── Page system ────────────────────────────────────────────── */
+    .page { display: none; animation: pageIn .3s ease; }
+    .page.active { display: block; }
+    @keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Utility ────────────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp4); }
+    .container-wide { max-width: 1440px; margin: 0 auto; padding: 0 var(--sp4); }
+
+    /* ── DESIGN.md Typography Scale ─────────────────────────────── */
+
+    /* Mono Label — figmaMono 18px uppercase 0.54px — DESIGN.md */
+    .label {
+      font-family: var(--mono);
+      font-size: 12px;               /* Mono Small — DESIGN.md */
+      font-weight: 400;
+      letter-spacing: 0.6px;         /* DESIGN.md Mono Small: 0.6px */
+      text-transform: uppercase;
+      line-height: 1.0;
+      color: var(--black);
+      opacity: 0.4;
+      display: block;
+    }
+    .label-lg {
+      font-family: var(--mono);
+      font-size: 18px;               /* Mono Label — DESIGN.md */
+      font-weight: 400;
+      letter-spacing: 0.54px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      color: var(--black);
+    }
+    /* On coloured/dark hero sections */
+    .label-white { color: var(--white); opacity: 0.55; }
+
+    /* Display / Hero — 86px w400 lh1.0 ls-1.72px — DESIGN.md */
+    .h-display {
+      font-size: clamp(48px, 6.5vw, 86px);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -1.72px;
+    }
+    /* Section Heading — 64px w400 lh1.10 ls-0.96px — DESIGN.md */
+    .h-section {
+      font-size: clamp(32px, 4.5vw, 64px);
+      font-weight: 400;
+      line-height: 1.10;
+      letter-spacing: -0.96px;
+    }
+    /* Sub-heading — 26px w540 lh1.35 ls-0.26px — DESIGN.md */
+    .h-sub {
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: var(--w-semi);    /* 540 */
+      line-height: 1.35;
+      letter-spacing: -0.26px;
+    }
+    /* Feature Title — 24px w700 lh1.45 — DESIGN.md */
+    .h-card {
+      font-size: 18px;
+      font-weight: var(--w-bold);    /* 700 */
+      line-height: 1.45;
+      letter-spacing: -0.14px;
+    }
+    /* Body Large — 20px w330 lh1.40 ls-0.14px — DESIGN.md */
+    .body-lg {
+      font-size: 20px;
+      font-weight: var(--w-light);   /* 330 */
+      line-height: 1.40;
+      letter-spacing: -0.14px;
+    }
+    /* Body — 16px w330 lh1.45 ls-0.14px — DESIGN.md */
+    .body {
+      font-size: 16px;
+      font-weight: var(--w-light);   /* 330 */
+      line-height: 1.45;
+      letter-spacing: -0.14px;
+      color: rgba(0,0,0,0.60);
+    }
+
+    /* ── Buttons — pill/circle only, DESIGN.md ──────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px 10px;        /* DESIGN.md White Pill: 8px 18px 10px */
+      border-radius: var(--r-pill);  /* 50px pill */
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: var(--w-mid);     /* 450 */
+      letter-spacing: -0.14px;
+      cursor: pointer;
+      border: none;
+      transition: opacity .15s, transform .15s;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .btn:hover { opacity: 0.82; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); opacity: 1; }
+    .btn-black  { background: var(--black); color: var(--white); }
+    .btn-white  { background: var(--white); color: var(--black); }
+    .btn-ghost  {
+      background: transparent; color: var(--black);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost:hover { background: var(--subtle); }
+    .btn-glass-dark  { background: var(--glass-dark); color: var(--black); }
+    .btn-glass-light { background: var(--glass-light); color: var(--white); }
+    .btn-sm { padding: 6px 14px 7px; font-size: 14px; }
+    .btn-lg { padding: 12px 28px 14px; font-size: 16px; }
+
+    /* hr */
+    hr.rule { border: none; border-top: 1px solid var(--border); }
+
+    /* Tags — Mono Small style */
+    .tag {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: var(--r-pill);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: rgba(0,0,0,0.45);
+    }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 999;
+      height: 60px;
+      display: flex; align-items: center;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: 100%; max-width: 1440px; margin: 0 auto;
+      padding: 0 var(--sp4);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; flex-direction: column; gap: 1px;
+      cursor: pointer; text-decoration: none;
+    }
+    .nav-logo-name {
+      font-size: 15px; font-weight: 600;
+      letter-spacing: -0.3px; color: var(--black);
+    }
+    .nav-logo-tag {
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.6px; text-transform: uppercase;
+      color: var(--black); opacity: 0.38; /* B&W chrome per DESIGN.md */
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-links a {
+      font-size: 14px; font-weight: 400;
+      letter-spacing: -0.1px;
+      color: rgba(0,0,0,0.6);
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .nav-links a:hover { background: var(--subtle); color: var(--black); }
+    .nav-links a.active { color: var(--black); font-weight: 500; }
+    .nav-links .nav-cta { padding: 7px 18px; }
+
+    .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 6px; border-radius: 8px; }
+    .hamburger span { width: 20px; height: 1.5px; background: var(--black); border-radius: 2px; transition: .2s; }
+    .mobile-menu {
+      display: none; position: fixed; inset: 60px 0 0;
+      background: var(--white); z-index: 998;
+      flex-direction: column; align-items: center; justify-content: center; gap: var(--sp4);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 28px; font-weight: 400; letter-spacing: -0.5px;
+      color: var(--black); cursor: pointer;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HOME
+    ═══════════════════════════════════════════════════════════ */
+
+    /* Hero — butterfly image with teal/gold overlay */
+    .hero {
+      min-height: 90vh;
+      background-image: url('images/hero-butterfly.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      display: flex; align-items: center;
+      padding: var(--sp10) 0;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(10,92,92,0.82) 0%, rgba(31,138,138,0.75) 35%,
+        rgba(31,138,138,0.55) 60%, rgba(150,90,10,0.6) 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 760px;
+    }
+    .hero .label { margin-bottom: var(--sp2); }
+    .hero .h-display { color: var(--white); margin-bottom: var(--sp3); }
+    .hero .body-lg {
+      color: rgba(255,255,255,0.82);
+      max-width: 560px; margin-bottom: var(--sp5);
+    }
+    .hero-actions { display: flex; gap: var(--sp2); flex-wrap: wrap; }
+
+    /* Pillars */
+    .pillars { padding: var(--sp10) 0; background: var(--white); }
+    .pillars-header { margin-bottom: var(--sp6); }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
+    .pillar {
+      padding: var(--sp4) var(--sp3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .pillar:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .pillar-num {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.6px;
+      color: var(--black); opacity: 0.35; margin-bottom: var(--sp2);
+    }
+    .pillar h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 10px; }
+    .pillar p { font-size: 14px; font-weight: 330; color: rgba(0,0,0,0.55); line-height: 1.6; }
+
+    /* Brand statement — dark section */
+    .brand-statement {
+      background: var(--black); color: var(--white);
+      padding: var(--sp10) 0;
+    }
+    .brand-statement .h-section { color: var(--white); max-width: 800px; margin-bottom: var(--sp4); }
+    .brand-statement .body-lg { color: rgba(255,255,255,0.6); max-width: 600px; margin-bottom: var(--sp5); }
+
+    /* Focus chips */
+    .focus-section { padding: var(--sp10) 0; }
+    .focus-section .pillars-header { margin-bottom: var(--sp4); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--sp3); }
+    .chip {
+      padding: 9px 20px; border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      font-size: 14px; font-weight: 400; letter-spacing: -0.1px;
+      color: rgba(0,0,0,0.7);
+      transition: background .15s, border-color .15s;
+      cursor: default;
+    }
+    .chip:hover { background: var(--subtle); border-color: rgba(0,0,0,0.2); }
+
+    /* Home CTA strip */
+    .home-cta {
+      padding: var(--sp8) 0;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: var(--sp4);
+    }
+    .home-cta h2 { font-size: clamp(22px,3vw,36px); font-weight: 400; letter-spacing: -0.6px; max-width: 480px; }
+    .home-cta-actions { display: flex; gap: var(--sp2); flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════════════════════ */
+    .page-hero {
+      padding: var(--sp10) 0 var(--sp8);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero .label { margin-bottom: var(--sp2); }
+    .page-hero .h-section { max-width: 680px; margin-bottom: var(--sp3); }
+    .page-hero .body-lg { max-width: 560px; color: rgba(0,0,0,0.55); }
+
+    /* Gradient page-hero variants */
+    .page-hero-teal {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, #3abcbc 100%);
+      color: var(--white);
+    }
+    .page-hero-teal .h-section { color: var(--white); }
+    .page-hero-teal .body-lg { color: rgba(255,255,255,0.75); }
+    .page-hero-teal .label { color: rgba(255,255,255,0.55); opacity: 1; }
+
+    .page-hero-gold {
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 60%, #e0b060 100%);
+      color: var(--white);
+    }
+    .page-hero-gold .h-section { color: var(--white); }
+    .page-hero-gold .body-lg { color: rgba(255,255,255,0.75); }
+    .page-hero-gold .label { color: rgba(255,255,255,0.55); opacity: 1; }
+
+    .page-hero-dark {
+      background: var(--black);
+      color: var(--white);
+    }
+    .page-hero-dark .h-section { color: var(--white); }
+    .page-hero-dark .body-lg { color: rgba(255,255,255,0.55); }
+    .page-hero-dark .label { color: rgba(255,255,255,0.4); opacity: 1; }
+
+    /* About story */
+    .about-body { padding: var(--sp10) 0; }
+    .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp8); align-items: start; }
+    .about-img {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .about-img img { width: 100%; display: block; object-fit: cover; max-height: 560px; }
+    .about-text .label { margin-bottom: var(--sp2); }
+    .about-text .h-sub { margin-bottom: var(--sp3); }
+    .about-text .body { margin-bottom: var(--sp2); font-size: 15px; line-height: 1.7; color: rgba(0,0,0,0.6); }
+    .blockquote {
+      border-left: 2px solid var(--black);
+      padding: var(--sp2) var(--sp3);
+      margin: var(--sp4) 0;
+    }
+    .blockquote p { font-size: 17px; font-weight: 400; letter-spacing: -0.2px; line-height: 1.5; color: var(--black); }
+
+    /* Values */
+    .values-section { padding: var(--sp10) 0; border-top: 1px solid var(--border); }
+    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--sp3); margin-top: var(--sp5); }
+    .value-card { padding: var(--sp3); border: 1px solid var(--border); border-radius: var(--r-md); }
+    .value-card .value-icon { font-size: 20px; margin-bottom: var(--sp2); }
+    .value-card h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 8px; }
+    .value-card p { font-size: 13px; font-weight: 330; color: rgba(0,0,0,0.5); line-height: 1.6; }
+
+    /* Distinct */
+    .distinct-section { padding: var(--sp10) 0; border-top: 1px solid var(--border); }
+    .distinct-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp5); }
+    .distinct-card { padding: var(--sp4) var(--sp3); border-radius: var(--r-md); background: rgba(0,0,0,0.03); }
+    .distinct-card h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 10px; }
+    .distinct-card p { font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.65; }
+
+    /* ═══════════════════════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════════════════════ */
+    .services-body { padding: var(--sp10) 0; }
+    .services-section { margin-bottom: var(--sp10); }
+    .services-section:last-child { margin-bottom: 0; }
+    .services-intro { margin-bottom: var(--sp5); }
+    .services-intro .label { margin-bottom: var(--sp2); }
+    .services-intro .h-sub { margin-bottom: var(--sp2); }
+    .services-intro .body { max-width: 560px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .service-item { background: var(--white); padding: var(--sp4) var(--sp3); }
+    .service-item:hover { background: rgba(0,0,0,0.02); }
+    .service-icon { font-size: 22px; margin-bottom: var(--sp2); }
+    .service-item h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 8px; }
+    .service-item p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; }
+
+    hr.section-divider { border: none; border-top: 1px solid var(--border); margin: var(--sp8) 0; }
+
+    /* Audience */
+    .audience-section { background: var(--black); padding: var(--sp10) 0; }
+    .audience-section .label { color: rgba(255,255,255,0.4); opacity: 1; margin-bottom: var(--sp2); }
+    .audience-section .h-sub { color: var(--white); margin-bottom: var(--sp5); }
+    .audience-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); overflow: hidden; }
+    .audience-item { background: var(--black); padding: var(--sp3) var(--sp3); }
+    .audience-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 8px; letter-spacing: -0.1px; }
+    .audience-item p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════════════════════
+       PRODUCTS
+    ═══════════════════════════════════════════════════════════ */
+    .products-body { padding: var(--sp10) 0; }
+    .products-section { margin-bottom: var(--sp10); }
+    .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp5); }
+    .product-card {
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .product-card-top { height: 4px; background: var(--black); }
+    .product-card-top.teal { background: var(--teal); }
+    .product-card-top.gold { background: var(--gold); }
+    .product-card-body { padding: var(--sp3) var(--sp3); flex: 1; }
+    .product-icon { font-size: 24px; margin-bottom: var(--sp2); }
+    .product-card h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 8px; }
+    .product-card p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; }
+    .product-card-foot { padding: var(--sp2) var(--sp3); border-top: 1px solid var(--border); }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESOURCES
+    ═══════════════════════════════════════════════════════════ */
+    .resources-body { padding: var(--sp10) 0; }
+    .resources-section { margin-bottom: var(--sp10); }
+    .resources-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp5); }
+    .resource-card {
+      padding: var(--sp3); border: 1px solid var(--border); border-radius: var(--r-md);
+      display: flex; flex-direction: column; gap: 8px;
+      transition: box-shadow .2s;
+    }
+    .resource-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .resource-type { font-family: var(--mono); font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; color: rgba(0,0,0,0.35); }
+    .resource-card h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; }
+    .resource-card p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; flex: 1; }
+
+    /* Newsletter */
+    .newsletter { background: var(--black); padding: var(--sp8) 0; }
+    .newsletter-inner { display: flex; gap: var(--sp8); align-items: center; flex-wrap: wrap; }
+    .newsletter-copy { flex: 1; min-width: 260px; }
+    .newsletter-copy .label { color: rgba(255,255,255,0.4); opacity: 1; margin-bottom: var(--sp2); }
+    .newsletter-copy h3 { font-size: clamp(20px,2.5vw,30px); font-weight: 400; letter-spacing: -0.5px; color: var(--white); }
+    .newsletter-form { display: flex; gap: var(--sp1); flex-wrap: wrap; }
+    .newsletter-form input {
+      padding: 10px 18px; border-radius: var(--r-pill);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: var(--white); font-family: var(--font);
+      font-size: 14px; outline: none; min-width: 240px;
+      transition: border-color .15s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .newsletter-form input:focus { border-color: rgba(255,255,255,0.5); }
+
+    /* ═══════════════════════════════════════════════════════════
+       BLOG
+    ═══════════════════════════════════════════════════════════ */
+    .blog-body { padding: var(--sp10) 0; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp5); }
+    .blog-card {
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .15s;
+      cursor: pointer;
+    }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .blog-card-top { height: 3px; background: var(--black); }
+    .blog-card-body { padding: var(--sp3); flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .blog-meta { display: flex; gap: var(--sp2); align-items: center; }
+    .blog-cat { font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.4); }
+    .blog-date { font-size: 12px; color: rgba(0,0,0,0.35); }
+    .blog-card h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.35; }
+    .blog-card p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; flex: 1; }
+    .blog-read { font-size: 13px; font-weight: 500; letter-spacing: -0.1px; }
+
+    /* Topics */
+    .topics-section { padding: var(--sp8) 0; border-top: 1px solid var(--border); }
+
+    /* ═══════════════════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════════════════ */
+    .contact-body { padding: var(--sp10) 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--sp8); align-items: start; }
+    .contact-info .label { margin-bottom: var(--sp2); }
+    .contact-info .h-sub { margin-bottom: var(--sp3); }
+    .contact-info .body { margin-bottom: var(--sp5); }
+    .contact-details { display: flex; flex-direction: column; gap: var(--sp3); }
+    .contact-detail { display: flex; gap: var(--sp2); }
+    .contact-detail-icon { width: 36px; height: 36px; border-radius: var(--r-circle); background: var(--subtle); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .contact-detail-text strong { display: block; font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .contact-detail-text span { font-size: 13px; color: rgba(0,0,0,0.5); }
+    .can-help { margin-top: var(--sp5); }
+    .can-help h4 { font-size: 13px; font-weight: 600; margin-bottom: var(--sp2); }
+    .can-help li { font-size: 13px; color: rgba(0,0,0,0.5); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; }
+    .can-help li:last-child { border-bottom: none; }
+    .can-help li::before { content: '→'; color: var(--black); font-weight: 500; }
+
+    /* Form */
+    .contact-form { border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp5); }
+    .contact-form h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: var(--sp4); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp2); }
+    .form-group { margin-bottom: var(--sp2); }
+    .form-group label { display: block; font-size: 12px; font-weight: 500; letter-spacing: -0.05px; margin-bottom: 6px; color: rgba(0,0,0,0.6); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      font-family: var(--font); font-size: 14px; font-weight: 330;
+      color: var(--black); background: var(--white); outline: none;
+      transition: border-color .15s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--black); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-submit {
+      width: 100%; padding: 12px; margin-top: var(--sp2);
+      background: var(--black); color: var(--white);
+      border: none; border-radius: var(--r-pill);
+      font-family: var(--font); font-size: 15px; font-weight: 450;
+      letter-spacing: -0.1px; cursor: pointer;
+      transition: opacity .15s;
+    }
+    .form-submit:hover { opacity: 0.8; }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════ */
+    footer {
+      background: var(--black); color: rgba(255,255,255,0.6);
+      padding: var(--sp8) 0 var(--sp4);
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp5); margin-bottom: var(--sp6); }
+    .footer-brand-name { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--teal); margin-bottom: var(--sp2); }
+    .footer-brand p { font-size: 13px; line-height: 1.65; max-width: 240px; color: rgba(255,255,255,0.4); }
+    .footer-col h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.54px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp2); }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { font-size: 13px; color: rgba(255,255,255,0.5); cursor: pointer; transition: color .15s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: var(--sp3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp2); }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .socials { display: flex; gap: 10px; }
+    .social-btn {
+      width: 32px; height: 32px; border-radius: var(--r-circle);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: rgba(255,255,255,0.45);
+      cursor: pointer; transition: border-color .15s, color .15s;
+    }
+    .social-btn:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .pillars-grid, .service-grid, .audience-grid,
+      .distinct-grid, .products-grid, .resources-grid,
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .about-split, .contact-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .pillars-grid, .service-grid, .audience-grid,
+      .distinct-grid, .products-grid, .resources-grid,
+      .blog-grid, .values-grid, .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { min-height: 70vh; padding: var(--sp8) 0; }
+      .home-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="showPage('home')">
+      <span class="nav-logo-name">Transforming Lives</span>
+      <span class="nav-logo-tag">Where insight and action meet</span>
+    </a>
+    <div class="nav-links">
+      <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
+      <a onclick="showPage('about')"     id="nav-about"    >About</a>
+      <a onclick="showPage('services')"  id="nav-services" >Services</a>
+      <a onclick="showPage('products')"  id="nav-products" >Products</a>
+      <a onclick="showPage('resources')" id="nav-resources">Resources</a>
+      <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
+      <a onclick="showPage('contact')"   id="nav-contact"  class="btn btn-black btn-sm nav-cta">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');closeMenu()">Home</a>
+  <a onclick="showPage('about');closeMenu()">About</a>
+  <a onclick="showPage('services');closeMenu()">Services</a>
+  <a onclick="showPage('products');closeMenu()">Products</a>
+  <a onclick="showPage('resources');closeMenu()">Resources</a>
+  <a onclick="showPage('blog');closeMenu()">Blog</a>
+  <a onclick="showPage('contact');closeMenu()">Contact</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     HOME
+══════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="label label-white">Social Enterprise · Singapore</p>
+        <h1 class="h-display">Where insight<br>and action<br>meet.</h1>
+        <p class="body-lg">Transforming Lives bridges psychoeducation and capability development to help individuals and organisations grow with greater clarity, capability, and confidence.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" onclick="showPage('services')">Explore Services</button>
+          <button class="btn btn-glass-light btn-lg" onclick="showPage('about')">Our Story</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <div class="pillars-header">
+        <p class="label">What We Do</p>
+        <h2 class="h-section" style="margin-top:12px;max-width:540px">Two pillars. One purpose.</h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <p class="pillar-num">01</p>
+          <h3>Capability Development</h3>
+          <p>Talks, workshops, coaching, and training that build practical skills and confidence for individuals and organisations.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">02</p>
+          <h3>Psychoeducation</h3>
+          <p>Books, podcasts, curricula, and accessible content that deepen understanding of how people think, learn, relate, and grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-statement">
+    <div class="container">
+      <p class="label label-white">Our Approach</p>
+      <h2 class="h-section" style="margin-top:12px">Strengths-based.<br>Relational. Grounded<br>in real transformation.</h2>
+      <p class="body-lg">Our approach is not deficit-based. We help people see themselves and others differently — turning insight into practical change, and strengthening relationships in ways that are both human and effective.</p>
+      <button class="btn btn-white btn-lg" onclick="showPage('about')">Meet Transforming Lives</button>
+    </div>
+  </section>
+
+  <section class="focus-section">
+    <div class="container">
+      <div class="pillars-header">
+        <p class="label">Core Focus</p>
+        <h2 class="h-sub" style="margin-top:12px">Areas of Expertise</h2>
+      </div>
+      <div class="chips">
+        <div class="chip">Neurodivergence &amp; ADHD</div>
+        <div class="chip">Executive Function</div>
+        <div class="chip">Strengths-Based Development</div>
+        <div class="chip">Relationships</div>
+        <div class="chip">Parenting &amp; Family Support</div>
+        <div class="chip">School Inclusion</div>
+        <div class="chip">Workplace Awareness</div>
+        <div class="chip">Professional Upskilling</div>
+        <div class="chip">Coaching</div>
+        <div class="chip">Psychoeducation</div>
+        <div class="chip">Curriculum Development</div>
+        <div class="chip">Human Development</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 0 var(--sp10)">
+    <div class="container">
+      <div class="home-cta">
+        <h2>Ready to move from insight to action?</h2>
+        <div class="home-cta-actions">
+          <button class="btn btn-black btn-lg" onclick="showPage('contact')">Get in Touch</button>
+          <button class="btn btn-ghost btn-lg" onclick="showPage('services')">View Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Our Story</p>
+      <h1 class="h-section">About Transforming Lives</h1>
+      <p class="body-lg">A social enterprise built at the intersection of strategy and empathy, education and transformation, professional credibility and human connection.</p>
+    </div>
+  </section>
+
+  <section class="about-body">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-img">
+          <img src="images/founder.jpg" alt="Founder of Transforming Lives" />
+        </div>
+        <div class="about-text">
+          <p class="label">Who We Are</p>
+          <h2 class="h-sub" style="margin-top:12px">From Insight to Action</h2>
+          <p class="body" style="margin-top:var(--sp3)">Transforming Lives (TL) is a social enterprise focused on helping individuals, families, professionals, schools, workplaces, and communities thrive through better understanding, support, and skill-building.</p>
+          <p class="body">We work at the intersection of capability development and psychoeducation to create meaningful, lasting change — not through a deficit lens, but through one of strength, potential, and possibility.</p>
+          <div class="blockquote" style="margin:var(--sp4) 0">
+            <p>"We help people see themselves and others differently — turning insight into practical change."</p>
+          </div>
+          <p class="body">TL is not narrowly defined by any single condition. Our broader themes are how people think, learn, relate, function, and grow — and how we build environments where that growth can flourish.</p>
+          <button class="btn btn-black" style="margin-top:var(--sp4)" onclick="showPage('services')">See What We Offer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <p class="label">Our Values</p>
+      <h2 class="h-sub" style="margin-top:12px">What We Stand For</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🌟</div>
+          <h4>Strengths-Based</h4>
+          <p>We lead with what people can do, not what they can't.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤲</div>
+          <h4>Human-Centred</h4>
+          <p>Every programme, resource, and interaction is designed with people at the core.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h4>Insightful</h4>
+          <p>We translate research and complexity into clear, actionable understanding.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔗</div>
+          <h4>Relational</h4>
+          <p>Change happens through connection — with self, with others, with community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="distinct-section">
+    <div class="container">
+      <p class="label">Why Transforming Lives</p>
+      <h2 class="h-sub" style="margin-top:12px">What Makes Us Distinct</h2>
+      <div class="distinct-grid">
+        <div class="distinct-card">
+          <h4>Strategy &amp; Empathy</h4>
+          <p>We bring together rigorous frameworks with deep human understanding — insights are not just theoretical, but lived and actionable.</p>
+        </div>
+        <div class="distinct-card">
+          <h4>Education &amp; Transformation</h4>
+          <p>We don't just inform — we equip. Our work shifts perspectives, builds capacity, and creates lasting change.</p>
+        </div>
+        <div class="distinct-card">
+          <h4>Broad Human Development</h4>
+          <p>Neurodivergence is a core area, but our lens covers executive function, relationships, coaching, and all of how people grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--black);padding:var(--sp10) 0">
+    <div class="container" style="text-align:center">
+      <p class="label" style="color:rgba(255,255,255,.35);opacity:1">Work Together</p>
+      <h2 class="h-sub" style="color:var(--white);margin:12px auto var(--sp3);max-width:480px">Ready to explore how TL can support you?</h2>
+      <button class="btn btn-white btn-lg" onclick="showPage('contact')">Contact Us</button>
+    </div>
+  </section>
+
+</div><!-- /about -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════════ -->
+<div id="page-services" class="page">
+
+  <section class="page-hero page-hero-gold">
+    <div class="container">
+      <p class="label">What We Offer</p>
+      <h1 class="h-section">Our Services</h1>
+      <p class="body-lg">From keynotes to coaching, workshops to curriculum — capability development and psychoeducation brought to life.</p>
+    </div>
+  </section>
+
+  <div class="services-body">
+    <div class="container">
+
+      <div class="services-section">
+        <div class="services-intro">
+          <p class="label">Capability Development</p>
+          <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
+          <p class="body">Practical, engaging programmes that help individuals and organisations develop the skills, mindsets, and behaviours to thrive.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">🎤</div>
+            <h3>Talks &amp; Keynotes</h3>
+            <p>Impactful, evidence-informed talks for conferences, organisations, schools, and community events.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🛠</div>
+            <h3>Workshops &amp; Training</h3>
+            <p>Customised programmes that go beyond awareness into skill-building and practical application.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🤝</div>
+            <h3>Facilitation</h3>
+            <p>Expert facilitation for team conversations, strategy sessions, and professional development.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">👨‍👩‍👧</div>
+            <h3>Parent Education</h3>
+            <p>Practical programmes for parents navigating neurodivergence, executive function, and family dynamics.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🧠</div>
+            <h3>Executive Function Skills</h3>
+            <p>Education and skills for individuals strengthening planning, focus, organisation, and self-regulation.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✨</div>
+            <h3>Coaching Services</h3>
+            <p>Strengths-based coaching supporting individuals in building clarity, capability, and confidence.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div class="services-section">
+        <div class="services-intro">
+          <p class="label">Psychoeducation</p>
+          <h2 class="h-sub" style="margin-top:12px">Understanding that Empowers</h2>
+          <p class="body">Accessible content, curriculum, and resources that build understanding for individuals, parents, professionals, and organisations.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">📚</div>
+            <h3>Curriculum Development</h3>
+            <p>Purpose-built curricula for schools, training providers, and organisations.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🏫</div>
+            <h3>School &amp; Workplace Awareness</h3>
+            <p>Neurodivergence awareness programmes for educators, HR teams, and managers.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">📝</div>
+            <h3>Professional Upskilling</h3>
+            <p>Specialised training for professionals working with neurodivergent individuals.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="audience-section">
+    <div class="container">
+      <p class="label">Who We Serve</p>
+      <h2 class="h-sub" style="margin-top:12px">Our Audiences</h2>
+      <div class="audience-grid">
+        <div class="audience-item"><h4>Individuals &amp; Families</h4><p>Parents, individuals, and families navigating neurodivergence and personal growth.</p></div>
+        <div class="audience-item"><h4>Schools &amp; Educators</h4><p>Teachers and administrators building inclusive school communities.</p></div>
+        <div class="audience-item"><h4>Workplaces &amp; Organisations</h4><p>HR leaders and managers creating neurodiverse-affirming environments.</p></div>
+        <div class="audience-item"><h4>Professionals</h4><p>Coaches, therapists, and allied health professionals deepening their practice.</p></div>
+        <div class="audience-item"><h4>Community Partners</h4><p>Non-profits building inclusive services and programmes.</p></div>
+        <div class="audience-item"><h4>Coaching Clients</h4><p>Participants in structured coaching or training seeking clarity and confidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0;text-align:center">
+    <div class="container">
+      <h2 class="h-sub" style="margin-bottom:var(--sp2)">Not sure where to start?</h2>
+      <p class="body" style="margin:0 auto var(--sp4);max-width:440px">Reach out and we'll help you find the right service for your needs.</p>
+      <button class="btn btn-black btn-lg" onclick="showPage('contact')">Talk to Us</button>
+    </div>
+  </section>
+
+</div><!-- /services -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════════════════════════ -->
+<div id="page-products" class="page">
+
+  <section class="page-hero page-hero-dark">
+    <div class="container">
+      <p class="label">Publications &amp; Media</p>
+      <h1 class="h-section">Our Products</h1>
+      <p class="body-lg">Books, podcasts, and educational content that make psychology and capability development accessible to everyone.</p>
+    </div>
+  </section>
+
+  <div class="products-body">
+    <div class="container">
+
+      <div class="products-section">
+        <p class="label">Publishing</p>
+        <h2 class="h-sub" style="margin-top:12px">Books &amp; Publications</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-card-top teal"></div>
+            <div class="product-card-body">
+              <div class="product-icon">📗</div>
+              <h3>Understanding Your Neurodivergent Child</h3>
+              <p>A parent's guide to understanding ADHD, executive function, and neurodivergence — with warmth, clarity, and practical tools.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Book</span></div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-top teal"></div>
+            <div class="product-card-body">
+              <div class="product-icon">📘</div>
+              <h3>Executive Function at Work</h3>
+              <p>A practical guide for professionals and managers seeking to support executive function differences in the workplace.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Book</span></div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-top teal"></div>
+            <div class="product-card-body">
+              <div class="product-icon">📙</div>
+              <h3>From Insight to Action</h3>
+              <p>A reflective workbook combining psychoeducation with practical exercises to support personal growth and self-understanding.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Workbook</span></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div class="products-section">
+        <p class="label">Audio &amp; Digital</p>
+        <h2 class="h-sub" style="margin-top:12px">Podcasts &amp; Content</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-card-top gold"></div>
+            <div class="product-card-body">
+              <div class="product-icon">🎧</div>
+              <h3>The Transforming Lives Podcast</h3>
+              <p>Real conversations about neurodivergence, parenting, strengths, and the science of how we grow.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Podcast</span></div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-top gold"></div>
+            <div class="product-card-body">
+              <div class="product-icon">🎬</div>
+              <h3>Video Learning Series</h3>
+              <p>Short, accessible video content on executive function, relationships, and inclusion.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Video</span></div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-top gold"></div>
+            <div class="product-card-body">
+              <div class="product-icon">📋</div>
+              <h3>Curriculum &amp; Resource Packs</h3>
+              <p>Structured curriculum materials and resource packs for schools, training providers, and organisations.</p>
+            </div>
+            <div class="product-card-foot"><span class="tag">Curriculum</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:var(--sp8) 0 0;border-top:1px solid var(--border);margin-top:var(--sp8)">
+        <p class="label" style="margin-bottom:12px">Coming Soon</p>
+        <h3 class="h-sub" style="margin-bottom:var(--sp2)">More on the Way</h3>
+        <p class="body" style="max-width:400px;margin:0 auto var(--sp4)">We are continually developing new content, tools, and resources.</p>
+        <button class="btn btn-black btn-lg" onclick="showPage('contact')">Stay Updated</button>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /products -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     RESOURCES
+══════════════════════════════════════════════════════════ -->
+<div id="page-resources" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Free &amp; Curated</p>
+      <h1 class="h-section">Resources</h1>
+      <p class="body-lg">Guides, articles, tools, and references to help you, your family, or your organisation grow with greater clarity and confidence.</p>
+    </div>
+  </section>
+
+  <div class="resources-body">
+    <div class="container">
+
+      <div class="resources-section">
+        <p class="label">For Individuals &amp; Families</p>
+        <h2 class="h-sub" style="margin-top:12px">Personal &amp; Family Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-card"><div class="resource-type">Guide</div><h4>Understanding Executive Function</h4><p>A plain-language guide to what executive function is, why it matters, and how to support it.</p></div>
+          <div class="resource-card"><div class="resource-type">Checklist</div><h4>Parent Conversation Starter Kit</h4><p>Practical prompts to help parents have meaningful conversations with their neurodivergent children.</p></div>
+          <div class="resource-card"><div class="resource-type">Article</div><h4>Strengths First: A Different Lens</h4><p>An introduction to strengths-based thinking and how it transforms support for children and adults.</p></div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div class="resources-section">
+        <p class="label">For Educators &amp; Professionals</p>
+        <h2 class="h-sub" style="margin-top:12px">Professional Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-card"><div class="resource-type">Framework</div><h4>Inclusion in Practice</h4><p>A practical framework for schools and workplaces building genuinely inclusive environments.</p></div>
+          <div class="resource-card"><div class="resource-type">Resource Pack</div><h4>Classroom Strategies Toolkit</h4><p>Evidence-informed strategies to support students with executive function differences.</p></div>
+          <div class="resource-card"><div class="resource-type">Guide</div><h4>Workplace Neurodivergence Guide</h4><p>A manager's guide to understanding and unlocking the potential of neurodivergent team members.</p></div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div class="resources-section">
+        <p class="label">Curated Reads</p>
+        <h2 class="h-sub" style="margin-top:12px">Recommended Reading &amp; Listening</h2>
+        <div class="resources-grid">
+          <div class="resource-card"><div class="resource-type">Reading List</div><h4>Books on Neurodivergence</h4><p>Our curated list of the most valuable books for parents, professionals, and individuals.</p></div>
+          <div class="resource-card"><div class="resource-type">Podcast Picks</div><h4>Top Episodes: Executive Function</h4><p>Our most listened-to podcast episodes on executive function — practical and accessible.</p></div>
+          <div class="resource-card"><div class="resource-type">Research Brief</div><h4>The Science of Strengths</h4><p>A concise overview of the research behind strengths-based approaches.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-copy">
+          <p class="label">Stay Informed</p>
+          <h3>Get resources delivered to your inbox</h3>
+        </div>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn btn-white">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /resources -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOG
+══════════════════════════════════════════════════════════ -->
+<div id="page-blog" class="page">
+
+  <section class="page-hero" style="border-bottom:1px solid var(--border)">
+    <div class="container">
+      <p class="label">Insights &amp; Perspectives</p>
+      <h1 class="h-section">The TL Blog</h1>
+      <p class="body-lg">Thoughtful writing on neurodivergence, executive function, parenting, inclusion, and the science of human growth.</p>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="container">
+      <p class="label">Latest Posts</p>
+      <h2 class="h-sub" style="margin-top:12px">Recent Articles</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Apr 2025</span></div>
+            <h3>Why Executive Function Matters More Than IQ</h3>
+            <p>Understanding the cognitive skills that predict success — and how to develop them at any age.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Mar 2025</span></div>
+            <h3>The Language We Use With Our Kids Matters More Than We Think</h3>
+            <p>How shifting from deficit to strengths language transforms how children see themselves.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Inclusion</span><span class="blog-date">Feb 2025</span></div>
+            <h3>Building a Neuro-Affirming Workplace: Where to Begin</h3>
+            <p>Practical first steps for HR leaders and managers creating genuinely inclusive environments.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Relationships</span><span class="blog-date">Jan 2025</span></div>
+            <h3>How Neurodivergence Affects Relationships — and What Helps</h3>
+            <p>An honest look at the relational impact of ADHD and how insight changes everything.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Psychoeducation</span><span class="blog-date">Dec 2024</span></div>
+            <h3>What is Psychoeducation — and Why Does It Change Lives?</h3>
+            <p>Understanding yourself is the foundation for growth. Here's why.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Schools</span><span class="blog-date">Nov 2024</span></div>
+            <h3>Strengths-Based Education: Moving Beyond Gaps and Deficits</h3>
+            <p>Focusing on what students can do produces better outcomes for everyone.</p>
+            <span class="blog-read">Read more →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="topics-section">
+    <div class="container">
+      <p class="label">Browse by Topic</p>
+      <div class="chips" style="margin-top:var(--sp3)">
+        <div class="chip">Neurodivergence</div>
+        <div class="chip">ADHD</div>
+        <div class="chip">Executive Function</div>
+        <div class="chip">Parenting</div>
+        <div class="chip">Schools &amp; Education</div>
+        <div class="chip">Workplace Inclusion</div>
+        <div class="chip">Relationships</div>
+        <div class="chip">Strengths-Based</div>
+        <div class="chip">Psychoeducation</div>
+        <div class="chip">Coaching</div>
+        <div class="chip">Research &amp; Evidence</div>
+        <div class="chip">Personal Growth</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-copy">
+          <p class="label">Never Miss a Post</p>
+          <h3>Subscribe for new articles</h3>
+        </div>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn btn-white">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /blog -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Let's Connect</p>
+      <h1 class="h-section">Contact Us</h1>
+      <p class="body-lg">Whether you're looking for a speaker, workshop, coaching conversation, or just want to know more — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <div class="contact-body">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="label">Get in Touch</p>
+          <h2 class="h-sub" style="margin-top:12px">We'd love to help</h2>
+          <p class="body" style="margin-top:var(--sp2)">We work with individuals, families, schools, workplaces, and community organisations. Tell us what you're looking for and we'll find the best way forward.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">✉️</div>
+              <div class="contact-detail-text"><strong>Email</strong><span>hello@transforminglives.com.sg</span></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div class="contact-detail-text"><strong>Location</strong><span>Singapore</span></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">💬</div>
+              <div class="contact-detail-text"><strong>Response Time</strong><span>Within 2 business days</span></div>
+            </div>
+          </div>
+          <div class="can-help">
+            <h4>We Can Help With</h4>
+            <ul>
+              <li>Booking a talk or keynote</li>
+              <li>Workshop or training enquiries</li>
+              <li>Coaching programme information</li>
+              <li>Media or collaboration requests</li>
+              <li>General questions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" placeholder="Jane" required /></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Smith" required /></div>
+            </div>
+            <div class="form-group"><label>Email *</label><input type="email" placeholder="jane@email.com" required /></div>
+            <div class="form-group"><label>Organisation (optional)</label><input type="text" placeholder="Your school or company" /></div>
+            <div class="form-group">
+              <label>I am interested in *</label>
+              <select required>
+                <option value="" disabled selected>Select an option</option>
+                <option>Talks &amp; Keynotes</option>
+                <option>Workshops &amp; Training</option>
+                <option>Coaching Services</option>
+                <option>Parent Education</option>
+                <option>School Awareness Programmes</option>
+                <option>Workplace Inclusion</option>
+                <option>Books &amp; Publications</option>
+                <option>Podcast / Collaboration</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Message *</label><textarea placeholder="Tell us what you're looking for…" required></textarea></div>
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /contact -->
+
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Transforming Lives</div>
+        <div class="footer-brand-tag">Where insight and action meet</div>
+        <p>A social enterprise bridging psychoeducation and capability development — helping individuals and organisations grow with clarity, capability, and confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('services')">Services</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('resources')">Resources</a></li>
+          <li><a onclick="showPage('blog')">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a onclick="showPage('services')">Talks &amp; Keynotes</a></li>
+          <li><a onclick="showPage('services')">Workshops</a></li>
+          <li><a onclick="showPage('services')">Coaching</a></li>
+          <li><a onclick="showPage('services')">Parent Education</a></li>
+          <li><a onclick="showPage('services')">School Programmes</a></li>
+          <li><a onclick="showPage('services')">Workplace Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
+          <li><a onclick="showPage('resources')">Free Resources</a></li>
+          <li><a onclick="showPage('blog')">Read the Blog</a></li>
+          <li><a onclick="showPage('products')">Our Books</a></li>
+          <li><a onclick="showPage('products')">Podcast</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Transforming Lives. All rights reserved. Social Enterprise, Singapore.</p>
+      <div class="socials">
+        <div class="social-btn">in</div>
+        <div class="social-btn">f</div>
+        <div class="social-btn">◎</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  const pages = ['home','about','services','products','resources','blog','contact'];
+
+  function showPage(id) {
+    pages.forEach(p => {
+      document.getElementById('page-' + p).classList.remove('active');
+      const n = document.getElementById('nav-' + p);
+      if (n) n.classList.remove('active');
+    });
+    document.getElementById('page-' + id).classList.add('active');
+    const n = document.getElementById('nav-' + id);
+    if (n) n.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const orig = btn.textContent;
+    btn.textContent = 'Subscribed ✓';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; e.target.reset(); }, 3000);
+  }
+  function handleContact(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Message Sent ✓';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; e.target.reset(); }, 3000);
+  }
+</script>
+</body>
+</html>
