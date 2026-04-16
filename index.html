@@ -368,12 +368,12 @@
        HOME
     ═══════════════════════════════════════════════════════════ */
 
-    /* Hero — butterfly image with teal/gold overlay */
+    /* Hero — butterfly image with left-fade overlay so butterfly/hands stay visible */
     .hero {
       min-height: 90vh;
       background-image: url('images/hero-butterfly.jpg');
       background-size: cover;
-      background-position: center 40%;
+      background-position: 68% center;
       display: flex; align-items: center;
       padding: var(--sp10) 0;
       position: relative; overflow: hidden;
@@ -381,13 +381,17 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg,
-        rgba(10,92,92,0.82) 0%, rgba(31,138,138,0.75) 35%,
-        rgba(31,138,138,0.55) 60%, rgba(150,90,10,0.6) 100%);
+      /* Dark on the left where text sits, fades to transparent on the right */
+      background: linear-gradient(to right,
+        rgba(8,55,55,0.95) 0%,
+        rgba(8,55,55,0.90) 28%,
+        rgba(8,55,55,0.55) 50%,
+        rgba(8,55,55,0.10) 68%,
+        transparent 80%);
     }
     .hero-inner {
       position: relative; z-index: 1;
-      max-width: 760px;
+      max-width: 520px;
     }
     .hero .label { margin-bottom: var(--sp2); }
     .hero .h-display { color: var(--white); margin-bottom: var(--sp3); }
