@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transforming Lives | Where Insight and Action Meet</title>
   <!--
-    Design system: DESIGN.md (Figma-inspired)
-    Adaptations for Transforming Lives:
-    - figmaSans → Inter variable font (closest publicly available)
-    - figmaMono → Space Mono for uppercase labels
-    - Interface chrome: strictly #000 / #fff
-    - Brand colours (teal #1F8A8A, gold #C9963A) used ONLY in hero gradient
-      and section accents — never as interface chrome
-    - Pill (50px) buttons, dashed focus rings, negative letter-spacing
+    Design systems applied:
+    1. DESIGN.md (Figma-inspired) — B&W chrome, pill buttons, variable font, negative tracking
+    2. neobrutal-catalogue — hard 4px offset shadows, 2px solid borders, flat hover shifts
+    3. tripled-catalogue — stagger entry animations, spring hover lifts, cubic-bezier transitions
+    4. uselayouts-catalogue — IntersectionObserver reveals, grid stagger delays
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -206,6 +203,107 @@
       text-transform: uppercase;
       border: 1px solid var(--border);
       color: rgba(0,0,0,0.45);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       NEOBRUTAL CATALOGUE
+       — 2px solid border, 4px 4px 0 0 black hard shadow
+       — hover: translate(2px,2px) + shadow removal
+       — no blur, no gradients on components
+    ══════════════════════════════════════════════════════════ */
+    .nb {
+      border: 2px solid var(--black) !important;
+      box-shadow: 4px 4px 0 0 var(--black);
+      transition: box-shadow 0.1s, transform 0.1s !important;
+    }
+    .nb:hover {
+      box-shadow: none !important;
+      transform: translate(2px, 2px) !important;
+    }
+    .nb-sm {
+      border: 2px solid var(--black) !important;
+      box-shadow: 3px 3px 0 0 var(--black);
+      transition: box-shadow 0.1s, transform 0.1s !important;
+    }
+    .nb-sm:hover {
+      box-shadow: none !important;
+      transform: translate(3px, 3px) !important;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       TRIPLED CATALOGUE
+       — staggered reveal: .reveal starts invisible, JS adds .visible
+       — spring lift hover on cards: translateY(-8px)
+       — button hover: translateY(-2px) + shadow grow
+       — stagger delay via --i CSS var: calc(var(--i) * 80ms)
+    ══════════════════════════════════════════════════════════ */
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition-delay: calc(var(--i, 0) * 80ms);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Spring card hover — TripleD pattern */
+    .lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.3s ease !important;
+    }
+    .lift:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
+    }
+
+    /* Stagger grid — children get --i index from JS */
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition-delay: calc(var(--i, 0) * 80ms);
+    }
+    .stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       USELAYOUTS CATALOGUE
+       — smooth cubic-bezier: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+       — expandable sections via max-height
+       — character stagger: calc(var(--i) * 30ms)
+    ══════════════════════════════════════════════════════════ */
+
+    /* Hero display text — character stagger */
+    .char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px) rotateX(90deg);
+      filter: blur(4px);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.4s ease;
+      transition-delay: calc(var(--i, 0) * 30ms);
+    }
+    .char.visible {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+      filter: blur(0);
+    }
+
+    /* Chip hover — UseLayouts expandable feel */
+    .chip {
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+    .chip:hover {
+      transform: scale(1.04) !important;
+      border-color: var(--black) !important;
+      background: var(--subtle) !important;
     }
 
     /* ── NAV ──────────────────────────────────────────────────── */
@@ -684,13 +782,13 @@
         <p class="label">What We Do</p>
         <h2 class="h-section" style="margin-top:12px;max-width:540px">Two pillars. One purpose.</h2>
       </div>
-      <div class="pillars-grid">
-        <div class="pillar">
+      <div class="pillars-grid stagger">
+        <div class="pillar nb">
           <p class="pillar-num">01</p>
           <h3>Capability Development</h3>
           <p>Talks, workshops, coaching, and training that build practical skills and confidence for individuals and organisations.</p>
         </div>
-        <div class="pillar">
+        <div class="pillar nb">
           <p class="pillar-num">02</p>
           <h3>Psychoeducation</h3>
           <p>Books, podcasts, curricula, and accessible content that deepen understanding of how people think, learn, relate, and grow.</p>
@@ -784,23 +882,23 @@
     <div class="container">
       <p class="label">Our Values</p>
       <h2 class="h-sub" style="margin-top:12px">What We Stand For</h2>
-      <div class="values-grid">
-        <div class="value-card">
+      <div class="values-grid stagger">
+        <div class="value-card nb-sm lift">
           <div class="value-icon">🌟</div>
           <h4>Strengths-Based</h4>
           <p>We lead with what people can do, not what they can't.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card nb-sm lift">
           <div class="value-icon">🤲</div>
           <h4>Human-Centred</h4>
           <p>Every programme, resource, and interaction is designed with people at the core.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card nb-sm lift">
           <div class="value-icon">💡</div>
           <h4>Insightful</h4>
           <p>We translate research and complexity into clear, actionable understanding.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card nb-sm lift">
           <div class="value-icon">🔗</div>
           <h4>Relational</h4>
           <p>Change happens through connection — with self, with others, with community.</p>
@@ -814,15 +912,15 @@
       <p class="label">Why Transforming Lives</p>
       <h2 class="h-sub" style="margin-top:12px">What Makes Us Distinct</h2>
       <div class="distinct-grid">
-        <div class="distinct-card">
+        <div class="distinct-card nb-sm">
           <h4>Strategy &amp; Empathy</h4>
           <p>We bring together rigorous frameworks with deep human understanding — insights are not just theoretical, but lived and actionable.</p>
         </div>
-        <div class="distinct-card">
+        <div class="distinct-card nb-sm">
           <h4>Education &amp; Transformation</h4>
           <p>We don't just inform — we equip. Our work shifts perspectives, builds capacity, and creates lasting change.</p>
         </div>
-        <div class="distinct-card">
+        <div class="distinct-card nb-sm">
           <h4>Broad Human Development</h4>
           <p>Neurodivergence is a core area, but our lens covers executive function, relationships, coaching, and all of how people grow.</p>
         </div>
@@ -972,8 +1070,8 @@
       <div class="products-section">
         <p class="label">Publishing</p>
         <h2 class="h-sub" style="margin-top:12px">Books &amp; Publications</h2>
-        <div class="products-grid">
-          <div class="product-card">
+        <div class="products-grid stagger">
+          <div class="product-card nb lift">
             <div class="product-card-top teal"></div>
             <div class="product-card-body">
               <div class="product-icon">📗</div>
@@ -982,7 +1080,7 @@
             </div>
             <div class="product-card-foot"><span class="tag">Book</span></div>
           </div>
-          <div class="product-card">
+          <div class="product-card nb lift">
             <div class="product-card-top teal"></div>
             <div class="product-card-body">
               <div class="product-icon">📘</div>
@@ -991,7 +1089,7 @@
             </div>
             <div class="product-card-foot"><span class="tag">Book</span></div>
           </div>
-          <div class="product-card">
+          <div class="product-card nb lift">
             <div class="product-card-top teal"></div>
             <div class="product-card-body">
               <div class="product-icon">📙</div>
@@ -1008,8 +1106,8 @@
       <div class="products-section">
         <p class="label">Audio &amp; Digital</p>
         <h2 class="h-sub" style="margin-top:12px">Podcasts &amp; Content</h2>
-        <div class="products-grid">
-          <div class="product-card">
+        <div class="products-grid stagger">
+          <div class="product-card nb lift">
             <div class="product-card-top gold"></div>
             <div class="product-card-body">
               <div class="product-icon">🎧</div>
@@ -1018,7 +1116,7 @@
             </div>
             <div class="product-card-foot"><span class="tag">Podcast</span></div>
           </div>
-          <div class="product-card">
+          <div class="product-card nb lift">
             <div class="product-card-top gold"></div>
             <div class="product-card-body">
               <div class="product-icon">🎬</div>
@@ -1027,7 +1125,7 @@
             </div>
             <div class="product-card-foot"><span class="tag">Video</span></div>
           </div>
-          <div class="product-card">
+          <div class="product-card nb lift">
             <div class="product-card-top gold"></div>
             <div class="product-card-body">
               <div class="product-icon">📋</div>
@@ -1071,10 +1169,10 @@
       <div class="resources-section">
         <p class="label">For Individuals &amp; Families</p>
         <h2 class="h-sub" style="margin-top:12px">Personal &amp; Family Resources</h2>
-        <div class="resources-grid">
-          <div class="resource-card"><div class="resource-type">Guide</div><h4>Understanding Executive Function</h4><p>A plain-language guide to what executive function is, why it matters, and how to support it.</p></div>
-          <div class="resource-card"><div class="resource-type">Checklist</div><h4>Parent Conversation Starter Kit</h4><p>Practical prompts to help parents have meaningful conversations with their neurodivergent children.</p></div>
-          <div class="resource-card"><div class="resource-type">Article</div><h4>Strengths First: A Different Lens</h4><p>An introduction to strengths-based thinking and how it transforms support for children and adults.</p></div>
+        <div class="resources-grid stagger">
+          <div class="resource-card nb-sm lift"><div class="resource-type">Guide</div><h4>Understanding Executive Function</h4><p>A plain-language guide to what executive function is, why it matters, and how to support it.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Checklist</div><h4>Parent Conversation Starter Kit</h4><p>Practical prompts to help parents have meaningful conversations with their neurodivergent children.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Article</div><h4>Strengths First: A Different Lens</h4><p>An introduction to strengths-based thinking and how it transforms support for children and adults.</p></div>
         </div>
       </div>
 
@@ -1083,10 +1181,10 @@
       <div class="resources-section">
         <p class="label">For Educators &amp; Professionals</p>
         <h2 class="h-sub" style="margin-top:12px">Professional Resources</h2>
-        <div class="resources-grid">
-          <div class="resource-card"><div class="resource-type">Framework</div><h4>Inclusion in Practice</h4><p>A practical framework for schools and workplaces building genuinely inclusive environments.</p></div>
-          <div class="resource-card"><div class="resource-type">Resource Pack</div><h4>Classroom Strategies Toolkit</h4><p>Evidence-informed strategies to support students with executive function differences.</p></div>
-          <div class="resource-card"><div class="resource-type">Guide</div><h4>Workplace Neurodivergence Guide</h4><p>A manager's guide to understanding and unlocking the potential of neurodivergent team members.</p></div>
+        <div class="resources-grid stagger">
+          <div class="resource-card nb-sm lift"><div class="resource-type">Framework</div><h4>Inclusion in Practice</h4><p>A practical framework for schools and workplaces building genuinely inclusive environments.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Resource Pack</div><h4>Classroom Strategies Toolkit</h4><p>Evidence-informed strategies to support students with executive function differences.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Guide</div><h4>Workplace Neurodivergence Guide</h4><p>A manager's guide to understanding and unlocking the potential of neurodivergent team members.</p></div>
         </div>
       </div>
 
@@ -1095,10 +1193,10 @@
       <div class="resources-section">
         <p class="label">Curated Reads</p>
         <h2 class="h-sub" style="margin-top:12px">Recommended Reading &amp; Listening</h2>
-        <div class="resources-grid">
-          <div class="resource-card"><div class="resource-type">Reading List</div><h4>Books on Neurodivergence</h4><p>Our curated list of the most valuable books for parents, professionals, and individuals.</p></div>
-          <div class="resource-card"><div class="resource-type">Podcast Picks</div><h4>Top Episodes: Executive Function</h4><p>Our most listened-to podcast episodes on executive function — practical and accessible.</p></div>
-          <div class="resource-card"><div class="resource-type">Research Brief</div><h4>The Science of Strengths</h4><p>A concise overview of the research behind strengths-based approaches.</p></div>
+        <div class="resources-grid stagger">
+          <div class="resource-card nb-sm lift"><div class="resource-type">Reading List</div><h4>Books on Neurodivergence</h4><p>Our curated list of the most valuable books for parents, professionals, and individuals.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Podcast Picks</div><h4>Top Episodes: Executive Function</h4><p>Our most listened-to podcast episodes on executive function — practical and accessible.</p></div>
+          <div class="resource-card nb-sm lift"><div class="resource-type">Research Brief</div><h4>The Science of Strengths</h4><p>A concise overview of the research behind strengths-based approaches.</p></div>
         </div>
       </div>
 
@@ -1140,8 +1238,8 @@
     <div class="container">
       <p class="label">Latest Posts</p>
       <h2 class="h-sub" style="margin-top:12px">Recent Articles</h2>
-      <div class="blog-grid">
-        <div class="blog-card">
+      <div class="blog-grid stagger">
+        <div class="blog-card nb lift">
           <div class="blog-card-top"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Apr 2025</span></div>
@@ -1150,7 +1248,7 @@
             <span class="blog-read">Read more →</span>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card nb lift">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Mar 2025</span></div>
@@ -1159,7 +1257,7 @@
             <span class="blog-read">Read more →</span>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card nb lift">
           <div class="blog-card-top"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Inclusion</span><span class="blog-date">Feb 2025</span></div>
@@ -1168,7 +1266,7 @@
             <span class="blog-read">Read more →</span>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card nb lift">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Relationships</span><span class="blog-date">Jan 2025</span></div>
@@ -1177,7 +1275,7 @@
             <span class="blog-read">Read more →</span>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card nb lift">
           <div class="blog-card-top"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Psychoeducation</span><span class="blog-date">Dec 2024</span></div>
@@ -1186,7 +1284,7 @@
             <span class="blog-read">Read more →</span>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card nb lift">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-cat">Schools</span><span class="blog-date">Nov 2024</span></div>
@@ -1387,6 +1485,8 @@
     const n = document.getElementById('nav-' + id);
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Trigger reveal animations on newly visible page
+    setTimeout(initReveals, 50);
   }
 
   function toggleMenu() {
@@ -1411,6 +1511,52 @@
     btn.disabled = true;
     setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; e.target.reset(); }, 3000);
   }
+
+  /* ── IntersectionObserver — UseLayouts + TripleD patterns ── */
+  function initReveals() {
+    // Set --i stagger index on stagger grid children
+    document.querySelectorAll('.stagger').forEach(grid => {
+      Array.from(grid.children).forEach((child, i) => {
+        child.style.setProperty('--i', i);
+      });
+    });
+
+    // Observe .stagger grids (trigger when grid enters viewport)
+    const gridObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          gridObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.stagger').forEach(el => {
+      el.classList.remove('visible');
+      gridObs.observe(el);
+    });
+
+    // Observe .reveal elements
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.setProperty('--i', i % 6);
+      el.classList.remove('visible');
+      revObs.observe(el);
+    });
+  }
+
+  // Init on first load
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initReveals, 80);
+  });
 </script>
 </body>
 </html>
