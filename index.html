@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Inter as variable font — enables exact DESIGN.md weight stops 320,330,340,450,480,540,700 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:wght@400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ── Design Tokens — strictly per DESIGN.md ────────────────── */
@@ -403,12 +403,21 @@
     .hero-inner {
       /* kept for legacy selectors */
     }
-    .hero .h-display { color: var(--white); margin-bottom: var(--sp2); }
+    .hero .h-display {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      font-size: clamp(52px, 7vw, 96px);
+      letter-spacing: 0px;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: var(--sp2);
+    }
     .hero-tagline {
-      font-size: clamp(16px, 1.6vw, 22px);
+      font-family: var(--font);
+      font-size: clamp(15px, 1.5vw, 20px);
       font-weight: 330;
-      color: rgba(255,255,255,0.80);
-      letter-spacing: -0.2px;
+      color: rgba(255,215,160,0.90);
+      letter-spacing: 0.3px;
       margin-bottom: var(--sp4);
     }
     .hero .body-lg {
