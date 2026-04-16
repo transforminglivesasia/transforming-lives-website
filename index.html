@@ -177,6 +177,8 @@
     .btn:hover { opacity: 0.82; transform: translateY(-1px); }
     .btn:active { transform: translateY(0); opacity: 1; }
     .btn-black  { background: var(--black); color: var(--white); }
+    .btn-teal   { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-dark); opacity: 1; }
     .btn-white  { background: var(--white); color: var(--black); }
     .btn-ghost  {
       background: transparent; color: var(--black);
@@ -368,38 +370,40 @@
        HOME
     ═══════════════════════════════════════════════════════════ */
 
-    /* Hero — butterfly image, text on right, butterfly/hands visible on left */
+    /* Hero — split layout: text left on teal, photo right */
     .hero {
       min-height: 90vh;
-      background-image: url('images/hero-butterfly.jpg');
-      background-size: cover;
-      background-position: 32% center;
-      display: flex; align-items: center;
-      padding: var(--sp10) 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      /* Transparent on the left (butterfly), dark on the right (text) */
-      background: linear-gradient(to left,
-        rgba(8,55,55,0.95) 0%,
-        rgba(8,55,55,0.90) 28%,
-        rgba(8,55,55,0.55) 50%,
-        rgba(8,55,55,0.10) 68%,
-        transparent 80%);
+    .hero-text {
+      background: linear-gradient(160deg, #083737 0%, #1a6e6e 100%);
+      display: flex; align-items: center;
+      padding: var(--sp10) var(--sp6) var(--sp10) 0;
+    }
+    .hero-text .container-left {
+      max-width: 520px;
+      margin-left: auto;
+      padding-right: var(--sp6);
+    }
+    .hero-photo {
+      position: relative; overflow: hidden;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
     }
     .hero-inner {
-      position: relative; z-index: 1;
-      max-width: 520px;
-      margin-left: auto;  /* pins text to the right */
-      text-align: left;
+      /* kept for legacy selectors */
     }
     .hero .label { margin-bottom: var(--sp2); }
     .hero .h-display { color: var(--white); margin-bottom: var(--sp3); }
     .hero .body-lg {
       color: rgba(255,255,255,0.82);
-      max-width: 560px; margin-bottom: var(--sp5);
+      max-width: 420px; margin-bottom: var(--sp5);
     }
     .hero-actions { display: flex; gap: var(--sp2); flex-wrap: wrap; }
 
@@ -723,7 +727,11 @@
       .distinct-grid, .products-grid, .resources-grid,
       .blog-grid, .values-grid, .footer-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .hero { min-height: 70vh; padding: var(--sp8) 0; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: var(--sp8) var(--sp4); }
+      .hero-text .container-left { margin-left: 0; padding-right: 0; max-width: 100%; }
+      .hero-photo { min-height: 50vw; }
+      .hero .body-lg { max-width: 100%; }
       .home-cta { flex-direction: column; }
     }
   </style>
@@ -769,8 +777,8 @@
 <div id="page-home" class="page active">
 
   <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
+    <div class="hero-text">
+      <div class="container-left">
         <p class="label label-white">Social Enterprise · Singapore</p>
         <h1 class="h-display">Where insight<br>and action<br>meet.</h1>
         <p class="body-lg">Transforming Lives bridges psychoeducation and capability development to help individuals and organisations grow with greater clarity, capability, and confidence.</p>
@@ -779,6 +787,9 @@
           <button class="btn btn-glass-light btn-lg" onclick="showPage('about')">Our Story</button>
         </div>
       </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero-butterfly.jpg" alt="Hands releasing a butterfly at sunset" />
     </div>
   </section>
 
@@ -833,7 +844,7 @@
       <div class="home-cta">
         <h2>Ready to move from insight to action?</h2>
         <div class="home-cta-actions">
-          <button class="btn btn-black btn-lg" onclick="showPage('contact')">Get in Touch</button>
+          <button class="btn btn-teal btn-lg" onclick="showPage('contact')">Get in Touch</button>
           <button class="btn btn-ghost btn-lg" onclick="showPage('services')">View Services</button>
         </div>
       </div>
@@ -1043,7 +1054,7 @@
     <div class="container">
       <h2 class="h-sub" style="margin-bottom:var(--sp2)">Not sure where to start?</h2>
       <p class="body" style="margin:0 auto var(--sp4);max-width:440px">Reach out and we'll help you find the right service for your needs.</p>
-      <button class="btn btn-black btn-lg" onclick="showPage('contact')">Talk to Us</button>
+      <button class="btn btn-teal btn-lg" onclick="showPage('contact')">Talk to Us</button>
     </div>
   </section>
 
