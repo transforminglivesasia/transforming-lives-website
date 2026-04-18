@@ -353,11 +353,14 @@
       transition: background .15s, color .15s;
     }
     .nav-links a:hover { background: var(--subtle); color: var(--black); }
-    .nav-links a.active { color: var(--black); font-weight: 500; }
+    .nav-links a.active { color: var(--black); font-weight: var(--w-semi); background: var(--subtle); }
     .nav-links .nav-cta { padding: 7px 18px; color: var(--teal); font-weight: 600; }
 
     .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 6px; border-radius: 8px; }
-    .hamburger span { width: 20px; height: 1.5px; background: var(--black); border-radius: 2px; transition: .2s; }
+    .hamburger span { width: 20px; height: 1.5px; background: var(--black); border-radius: 2px; transition: transform .25s cubic-bezier(0.34,1.56,0.64,1), opacity .2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
     .mobile-menu {
       display: none; position: fixed; inset: 60px 0 0;
       background: var(--white); z-index: 998;
@@ -430,7 +433,7 @@
     /* Pillars */
     .pillars { padding: var(--sp10) 0; background: var(--white); }
     .pillars-header { margin-bottom: var(--sp6); }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
+    .pillars-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
     .pillar {
       padding: var(--sp4) var(--sp3);
       border: 1px solid var(--border);
@@ -1486,7 +1489,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Transforming Lives. All rights reserved. Social Enterprise, Singapore.</p>
+      <p>© 2026 Transforming Lives. All rights reserved. Social Enterprise, Singapore.</p>
       <div class="socials">
         <div class="social-btn">in</div>
         <div class="social-btn">f</div>
@@ -1516,9 +1519,11 @@
 
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
   }
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
   }
 
   function handleNewsletter(e) {
@@ -1578,8 +1583,28 @@
     });
   }
 
+  /* ── Hero title character stagger — UseLayouts catalogue ── */
+  function splitChars(el) {
+    const text = el.textContent;
+    el.textContent = '';
+    [...text].forEach((char, i) => {
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.style.setProperty('--i', i);
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      el.appendChild(span);
+    });
+  }
+
   // Init on first load
   document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.querySelector('#page-home .h-display');
+    if (heroTitle) {
+      splitChars(heroTitle);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        heroTitle.querySelectorAll('.char').forEach(c => c.classList.add('visible'));
+      }));
+    }
     setTimeout(initReveals, 80);
   });
 </script>
