@@ -849,6 +849,7 @@
     <div class="nav-links">
       <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
       <a onclick="showPage('about')"     id="nav-about"    >About Us</a>
+      <a onclick="showPage('founder')"   id="nav-founder"  >Our Founder</a>
       <a onclick="showPage('services')"  id="nav-services" >Services</a>
       <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
       <a onclick="showPage('products')"  id="nav-products" >Publications</a>
@@ -864,6 +865,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="showPage('home');closeMenu()">Home</a>
   <a onclick="showPage('about');closeMenu()">About Us</a>
+  <a onclick="showPage('founder');closeMenu()">Our Founder</a>
   <a onclick="showPage('services');closeMenu()">Services</a>
   <a onclick="showPage('blog');closeMenu()">Blog</a>
   <a onclick="showPage('products');closeMenu()">Publications</a>
@@ -894,19 +896,44 @@
     </div>
   </section>
 
+
+</div><!-- /home -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Our Story</p>
+      <h1 class="h-section">About Transforming Lives</h1>
+      <p class="body-lg">A social enterprise focused on helping individuals, families, professionals, schools, workplaces, and communities thrive through better understanding, support, and skill-building.</p>
+    </div>
+  </section>
+
+  <section class="about-intro">
+    <div class="container">
+      <p class="label">What We Do</p>
+      <h2 class="h-sub" style="margin-top:12px">Bridging Insight and Action</h2>
+      <p class="body-lg" style="margin-top:var(--sp3)">We work primarily in two areas: capability development and psychoeducation. Our approach is not deficit-based. It is strengths-based, relational, and grounded in practical transformation.</p>
+      <p class="body-lg" style="margin-top:var(--sp4)">Transforming Lives sits at the intersection of strategy and empathy, education and transformation, and professional credibility and human connection. While neurodivergence is an important area of expertise, our broader themes are how people think, learn, relate, function, and grow.</p>
+    </div>
+  </section>
+
   <section class="brand-statement">
     <div class="container">
       <p class="label label-white">Our Approach</p>
       <h2 class="h-section" style="margin-top:12px">Strengths-based. Relational.<br>Grounded in real transformation.</h2>
       <p class="body-lg">Our approach is not deficit-based. We help people see themselves and others differently — turning insight into practical change, and strengthening relationships in ways that are both human and effective.</p>
-      <button class="btn btn-white btn-lg" onclick="showPage('about')">Meet Transforming Lives</button>
     </div>
   </section>
 
   <section class="pillars">
     <div class="container">
       <div class="pillars-header">
-        <p class="label">What We Do</p>
+        <p class="label">How We Work</p>
         <h2 class="h-section" style="margin-top:12px;max-width:540px">Two Pillars. One Purpose.</h2>
       </div>
       <div class="pillars-grid stagger">
@@ -934,73 +961,6 @@
         <div class="chip">Workplace Awareness</div>
         <div class="chip">Relationships</div>
         <div class="chip">Parenting</div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:0 0 var(--sp10)">
-    <div class="container">
-      <div class="home-cta">
-        <h2>Ready to move from insight to action?</h2>
-        <div class="home-cta-actions">
-          <button class="btn btn-teal btn-lg" onclick="showPage('contact')">Get in Touch</button>
-          <button class="btn btn-ghost btn-lg" onclick="showPage('services')">View Services</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /home -->
-
-
-<!-- ══════════════════════════════════════════════════════════
-     ABOUT
-══════════════════════════════════════════════════════════ -->
-<div id="page-about" class="page">
-
-  <section class="page-hero page-hero-teal">
-    <div class="container">
-      <p class="label">Our Story</p>
-      <h1 class="h-section">About Transforming Lives</h1>
-      <p class="body-lg">A social enterprise focused on helping individuals, families, professionals, schools, workplaces, and communities thrive through better understanding, support, and skill-building.</p>
-    </div>
-  </section>
-
-  <section class="about-intro">
-    <div class="container">
-      <p class="label">What We Do</p>
-      <h2 class="h-sub" style="margin-top:12px">Bridging Insight and Action</h2>
-      <p class="body-lg" style="margin-top:var(--sp3)">We work primarily in two areas: capability development and psychoeducation. Our approach is not deficit-based. It is strengths-based, relational, and grounded in practical transformation.</p>
-      <p class="body-lg" style="margin-top:var(--sp4)">Transforming Lives sits at the intersection of strategy and empathy, education and transformation, and professional credibility and human connection. While neurodivergence is an important area of expertise, our broader themes are how people think, learn, relate, function, and grow.</p>
-    </div>
-  </section>
-
-  <section class="about-body">
-    <div class="container">
-      <div class="about-split">
-        <div class="about-col-left">
-          <div class="about-img">
-            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" />
-          </div>
-          <div class="founder-attribution">
-            <p class="founder-name">Moonlake Lee</p>
-            <div class="founder-creds">
-              <span>BA (Hons)</span><span>MBA</span><span>JD</span><span>LL.M</span>
-            </div>
-            <p class="founder-role">Founder &amp; CEO</p>
-            <p class="founder-org">Transforming Lives</p>
-            <a class="founder-linkedin" href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
-          </div>
-        </div>
-        <div class="about-text">
-          <p class="label">Meet the Founder &amp; CEO</p>
-          <h2 class="h-sub" style="margin-top:12px">Moonlake Lee</h2>
-          <p class="body" style="margin-top:var(--sp3)">Moonlake Lee is the Founder and CEO of Transforming Lives, a social enterprise focused on capability development and psychoeducation through a strengths-based lens. She is also the Founder of <a href="https://www.unlockingadhd.org.sg" target="_blank" rel="noopener"><strong>Unlocking ADHD</strong></a>, a registered IPC charity in Singapore that supports ADHDers and their families through awareness, advocacy, and practical resources.</p>
-          <p class="body">Diagnosed with ADHD at the age of 50 — one year after her daughter received the same diagnosis — Moonlake brings both lived experience and strategic perspective to her work. Her background spans journalism, law, business, and technology law, and includes legal practice in Canada, entrepreneurship, angel investing, and social impact leadership.</p>
-          <p class="body">Moonlake was a finalist for <a href="https://bit.ly/SOTY-Moonlake" target="_blank" rel="noopener"><strong><em>The Straits Times</em> Singaporean of the Year 2022</strong></a> in recognition of her contributions to the ADHD community. She is a member of the workgroup developing clinical practice guidelines for adult ADHD in Singapore and is training as an Executive Function Coach.</p>
-          <p class="body">She was the Lead Editor for <a href="https://www.unlockingadhd.org.sg/differently-wired-minds/" target="_blank" rel="noopener"><strong><em>Differently Wired Minds</em></strong></a>, a SG60 commemorative book celebrating 60+ Singapore ADHDers (2025), and is a contributing author for the upcoming book <a href="https://bit.ly/Parent1stADHDLtr" target="_blank" rel="noopener"><strong><em>Parent First, ADHD Later</em></strong></a>, published by Transforming Lives.</p>
-          <button class="btn btn-black" style="margin-top:var(--sp4)" onclick="showPage('contact')">Get in Touch</button>
-        </div>
       </div>
     </div>
   </section>
@@ -1057,13 +1017,62 @@
 
   <section style="background:var(--black);padding:var(--sp10) 0">
     <div class="container" style="text-align:center">
-      <p class="label" style="color:rgba(255,255,255,.35);opacity:1">Work Together</p>
-      <h2 class="h-sub" style="color:var(--white);margin:12px auto var(--sp3);max-width:480px">Ready to explore how TL can support you?</h2>
-      <button class="btn btn-white btn-lg" onclick="showPage('contact')">Contact Us</button>
+      <p class="label" style="color:rgba(255,255,255,.35);opacity:1">The Person Behind The Work</p>
+      <h2 class="h-sub" style="color:var(--white);margin:12px auto var(--sp3);max-width:480px">Want to know more about our Founder?</h2>
+      <div style="display:flex;gap:var(--sp2);justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-white btn-lg" onclick="showPage('founder')">Meet Moonlake Lee</button>
+        <button class="btn btn-glass-light btn-lg" onclick="showPage('contact')">Get in Touch</button>
+      </div>
     </div>
   </section>
 
 </div><!-- /about -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FOUNDER
+══════════════════════════════════════════════════════════ -->
+<div id="page-founder" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Meet the Founder &amp; CEO</p>
+      <h1 class="h-section">Moonlake Lee</h1>
+      <p class="body-lg">Founder &amp; CEO of Transforming Lives and Founder of <a href="https://www.unlockingadhd.org.sg" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.9);text-decoration:underline">Unlocking ADHD</a> — bringing lived experience, professional expertise, and a strengths-based lens to everything she does.</p>
+    </div>
+  </section>
+
+  <section class="about-body" style="padding:var(--sp10) 0">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-col-left">
+          <div class="about-img">
+            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" />
+          </div>
+          <div class="founder-attribution">
+            <p class="founder-name">Moonlake Lee</p>
+            <div class="founder-creds">
+              <span>BA (Hons)</span><span>MBA</span><span>JD</span><span>LL.M</span>
+            </div>
+            <p class="founder-role">Founder &amp; CEO</p>
+            <p class="founder-org">Transforming Lives</p>
+            <a class="founder-linkedin" href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="label">Her Story</p>
+          <h2 class="h-sub" style="margin-top:12px">Background &amp; Experience</h2>
+          <p class="body" style="margin-top:var(--sp3)">Moonlake Lee is the Founder and CEO of Transforming Lives, a social enterprise focused on capability development and psychoeducation through a strengths-based lens. She is also the Founder of <a href="https://www.unlockingadhd.org.sg" target="_blank" rel="noopener"><strong>Unlocking ADHD</strong></a>, a registered IPC charity in Singapore that supports ADHDers and their families through awareness, advocacy, and practical resources.</p>
+          <p class="body">Diagnosed with ADHD at the age of 50 — one year after her daughter received the same diagnosis — Moonlake brings both lived experience and strategic perspective to her work. Her background spans journalism, law, business, and technology law, and includes legal practice in Canada, entrepreneurship, angel investing, and social impact leadership.</p>
+          <p class="body">Moonlake was a finalist for <a href="https://bit.ly/SOTY-Moonlake" target="_blank" rel="noopener"><strong><em>The Straits Times</em> Singaporean of the Year 2022</strong></a> in recognition of her contributions to the ADHD community. She is a member of the workgroup developing clinical practice guidelines for adult ADHD in Singapore and is training as an Executive Function Coach.</p>
+          <p class="body">She was the Lead Editor for <a href="https://www.unlockingadhd.org.sg/differently-wired-minds/" target="_blank" rel="noopener"><strong><em>Differently Wired Minds</em></strong></a>, a SG60 commemorative book celebrating 60+ Singapore ADHDers (2025), and is a contributing author for the upcoming book <a href="https://bit.ly/Parent1stADHDLtr" target="_blank" rel="noopener"><strong><em>Parent First, ADHD Later</em></strong></a>, published by Transforming Lives.</p>
+          <button class="btn btn-black" style="margin-top:var(--sp4)" onclick="showPage('contact')">Get in Touch</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /founder -->
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1578,6 +1587,7 @@
         <ul>
           <li><a onclick="showPage('home')">Home</a></li>
           <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('founder')">Our Founder</a></li>
           <li><a onclick="showPage('services')">Services</a></li>
           <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('products')">Publications</a></li>
@@ -1607,7 +1617,7 @@
 
 
 <script>
-  const pages = ['home','about','services','products','resources','blog','speaking','contact'];
+  const pages = ['home','about','founder','services','products','resources','blog','speaking','contact'];
 
   function showPage(id) {
     pages.forEach(p => {
