@@ -629,15 +629,24 @@
     .product-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 10px; }
     .product-card p { font-size: 15px; color: rgba(0,0,0,0.6); line-height: 1.65; }
     .product-card-foot { padding: var(--sp2) var(--sp3); border-top: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
-    /* Book feature — single horizontal card */
-    .book-feature { display: grid; grid-template-columns: 320px 1fr; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: var(--white); }
-    .book-feature-cover { overflow: hidden; background: #f5f0e8; }
-    .book-feature-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .book-feature-body { padding: var(--sp7) var(--sp6); display: flex; flex-direction: column; gap: var(--sp2); justify-content: center; }
-    .book-feature-title { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(32px, 3.5vw, 48px); letter-spacing: -0.5px; line-height: 1.1; color: var(--black); }
-    .book-subtitle { font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 4px; }
-    .book-feature-body p { font-size: 16px; color: rgba(0,0,0,0.65); line-height: 1.7; }
-    @media (max-width: 768px) { .book-feature { grid-template-columns: 1fr; } .book-feature-cover { aspect-ratio: 4/3; } }
+    /* Publications page */
+    .pub-banner { width: 100%; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .pub-banner img { width: 100%; display: block; max-height: 420px; object-fit: cover; object-position: center; }
+    .pub-showcase { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--sp8); align-items: start; padding: var(--sp10) 0 var(--sp6); }
+    .pub-covers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); }
+    .pub-cover-front, .pub-cover-back { border-radius: var(--r-md); overflow: hidden; }
+    .pub-cover-front img, .pub-cover-back img { width: 100%; display: block; object-fit: cover; }
+    .pub-title { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(36px, 4vw, 56px); letter-spacing: -0.5px; line-height: 1.05; color: var(--black); }
+    .book-subtitle { font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); }
+    .pub-details { display: flex; flex-direction: column; gap: var(--sp3); }
+    .pub-details p { font-size: 16px; color: rgba(0,0,0,0.65); line-height: 1.7; }
+    .pub-contents { background: rgba(31,138,138,0.06); border-left: 3px solid var(--teal); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: var(--sp3) var(--sp4); }
+    .pub-contents h4 { font-size: 15px; font-weight: 600; margin-bottom: var(--sp2); letter-spacing: -0.1px; }
+    .pub-contents ul { list-style: disc; padding-left: var(--sp3); display: flex; flex-direction: column; gap: 8px; }
+    .pub-contents li { font-size: 15px; color: rgba(0,0,0,0.65); line-height: 1.6; }
+    .pub-charity { font-size: 15px; color: rgba(0,0,0,0.5); font-style: italic; }
+    @media (max-width: 960px) { .pub-showcase { grid-template-columns: 1fr; } .pub-covers { grid-template-columns: 1fr 1fr; max-width: 480px; } }
+    @media (max-width: 560px) { .pub-covers { grid-template-columns: 1fr; max-width: 280px; } }
     .product-link { font-size: 12px; font-weight: 600; color: var(--teal); text-decoration: none; letter-spacing: -0.1px; }
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
@@ -1149,34 +1158,49 @@
 ══════════════════════════════════════════════════════════ -->
 <div id="page-products" class="page">
 
-  <section class="page-hero page-hero-teal">
-    <div class="container">
-      <p class="label">Books &amp; Resources</p>
-      <h1 class="h-section">Publications</h1>
-      <p class="body-lg">Accessible, evidence-informed books that bring psychoeducation to wider audiences — from families and individuals to professionals and communities.</p>
-    </div>
-  </section>
+  <!-- Banner -->
+  <div class="pub-banner">
+    <img src="images/p1al-banner.jpg" alt="Parent First, ADHD Later — The Support Seldom Talked About" />
+  </div>
 
   <div class="products-body">
     <div class="container">
 
-      <div class="products-section">
-        <p class="label">Publishing</p>
-        <h2 class="h-sub" style="margin-top:12px">Books &amp; Publications</h2>
+      <!-- Book showcase -->
+      <div class="pub-showcase">
 
-        <div class="book-feature nb lift" style="margin-top:var(--sp5)">
-          <div class="book-feature-cover">
-            <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later book cover" />
+        <!-- Covers -->
+        <div class="pub-covers">
+          <div class="pub-cover-front nb">
+            <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later — front cover" />
           </div>
-          <div class="book-feature-body">
-            <span class="tag" style="margin-bottom:var(--sp2);display:inline-block">Pre-order Now</span>
-            <h3 class="book-feature-title">Parent First,<br>ADHD Later</h3>
-            <p class="book-subtitle">The Support Seldom Talked About</p>
-            <p style="margin-top:var(--sp3)">By Jerome J. Wong — with sections contributed by Moonlake Lee, Founder of Unlocking ADHD. What does it really look like to parent a teen with ADHD, especially when emotions run high and support feels hard to find?</p>
-            <p>8 recurring moments explored through a teen's perspective, with flowcharts mapping emotions, actions and reactions — plus toolkits to help parents respond with greater understanding, clarity, and intention.</p>
-            <p>50% of net proceeds donated to <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
-            <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-black" style="margin-top:var(--sp4);display:inline-block">Pre-Order Your Copy ↗</a>
+          <div class="pub-cover-back nb">
+            <img src="images/p1al-back-cover.png" alt="Parent First, ADHD Later — back cover" />
           </div>
+        </div>
+
+        <!-- Details -->
+        <div class="pub-details">
+          <span class="tag" style="display:inline-block;margin-bottom:var(--sp3)">Pre-order Now</span>
+          <h2 class="pub-title">Parent First,<br>ADHD Later</h2>
+          <p class="book-subtitle" style="margin-top:8px">The Support Seldom Talked About</p>
+
+          <p style="margin-top:var(--sp4)">By Jerome J. Wong — with sections contributed by Moonlake Lee, Founder of Unlocking ADHD.</p>
+          <p>What does it really look like to parent a teen with ADHD — especially when emotions run high and support feels hard to find? Based on the real lived experience of Singaporeans, this book sheds light on the emotional dynamics that shape family life.</p>
+
+          <div class="pub-contents">
+            <h4>In this book, you will find:</h4>
+            <ul>
+              <li><strong>8</strong> recurring moments explored through a teen's perspective</li>
+              <li>Flowcharts mapping the emotions, actions, and reactions in everyday situations</li>
+              <li>Toolkits and reflection points to help parents respond with greater understanding, clarity, and intention</li>
+            </ul>
+          </div>
+
+          <p>Also included: sections on ADHD, parenting, and support resources contributed by Moonlake Lee, Founder of Unlocking ADHD and parent of an ADHD youth.</p>
+          <p class="pub-charity">50% of net proceeds donated to <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
+
+          <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-black btn-lg" style="margin-top:var(--sp5)">Pre-Order Your Copy ↗</a>
         </div>
 
       </div>
