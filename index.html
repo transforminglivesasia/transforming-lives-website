@@ -626,7 +626,16 @@
     .product-icon { font-size: 24px; margin-bottom: var(--sp2); }
     .product-card h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 8px; }
     .product-card p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; }
-    .product-card-foot { padding: var(--sp2) var(--sp3); border-top: 1px solid var(--border); }
+    .product-card-foot { padding: var(--sp2) var(--sp3); border-top: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .product-link { font-size: 12px; font-weight: 600; color: var(--teal); text-decoration: none; letter-spacing: -0.1px; }
+    .product-link:hover { text-decoration: underline; }
+    .speaking-body { padding: var(--sp10) 0; }
+    .speaking-intro { margin-bottom: var(--sp5); }
+    #page-speaking .audience-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
+    #page-speaking .audience-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); }
+    #page-speaking .audience-item h4 { font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 8px; letter-spacing: -0.1px; }
+    #page-speaking .audience-item p { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; }
+    @media (max-width: 560px) { #page-speaking .audience-grid { grid-template-columns: 1fr; } }
 
     /* ═══════════════════════════════════════════════════════════
        RESOURCES
@@ -799,11 +808,11 @@
     </a>
     <div class="nav-links">
       <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
-      <a onclick="showPage('about')"     id="nav-about"    >About</a>
+      <a onclick="showPage('about')"     id="nav-about"    >About Us</a>
       <a onclick="showPage('services')"  id="nav-services" >Services</a>
-      <a onclick="showPage('products')"  id="nav-products" >Products</a>
-      <a onclick="showPage('resources')" id="nav-resources">Resources</a>
       <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
+      <a onclick="showPage('products')"  id="nav-products" >Publications</a>
+      <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
       <a onclick="showPage('contact')"   id="nav-contact"  class="nav-cta">Contact</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -814,11 +823,11 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="showPage('home');closeMenu()">Home</a>
-  <a onclick="showPage('about');closeMenu()">About</a>
+  <a onclick="showPage('about');closeMenu()">About Us</a>
   <a onclick="showPage('services');closeMenu()">Services</a>
-  <a onclick="showPage('products');closeMenu()">Products</a>
-  <a onclick="showPage('resources');closeMenu()">Resources</a>
   <a onclick="showPage('blog');closeMenu()">Blog</a>
+  <a onclick="showPage('products');closeMenu()">Publications</a>
+  <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
   <a onclick="showPage('contact');closeMenu()">Contact</a>
 </div>
 
@@ -1026,7 +1035,7 @@
     <div class="container">
       <p class="label">What We Offer</p>
       <h1 class="h-section">Our Services</h1>
-      <p class="body-lg">From keynotes to coaching, workshops to programmes — capability development and psychoeducation brought to life.</p>
+      <p class="body-lg">Two pillars, one mission — turning insight into action through capability development and psychoeducation.</p>
     </div>
   </section>
 
@@ -1131,9 +1140,9 @@
 
   <section class="page-hero page-hero-dark">
     <div class="container">
-      <p class="label">Publications &amp; Media</p>
-      <h1 class="h-section">Our Products</h1>
-      <p class="body-lg">Books, podcasts, and educational content that make psychology and capability development accessible to everyone.</p>
+      <p class="label">Books &amp; Resources</p>
+      <h1 class="h-section">Publications</h1>
+      <p class="body-lg">Accessible, evidence-informed books that bring psychoeducation to wider audiences — from families and individuals to professionals and communities.</p>
     </div>
   </section>
 
@@ -1148,28 +1157,22 @@
             <div class="product-card-top teal"></div>
             <div class="product-card-body">
               <div class="product-icon">📗</div>
-              <h3>Understanding Your Neurodivergent Child</h3>
-              <p>A parent's guide to understanding ADHD, executive function, and neurodivergence — with warmth, clarity, and practical tools.</p>
+              <h3>Parent First, ADHD Later</h3>
+              <p>An upcoming book published by Transforming Lives — practical, compassionate guidance for parents navigating an ADHD diagnosis in the family.</p>
             </div>
-            <div class="product-card-foot"><span class="tag">Book</span></div>
+            <div class="product-card-foot">
+              <span class="tag">Upcoming</span>
+              <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="product-link">Learn more ↗</a>
+            </div>
           </div>
           <div class="product-card nb lift">
             <div class="product-card-top teal"></div>
             <div class="product-card-body">
               <div class="product-icon">📘</div>
-              <h3>Executive Function at Work</h3>
-              <p>A practical guide for professionals and managers seeking to support executive function differences in the workplace.</p>
+              <h3>Differently Wired Minds</h3>
+              <p>A SG60 commemorative book celebrating 60+ Singapore ADHDers — edited by Moonlake Lee. Stories of resilience, creativity, and lived experience.</p>
             </div>
-            <div class="product-card-foot"><span class="tag">Book</span></div>
-          </div>
-          <div class="product-card nb lift">
-            <div class="product-card-top teal"></div>
-            <div class="product-card-body">
-              <div class="product-icon">📙</div>
-              <h3>From Insight to Action</h3>
-              <p>A reflective workbook combining psychoeducation with practical exercises to support personal growth and self-understanding.</p>
-            </div>
-            <div class="product-card-foot"><span class="tag">Workbook</span></div>
+            <div class="product-card-foot"><span class="tag">2025</span></div>
           </div>
         </div>
       </div>
@@ -1177,44 +1180,10 @@
       <hr class="section-divider" />
 
       <div class="products-section">
-        <p class="label">Audio &amp; Digital</p>
-        <h2 class="h-sub" style="margin-top:12px">Podcasts &amp; Content</h2>
-        <div class="products-grid stagger">
-          <div class="product-card nb lift">
-            <div class="product-card-top gold"></div>
-            <div class="product-card-body">
-              <div class="product-icon">🎧</div>
-              <h3>The Transforming Lives Podcast</h3>
-              <p>Real conversations about neurodivergence, parenting, strengths, and the science of how we grow.</p>
-            </div>
-            <div class="product-card-foot"><span class="tag">Podcast</span></div>
-          </div>
-          <div class="product-card nb lift">
-            <div class="product-card-top gold"></div>
-            <div class="product-card-body">
-              <div class="product-icon">🎬</div>
-              <h3>Video Learning Series</h3>
-              <p>Short, accessible video content on executive function, relationships, and inclusion.</p>
-            </div>
-            <div class="product-card-foot"><span class="tag">Video</span></div>
-          </div>
-          <div class="product-card nb lift">
-            <div class="product-card-top gold"></div>
-            <div class="product-card-body">
-              <div class="product-icon">📋</div>
-              <h3>Curriculum &amp; Resource Packs</h3>
-              <p>Structured curriculum materials and resource packs for schools, training providers, and organisations.</p>
-            </div>
-            <div class="product-card-foot"><span class="tag">Curriculum</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align:center;padding:var(--sp8) 0 0;border-top:1px solid var(--border);margin-top:var(--sp8)">
-        <p class="label" style="margin-bottom:12px">Coming Soon</p>
-        <h3 class="h-sub" style="margin-bottom:var(--sp2)">More on the Way</h3>
-        <p class="body" style="max-width:400px;margin:0 auto var(--sp4)">We are continually developing new content, tools, and resources.</p>
-        <button class="btn btn-teal btn-lg" onclick="showPage('contact')">Stay Updated</button>
+        <p class="label">Newsletter</p>
+        <h2 class="h-sub" style="margin-top:12px">ADHD Life &amp; Musings</h2>
+        <p class="body" style="max-width:560px;margin-bottom:var(--sp4)">Moonlake Lee shares her lived experience and resources to manage ADHD and thrive. Published weekly on LinkedIn.</p>
+        <a href="https://www.linkedin.com/newsletters/adhd-life-musings/" target="_blank" rel="noopener" class="btn btn-black">Subscribe on LinkedIn ↗</a>
       </div>
 
     </div>
@@ -1301,9 +1270,10 @@
 
   <section class="page-hero" style="border-bottom:1px solid var(--border)">
     <div class="container">
-      <p class="label">Insights &amp; Perspectives</p>
-      <h1 class="h-section">The TL Blog</h1>
-      <p class="body-lg">Thoughtful writing on neurodivergence, executive function, parenting, inclusion, and the science of human growth.</p>
+      <p class="label">Weekly Newsletter</p>
+      <h1 class="h-section">ADHD Life &amp; Musings</h1>
+      <p class="body-lg">Moonlake Lee shares her lived experience and the resources to manage ADHD and thrive. Published weekly on LinkedIn.</p>
+      <a href="https://www.linkedin.com/newsletters/adhd-life-musings/" target="_blank" rel="noopener" class="btn btn-black" style="margin-top:var(--sp4);display:inline-block">Subscribe on LinkedIn ↗</a>
     </div>
   </section>
 
@@ -1409,15 +1379,69 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
+     SPEAKING
+══════════════════════════════════════════════════════════ -->
+<div id="page-speaking" class="page">
+
+  <section class="page-hero page-hero-gold">
+    <div class="container">
+      <p class="label">On Stage &amp; In Conversation</p>
+      <h1 class="h-section">Speaking &amp; Events</h1>
+      <p class="body-lg">Moonlake Lee is a sought-after speaker, facilitator, and panellist on neurodivergence, ADHD, executive function, and strengths-based approaches.</p>
+    </div>
+  </section>
+
+  <div class="speaking-body">
+    <div class="container">
+
+      <div class="speaking-intro">
+        <p class="label">Audiences</p>
+        <h2 class="h-sub" style="margin-top:12px">Who Moonlake Speaks For</h2>
+        <p class="body" style="max-width:600px;margin-top:var(--sp2)">From corporate leadership teams and HR professionals to schools, community organisations, and media — every talk is tailored, evidence-informed, and grounded in lived experience.</p>
+      </div>
+
+      <div class="audience-grid stagger" style="margin-top:var(--sp5)">
+        <div class="audience-item nb-sm">
+          <h4>Corporates &amp; Workplaces</h4>
+          <p>Neurodiversity inclusion, executive function at work, strengths-based leadership, and building psychologically safe teams.</p>
+        </div>
+        <div class="audience-item nb-sm">
+          <h4>Schools &amp; Educators</h4>
+          <p>Understanding ADHD and neurodivergence in the classroom, supporting executive function, and working with families.</p>
+        </div>
+        <div class="audience-item nb-sm">
+          <h4>Community &amp; Families</h4>
+          <p>Parenting neurodivergent children, family communication, and practical strategies for everyday life.</p>
+        </div>
+        <div class="audience-item nb-sm">
+          <h4>Media &amp; Events</h4>
+          <p>Panel discussions, podcast appearances, and keynotes at conferences and public events.</p>
+        </div>
+      </div>
+
+      <div class="speaking-cta" style="margin-top:var(--sp8);padding-top:var(--sp8);border-top:1px solid var(--border);text-align:center">
+        <p class="label" style="margin-bottom:12px">Get in Touch</p>
+        <h3 class="h-sub" style="margin-bottom:var(--sp2)">Enquire About Speaking</h3>
+        <p class="body" style="max-width:480px;margin:0 auto var(--sp4)">To book Moonlake for your event, conference, or organisation, send us a message and we'll get back to you within two business days.</p>
+        <button class="btn btn-black btn-lg" onclick="showPage('contact')">Enquire Now</button>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /speaking -->
+
+
+<!-- ══════════════════════════════════════════════════════════
      CONTACT
 ══════════════════════════════════════════════════════════ -->
 <div id="page-contact" class="page">
 
   <section class="page-hero page-hero-teal">
     <div class="container">
-      <p class="label">Let's Connect</p>
+      <p class="label">Let's Talk</p>
       <h1 class="h-section">Contact Us</h1>
-      <p class="body-lg">Whether you're looking for a speaker, workshop, coaching conversation, or just want to know more — we'd love to hear from you.</p>
+      <p class="body-lg">Every engagement begins with listening. Whether you have a specific project in mind or simply want to explore possibilities, we would love to hear from you.</p>
     </div>
   </section>
 
@@ -1506,30 +1530,18 @@
           <li><a onclick="showPage('home')">Home</a></li>
           <li><a onclick="showPage('about')">About Us</a></li>
           <li><a onclick="showPage('services')">Services</a></li>
-          <li><a onclick="showPage('products')">Products</a></li>
-          <li><a onclick="showPage('resources')">Resources</a></li>
           <li><a onclick="showPage('blog')">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a onclick="showPage('services')">Talks &amp; Keynotes</a></li>
-          <li><a onclick="showPage('services')">Workshops</a></li>
-          <li><a onclick="showPage('services')">Coaching</a></li>
-          <li><a onclick="showPage('services')">Parent Education</a></li>
-          <li><a onclick="showPage('services')">School Programmes</a></li>
-          <li><a onclick="showPage('services')">Workplace Training</a></li>
+          <li><a onclick="showPage('products')">Publications</a></li>
+          <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a onclick="showPage('contact')">Contact Us</a></li>
-          <li><a onclick="showPage('resources')">Free Resources</a></li>
-          <li><a onclick="showPage('blog')">Read the Blog</a></li>
-          <li><a onclick="showPage('products')">Our Books</a></li>
-          <li><a onclick="showPage('products')">Podcast</a></li>
+          <li><a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener">Moonlake Lee on LinkedIn ↗</a></li>
+          <li><a href="https://www.linkedin.com/newsletters/adhd-life-musings/" target="_blank" rel="noopener">ADHD Life &amp; Musings Newsletter ↗</a></li>
+          <li><a onclick="showPage('contact')">Get in Touch</a></li>
         </ul>
       </div>
     </div>
@@ -1546,7 +1558,7 @@
 
 
 <script>
-  const pages = ['home','about','services','products','resources','blog','contact'];
+  const pages = ['home','about','services','products','resources','blog','speaking','contact'];
 
   function showPage(id) {
     pages.forEach(p => {
