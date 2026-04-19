@@ -665,6 +665,12 @@
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
     .speaking-intro { margin-bottom: var(--sp5); }
+    .speaking-photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); }
+    .speaking-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+    .speaking-photo img { width: 100%; display: block; object-fit: cover; height: 360px; object-position: top center; }
+    @media (max-width: 680px) { .speaking-photos { grid-template-columns: 1fr; } .speaking-photo img { height: 260px; } }
+    .services-workshop-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); margin-bottom: var(--sp5); }
+    .services-workshop-photo img { width: 100%; display: block; object-fit: cover; height: 320px; object-position: center 30%; }
     #page-speaking .audience-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
     #page-speaking .audience-item { background: rgba(201,150,58,0.05); border: none; border-left: 4px solid var(--gold); border-radius: 0 var(--r-md) var(--r-md) 0; padding: var(--sp5) var(--sp4); }
     #page-speaking .audience-item h4 { font-size: 18px; font-weight: 600; color: var(--black); margin-bottom: 10px; letter-spacing: -0.2px; }
@@ -1089,6 +1095,9 @@
           <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
           <p class="body">Practical, engaging programmes that help individuals and organisations develop the skills, mindsets, and behaviours to thrive.</p>
         </div>
+        <div class="services-workshop-photo">
+          <img src="images/moonlake-ef-workshop.jpg" alt="Moonlake Lee facilitating an executive function workshop" />
+        </div>
         <div class="service-grid">
           <div class="service-item">
             <div class="service-icon">🎤</div>
@@ -1344,61 +1353,502 @@
 
   <div class="blog-body">
     <div class="container">
-      <p class="label">Latest Posts</p>
-      <h2 class="h-sub" style="margin-top:12px">Recent Articles</h2>
+      <p class="label">55 Articles — Newest First</p>
+      <h2 class="h-sub" style="margin-top:12px">All Articles</h2>
       <div class="blog-grid stagger">
-        <div class="blog-card nb lift">
-          <div class="blog-card-top"></div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/managing-emotions-parent-coachs-view-part-2-moonlake-lee-minac/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Apr 2025</span></div>
-            <h3>Why Executive Function Matters More Than IQ</h3>
-            <p>Understanding the cognitive skills that predict success — and how to develop them at any age.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Emotions</span><span class="blog-date">Apr 2026</span></div>
+            <h3>Managing Emotions: A Parent &amp; Parent Coach&#39;s View</h3>
+            <p>Part 2: a parent and parent coach&#39;s perspective on navigating emotional regulation in ADHD families.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
-        <div class="blog-card nb lift">
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/managing-emotions-psychiatrists-view-part-1-moonlake-lee-o469c/','_blank')">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Mar 2025</span></div>
-            <h3>The Language We Use With Our Kids Matters More Than We Think</h3>
-            <p>How shifting from deficit to strengths language transforms how children see themselves.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Emotions</span><span class="blog-date">Apr 2026</span></div>
+            <h3>Managing Emotions: A Psychiatrist&#39;s View</h3>
+            <p>Part 1: a psychiatrist&#39;s perspective on emotional regulation and what it means for people with ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
-        <div class="blog-card nb lift">
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/emotional-regulation-adhd-families-moonlake-lee-dbadc','_blank')">
           <div class="blog-card-top"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Inclusion</span><span class="blog-date">Feb 2025</span></div>
-            <h3>Building a Neuro-Affirming Workplace: Where to Begin</h3>
-            <p>Practical first steps for HR leaders and managers creating genuinely inclusive environments.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Emotions</span><span class="blog-date">Apr 2026</span></div>
+            <h3>Emotional Regulation in ADHD Families</h3>
+            <p>Understanding emotional regulation in ADHD families — and how to navigate it together.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
-        <div class="blog-card nb lift">
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-overdiagnosis-underdiagnosis-missed-diagnosis-moonlake-lee-pc5pc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Diagnosis</span><span class="blog-date">Mar 2026</span></div>
+            <h3>ADHD: Overdiagnosed, Underdiagnosed, or Missed Entirely?</h3>
+            <p>Unpacking the real story behind ADHD diagnosis rates and what it means for individuals and families.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/prioritisation-choosing-better-thing-moonlake-lee-1aydc/','_blank')">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Relationships</span><span class="blog-date">Jan 2025</span></div>
-            <h3>How Neurodivergence Affects Relationships — and What Helps</h3>
-            <p>An honest look at the relational impact of ADHD and how insight changes everything.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Mar 2026</span></div>
+            <h3>Prioritisation: Choosing the Better Thing</h3>
+            <p>How to make better decisions about where to focus time and energy — especially with an ADHD brain.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
-        <div class="blog-card nb lift">
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/life-like-marathon-moonlake-lee-n2asc/','_blank')">
           <div class="blog-card-top"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Psychoeducation</span><span class="blog-date">Dec 2024</span></div>
-            <h3>What is Psychoeducation — and Why Does It Change Lives?</h3>
-            <p>Understanding yourself is the foundation for growth. Here's why.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Exercise</span><span class="blog-date">Mar 2026</span></div>
+            <h3>Life is Like a Marathon</h3>
+            <p>Reflections on endurance, pace, and showing up — through an ADHD lens.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
-        <div class="blog-card nb lift">
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/stewarding-differently-wired-minds-moonlake-lee-vufnc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Faith</span><span class="blog-date">Mar 2026</span></div>
+            <h3>Stewarding Differently Wired Minds</h3>
+            <p>Reflections on caring for and nurturing neurodivergent minds — and what stewardship means.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/giving-we-receive-other-centredness-moonlake-lee-aka9c/','_blank')">
           <div class="blog-card-top" style="background:var(--gold)"></div>
           <div class="blog-card-body">
-            <div class="blog-meta"><span class="blog-cat">Schools</span><span class="blog-date">Nov 2024</span></div>
-            <h3>Strengths-Based Education: Moving Beyond Gaps and Deficits</h3>
-            <p>Focusing on what students can do produces better outcomes for everyone.</p>
-            <span class="blog-read">Read more →</span>
+            <div class="blog-meta"><span class="blog-cat">Faith</span><span class="blog-date">Mar 2026</span></div>
+            <h3>In Giving We Receive</h3>
+            <p>On other-centredness and the unexpected rewards of generosity.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/career-strategies-adhders-moonlake-lee-0il5c/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Careers</span><span class="blog-date">Feb 2026</span></div>
+            <h3>Career Strategies for ADHDers</h3>
+            <p>Practical strategies for building a fulfilling career by playing to your ADHD strengths.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/posts/moonlakelee_unlockingadhd-adhdsupportsg-adultadhd-activity-7428852125981597696-6BlQ','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Careers</span><span class="blog-date">Feb 2026</span></div>
+            <h3>Job Search Strategies for ADHDers</h3>
+            <p>How ADHDers can leverage their unique strengths to navigate the job search process.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/exercise-vitamin-e-adhd-moonlake-lee-btoqc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Exercise</span><span class="blog-date">Feb 2026</span></div>
+            <h3>Exercise: Vitamin E for ADHD</h3>
+            <p>Why exercise is one of the most powerful non-medication tools for managing ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/life-design-reflections-from-adhd-lens-moonlake-lee-tvqqc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Goal Setting</span><span class="blog-date">Feb 2026</span></div>
+            <h3>Life by Design — Reflections from an ADHD Lens</h3>
+            <p>Intentional living and goal-setting explored through an ADHD lens.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-rest-essential-non-negotiable-moonlake-lee-fsrtc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Self-Care</span><span class="blog-date">Jan 2026</span></div>
+            <h3>ADHD &amp; Rest: Essential and Non-Negotiable</h3>
+            <p>Why rest is not a luxury for ADHDers — it&#39;s an essential part of managing a well-lived life.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/twice-exceptional-adhd-moonlake-lee-yphgc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Twice Exceptional</span><span class="blog-date">Jan 2026</span></div>
+            <h3>Twice Exceptional &amp; ADHD</h3>
+            <p>What it means to be twice exceptional — gifted and neurodivergent — and why it matters.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/putting-woop-smarter-goals-your-life-moonlake-lee-jeutc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Jan 2026</span></div>
+            <h3>Putting WOOP and SMARTER Goals into Your Life</h3>
+            <p>Two evidence-based frameworks for setting and achieving goals — designed with the ADHD brain in mind.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/planning-getting-things-done-moonlake-lee-hhtzc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Jan 2026</span></div>
+            <h3>Planning: Getting Things Done</h3>
+            <p>Practical planning strategies that actually work for the ADHD brain.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-guide-caring-your-teeth-moonlake-lee-uenxc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Healthcare</span><span class="blog-date">Dec 2025</span></div>
+            <h3>The ADHD Guide: Caring for Your Teeth</h3>
+            <p>Practical tips for ADHDers to build better dental habits — and helpful guidance for dentists.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/tooth-adhd-dental-issues-moonlake-lee-yblhc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Healthcare</span><span class="blog-date">Dec 2025</span></div>
+            <h3>The &#34;Tooth&#34; About ADHD and Dental Issues</h3>
+            <p>Why ADHDers struggle with dental care — personal experiences and the underlying reasons.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/managing-adhd-tax-moonlake-lee-eecjc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Financial</span><span class="blog-date">Dec 2025</span></div>
+            <h3>Managing the ADHD Tax</h3>
+            <p>Strategies for managing the financial and time costs that come with ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/experiencing-adhd-tax-moonlake-lee-8fhpc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Financial</span><span class="blog-date">Dec 2025</span></div>
+            <h3>Experiencing the ADHD Tax</h3>
+            <p>What the ADHD tax is — and real examples of how it shows up in everyday life.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/keeping-hope-alive-moonlake-lee-clsdc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Hope</span><span class="blog-date">Dec 2025</span></div>
+            <h3>Keeping Hope Alive</h3>
+            <p>Why hope matters — and how to power through life&#39;s challenges with resilience.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/importance-good-sleep-moonlake-lee-tmy3c/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Sleep</span><span class="blog-date">Nov 2025</span></div>
+            <h3>The Importance of Good Sleep</h3>
+            <p>Key learnings from a seminar on sleep by Dr Paul Rochon — and why it matters for ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/secret-sauce-sleepzzz-moonlake-lee-q6v4c/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Sleep</span><span class="blog-date">Nov 2025</span></div>
+            <h3>The Secret Sauce&#8230; Sleep&#8230; zzz</h3>
+            <p>The importance of sleep for ADHD — and Moonlake&#39;s personal sleep strategies.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/showing-up-moonlake-lee-sj74c/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Mindset</span><span class="blog-date">Nov 2025</span></div>
+            <h3>Showing Up</h3>
+            <p>Reflections on resilience and showing up — inspired by the Great Eastern Women&#39;s Run Half Marathon.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/awareness-end-its-beginning-moonlake-lee-fv7fc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Awareness</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Awareness is the Beginning</h3>
+            <p>Awareness is not the end goal — it&#39;s where the real work of change begins.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/looking-back-moving-forward-moonlake-lee-byu5c/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Reflection</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Looking Back, Moving Forward</h3>
+            <p>A review of themes and learnings from the 30-day ADHD awareness newsletter challenge.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/maintaining-adhd-relationships-moonlake-lee-vi8jc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Relationships</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Maintaining ADHD Relationships</h3>
+            <p>Personal reflections on marriage and practical tips for maintaining strong relationships with ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/how-adhd-impacts-relationships-moonlake-lee-v9wlc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Relationships</span><span class="blog-date">Oct 2025</span></div>
+            <h3>How ADHD Impacts Relationships</h3>
+            <p>An honest look at how ADHD affects the people we love most.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/common-misconceptions-adhd-moonlake-lee-3l3zc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Misconceptions</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Common Misconceptions About ADHD</h3>
+            <p>Five of the most common ADHD myths — debunked with evidence and lived experience.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/unlocking-adhd-mindset-support-hub-moonlake-lee-ezkic/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Philanthropy</span><span class="blog-date">Oct 2025</span></div>
+            <h3>The UA-MINDSET Support Hub</h3>
+            <p>How the UA-MINDSET counselling hub works — and how philanthropy creates lasting change.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/hacks-workplace-moonlake-lee-i1kac/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Workplace</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Hacks for the Workplace</h3>
+            <p>Practical ADHD-friendly hacks for navigating the modern workplace more effectively.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/supporting-adhd-workplace-moonlake-lee-okbxc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Workplace</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Supporting ADHD in the Workplace</h3>
+            <p>Survey insights and workplace accommodations that actually make a difference for ADHDers.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-work-moonlake-lee-fn2qc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Workplace</span><span class="blog-date">Oct 2025</span></div>
+            <h3>ADHD @ Work</h3>
+            <p>On disclosure, environment, and the difference between excuses and explanations.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/strengthening-parent-youth-relationships-through-problem-moonlake-lee-h41zc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Strengthening Parent-Youth Relationships</h3>
+            <p>Collaborative problem-solving with Dr Dan Shapiro and Breyl Frances.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/anxious-parenting-moonlake-lee-ntgnc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Anxious Parenting</h3>
+            <p>How anxiety can quietly fuel and shape our approach to parenting.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/demystifying-executive-function-moonlake-lee-tpqmc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Demystifying Executive Functions</h3>
+            <p>Key learnings from a webinar with executive function coach Seth Perler.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/executive-function-whats-big-deal-moonlake-lee-lnd8c/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Executive Function</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Executive Function: What&#39;s the Big Deal?</h3>
+            <p>Breaking down executive function — and why it matters for ADHDers of all ages.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/early-signs-adhd-my-pre-school-primary-school-years-moonlake-lee-zgyoc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Diagnosis</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Early Signs of ADHD? My Pre-School and Primary School Years</h3>
+            <p>Looking back at the early signs of ADHD through the lens of lived experience.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-burnout-autistic-moonlake-lee-nhcle/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Burnout</span><span class="blog-date">Oct 2025</span></div>
+            <h3>ADHD Burnout and Autistic Burnout</h3>
+            <p>Exploring the overlap and differences between ADHD burnout and autistic burnout.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/experiencing-adhd-burnout-moonlake-lee-jkbxc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Burnout</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Experiencing ADHD Burnout</h3>
+            <p>What ADHD burnout looks and feels like — and tips from the Unlocking ADHD webinar.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/more-thoughts-adhd-medication-moonlake-lee-2le9c/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Medication</span><span class="blog-date">Oct 2025</span></div>
+            <h3>More Thoughts on ADHD Medication</h3>
+            <p>Continuing the conversation — more myths explored and realities shared.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/thoughts-adhd-medication-moonlake-lee-geecc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Medication</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Some Thoughts on ADHD Medication</h3>
+            <p>Exploring medication trials, common myths, and what the evidence says.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/lessons-learned-from-parenting-moonlake-lee-7tzzc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Lessons Learned from Parenting</h3>
+            <p>The dos and don&#39;ts of parenting teenagers — hard-won lessons shared honestly.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/what-does-self-care-look-like-you-moonlake-lee-cjrbc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Self-Care</span><span class="blog-date">Oct 2025</span></div>
+            <h3>What Does Self Care Look Like for You?</h3>
+            <p>Exploring what self-care really means — with practical examples for ADHDers.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/celebrating-adhd-awareness-month-2025-moonlake-lee-njuac/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Event</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Differently Wired Minds — ADHD Awareness Month 2025</h3>
+            <p>The launch of the Differently Wired Minds book, the Focus on Us video, and the UA-MINDSET Hub.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/demystifying-mental-health-moonlake-lee-odqcc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Mental Health</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Demystifying Mental Health</h3>
+            <p>Personal experiences with therapy — breaking the stigma around mental health.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/powered-purpose-tribute-our-volunteers-moonlake-lee-sdcde/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Volunteering</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Powered by Purpose</h3>
+            <p>A tribute to the volunteers who make Unlocking ADHD&#39;s work possible.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/tyranny-shoulds-moonlake-lee-xea2c/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Mindset</span><span class="blog-date">Oct 2025</span></div>
+            <h3>The Tyranny of the Shoulds</h3>
+            <p>How &#34;should&#34; thinking draws a cage around us — and how to break free.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/more-non-medication-strategies-manage-adhd-moonlake-lee-zlroc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Strategies</span><span class="blog-date">Oct 2025</span></div>
+            <h3>More Non-Medication Strategies to Manage ADHD</h3>
+            <p>Support, journaling, music, and practical tools to help manage ADHD day-to-day.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/non-medication-strategies-manage-adhd-moonlake-lee-ikifc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Strategies</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Non-Medication Strategies to Manage ADHD</h3>
+            <p>Therapy, coaching, community, exercise, eating, and sleep — a comprehensive overview.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/discovering-your-strengths-moonlake-lee-son7c/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Strengths</span><span class="blog-date">Oct 2025</span></div>
+            <h3>The Strengths of ADHD</h3>
+            <p>A strengths-based approach using Clifton StrengthsFinder and VIA Character Strengths.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-parenting-double-whammy-moonlake-lee-nkjuc/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Parenting</span><span class="blog-date">Oct 2025</span></div>
+            <h3>ADHD &amp; Parenting</h3>
+            <p>The double whammy of being an ADHDer who is also raising a child with ADHD.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/adhd-school-years-struggles-reframing-failures-moonlake-lee-kkgmc/','_blank')">
+          <div class="blog-card-top" style="background:var(--gold)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">School</span><span class="blog-date">Oct 2025</span></div>
+            <h3>ADHD in the School Years</h3>
+            <p>Struggles, academic failures, and how reframing those experiences changes everything.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/letter-my-young-self-moonlake-lee-4cvuc/','_blank')">
+          <div class="blog-card-top"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Girls with ADHD</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Letter to My Young Self</h3>
+            <p>What Moonlake wrote to her 13-year-old self — a letter full of understanding and grace.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+        <div class="blog-card nb lift" onclick="window.open('https://www.linkedin.com/pulse/launch-unlocking-adhd-moonlake-lee-l459c/','_blank')">
+          <div class="blog-card-top" style="background:var(--teal)"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span class="blog-cat">Medication</span><span class="blog-date">Oct 2025</span></div>
+            <h3>Launch of Unlocking ADHD and Webinar on Medication</h3>
+            <p>A look back at when it all began — the launch of Unlocking ADHD and the first webinar on ADHD medication.</p>
+            <span class="blog-read">Read on LinkedIn →</span>
           </div>
         </div>
       </div>
@@ -1409,18 +1859,24 @@
     <div class="container">
       <p class="label">Browse by Topic</p>
       <div class="chips" style="margin-top:var(--sp3)">
-        <div class="chip">Neurodivergence</div>
         <div class="chip">ADHD</div>
-        <div class="chip">Executive Function</div>
         <div class="chip">Parenting</div>
-        <div class="chip">Schools &amp; Education</div>
-        <div class="chip">Workplace Inclusion</div>
+        <div class="chip">Executive Function</div>
+        <div class="chip">Workplace</div>
         <div class="chip">Relationships</div>
-        <div class="chip">Strengths-Based</div>
-        <div class="chip">Psychoeducation</div>
-        <div class="chip">Coaching</div>
-        <div class="chip">Research &amp; Evidence</div>
-        <div class="chip">Personal Growth</div>
+        <div class="chip">Medication</div>
+        <div class="chip">Strategies</div>
+        <div class="chip">Mental Health</div>
+        <div class="chip">Self-Care</div>
+        <div class="chip">Sleep</div>
+        <div class="chip">Burnout</div>
+        <div class="chip">Careers</div>
+        <div class="chip">School</div>
+        <div class="chip">Emotions</div>
+        <div class="chip">Strengths</div>
+        <div class="chip">Diagnosis</div>
+        <div class="chip">Mindset</div>
+        <div class="chip">Exercise</div>
       </div>
     </div>
   </section>
@@ -1455,6 +1911,19 @@
       <p class="body-lg">Moonlake Lee is a sought-after speaker, facilitator, and panellist on neurodivergence, ADHD, executive function, and strengths-based approaches.</p>
     </div>
   </section>
+
+  <div style="background:var(--off-white);padding:var(--sp8) 0">
+    <div class="container">
+      <div class="speaking-photos">
+        <div class="speaking-photo">
+          <img src="images/moonlake-adhd-journey-talk.jpg" alt="Moonlake Lee presenting her ADHD Journey talk" />
+        </div>
+        <div class="speaking-photo">
+          <img src="images/moonlake-speaking.jpg" alt="Moonlake Lee speaking at an event" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="speaking-body">
     <div class="container">
