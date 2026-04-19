@@ -458,8 +458,12 @@
       background: var(--black); color: var(--white);
       padding: var(--sp10) 0;
     }
-    .brand-statement .h-section { color: var(--white); max-width: 800px; margin-bottom: var(--sp4); }
+    .brand-statement .h-section { color: var(--white); max-width: 800px; margin-bottom: var(--sp4); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; }
     .brand-statement .body-lg { color: rgba(255,255,255,0.6); max-width: 600px; margin-bottom: var(--sp5); }
+    .pillars-header .h-section, .pillars-header .h-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-weight: 600;
+    }
 
     /* Focus chips */
     .focus-section { padding: var(--sp10) 0; }
@@ -890,33 +894,31 @@
     </div>
   </section>
 
+  <section class="brand-statement">
+    <div class="container">
+      <p class="label label-white">Our Approach</p>
+      <h2 class="h-section" style="margin-top:12px">Strengths-based. Relational.<br>Grounded in real transformation.</h2>
+      <p class="body-lg">Our approach is not deficit-based. We help people see themselves and others differently — turning insight into practical change, and strengthening relationships in ways that are both human and effective.</p>
+      <button class="btn btn-white btn-lg" onclick="showPage('about')">Meet Transforming Lives</button>
+    </div>
+  </section>
+
   <section class="pillars">
     <div class="container">
       <div class="pillars-header">
         <p class="label">What We Do</p>
-        <h2 class="h-section" style="margin-top:12px;max-width:540px">Two pillars. One purpose.</h2>
+        <h2 class="h-section" style="margin-top:12px;max-width:540px">Two Pillars. One Purpose.</h2>
       </div>
       <div class="pillars-grid stagger">
         <div class="pillar nb">
-          <p class="pillar-num">01</p>
           <h3>Capability Development</h3>
           <p>Talks, workshops, coaching, and training that build practical skills and confidence for individuals and organisations.</p>
         </div>
         <div class="pillar nb">
-          <p class="pillar-num">02</p>
           <h3>Psychoeducation</h3>
           <p>Books, podcasts, curricula, and accessible content that deepen understanding of how people think, learn, relate, and grow.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="brand-statement">
-    <div class="container">
-      <p class="label label-white">Our Approach</p>
-      <h2 class="h-section" style="margin-top:12px">Strengths-based.<br>Relational. Grounded<br>in real transformation.</h2>
-      <p class="body-lg">Our approach is not deficit-based. We help people see themselves and others differently — turning insight into practical change, and strengthening relationships in ways that are both human and effective.</p>
-      <button class="btn btn-white btn-lg" onclick="showPage('about')">Meet Transforming Lives</button>
     </div>
   </section>
 
