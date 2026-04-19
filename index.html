@@ -1616,14 +1616,27 @@
 
   /* ── Hero title character stagger — UseLayouts catalogue ── */
   function splitChars(el) {
-    const text = el.textContent;
+    const words = el.textContent.split(' ');
     el.textContent = '';
-    [...text].forEach((char, i) => {
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.style.setProperty('--i', i);
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      el.appendChild(span);
+    let charIndex = 0;
+    words.forEach((word, wi) => {
+      const wordWrap = document.createElement('span');
+      wordWrap.style.cssText = 'display:inline-block;white-space:nowrap';
+      [...word].forEach(char => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.style.setProperty('--i', charIndex++);
+        span.textContent = char;
+        wordWrap.appendChild(span);
+      });
+      el.appendChild(wordWrap);
+      if (wi < words.length - 1) {
+        const space = document.createElement('span');
+        space.className = 'char';
+        space.style.setProperty('--i', charIndex++);
+        space.textContent = '\u00A0';
+        el.appendChild(space);
+      }
     });
   }
 
