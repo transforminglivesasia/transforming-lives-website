@@ -645,6 +645,9 @@
     .pub-contents ul { list-style: disc; padding-left: var(--sp3); display: flex; flex-direction: column; gap: 8px; }
     .pub-contents li { font-size: 15px; color: rgba(0,0,0,0.65); line-height: 1.6; }
     .pub-charity { font-size: 15px; color: rgba(0,0,0,0.5); font-style: italic; }
+    .pub-launch-badge { display: flex; align-items: center; gap: var(--sp2); flex-wrap: wrap; }
+    .pub-preorder { display: inline-block; background: var(--gold); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; padding: 6px 14px; border-radius: var(--r-pill); }
+    .pub-launch-date { font-size: 14px; font-weight: 600; color: var(--teal); letter-spacing: -0.1px; }
     @media (max-width: 960px) { .pub-showcase { grid-template-columns: 1fr; } .pub-covers { grid-template-columns: 1fr 1fr; max-width: 480px; } }
     @media (max-width: 560px) { .pub-covers { grid-template-columns: 1fr; max-width: 280px; } }
     .product-link { font-size: 12px; font-weight: 600; color: var(--teal); text-decoration: none; letter-spacing: -0.1px; }
@@ -1189,12 +1192,14 @@
 
         <!-- Details -->
         <div class="pub-details">
-          <span class="tag" style="display:inline-block;margin-bottom:var(--sp3)">Pre-order Now</span>
+          <div class="pub-launch-badge">
+            <span class="pub-preorder">Pre-Order Now</span>
+            <span class="pub-launch-date">Launching 9 May 2026</span>
+          </div>
           <h2 class="pub-title">Parent First,<br>ADHD Later</h2>
           <p class="book-subtitle" style="margin-top:8px">The Support Seldom Talked About</p>
 
-          <p style="margin-top:var(--sp4)">By Jerome J. Wong — with sections contributed by Moonlake Lee, Founder of Unlocking ADHD.</p>
-          <p>What does it really look like to parent a teen with ADHD — especially when emotions run high and support feels hard to find? Based on the real lived experience of Singaporeans, this book sheds light on the emotional dynamics that shape family life.</p>
+          <p style="margin-top:var(--sp4)">What does it really look like to parent a teen with ADHD — especially when emotions run high and support feels hard to find? Based on the real lived experience of Singaporeans, this book sheds light on the emotional dynamics that shape family life.</p>
 
           <div class="pub-contents">
             <h4>In this book, you will find:</h4>
@@ -1206,9 +1211,9 @@
           </div>
 
           <p>Also included: sections on ADHD, parenting, and support resources contributed by Moonlake Lee, Founder of Unlocking ADHD and parent of an ADHD youth.</p>
-          <p class="pub-charity">50% of net proceeds donated to <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
+          <p class="pub-charity">50% of net proceeds donated to support two ADHD charities — <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
 
-          <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-black btn-lg" style="margin-top:var(--sp5)">Pre-Order Your Copy ↗</a>
+          <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="margin-top:var(--sp5)">Visit the Book Website — Find Out More &amp; Get Your Copy ↗</a>
         </div>
 
       </div>
