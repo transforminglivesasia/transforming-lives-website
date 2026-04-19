@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Inter as variable font — enables exact DESIGN.md weight stops 320,330,340,450,480,540,700 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/jpeg" href="images/hero-butterfly.jpg" />
 
   <style>
@@ -40,8 +40,8 @@
       --gold-dark:    #9C7020;
 
       /* Typography — DESIGN.md exact values */
-      --font: 'Inter', 'SF Pro Display', system-ui, helvetica, sans-serif;
-      --mono: 'Space Mono', 'SF Mono', menlo, monospace;
+      --font: 'DM Sans', 'SF Pro Display', system-ui, helvetica, sans-serif;
+      --mono: 'DM Mono', 'SF Mono', menlo, monospace;
 
       /* DESIGN.md weight stops */
       --w-thin:    320;
@@ -629,18 +629,15 @@
     .product-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 10px; }
     .product-card p { font-size: 15px; color: rgba(0,0,0,0.6); line-height: 1.65; }
     .product-card-foot { padding: var(--sp2) var(--sp3); border-top: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
-    /* Book cards */
-    .book-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp6); margin-top: var(--sp5); }
-    .book-card { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; display: flex; flex-direction: column; background: var(--white); }
-    .book-cover { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: #f5f0e8; }
-    .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .book-cover-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e8a030 0%, #c97820 100%); }
-    .book-cover-text { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 28px; color: #fff; text-align: center; line-height: 1.2; letter-spacing: -0.5px; padding: var(--sp4); }
-    .book-body { padding: var(--sp5); flex: 1; display: flex; flex-direction: column; gap: var(--sp2); }
-    .book-body h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+    /* Book feature — single horizontal card */
+    .book-feature { display: grid; grid-template-columns: 320px 1fr; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: var(--white); }
+    .book-feature-cover { overflow: hidden; background: #f5f0e8; }
+    .book-feature-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .book-feature-body { padding: var(--sp7) var(--sp6); display: flex; flex-direction: column; gap: var(--sp2); justify-content: center; }
+    .book-feature-title { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(32px, 3.5vw, 48px); letter-spacing: -0.5px; line-height: 1.1; color: var(--black); }
     .book-subtitle { font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 4px; }
-    .book-body p { font-size: 15px; color: rgba(0,0,0,0.65); line-height: 1.65; }
-    @media (max-width: 768px) { .book-grid { grid-template-columns: 1fr; } }
+    .book-feature-body p { font-size: 16px; color: rgba(0,0,0,0.65); line-height: 1.7; }
+    @media (max-width: 768px) { .book-feature { grid-template-columns: 1fr; } .book-feature-cover { aspect-ratio: 4/3; } }
     .product-link { font-size: 12px; font-weight: 600; color: var(--teal); text-decoration: none; letter-spacing: -0.1px; }
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
@@ -1166,36 +1163,22 @@
       <div class="products-section">
         <p class="label">Publishing</p>
         <h2 class="h-sub" style="margin-top:12px">Books &amp; Publications</h2>
-        <div class="book-grid stagger">
 
-          <div class="book-card nb lift">
-            <div class="book-cover">
-              <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later book cover" />
-            </div>
-            <div class="book-body">
-              <span class="tag" style="margin-bottom:var(--sp2);display:inline-block">Pre-order Now</span>
-              <h3>Parent First, ADHD Later</h3>
-              <p class="book-subtitle">The Support Seldom Talked About</p>
-              <p>By Jerome J. Wong — with sections contributed by Moonlake Lee, Founder of Unlocking ADHD. What does it really look like to parent a teen with ADHD, especially when emotions run high and support feels hard to find?</p>
-              <p>50% of net proceeds donated to <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
-              <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-black" style="margin-top:var(--sp3);display:inline-block">Pre-Order Your Copy ↗</a>
-            </div>
+        <div class="book-feature nb lift" style="margin-top:var(--sp5)">
+          <div class="book-feature-cover">
+            <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later book cover" />
           </div>
-
-          <div class="book-card nb lift">
-            <div class="book-cover">
-              <img src="images/differently-wired-minds.jpg" alt="Differently Wired Minds book cover" />
-            </div>
-            <div class="book-body">
-              <span class="tag" style="margin-bottom:var(--sp2);display:inline-block">2025 · SG60</span>
-              <h3>Differently Wired Minds</h3>
-              <p class="book-subtitle">Singapore ADHDers Share Their Journeys</p>
-              <p>Lead Editor: Moonlake Lee. Published by Unlocking ADHD as part of Singapore's SG60 commemorative series. 60+ ADHDers share how they turned struggles into strengths, challenges into resilience, and difference into impact.</p>
-              <p>May their voices inspire you, touch your heart, and reframe how we see ADHD — not as a limitation, but as a force for creativity, hope, and change.</p>
-            </div>
+          <div class="book-feature-body">
+            <span class="tag" style="margin-bottom:var(--sp2);display:inline-block">Pre-order Now</span>
+            <h3 class="book-feature-title">Parent First,<br>ADHD Later</h3>
+            <p class="book-subtitle">The Support Seldom Talked About</p>
+            <p style="margin-top:var(--sp3)">By Jerome J. Wong — with sections contributed by Moonlake Lee, Founder of Unlocking ADHD. What does it really look like to parent a teen with ADHD, especially when emotions run high and support feels hard to find?</p>
+            <p>8 recurring moments explored through a teen's perspective, with flowcharts mapping emotions, actions and reactions — plus toolkits to help parents respond with greater understanding, clarity, and intention.</p>
+            <p>50% of net proceeds donated to <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>.</p>
+            <a href="https://www.parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn btn-black" style="margin-top:var(--sp4);display:inline-block">Pre-Order Your Copy ↗</a>
           </div>
-
         </div>
+
       </div>
 
       <hr class="section-divider" />
