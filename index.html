@@ -638,9 +638,9 @@
     .pub-banner { padding: var(--sp8) 0 0; }
     .pub-banner img { display: block; max-width: 780px; width: 100%; margin: 0 auto; border-radius: var(--r-md); box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
     .pub-showcase { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--sp8); align-items: start; padding: var(--sp10) 0 var(--sp6); }
-    .pub-covers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); }
-    .pub-cover-front, .pub-cover-back { border-radius: var(--r-md); overflow: hidden; }
-    .pub-cover-front img, .pub-cover-back img { width: 100%; display: block; object-fit: cover; }
+    .pub-covers { display: flex; flex-direction: column; gap: var(--sp3); max-width: 320px; }
+    .pub-cover-front, .pub-cover-back { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+    .pub-cover-front img, .pub-cover-back img { width: 100%; display: block; }
     .pub-title { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(36px, 4vw, 56px); letter-spacing: -0.5px; line-height: 1.05; color: var(--black); }
     .book-subtitle { font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); }
     .pub-details { display: flex; flex-direction: column; gap: var(--sp3); }
@@ -653,8 +653,7 @@
     .pub-launch-badge { display: flex; align-items: center; gap: var(--sp2); flex-wrap: wrap; }
     .pub-preorder { display: inline-block; background: var(--gold); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; padding: 6px 14px; border-radius: var(--r-pill); }
     .pub-launch-date { font-size: 14px; font-weight: 600; color: var(--teal); letter-spacing: -0.1px; }
-    @media (max-width: 960px) { .pub-showcase { grid-template-columns: 1fr; } .pub-covers { grid-template-columns: 1fr 1fr; max-width: 480px; } }
-    @media (max-width: 560px) { .pub-covers { grid-template-columns: 1fr; max-width: 280px; } }
+    @media (max-width: 960px) { .pub-showcase { grid-template-columns: 1fr; } .pub-covers { max-width: 320px; margin: 0 auto; } }
     .product-link { font-size: 12px; font-weight: 600; color: var(--teal); text-decoration: none; letter-spacing: -0.1px; }
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
@@ -1191,7 +1190,7 @@
             <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later — front cover" />
           </div>
           <div class="pub-cover-back nb">
-            <img src="images/p1al-back-cover.png" alt="Parent First, ADHD Later — back cover" />
+            <img src="images/p1al-back-cover.jpg" alt="Parent First, ADHD Later — back cover" />
           </div>
         </div>
 
