@@ -543,10 +543,12 @@
       overflow: hidden;
       border: 1px solid var(--border);
     }
-    .about-img img { width: 100%; display: block; object-fit: cover; max-height: 380px; }
+    .about-img img { width: 100%; display: block; object-fit: cover; object-position: top center; max-height: 420px; }
     .about-text .label { margin-bottom: var(--sp2); }
     .about-text .h-sub { margin-bottom: var(--sp3); }
     .about-text .body { margin-bottom: var(--sp2); font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.6); }
+    .about-text .body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+    .about-text .body a:hover { color: var(--teal-dark); }
     .about-col-left { display: flex; flex-direction: column; gap: var(--sp3); }
     .founder-attribution { padding: var(--sp2) 0; }
     .founder-name {
@@ -556,9 +558,16 @@
       color: var(--black); margin-bottom: 6px;
     }
     .founder-creds {
-      font-family: var(--mono); font-size: 11px;
-      letter-spacing: 0.3px; color: rgba(0,0,0,0.5);
-      margin-bottom: 8px;
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-bottom: 10px;
+    }
+    .founder-creds span {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.4px; color: rgba(0,0,0,0.55);
+      background: rgba(31,138,138,0.08);
+      border: 1px solid rgba(31,138,138,0.18);
+      border-radius: var(--r-pill);
+      padding: 3px 9px;
     }
     .founder-role { font-size: 14px; font-weight: 600; color: var(--black); }
     .founder-org  { font-size: 14px; color: rgba(0,0,0,0.5); margin-top: 2px; }
@@ -973,7 +982,9 @@
           </div>
           <div class="founder-attribution">
             <p class="founder-name">Moonlake Lee</p>
-            <p class="founder-creds">BA (Hons), MBA, JD, LL.M</p>
+            <div class="founder-creds">
+              <span>BA (Hons)</span><span>MBA</span><span>JD</span><span>LL.M</span>
+            </div>
             <p class="founder-role">Founder &amp; CEO</p>
             <p class="founder-org">Transforming Lives</p>
             <a class="founder-linkedin" href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
