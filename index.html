@@ -687,6 +687,9 @@
     @media (max-width: 900px) { .speaking-photos { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 560px) { .speaking-photos { grid-template-columns: 1fr; } .speaking-photo img { height: 240px; } }
     .services-workshop-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); margin-bottom: var(--sp5); }
+    .services-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin-bottom: var(--sp5); }
+    .services-photo-grid .services-workshop-photo { margin-bottom: 0; }
+    @media (max-width: 680px) { .services-photo-grid { grid-template-columns: 1fr; } .services-workshop-photo img { height: 260px; } }
     .services-workshop-photo img { width: 100%; display: block; object-fit: cover; height: 320px; object-position: center 30%; }
     #page-speaking .audience-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
     #page-speaking .audience-item { background: rgba(201,150,58,0.05); border: none; border-left: 4px solid var(--gold); border-radius: 0 var(--r-md) var(--r-md) 0; padding: var(--sp5) var(--sp4); }
@@ -1125,11 +1128,11 @@
           <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
           <p class="body">Practical, engaging programmes that help individuals and organisations develop the skills, mindsets, and behaviours to thrive.</p>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp3);margin-bottom:var(--sp5)">
-          <div class="services-workshop-photo" style="margin-bottom:0">
+        <div class="services-photo-grid">
+          <div class="services-workshop-photo">
             <img src="images/moonlake-nyc-conference.jpg" alt="Moonlake Lee speaking at the 2024 NYC Brunei Singapore Conference" />
           </div>
-          <div class="services-workshop-photo" style="margin-bottom:0">
+          <div class="services-workshop-photo">
             <img src="images/moonlake-ef-workshop.jpg" alt="Moonlake Lee facilitating an executive function workshop" />
           </div>
         </div>
