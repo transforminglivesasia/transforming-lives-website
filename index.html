@@ -670,8 +670,11 @@
     .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); }
     .media-card { display: flex; flex-direction: column; padding: var(--sp4); background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-md); text-decoration: none; color: inherit; transition: transform .18s ease, box-shadow .18s ease; }
     .media-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+    .media-card-thumb { height: 72px; border-radius: var(--r-sm); margin-bottom: var(--sp3); display: flex; align-items: center; justify-content: flex-start; padding: 0 var(--sp3); background: var(--subtle); gap: 12px; }
+    .media-card-thumb-badge { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--white); background: var(--teal); border-radius: 4px; padding: 4px 8px; white-space: nowrap; }
+    .media-card-thumb-type { font-size: 11px; font-family: var(--mono); letter-spacing: 0.3px; text-transform: uppercase; color: var(--muted); }
     .media-card-outlet { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
-    .media-card-type { font-size: 12px; color: var(--muted); margin-bottom: var(--sp2); }
+    .media-card-type { display: none; }
     .media-card-title { font-size: 16px; font-weight: 600; line-height: 1.45; letter-spacing: -0.2px; flex-grow: 1; margin-bottom: var(--sp3); }
     .media-card-cta { font-size: 13px; font-weight: 600; color: var(--teal); }
     @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2,1fr); } }
@@ -735,9 +738,11 @@
       cursor: pointer;
     }
     .blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .blog-card-top { height: 3px; background: var(--black); }
-    .blog-card-body { padding: var(--sp4); flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .blog-card-top { height: 80px; background: var(--black); display: flex; align-items: flex-end; padding: 10px var(--sp3); }
+    .blog-card-top-cat { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+    .blog-card-body { padding: var(--sp3) var(--sp4) var(--sp4); flex: 1; display: flex; flex-direction: column; gap: 10px; }
     .blog-meta { display: flex; gap: var(--sp2); align-items: center; }
+    .blog-cat { display: none; }
     .blog-cat { font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.4); }
     .blog-date { font-size: 12px; color: rgba(0,0,0,0.35); }
     .blog-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.35; }
@@ -1085,7 +1090,7 @@
         <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
           <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
           <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Forever grateful to you, Moonlake Lee, for sharing your story on CNA. If not for your interview, I would never have been diagnosed and gotten the help I need to live a more aligned and joyful life.</p>
-          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Goh Mingshan</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Late-diagnosed female ADHDer</p>
           <p style="font-size:12px;color:var(--muted)">After watching Moonlake's CNA feature</p>
         </div>
 
@@ -1382,7 +1387,7 @@
   <div style="background:var(--black);padding:var(--sp8) 0">
     <div class="container" style="text-align:center">
       <a href="https://www.linkedin.com/newsletters/adhd-life-musings-7379802972484116480/" target="_blank" rel="noopener">
-        <img src="images/blog-newsletter-banner.png" alt="ADHD Life &amp; Musings — Subscribe to Moonlake's newsletter" style="max-width:860px;width:100%;border-radius:var(--r-md);display:inline-block" />
+        <img src="images/blog-newsletter-banner.png" alt="ADHD Life &amp; Musings — Subscribe to Moonlake's newsletter" style="max-width:720px;width:100%;height:auto;max-height:160px;object-fit:cover;object-position:center;border-radius:var(--r-md);display:inline-block" />
       </a>
     </div>
   </div>
@@ -2247,6 +2252,39 @@
 
 <script>
   const pages = ['home','about','founder','services','products','resources','blog','speaking','media','contact'];
+
+  // Inject category label into blog card colour bands
+  document.querySelectorAll('.blog-card').forEach(card => {
+    const top = card.querySelector('.blog-card-top');
+    const cat = card.querySelector('.blog-cat');
+    if (top && cat) {
+      const span = document.createElement('span');
+      span.className = 'blog-card-top-cat';
+      span.textContent = cat.textContent;
+      top.appendChild(span);
+    }
+  });
+
+  // Inject thumb badges into media cards
+  document.querySelectorAll('.media-card').forEach(card => {
+    const outlet = card.querySelector('.media-card-outlet');
+    const type = card.querySelector('.media-card-type');
+    if (outlet) {
+      const thumb = document.createElement('div');
+      thumb.className = 'media-card-thumb';
+      const badge = document.createElement('span');
+      badge.className = 'media-card-thumb-badge';
+      badge.textContent = outlet.textContent;
+      thumb.appendChild(badge);
+      if (type) {
+        const typeSpan = document.createElement('span');
+        typeSpan.className = 'media-card-thumb-type';
+        typeSpan.textContent = type.textContent;
+        thumb.appendChild(typeSpan);
+      }
+      card.insertBefore(thumb, card.firstChild);
+    }
+  });
 
   function showPage(id) {
     pages.forEach(p => {
