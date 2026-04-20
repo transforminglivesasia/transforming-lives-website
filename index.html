@@ -668,15 +668,17 @@
     /* ── Media page ── */
     .media-body { padding: var(--sp10) 0; }
     .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); }
-    .media-card { display: flex; flex-direction: column; padding: var(--sp4); background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-md); text-decoration: none; color: inherit; transition: transform .18s ease, box-shadow .18s ease; }
+    .media-card { display: flex; flex-direction: column; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-md); text-decoration: none; color: inherit; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
     .media-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
-    .media-card-thumb { height: 72px; border-radius: var(--r-sm); margin-bottom: var(--sp3); display: flex; align-items: center; justify-content: flex-start; padding: 0 var(--sp3); background: var(--subtle); gap: 12px; }
-    .media-card-thumb-badge { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--white); background: var(--teal); border-radius: 4px; padding: 4px 8px; white-space: nowrap; }
-    .media-card-thumb-type { font-size: 11px; font-family: var(--mono); letter-spacing: 0.3px; text-transform: uppercase; color: var(--muted); }
-    .media-card-outlet { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
-    .media-card-type { display: none; }
-    .media-card-title { font-size: 16px; font-weight: 600; line-height: 1.45; letter-spacing: -0.2px; flex-grow: 1; margin-bottom: var(--sp3); }
+    .media-card-img { position: relative; height: 180px; overflow: hidden; flex-shrink: 0; }
+    .media-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .media-card-outlet-badge { position: absolute; bottom: 8px; left: 8px; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--white); background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); border-radius: 4px; padding: 3px 8px; }
+    .media-card-content { padding: var(--sp3) var(--sp4) var(--sp4); display: flex; flex-direction: column; flex: 1; }
+    .media-card-type { font-family: var(--mono); font-size: 10px; letter-spacing: 0.4px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; font-weight: 600; }
+    .media-card-title { font-size: 15px; font-weight: 600; line-height: 1.45; letter-spacing: -0.2px; flex-grow: 1; margin-bottom: var(--sp2); }
     .media-card-cta { font-size: 13px; font-weight: 600; color: var(--teal); }
+    .media-card-outlet { display: none; }
+    .media-card-thumb { display: none; }
     @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 560px) { .media-grid { grid-template-columns: 1fr; } }
     .speaking-photos { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
@@ -2024,7 +2026,7 @@
 ══════════════════════════════════════════════════════════ -->
 <div id="page-media" class="page">
 
-  <section class="page-hero page-hero-dark">
+  <section class="page-hero page-hero-teal">
     <div class="container">
       <p class="label">Press &amp; Media</p>
       <h1 class="h-section">In the Media</h1>
@@ -2038,74 +2040,94 @@
       <h2 class="h-sub" style="margin-top:12px">Articles, Features &amp; Podcasts</h2>
       <div class="media-grid stagger">
 
-        <a class="media-card nb-sm" href="https://bit.ly/SOTY-Moonlake" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Straits Times</p>
-          <p class="media-card-type">Article</p>
-          <h3 class="media-card-title">Singaporean of the Year Finalist 2022</h3>
-          <span class="media-card-cta">Read ↗</span>
+        <a class="media-card" href="https://bit.ly/SOTY-Moonlake" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-soty.jpg" alt="Singaporean of the Year Finalist 2022" /><span class="media-card-outlet-badge">Straits Times</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Article</p>
+            <h3 class="media-card-title">Singaporean of the Year Finalist 2022</h3>
+            <span class="media-card-cta">Read ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/ST-Failure2Awards" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Straits Times</p>
-          <p class="media-card-type">Article</p>
-          <h3 class="media-card-title">From Failure to Awards</h3>
-          <span class="media-card-cta">Read ↗</span>
+        <a class="media-card" href="https://bit.ly/ST-Failure2Awards" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-failure-awards.jpg" alt="From Failure to Awards" /><span class="media-card-outlet-badge">Straits Times</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Article</p>
+            <h3 class="media-card-title">From Failing to Getting Maths Award: Unlocking the Potential of Kids with ADHD</h3>
+            <span class="media-card-cta">Read ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/healthcheck-adhd" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Straits Times HealthCheck</p>
-          <p class="media-card-type">Podcast</p>
-          <h3 class="media-card-title">Unlock Your ADHD</h3>
-          <span class="media-card-cta">Listen ↗</span>
+        <a class="media-card" href="https://bit.ly/healthcheck-adhd" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-healthcheck-adhd.jpg" alt="Unlock Your ADHD podcast" /><span class="media-card-outlet-badge">ST HealthCheck</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Podcast</p>
+            <h3 class="media-card-title">Unlock Your ADHD</h3>
+            <span class="media-card-cta">Listen ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/healthcheck-ADHD" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Straits Times HealthCheck</p>
-          <p class="media-card-type">Podcast</p>
-          <h3 class="media-card-title">Is ADHD Affecting Your Family?</h3>
-          <span class="media-card-cta">Listen ↗</span>
+        <a class="media-card" href="https://bit.ly/healthcheck-ADHD" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-healthcheck-family.jpg" alt="Is ADHD Affecting Your Family?" /><span class="media-card-outlet-badge">ST HealthCheck</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Podcast</p>
+            <h3 class="media-card-title">Is ADHD Affecting Your Family?</h3>
+            <span class="media-card-cta">Listen ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/ADHDwomenSG" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Channel NewsAsia</p>
-          <p class="media-card-type">Feature</p>
-          <h3 class="media-card-title">Women with ADHD</h3>
-          <span class="media-card-cta">Watch ↗</span>
+        <a class="media-card" href="https://bit.ly/ADHDwomenSG" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-cna-women.jpg" alt="Women with ADHD" /><span class="media-card-outlet-badge">CNA</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Feature</p>
+            <h3 class="media-card-title">Women with ADHD: How a Diagnosis Changed Our Lives</h3>
+            <span class="media-card-cta">Watch ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/OurLives-Buses" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Channel NewsAsia</p>
-          <p class="media-card-type">Feature</p>
-          <h3 class="media-card-title">Our Lives According to Buses</h3>
-          <span class="media-card-cta">Watch ↗</span>
+        <a class="media-card" href="https://bit.ly/OurLives-Buses" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-cna-buses.jpg" alt="Our Lives According to Buses" /><span class="media-card-outlet-badge">CNA</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Feature</p>
+            <h3 class="media-card-title">Our Lives According to Buses</h3>
+            <span class="media-card-cta">Watch ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/lettertomyself-moonlake" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Channel NewsAsia</p>
-          <p class="media-card-type">Feature</p>
-          <h3 class="media-card-title">A Letter to Myself</h3>
-          <span class="media-card-cta">Watch ↗</span>
+        <a class="media-card" href="https://bit.ly/lettertomyself-moonlake" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-cna-letter.jpg" alt="A Letter to Myself" /><span class="media-card-outlet-badge">CNA</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Feature</p>
+            <h3 class="media-card-title">A Letter to Myself</h3>
+            <span class="media-card-cta">Watch ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/saltlight-ADHD" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Salt &amp; Light</p>
-          <p class="media-card-type">Article</p>
-          <h3 class="media-card-title">She Started a Charity to Help People with ADHD</h3>
-          <span class="media-card-cta">Read ↗</span>
+        <a class="media-card" href="https://bit.ly/saltlight-ADHD" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-saltlight.jpg" alt="She Started a Charity" /><span class="media-card-outlet-badge">Salt &amp; Light</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Article</p>
+            <h3 class="media-card-title">She Started a Charity to Help People with ADHD</h3>
+            <span class="media-card-cta">Read ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/ricemedia-vote" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Rice Media</p>
-          <p class="media-card-type">Article</p>
-          <h3 class="media-card-title">After the Vote</h3>
-          <span class="media-card-cta">Read ↗</span>
+        <a class="media-card" href="https://bit.ly/ricemedia-vote" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-ricemedia.jpg" alt="After the Vote" /><span class="media-card-outlet-badge">Rice Media</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Article</p>
+            <h3 class="media-card-title">After the Vote</h3>
+            <span class="media-card-cta">Read ↗</span>
+          </div>
         </a>
 
-        <a class="media-card nb-sm" href="https://bit.ly/vogue-adultADHD" target="_blank" rel="noopener">
-          <p class="media-card-outlet">Vogue</p>
-          <p class="media-card-type">Article</p>
-          <h3 class="media-card-title">What Is It Like to Have Adult ADHD?</h3>
-          <span class="media-card-cta">Read ↗</span>
+        <a class="media-card" href="https://bit.ly/vogue-adultADHD" target="_blank" rel="noopener">
+          <div class="media-card-img"><img src="images/media-thumb-vogue.jpg" alt="My Mind Has 150 Tabs Open" /><span class="media-card-outlet-badge">Vogue</span></div>
+          <div class="media-card-content">
+            <p class="media-card-type">Article</p>
+            <h3 class="media-card-title">"My Mind Feels Like It Has 150 Tabs Open": What It's Like to Have Adult ADHD</h3>
+            <span class="media-card-cta">Read ↗</span>
+          </div>
         </a>
 
       </div>
@@ -2265,26 +2287,6 @@
     }
   });
 
-  // Inject thumb badges into media cards
-  document.querySelectorAll('.media-card').forEach(card => {
-    const outlet = card.querySelector('.media-card-outlet');
-    const type = card.querySelector('.media-card-type');
-    if (outlet) {
-      const thumb = document.createElement('div');
-      thumb.className = 'media-card-thumb';
-      const badge = document.createElement('span');
-      badge.className = 'media-card-thumb-badge';
-      badge.textContent = outlet.textContent;
-      thumb.appendChild(badge);
-      if (type) {
-        const typeSpan = document.createElement('span');
-        typeSpan.className = 'media-card-thumb-type';
-        typeSpan.textContent = type.textContent;
-        thumb.appendChild(typeSpan);
-      }
-      card.insertBefore(thumb, card.firstChild);
-    }
-  });
 
   function showPage(id) {
     pages.forEach(p => {
