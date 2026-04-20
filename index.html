@@ -665,6 +665,17 @@
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
     .speaking-intro { margin-bottom: var(--sp5); }
+    /* ── Media page ── */
+    .media-body { padding: var(--sp10) 0; }
+    .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); }
+    .media-card { display: flex; flex-direction: column; padding: var(--sp4); background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-md); text-decoration: none; color: inherit; transition: transform .18s ease, box-shadow .18s ease; }
+    .media-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+    .media-card-outlet { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+    .media-card-type { font-size: 12px; color: var(--muted); margin-bottom: var(--sp2); }
+    .media-card-title { font-size: 16px; font-weight: 600; line-height: 1.45; letter-spacing: -0.2px; flex-grow: 1; margin-bottom: var(--sp3); }
+    .media-card-cta { font-size: 13px; font-weight: 600; color: var(--teal); }
+    @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 560px) { .media-grid { grid-template-columns: 1fr; } }
     .speaking-photos { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
     .speaking-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
     .speaking-photo img { width: 100%; display: block; object-fit: cover; height: 360px; object-position: top center; }
@@ -855,6 +866,7 @@
       <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
       <a onclick="showPage('products')"  id="nav-products" >Publications</a>
       <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
+      <a onclick="showPage('media')"     id="nav-media"    >Media</a>
       <a onclick="showPage('contact')"   id="nav-contact"  class="nav-cta">Contact</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -871,6 +883,7 @@
   <a onclick="showPage('blog');closeMenu()">Blog</a>
   <a onclick="showPage('products');closeMenu()">Publications</a>
   <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
+  <a onclick="showPage('media');closeMenu()">Media</a>
   <a onclick="showPage('contact');closeMenu()">Contact</a>
 </div>
 
@@ -950,21 +963,6 @@
     </div>
   </section>
 
-  <section class="focus-section">
-    <div class="container">
-      <div class="pillars-header">
-        <p class="label">Core Focus</p>
-        <h2 class="h-sub" style="margin-top:12px">Areas of Expertise</h2>
-      </div>
-      <div class="chips">
-        <div class="chip">Neurodivergence &amp; ADHD</div>
-        <div class="chip">Executive Function</div>
-        <div class="chip">Workplace Awareness</div>
-        <div class="chip">Relationships</div>
-        <div class="chip">Parenting</div>
-      </div>
-    </div>
-  </section>
 
   <section class="values-section">
     <div class="container">
@@ -1985,6 +1983,110 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
+     MEDIA
+══════════════════════════════════════════════════════════ -->
+<div id="page-media" class="page">
+
+  <section class="page-hero page-hero-dark">
+    <div class="container">
+      <p class="label">Press &amp; Media</p>
+      <h1 class="h-section">In the Media</h1>
+      <p class="body-lg">Moonlake Lee and Transforming Lives featured in print, broadcast, and digital media across Singapore and beyond.</p>
+    </div>
+  </section>
+
+  <div class="media-body">
+    <div class="container">
+      <p class="label">Coverage</p>
+      <h2 class="h-sub" style="margin-top:12px">Articles, Features &amp; Podcasts</h2>
+      <div class="media-grid stagger">
+
+        <a class="media-card nb-sm" href="https://bit.ly/SOTY-Moonlake" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Straits Times</p>
+          <p class="media-card-type">Article</p>
+          <h3 class="media-card-title">Singaporean of the Year Finalist 2022</h3>
+          <span class="media-card-cta">Read ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/ST-Failure2Awards" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Straits Times</p>
+          <p class="media-card-type">Article</p>
+          <h3 class="media-card-title">From Failure to Awards</h3>
+          <span class="media-card-cta">Read ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/healthcheck-adhd" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Straits Times HealthCheck</p>
+          <p class="media-card-type">Podcast</p>
+          <h3 class="media-card-title">Unlock Your ADHD</h3>
+          <span class="media-card-cta">Listen ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/healthcheck-ADHD" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Straits Times HealthCheck</p>
+          <p class="media-card-type">Podcast</p>
+          <h3 class="media-card-title">Is ADHD Affecting Your Family?</h3>
+          <span class="media-card-cta">Listen ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/ADHDwomenSG" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Channel NewsAsia</p>
+          <p class="media-card-type">Feature</p>
+          <h3 class="media-card-title">Women with ADHD</h3>
+          <span class="media-card-cta">Watch ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/OurLives-Buses" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Channel NewsAsia</p>
+          <p class="media-card-type">Feature</p>
+          <h3 class="media-card-title">Our Lives According to Buses</h3>
+          <span class="media-card-cta">Watch ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/lettertomyself-moonlake" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Channel NewsAsia</p>
+          <p class="media-card-type">Feature</p>
+          <h3 class="media-card-title">A Letter to Myself</h3>
+          <span class="media-card-cta">Watch ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/saltlight-ADHD" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Salt &amp; Light</p>
+          <p class="media-card-type">Article</p>
+          <h3 class="media-card-title">She Started a Charity to Help People with ADHD</h3>
+          <span class="media-card-cta">Read ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/ricemedia-vote" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Rice Media</p>
+          <p class="media-card-type">Article</p>
+          <h3 class="media-card-title">After the Vote</h3>
+          <span class="media-card-cta">Read ↗</span>
+        </a>
+
+        <a class="media-card nb-sm" href="https://bit.ly/vogue-adultADHD" target="_blank" rel="noopener">
+          <p class="media-card-outlet">Vogue</p>
+          <p class="media-card-type">Article</p>
+          <h3 class="media-card-title">What Is It Like to Have Adult ADHD?</h3>
+          <span class="media-card-cta">Read ↗</span>
+        </a>
+
+      </div>
+
+      <div style="margin-top:var(--sp10);padding-top:var(--sp8);border-top:1px solid var(--border);text-align:center">
+        <p class="label" style="margin-bottom:12px">Speaking Enquiries</p>
+        <h3 class="h-sub" style="margin-bottom:var(--sp2)">Want Moonlake at Your Event?</h3>
+        <p class="body" style="max-width:480px;margin:0 auto var(--sp4)">For media interviews, press enquiries, or speaking bookings, get in touch and we'll respond within two business days.</p>
+        <button class="btn btn-black btn-lg" onclick="showPage('contact')">Get in Touch</button>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /media -->
+
+
+<!-- ══════════════════════════════════════════════════════════
      CONTACT
 ══════════════════════════════════════════════════════════ -->
 <div id="page-contact" class="page">
@@ -2086,6 +2188,7 @@
           <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('products')">Publications</a></li>
           <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
+          <li><a onclick="showPage('media')">Media</a></li>
           <li><a onclick="showPage('contact')">Contact Us</a></li>
         </ul>
       </div>
@@ -2111,7 +2214,7 @@
 
 
 <script>
-  const pages = ['home','about','founder','services','products','resources','blog','speaking','contact'];
+  const pages = ['home','about','founder','services','products','resources','blog','speaking','media','contact'];
 
   function showPage(id) {
     pages.forEach(p => {
