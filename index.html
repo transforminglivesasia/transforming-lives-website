@@ -665,10 +665,11 @@
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
     .speaking-intro { margin-bottom: var(--sp5); }
-    .speaking-photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); }
+    .speaking-photos { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
     .speaking-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
     .speaking-photo img { width: 100%; display: block; object-fit: cover; height: 360px; object-position: top center; }
-    @media (max-width: 680px) { .speaking-photos { grid-template-columns: 1fr; } .speaking-photo img { height: 260px; } }
+    @media (max-width: 900px) { .speaking-photos { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 560px) { .speaking-photos { grid-template-columns: 1fr; } .speaking-photo img { height: 240px; } }
     .services-workshop-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); margin-bottom: var(--sp5); }
     .services-workshop-photo img { width: 100%; display: block; object-fit: cover; height: 320px; object-position: center 30%; }
     #page-speaking .audience-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
@@ -1095,8 +1096,13 @@
           <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
           <p class="body">Practical, engaging programmes that help individuals and organisations develop the skills, mindsets, and behaviours to thrive.</p>
         </div>
-        <div class="services-workshop-photo">
-          <img src="images/moonlake-ef-workshop.jpg" alt="Moonlake Lee facilitating an executive function workshop" />
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp3);margin-bottom:var(--sp5)">
+          <div class="services-workshop-photo" style="margin-bottom:0">
+            <img src="images/moonlake-ef-workshop.jpg" alt="Moonlake Lee facilitating an executive function workshop" />
+          </div>
+          <div class="services-workshop-photo" style="margin-bottom:0">
+            <img src="images/moonlake-workshop-cafe.jpg" alt="Moonlake Lee running an intimate community workshop" />
+          </div>
         </div>
         <div class="service-grid">
           <div class="service-item">
@@ -1916,10 +1922,22 @@
     <div class="container">
       <div class="speaking-photos">
         <div class="speaking-photo">
+          <img src="images/moonlake-audience-talk.jpg" alt="Moonlake Lee presenting to a full auditorium" />
+        </div>
+        <div class="speaking-photo">
+          <img src="images/moonlake-panel-discussion.jpg" alt="Moonlake Lee on a panel at Simone x Mandala Club" />
+        </div>
+        <div class="speaking-photo">
+          <img src="images/moonlake-speaking-yellow.jpg" alt="Moonlake Lee speaking at a corporate event" />
+        </div>
+        <div class="speaking-photo">
           <img src="images/moonlake-adhd-journey-talk.jpg" alt="Moonlake Lee presenting her ADHD Journey talk" />
         </div>
         <div class="speaking-photo">
-          <img src="images/moonlake-speaking.jpg" alt="Moonlake Lee speaking at an event" />
+          <img src="images/moonlake-onstage-floral.jpg" alt="Moonlake Lee on stage at an event" />
+        </div>
+        <div class="speaking-photo">
+          <img src="images/moonlake-award-ceremony.jpg" alt="Moonlake Lee receiving a professional recognition award" />
         </div>
       </div>
     </div>
