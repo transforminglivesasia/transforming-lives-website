@@ -2236,9 +2236,10 @@
 <script>
   const pages = ['home','about','founder','services','products','resources','blog','speaking','media','contact'];
 
+  const slugToPage = { '/': 'home', '/about': 'about', '/founder': 'founder', '/services': 'services', '/products': 'products', '/resources': 'resources', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/contact': 'contact' };
+  const pageToSlug = { home: '/', about: '/about', founder: '/founder', services: '/services', products: '/products', resources: '/resources', blog: '/blog', speaking: '/speaking', media: '/media', contact: '/contact' };
 
-
-  function showPage(id) {
+  function showPage(id, pushHistory = true) {
     pages.forEach(p => {
       document.getElementById('page-' + p).classList.remove('active');
       const n = document.getElementById('nav-' + p);
@@ -2248,9 +2249,14 @@
     const n = document.getElementById('nav-' + id);
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Trigger reveal animations on newly visible page
+    if (pushHistory) history.pushState({ page: id }, '', pageToSlug[id] || '/');
     setTimeout(initReveals, 50);
   }
+
+  window.addEventListener('popstate', e => {
+    const id = (e.state && e.state.page) || slugToPage[location.pathname] || 'home';
+    showPage(id, false);
+  });
 
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
@@ -2346,6 +2352,14 @@
 
   // Init on first load
   document.addEventListener('DOMContentLoaded', () => {
+    // Route to correct page based on URL on initial load
+    const initialPage = slugToPage[location.pathname] || 'home';
+    if (initialPage !== 'home') {
+      showPage(initialPage, false);
+    } else {
+      history.replaceState({ page: 'home' }, '', '/');
+    }
+
     const heroTitle = document.querySelector('#page-home .h-display');
     if (heroTitle) {
       splitChars(heroTitle);
