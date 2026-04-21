@@ -819,11 +819,11 @@
     .contact-details { display: flex; flex-direction: column; gap: var(--sp3); }
     .contact-detail { display: flex; gap: var(--sp2); }
     .contact-detail-icon { width: 36px; height: 36px; border-radius: var(--r-circle); background: var(--subtle); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
-    .contact-detail-text strong { display: block; font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-    .contact-detail-text span { font-size: 13px; color: rgba(0,0,0,0.5); }
+    .contact-detail-text strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .contact-detail-text span { font-size: 14px; color: rgba(0,0,0,0.55); }
     .can-help { margin-top: var(--sp5); }
-    .can-help h4 { font-size: 13px; font-weight: 600; margin-bottom: var(--sp2); }
-    .can-help li { font-size: 13px; color: rgba(0,0,0,0.5); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; }
+    .can-help h4 { font-size: 14px; font-weight: 600; margin-bottom: var(--sp2); }
+    .can-help li { font-size: 14px; color: rgba(0,0,0,0.6); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; }
     .can-help li:last-child { border-bottom: none; }
     .can-help li::before { content: '→'; color: var(--black); font-weight: 500; }
 
@@ -2168,6 +2168,7 @@
               <label>I am interested in *</label>
               <select id="cf-interest" required>
                 <option value="" disabled selected>Select an option</option>
+                <option>Consultation</option>
                 <option>Talks &amp; Keynotes</option>
                 <option>Workshops &amp; Training</option>
                 <option>Coaching Services</option>
@@ -2175,14 +2176,15 @@
                 <option>School Awareness Programmes</option>
                 <option>Workplace Inclusion</option>
                 <option>Books &amp; Publications</option>
-                <option>Podcast / Collaboration</option>
+                <option>Collaboration</option>
+                <option>Media Enquiry</option>
                 <option>General Enquiry</option>
               </select>
             </div>
             <div class="form-group"><label>Message *</label><textarea id="cf-message" placeholder="Tell us what you're looking for…" required></textarea></div>
             <div class="form-consent">
               <input type="checkbox" id="cf-consent" required />
-              <label for="cf-consent">I agree to be contacted by Transforming Lives regarding my enquiry.</label>
+              <label for="cf-consent">Yes I agree to be contacted by Transforming Lives regarding my enquiry.</label>
             </div>
             <button type="submit" class="form-submit">Send Message</button>
           </form>
