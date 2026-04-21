@@ -855,7 +855,8 @@
       letter-spacing: -0.1px; cursor: pointer;
       transition: opacity .15s;
     }
-    .form-submit:hover { opacity: 0.8; }
+    .form-submit { transition: opacity .2s; }
+    .form-submit:not(:disabled):hover { opacity: 0.8; }
     .form-consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: var(--sp3); }
     .form-consent input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: 16px; height: 16px; accent-color: var(--teal); cursor: pointer; }
     .form-consent label { font-size: 13px; color: rgba(0,0,0,0.55); line-height: 1.5; cursor: pointer; }
@@ -2183,10 +2184,10 @@
             </div>
             <div class="form-group"><label>Message *</label><textarea id="cf-message" placeholder="Tell us what you're looking for…" required></textarea></div>
             <div class="form-consent">
-              <input type="checkbox" id="cf-consent" required />
+              <input type="checkbox" id="cf-consent" required onchange="document.getElementById('cf-submit').disabled=!this.checked" />
               <label for="cf-consent">By providing your contact details in this form, you agree that Transforming Lives Pte Ltd can contact you regarding your enquiry, and also share events and relevant information that may be of interest to you. You may write to <a href="mailto:contact@transforminglives.asia" style="color:inherit">contact@transforminglives.asia</a> at any time to be removed from communications.</label>
             </div>
-            <button type="submit" class="form-submit">Send Message</button>
+            <button type="submit" id="cf-submit" class="form-submit" disabled style="opacity:0.45;cursor:not-allowed">Send Message</button>
           </form>
         </div>
 
