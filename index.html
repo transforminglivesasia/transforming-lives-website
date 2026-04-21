@@ -2277,10 +2277,20 @@
   }
   function handleContact(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Message Sent ✓';
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; e.target.reset(); }, 3000);
+    const f = e.target;
+    const firstName = f.querySelector('input[placeholder="Jane"]').value;
+    const lastName  = f.querySelector('input[placeholder="Smith"]').value;
+    const email     = f.querySelector('input[type="email"]').value;
+    const org       = f.querySelector('input[placeholder="Your school or company"]').value;
+    const interest  = f.querySelector('select').value;
+    const message   = f.querySelector('textarea').value;
+
+    const subject = encodeURIComponent(`Enquiry from ${firstName} ${lastName}: ${interest}`);
+    const body    = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nOrganisation: ${org || '—'}\nInterest: ${interest}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:contact@transforminglives.asia?subject=${subject}&body=${body}`;
   }
 
   /* ── IntersectionObserver — UseLayouts + TripleD patterns ── */
