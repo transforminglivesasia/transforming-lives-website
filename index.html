@@ -2185,7 +2185,7 @@
             <div class="form-group"><label>Message *</label><textarea id="cf-message" placeholder="Tell us what you're looking for…" required></textarea></div>
             <div class="form-consent">
               <input type="checkbox" id="cf-consent" required onchange="document.getElementById('cf-submit').disabled=!this.checked" />
-              <label for="cf-consent">By providing your contact details in this form, you agree that Transforming Lives Pte Ltd can contact you regarding your enquiry, and also share events and relevant information that may be of interest to you. You may write to <a href="mailto:contact@transforminglives.asia" style="color:inherit">contact@transforminglives.asia</a> at any time to be removed from communications.</label>
+              <label for="cf-consent">By providing your contact details in this form, you agree that Transforming Lives Pte Ltd can contact you regarding your enquiry, and also share events and relevant information that may be of interest to you. You may write to contact@transforminglives.asia at any time to be removed from communications.</label>
             </div>
             <button type="submit" id="cf-submit" class="form-submit" disabled style="opacity:0.45;cursor:not-allowed">Send Message</button>
           </form>
@@ -2306,10 +2306,14 @@
     document.getElementById('gf-interest').value = document.getElementById('cf-interest').value;
     document.getElementById('gf-form').submit();
 
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Message Sent ✓';
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; e.target.reset(); }, 4000);
+    // Replace form with confirmation message
+    const formBox = e.target.closest('.contact-form');
+    formBox.innerHTML = `
+      <div style="text-align:center;padding:var(--sp8) var(--sp5)">
+        <div style="width:52px;height:52px;border-radius:50%;background:rgba(31,138,138,0.1);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto var(--sp4)">✓</div>
+        <h3 style="margin-bottom:var(--sp3)">Enquiry Received</h3>
+        <p style="font-size:15px;color:rgba(0,0,0,0.55);line-height:1.7;max-width:360px;margin:0 auto">Thanks for submitting your enquiry. Please give us at least two (2) business days to respond.</p>
+      </div>`;
   }
 
   /* ── IntersectionObserver — UseLayouts + TripleD patterns ── */
