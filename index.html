@@ -665,6 +665,35 @@
     .product-link:hover { text-decoration: underline; }
     .speaking-body { padding: var(--sp10) 0; }
     .speaking-intro { margin-bottom: var(--sp5); }
+    /* Speaking topics */
+    .speaking-topics-list { display: flex; flex-direction: column; gap: 10px; }
+    .speaking-topic-item { display: flex; align-items: center; gap: 14px; padding: 14px var(--sp3); background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); font-size: 15px; font-weight: 500; letter-spacing: -0.1px; transition: border-color .15s, transform .15s; }
+    .speaking-topic-item:hover { border-color: var(--teal); transform: translateX(3px); }
+    .speaking-topic-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(31,138,138,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
+    /* Past events */
+    .past-events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin-top: var(--sp6); }
+    .past-event-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); display: flex; gap: var(--sp3); }
+    .past-event-year { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--teal); background: rgba(31,138,138,0.08); border-radius: 6px; padding: 4px 8px; height: fit-content; white-space: nowrap; flex-shrink: 0; }
+    .past-event-type { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--teal); }
+    .past-event-org { font-size: 12px; color: var(--muted); margin-left: 4px; }
+    .past-event-title { font-size: 15px; font-weight: 600; letter-spacing: -0.2px; margin: 6px 0 6px; line-height: 1.35; }
+    .past-event-desc { font-size: 13px; color: rgba(0,0,0,0.55); line-height: 1.55; margin-bottom: 8px; }
+    .past-event-location { font-size: 12px; color: var(--muted); }
+    /* Upcoming events */
+    .upcoming-events-list { display: flex; flex-direction: column; gap: var(--sp3); margin-top: var(--sp6); }
+    .upcoming-event-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); display: flex; gap: var(--sp4); align-items: flex-start; }
+    .upcoming-event-date { background: var(--teal); color: var(--white); border-radius: var(--r-sm); padding: 10px 14px; text-align: center; flex-shrink: 0; min-width: 60px; }
+    .upcoming-event-month { display: block; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.8; }
+    .upcoming-event-day { display: block; font-size: 24px; font-weight: 700; line-height: 1.1; margin-top: 2px; }
+    .upcoming-event-body { flex: 1; }
+    .upcoming-event-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+    .upcoming-event-tag { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--teal); background: rgba(31,138,138,0.08); border-radius: 4px; padding: 2px 7px; }
+    .upcoming-event-host { font-size: 13px; color: var(--muted); }
+    .upcoming-event-title { font-size: 17px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 6px; }
+    .upcoming-event-desc { font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.6; margin-bottom: 10px; }
+    .upcoming-event-details { display: flex; gap: var(--sp3); flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+    .upcoming-event-btn { flex-shrink: 0; align-self: center; }
+    @media (max-width: 680px) { .past-events-grid { grid-template-columns: 1fr; } .upcoming-event-item { flex-wrap: wrap; } .upcoming-event-btn { width: 100%; } .speaking-topics-2col { grid-template-columns: 1fr !important; } }
     /* ── Media page ── */
     .media-body { padding: var(--sp10) 0; }
     .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); }
@@ -1983,15 +2012,38 @@
     </div>
   </div>
 
-  <div class="speaking-body">
+  <!-- Signature Topics -->
+  <section style="padding:var(--sp10) 0">
     <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp10);align-items:start" class="speaking-topics-2col">
+        <div>
+          <p class="label">What Moonlake Speaks On</p>
+          <h2 class="h-sub" style="margin-top:12px">Signature Topics</h2>
+          <p class="body" style="margin-top:var(--sp3)">Every talk is tailored to the audience and context. Moonlake draws on lived experience, professional expertise, and evidence-based frameworks to deliver sessions that are both intellectually rigorous and deeply human.</p>
+          <button class="btn btn-teal" style="margin-top:var(--sp4)" onclick="showPage('contact')">Discuss a custom topic →</button>
+        </div>
+        <div class="speaking-topics-list">
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>ADHD in Adults: Late Diagnosis, Identity &amp; Thriving</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>Executive Function: The Missing Manual for Schools &amp; Workplaces</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>Building Neuro-Inclusive Organisations</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>Parenting a Neurodivergent Child: A Strengths-Based Approach</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>Relationships &amp; ADHD: Navigating Family Dynamics</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>The Strengths-Based Lens: Reframing Neurodivergence</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>ADHD in Women: Why We're Still Missed</div>
+          <div class="speaking-topic-item"><div class="speaking-topic-icon">🎤</div>From Diagnosis to Direction: A Personal &amp; Professional Journey</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Who Moonlake Speaks For -->
+  <section style="padding:var(--sp10) 0;background:var(--off-white)">
+    <div class="container">
       <div class="speaking-intro">
         <p class="label">Audiences</p>
         <h2 class="h-sub" style="margin-top:12px">Who Moonlake Speaks For</h2>
         <p class="body" style="max-width:600px;margin-top:var(--sp2)">From corporate leadership teams and HR professionals to schools, community organisations, and media — every talk is tailored, evidence-informed, and grounded in lived experience.</p>
       </div>
-
       <div class="audience-grid stagger" style="margin-top:var(--sp5)">
         <div class="audience-item nb-sm">
           <h4>Corporates &amp; Workplaces</h4>
@@ -2010,16 +2062,166 @@
           <p>Panel discussions, podcast appearances, and keynotes at conferences and public events.</p>
         </div>
       </div>
-
-      <div class="speaking-cta" style="margin-top:var(--sp8);padding-top:var(--sp8);border-top:1px solid var(--border);text-align:center">
-        <p class="label" style="margin-bottom:12px">Get in Touch</p>
-        <h3 class="h-sub" style="margin-bottom:var(--sp2)">Enquire About Speaking</h3>
-        <p class="body" style="max-width:480px;margin:0 auto var(--sp4)">To book Moonlake for your event, conference, or organisation, send us a message and we'll get back to you within two business days.</p>
-        <button class="btn btn-black btn-lg" onclick="showPage('contact')">Enquire Now</button>
-      </div>
-
     </div>
-  </div>
+  </section>
+
+  <!-- Past Events -->
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <p class="label">A Track Record of Impact</p>
+      <h2 class="h-sub" style="margin-top:12px">Past Events &amp; Appearances</h2>
+      <div class="past-events-grid stagger">
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2025</span>
+          <div>
+            <div><span class="past-event-type">Launch Event</span><span class="past-event-org">· Unlocking ADHD</span></div>
+            <p class="past-event-title">Differently Wired Minds Book Launch</p>
+            <p class="past-event-desc">SG60 commemorative book launch celebrating 60+ Singapore ADHDers, with Moonlake as Lead Editor.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2025</span>
+          <div>
+            <div><span class="past-event-type">Facilitation</span><span class="past-event-org">· Unlocking ADHD</span></div>
+            <p class="past-event-title">ADHD Awareness Month — Community Forum</p>
+            <p class="past-event-desc">Annual community forum bringing together ADHDers, families, clinicians, and educators for a day of learning and connection.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2025</span>
+          <div>
+            <div><span class="past-event-type">Corporate Workshop</span><span class="past-event-org">· Jardine Matheson</span></div>
+            <p class="past-event-title">Neurodiversity at Work</p>
+            <p class="past-event-desc">A customised workshop for HR and people leaders on building neuro-inclusive workplaces, delivered as part of the Unlocking ADHD × Jardine Matheson partnership.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2024</span>
+          <div>
+            <div><span class="past-event-type">Panel Discussion</span><span class="past-event-org">· Kaleidoscope Society</span></div>
+            <p class="past-event-title">Late Diagnosis &amp; Identity: A Conversation</p>
+            <p class="past-event-desc">Moonlake joined a panel of late-diagnosed ADHDers to discuss identity, grief, and the gifts of a late diagnosis.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2024</span>
+          <div>
+            <div><span class="past-event-type">Training</span><span class="past-event-org">· Transforming Lives</span></div>
+            <p class="past-event-title">Executive Function Coaching Masterclass</p>
+            <p class="past-event-desc">A professional development masterclass for educators and coaches on executive function coaching frameworks and tools.</p>
+            <p class="past-event-location">📍 Online</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2023</span>
+          <div>
+            <div><span class="past-event-type">Media Appearance</span><span class="past-event-org">· Channel NewsAsia</span></div>
+            <p class="past-event-title">CNA938 Live Radio Feature</p>
+            <p class="past-event-desc">Moonlake appeared live on CNA938 to discuss ADHD awareness, late diagnosis in women, and the work of Unlocking ADHD.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2023</span>
+          <div>
+            <div><span class="past-event-type">Recognition</span><span class="past-event-org">· The Straits Times</span></div>
+            <p class="past-event-title">Straits Times — S'porean of the Year Nominee</p>
+            <p class="past-event-desc">Moonlake was named a nominee for The Straits Times Singaporean of the Year 2022 for her work founding Unlocking ADHD.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+        <div class="past-event-card nb-sm">
+          <span class="past-event-year">2022</span>
+          <div>
+            <div><span class="past-event-type">School Talk</span><span class="past-event-org">· Multiple Independent Schools</span></div>
+            <p class="past-event-title">ADHD &amp; Families: What Schools Need to Know</p>
+            <p class="past-event-desc">A series of talks for school communities — parents, teachers, and students — on understanding ADHD and building more supportive school environments.</p>
+            <p class="past-event-location">📍 Singapore</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section style="padding:var(--sp10) 0;background:var(--off-white)">
+    <div class="container">
+      <p class="label">What's Coming Up</p>
+      <h2 class="h-sub" style="margin-top:12px">Upcoming Events</h2>
+      <div class="upcoming-events-list stagger">
+        <div class="upcoming-event-item nb-sm">
+          <div class="upcoming-event-date"><span class="upcoming-event-month">May</span><span class="upcoming-event-day">22</span></div>
+          <div class="upcoming-event-body">
+            <div class="upcoming-event-meta"><span class="upcoming-event-tag">Keynote Talk</span><span class="upcoming-event-host">HR Summit Singapore 2026</span></div>
+            <h4 class="upcoming-event-title">Understanding ADHD in the Workplace</h4>
+            <p class="upcoming-event-desc">Moonlake will deliver a keynote on building neuro-inclusive workplaces — covering ADHD in adults, executive function, and practical strategies for managers and HR teams.</p>
+            <div class="upcoming-event-details"><span>📍 Suntec Singapore Convention Centre</span><span>👥 HR Professionals &amp; People Leaders</span><span>📅 May 22, 2026</span></div>
+          </div>
+          <div class="upcoming-event-btn"><button class="btn btn-teal" onclick="showPage('contact')">Register Interest</button></div>
+        </div>
+        <div class="upcoming-event-item nb-sm">
+          <div class="upcoming-event-date"><span class="upcoming-event-month">Jun</span><span class="upcoming-event-day">7</span></div>
+          <div class="upcoming-event-body">
+            <div class="upcoming-event-meta"><span class="upcoming-event-tag">Workshop</span><span class="upcoming-event-host">Transforming Lives</span></div>
+            <h4 class="upcoming-event-title">Parent Workshop: When Your Child Has ADHD</h4>
+            <p class="upcoming-event-desc">A practical, compassionate workshop for parents navigating an ADHD diagnosis — covering what ADHD really means, how to support your child at home and school, and how to take care of yourself in the process.</p>
+            <div class="upcoming-event-details"><span>📍 Online (Zoom)</span><span>👥 Parents &amp; Caregivers</span><span>📅 Jun 7, 2026</span></div>
+          </div>
+          <div class="upcoming-event-btn"><button class="btn btn-teal" onclick="showPage('contact')">Register Interest</button></div>
+        </div>
+        <div class="upcoming-event-item nb-sm">
+          <div class="upcoming-event-date"><span class="upcoming-event-month">Jun</span><span class="upcoming-event-day">28</span></div>
+          <div class="upcoming-event-body">
+            <div class="upcoming-event-meta"><span class="upcoming-event-tag">Panel Discussion</span><span class="upcoming-event-host">Singapore Psychological Society</span></div>
+            <h4 class="upcoming-event-title">Executive Function: The Missing Manual</h4>
+            <p class="upcoming-event-desc">Moonlake joins a panel of clinicians and educators to discuss the practical implications of executive function challenges in schools and clinical settings, and what a strengths-based approach looks like in practice.</p>
+            <div class="upcoming-event-details"><span>📍 National University of Singapore</span><span>👥 Educators, Psychologists &amp; Clinicians</span><span>📅 Jun 28, 2026</span></div>
+          </div>
+          <div class="upcoming-event-btn"><button class="btn btn-teal" onclick="showPage('contact')">Register Interest</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker Enquiry -->
+  <section style="padding:var(--sp10) 0;background:var(--black)">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp10);align-items:start" class="speaking-topics-2col">
+        <div>
+          <p class="label" style="color:rgba(255,255,255,.55)">Book Moonlake</p>
+          <h2 class="h-sub" style="color:var(--white);margin-top:12px">Speaker Enquiry</h2>
+          <p class="body" style="color:rgba(255,255,255,.6);margin-top:var(--sp3)">Moonlake is available for keynotes, workshops, panel discussions, podcast interviews, and facilitation — for corporate, school, community, and media contexts.</p>
+          <p class="body" style="color:rgba(255,255,255,.6);margin-top:var(--sp2)">Every engagement begins with a conversation. Fill in the form and we will be in touch within 3–5 business days to discuss your event and how we can best serve your audience.</p>
+          <ul style="margin-top:var(--sp4);display:flex;flex-direction:column;gap:10px;list-style:none">
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Tailored content for your specific audience and context</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Evidence-informed, strengths-based approach</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Lived experience combined with professional expertise</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Engaging, warm, and accessible delivery style</li>
+          </ul>
+        </div>
+        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);display:flex;flex-direction:column;gap:var(--sp3)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2)">
+            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Your Name *</label><input type="text" placeholder="Full name" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Email Address *</label><input type="email" placeholder="you@organisation.com" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+          </div>
+          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Organisation / Event Name</label><input type="text" placeholder="Company, school, or event name" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2)">
+            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Type of Engagement *</label><select style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);background:var(--white)"><option value="">Select type…</option><option>Keynote Talk</option><option>Workshop</option><option>Panel Discussion</option><option>Facilitation</option><option>Podcast / Media</option><option>Other</option></select></div>
+            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Proposed Date / Period</label><input type="text" placeholder="e.g. July 2026 or TBD" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+          </div>
+          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Expected Audience</label><input type="text" placeholder="e.g. HR professionals, parents, educators, ~100 pax" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Topic of Interest</label><select style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);background:var(--white)"><option value="">Select a topic (or describe below)…</option><option>ADHD in Adults: Late Diagnosis, Identity &amp; Thriving</option><option>Executive Function: The Missing Manual</option><option>Building Neuro-Inclusive Organisations</option><option>Parenting a Neurodivergent Child</option><option>Relationships &amp; ADHD</option><option>ADHD in Women</option><option>Custom / Other</option></select></div>
+          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Tell Us More *</label><textarea rows="3" placeholder="Describe your event, goals, and any specific requirements…" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);resize:vertical"></textarea></div>
+          <button class="btn btn-teal btn-lg" style="width:100%" onclick="showPage('contact')">Submit Enquiry →</button>
+          <p style="font-size:12px;color:var(--muted);text-align:center">We respond to all enquiries within 3–5 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div><!-- /speaking -->
 
