@@ -780,13 +780,25 @@
     .blog-card p { font-size: 15px; color: rgba(0,0,0,0.6); line-height: 1.65; flex: 1; }
     .blog-latest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp5); }
     .blog-topics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); align-items: start; }
-    .blog-topic-panel { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); }
+    .blog-topic-panel { background: var(--white); border: 1.5px solid var(--border); border-left-width: 4px; border-radius: var(--r-md); padding: var(--sp4); }
     .blog-topic-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp2); margin-bottom: var(--sp3); padding-bottom: var(--sp2); border-bottom: 1px solid var(--border); }
-    .blog-topic-name { font-size: 14px; font-weight: 600; letter-spacing: -0.1px; }
+    .blog-topic-name { font-size: 14px; font-weight: 600; letter-spacing: -0.1px; display: flex; align-items: center; gap: 7px; }
+    .blog-topic-icon { font-size: 15px; line-height: 1; flex-shrink: 0; }
     .blog-topic-count { font-family: var(--mono); font-size: 10px; color: rgba(0,0,0,0.4); background: var(--off-white); border-radius: 4px; padding: 2px 7px; white-space: nowrap; }
     .blog-topic-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
     .blog-topic-links li a { font-size: 14px; color: rgba(0,0,0,0.65); text-decoration: none; line-height: 1.4; display: block; }
-    .blog-topic-links li a:hover { color: var(--teal); }
+    .blog-topic-links li a:hover { text-decoration: underline; }
+    /* colour variants */
+    .blog-topic-panel[data-color="teal"]   { border-left-color: var(--teal);  background: rgba(31,138,138,0.04); }
+    .blog-topic-panel[data-color="teal"]   .blog-topic-links li a:hover { color: var(--teal); }
+    .blog-topic-panel[data-color="gold"]   { border-left-color: var(--gold);  background: rgba(201,150,58,0.04); }
+    .blog-topic-panel[data-color="gold"]   .blog-topic-links li a:hover { color: var(--gold); }
+    .blog-topic-panel[data-color="indigo"] { border-left-color: #5C6FC4;       background: rgba(92,111,196,0.04); }
+    .blog-topic-panel[data-color="indigo"] .blog-topic-links li a:hover { color: #5C6FC4; }
+    .blog-topic-panel[data-color="warm"]   { border-left-color: #C07040;       background: rgba(192,112,64,0.04); }
+    .blog-topic-panel[data-color="warm"]   .blog-topic-links li a:hover { color: #C07040; }
+    .blog-topic-panel[data-color="slate"]  { border-left-color: #4A6080;       background: rgba(74,96,128,0.04); }
+    .blog-topic-panel[data-color="slate"]  .blog-topic-links li a:hover { color: #4A6080; }
     .blog-read { font-size: 14px; font-weight: 600; letter-spacing: -0.1px; color: var(--teal); }
 
     /* Topics */
@@ -1470,299 +1482,299 @@
       <p class="label">55 Articles</p>
       <h2 class="h-sub" style="margin-top:12px">Browse by Topic</h2>
       <div class="blog-topics-grid stagger">
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Executive Function</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🧠</span>Executive Function</span>
           <span class="blog-topic-count">5 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/prioritisation-choosing-better-thing-moonlake-lee-1aydc/" target="_blank" rel="noopener">Prioritisation: Choosing the Better Thing</a></li>
+<li><a href="https://www.linkedin.com/pulse/prioritisation-choosing-better-thing-moonlake-lee-1aydc/" target="_blank" rel="noopener">Prioritisation: Choosing the Better Thing</a></li>
           <li><a href="https://www.linkedin.com/pulse/putting-woop-smarter-goals-your-life-moonlake-lee-jeutc/" target="_blank" rel="noopener">Putting WOOP and SMARTER Goals into Your Life</a></li>
           <li><a href="https://www.linkedin.com/pulse/planning-getting-things-done-moonlake-lee-hhtzc/" target="_blank" rel="noopener">Planning: Getting Things Done</a></li>
           <li><a href="https://www.linkedin.com/pulse/demystifying-executive-function-moonlake-lee-tpqmc/" target="_blank" rel="noopener">Demystifying Executive Functions</a></li>
           <li><a href="https://www.linkedin.com/pulse/executive-function-whats-big-deal-moonlake-lee-lnd8c/" target="_blank" rel="noopener">Executive Function: What&#39;s the Big Deal?</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Parenting</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">👪</span>Parenting</span>
           <span class="blog-topic-count">4 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/strengthening-parent-youth-relationships-through-problem-moonlake-lee-h41zc/" target="_blank" rel="noopener">Strengthening Parent-Youth Relationships</a></li>
+<li><a href="https://www.linkedin.com/pulse/strengthening-parent-youth-relationships-through-problem-moonlake-lee-h41zc/" target="_blank" rel="noopener">Strengthening Parent-Youth Relationships</a></li>
           <li><a href="https://www.linkedin.com/pulse/anxious-parenting-moonlake-lee-ntgnc/" target="_blank" rel="noopener">Anxious Parenting</a></li>
           <li><a href="https://www.linkedin.com/pulse/lessons-learned-from-parenting-moonlake-lee-7tzzc/" target="_blank" rel="noopener">Lessons Learned from Parenting</a></li>
           <li><a href="https://www.linkedin.com/pulse/adhd-parenting-double-whammy-moonlake-lee-nkjuc/" target="_blank" rel="noopener">ADHD &amp; Parenting</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="indigo">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Emotions</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">❤️</span>Emotions</span>
           <span class="blog-topic-count">3 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/managing-emotions-parent-coachs-view-part-2-moonlake-lee-minac/" target="_blank" rel="noopener">Managing Emotions: A Parent &amp; Parent Coach&#39;s View</a></li>
+<li><a href="https://www.linkedin.com/pulse/managing-emotions-parent-coachs-view-part-2-moonlake-lee-minac/" target="_blank" rel="noopener">Managing Emotions: A Parent &amp; Parent Coach&#39;s View</a></li>
           <li><a href="https://www.linkedin.com/pulse/managing-emotions-psychiatrists-view-part-1-moonlake-lee-o469c/" target="_blank" rel="noopener">Managing Emotions: A Psychiatrist&#39;s View</a></li>
           <li><a href="https://www.linkedin.com/pulse/emotional-regulation-adhd-families-moonlake-lee-dbadc" target="_blank" rel="noopener">Emotional Regulation in ADHD Families</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Medication</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💊</span>Medication</span>
           <span class="blog-topic-count">3 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/more-thoughts-adhd-medication-moonlake-lee-2le9c/" target="_blank" rel="noopener">More Thoughts on ADHD Medication</a></li>
+<li><a href="https://www.linkedin.com/pulse/more-thoughts-adhd-medication-moonlake-lee-2le9c/" target="_blank" rel="noopener">More Thoughts on ADHD Medication</a></li>
           <li><a href="https://www.linkedin.com/pulse/thoughts-adhd-medication-moonlake-lee-geecc/" target="_blank" rel="noopener">Some Thoughts on ADHD Medication</a></li>
           <li><a href="https://www.linkedin.com/pulse/launch-unlocking-adhd-moonlake-lee-l459c/" target="_blank" rel="noopener">Launch of Unlocking ADHD and Webinar on Medication</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="slate">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Workplace</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💼</span>Workplace</span>
           <span class="blog-topic-count">3 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/hacks-workplace-moonlake-lee-i1kac/" target="_blank" rel="noopener">Hacks for the Workplace</a></li>
+<li><a href="https://www.linkedin.com/pulse/hacks-workplace-moonlake-lee-i1kac/" target="_blank" rel="noopener">Hacks for the Workplace</a></li>
           <li><a href="https://www.linkedin.com/pulse/supporting-adhd-workplace-moonlake-lee-okbxc/" target="_blank" rel="noopener">Supporting ADHD in the Workplace</a></li>
           <li><a href="https://www.linkedin.com/pulse/adhd-work-moonlake-lee-fn2qc/" target="_blank" rel="noopener">ADHD @ Work</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Burnout</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🔋</span>Burnout</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/adhd-burnout-autistic-moonlake-lee-nhcle/" target="_blank" rel="noopener">ADHD Burnout and Autistic Burnout</a></li>
+<li><a href="https://www.linkedin.com/pulse/adhd-burnout-autistic-moonlake-lee-nhcle/" target="_blank" rel="noopener">ADHD Burnout and Autistic Burnout</a></li>
           <li><a href="https://www.linkedin.com/pulse/experiencing-adhd-burnout-moonlake-lee-jkbxc/" target="_blank" rel="noopener">Experiencing ADHD Burnout</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="slate">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Careers</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">📈</span>Careers</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/career-strategies-adhders-moonlake-lee-0il5c/" target="_blank" rel="noopener">Career Strategies for ADHDers</a></li>
+<li><a href="https://www.linkedin.com/pulse/career-strategies-adhders-moonlake-lee-0il5c/" target="_blank" rel="noopener">Career Strategies for ADHDers</a></li>
           <li><a href="https://www.linkedin.com/posts/moonlakelee_unlockingadhd-adhdsupportsg-adultadhd-activity-7428852125981597696-6BlQ" target="_blank" rel="noopener">Job Search Strategies for ADHDers</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Diagnosis</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🔍</span>Diagnosis</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/adhd-overdiagnosis-underdiagnosis-missed-diagnosis-moonlake-lee-pc5pc/" target="_blank" rel="noopener">ADHD: Overdiagnosed, Underdiagnosed, or Missed Entirely?</a></li>
+<li><a href="https://www.linkedin.com/pulse/adhd-overdiagnosis-underdiagnosis-missed-diagnosis-moonlake-lee-pc5pc/" target="_blank" rel="noopener">ADHD: Overdiagnosed, Underdiagnosed, or Missed Entirely?</a></li>
           <li><a href="https://www.linkedin.com/pulse/early-signs-adhd-my-pre-school-primary-school-years-moonlake-lee-zgyoc/" target="_blank" rel="noopener">Early Signs of ADHD? My Pre-School and Primary School Years</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Exercise</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🏃</span>Exercise</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/life-like-marathon-moonlake-lee-n2asc/" target="_blank" rel="noopener">Life is Like a Marathon</a></li>
+<li><a href="https://www.linkedin.com/pulse/life-like-marathon-moonlake-lee-n2asc/" target="_blank" rel="noopener">Life is Like a Marathon</a></li>
           <li><a href="https://www.linkedin.com/pulse/exercise-vitamin-e-adhd-moonlake-lee-btoqc/" target="_blank" rel="noopener">Exercise: Vitamin E for ADHD</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Faith</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🙏</span>Faith</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/stewarding-differently-wired-minds-moonlake-lee-vufnc/" target="_blank" rel="noopener">Stewarding Differently Wired Minds</a></li>
+<li><a href="https://www.linkedin.com/pulse/stewarding-differently-wired-minds-moonlake-lee-vufnc/" target="_blank" rel="noopener">Stewarding Differently Wired Minds</a></li>
           <li><a href="https://www.linkedin.com/pulse/giving-we-receive-other-centredness-moonlake-lee-aka9c/" target="_blank" rel="noopener">In Giving We Receive</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Financial</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💰</span>Financial</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/managing-adhd-tax-moonlake-lee-eecjc/" target="_blank" rel="noopener">Managing the ADHD Tax</a></li>
+<li><a href="https://www.linkedin.com/pulse/managing-adhd-tax-moonlake-lee-eecjc/" target="_blank" rel="noopener">Managing the ADHD Tax</a></li>
           <li><a href="https://www.linkedin.com/pulse/experiencing-adhd-tax-moonlake-lee-8fhpc/" target="_blank" rel="noopener">Experiencing the ADHD Tax</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Healthcare</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🩺</span>Healthcare</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/adhd-guide-caring-your-teeth-moonlake-lee-uenxc/" target="_blank" rel="noopener">The ADHD Guide: Caring for Your Teeth</a></li>
+<li><a href="https://www.linkedin.com/pulse/adhd-guide-caring-your-teeth-moonlake-lee-uenxc/" target="_blank" rel="noopener">The ADHD Guide: Caring for Your Teeth</a></li>
           <li><a href="https://www.linkedin.com/pulse/tooth-adhd-dental-issues-moonlake-lee-yblhc/" target="_blank" rel="noopener">The &#34;Tooth&#34; About ADHD and Dental Issues</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="indigo">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Mindset</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💭</span>Mindset</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/showing-up-moonlake-lee-sj74c/" target="_blank" rel="noopener">Showing Up</a></li>
+<li><a href="https://www.linkedin.com/pulse/showing-up-moonlake-lee-sj74c/" target="_blank" rel="noopener">Showing Up</a></li>
           <li><a href="https://www.linkedin.com/pulse/tyranny-shoulds-moonlake-lee-xea2c/" target="_blank" rel="noopener">The Tyranny of the Shoulds</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Relationships</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🤝</span>Relationships</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/maintaining-adhd-relationships-moonlake-lee-vi8jc/" target="_blank" rel="noopener">Maintaining ADHD Relationships</a></li>
+<li><a href="https://www.linkedin.com/pulse/maintaining-adhd-relationships-moonlake-lee-vi8jc/" target="_blank" rel="noopener">Maintaining ADHD Relationships</a></li>
           <li><a href="https://www.linkedin.com/pulse/how-adhd-impacts-relationships-moonlake-lee-v9wlc/" target="_blank" rel="noopener">How ADHD Impacts Relationships</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Self-Care</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🌿</span>Self-Care</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/adhd-rest-essential-non-negotiable-moonlake-lee-fsrtc/" target="_blank" rel="noopener">ADHD &amp; Rest: Essential and Non-Negotiable</a></li>
+<li><a href="https://www.linkedin.com/pulse/adhd-rest-essential-non-negotiable-moonlake-lee-fsrtc/" target="_blank" rel="noopener">ADHD &amp; Rest: Essential and Non-Negotiable</a></li>
           <li><a href="https://www.linkedin.com/pulse/what-does-self-care-look-like-you-moonlake-lee-cjrbc/" target="_blank" rel="noopener">What Does Self Care Look Like for You?</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Sleep</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🌙</span>Sleep</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/importance-good-sleep-moonlake-lee-tmy3c/" target="_blank" rel="noopener">The Importance of Good Sleep</a></li>
+<li><a href="https://www.linkedin.com/pulse/importance-good-sleep-moonlake-lee-tmy3c/" target="_blank" rel="noopener">The Importance of Good Sleep</a></li>
           <li><a href="https://www.linkedin.com/pulse/secret-sauce-sleepzzz-moonlake-lee-q6v4c/" target="_blank" rel="noopener">The Secret Sauce&#8230; Sleep&#8230; zzz</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Strategies</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🛠️</span>Strategies</span>
           <span class="blog-topic-count">2 articles</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/more-non-medication-strategies-manage-adhd-moonlake-lee-zlroc/" target="_blank" rel="noopener">More Non-Medication Strategies to Manage ADHD</a></li>
+<li><a href="https://www.linkedin.com/pulse/more-non-medication-strategies-manage-adhd-moonlake-lee-zlroc/" target="_blank" rel="noopener">More Non-Medication Strategies to Manage ADHD</a></li>
           <li><a href="https://www.linkedin.com/pulse/non-medication-strategies-manage-adhd-moonlake-lee-ikifc/" target="_blank" rel="noopener">Non-Medication Strategies to Manage ADHD</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Awareness</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💡</span>Awareness</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/awareness-end-its-beginning-moonlake-lee-fv7fc/" target="_blank" rel="noopener">Awareness is the Beginning</a></li>
+<li><a href="https://www.linkedin.com/pulse/awareness-end-its-beginning-moonlake-lee-fv7fc/" target="_blank" rel="noopener">Awareness is the Beginning</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Event</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">📅</span>Event</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/celebrating-adhd-awareness-month-2025-moonlake-lee-njuac/" target="_blank" rel="noopener">Differently Wired Minds — ADHD Awareness Month 2025</a></li>
+<li><a href="https://www.linkedin.com/pulse/celebrating-adhd-awareness-month-2025-moonlake-lee-njuac/" target="_blank" rel="noopener">Differently Wired Minds — ADHD Awareness Month 2025</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Girls with ADHD</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">💜</span>Girls with ADHD</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/letter-my-young-self-moonlake-lee-4cvuc/" target="_blank" rel="noopener">Letter to My Young Self</a></li>
+<li><a href="https://www.linkedin.com/pulse/letter-my-young-self-moonlake-lee-4cvuc/" target="_blank" rel="noopener">Letter to My Young Self</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="gold">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Goal Setting</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🎯</span>Goal Setting</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/life-design-reflections-from-adhd-lens-moonlake-lee-tvqqc/" target="_blank" rel="noopener">Life by Design — Reflections from an ADHD Lens</a></li>
+<li><a href="https://www.linkedin.com/pulse/life-design-reflections-from-adhd-lens-moonlake-lee-tvqqc/" target="_blank" rel="noopener">Life by Design — Reflections from an ADHD Lens</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="indigo">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Hope</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🌱</span>Hope</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/keeping-hope-alive-moonlake-lee-clsdc/" target="_blank" rel="noopener">Keeping Hope Alive</a></li>
+<li><a href="https://www.linkedin.com/pulse/keeping-hope-alive-moonlake-lee-clsdc/" target="_blank" rel="noopener">Keeping Hope Alive</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="indigo">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Mental Health</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🧘</span>Mental Health</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/demystifying-mental-health-moonlake-lee-odqcc/" target="_blank" rel="noopener">Demystifying Mental Health</a></li>
+<li><a href="https://www.linkedin.com/pulse/demystifying-mental-health-moonlake-lee-odqcc/" target="_blank" rel="noopener">Demystifying Mental Health</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Misconceptions</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🔎</span>Misconceptions</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/common-misconceptions-adhd-moonlake-lee-3l3zc/" target="_blank" rel="noopener">Common Misconceptions About ADHD</a></li>
+<li><a href="https://www.linkedin.com/pulse/common-misconceptions-adhd-moonlake-lee-3l3zc/" target="_blank" rel="noopener">Common Misconceptions About ADHD</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Philanthropy</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🤲</span>Philanthropy</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/unlocking-adhd-mindset-support-hub-moonlake-lee-ezkic/" target="_blank" rel="noopener">The UA-MINDSET Support Hub</a></li>
+<li><a href="https://www.linkedin.com/pulse/unlocking-adhd-mindset-support-hub-moonlake-lee-ezkic/" target="_blank" rel="noopener">The UA-MINDSET Support Hub</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="indigo">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Reflection</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">✨</span>Reflection</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/looking-back-moving-forward-moonlake-lee-byu5c/" target="_blank" rel="noopener">Looking Back, Moving Forward</a></li>
+<li><a href="https://www.linkedin.com/pulse/looking-back-moving-forward-moonlake-lee-byu5c/" target="_blank" rel="noopener">Looking Back, Moving Forward</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">School</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">📚</span>School</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/adhd-school-years-struggles-reframing-failures-moonlake-lee-kkgmc/" target="_blank" rel="noopener">ADHD in the School Years</a></li>
+<li><a href="https://www.linkedin.com/pulse/adhd-school-years-struggles-reframing-failures-moonlake-lee-kkgmc/" target="_blank" rel="noopener">ADHD in the School Years</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Strengths</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">⭐</span>Strengths</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/discovering-your-strengths-moonlake-lee-son7c/" target="_blank" rel="noopener">The Strengths of ADHD</a></li>
+<li><a href="https://www.linkedin.com/pulse/discovering-your-strengths-moonlake-lee-son7c/" target="_blank" rel="noopener">The Strengths of ADHD</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="teal">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Twice Exceptional</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🌟</span>Twice Exceptional</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/twice-exceptional-adhd-moonlake-lee-yphgc/" target="_blank" rel="noopener">Twice Exceptional &amp; ADHD</a></li>
+<li><a href="https://www.linkedin.com/pulse/twice-exceptional-adhd-moonlake-lee-yphgc/" target="_blank" rel="noopener">Twice Exceptional &amp; ADHD</a></li>
         </ul>
       </div>
-      <div class="blog-topic-panel">
+      <div class="blog-topic-panel" data-color="warm">
         <div class="blog-topic-head">
-          <span class="blog-topic-name">Volunteering</span>
+          <span class="blog-topic-name"><span class="blog-topic-icon">🙋</span>Volunteering</span>
           <span class="blog-topic-count">1 article</span>
         </div>
         <ul class="blog-topic-links">
-          <li><a href="https://www.linkedin.com/pulse/powered-purpose-tribute-our-volunteers-moonlake-lee-sdcde/" target="_blank" rel="noopener">Powered by Purpose</a></li>
+<li><a href="https://www.linkedin.com/pulse/powered-purpose-tribute-our-volunteers-moonlake-lee-sdcde/" target="_blank" rel="noopener">Powered by Purpose</a></li>
         </ul>
       </div>
       </div>
