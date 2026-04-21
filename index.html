@@ -597,6 +597,9 @@
        SERVICES
     ═══════════════════════════════════════════════════════════ */
     .services-body { padding: var(--sp10) 0; }
+    .services-anchors { display: flex; gap: 10px; flex-wrap: wrap; padding: var(--sp5) 0 var(--sp8); }
+    .services-anchor-link { font-size: 13px; font-weight: 500; color: rgba(0,0,0,0.5); text-decoration: none; padding: 7px 16px; border-radius: 20px; border: 1.5px solid var(--border); transition: color .15s, border-color .15s; white-space: nowrap; }
+    .services-anchor-link:hover { color: var(--black); border-color: rgba(0,0,0,0.35); }
     .services-section { margin-bottom: var(--sp10); }
     .services-section:last-child { margin-bottom: 0; }
     .services-intro { margin-bottom: var(--sp5); }
@@ -604,6 +607,7 @@
     .services-intro .h-sub { margin-bottom: var(--sp2); }
     .services-intro .body { max-width: 560px; }
     .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); background: transparent; border: none; }
+    .service-coming-badge { display: inline-block; font-family: var(--mono); font-size: 9px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.4); background: var(--off-white); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; margin-bottom: 10px; }
     .service-item { background: var(--white); padding: var(--sp5) var(--sp4); border: 1px solid var(--border); border-radius: var(--r-md); transition: box-shadow .2s, transform .15s; }
     .service-item:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.09); transform: translateY(-3px); }
     .service-icon { font-size: 28px; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; background: rgba(31,138,138,0.1); border-radius: 12px; margin-bottom: var(--sp3); }
@@ -1162,14 +1166,20 @@
     <div class="container">
       <p class="label">What We Offer</p>
       <h1 class="h-section">Our Services</h1>
-      <p class="body-lg">Two pillars, one mission — turning insight into action through capability development and psychoeducation.</p>
+      <p class="body-lg">Capability development, consultation &amp; coaching, and psychoeducation — turning insight into action for individuals and organisations.</p>
     </div>
   </section>
 
   <div class="services-body">
     <div class="container">
 
-      <div class="services-section">
+      <div class="services-anchors">
+        <a class="services-anchor-link" href="#services-capability">Workshops &amp; Talks</a>
+        <a class="services-anchor-link" href="#services-coaching">Consultation &amp; Coaching</a>
+        <a class="services-anchor-link" href="#services-psychoed">Psychoeducation</a>
+      </div>
+
+      <div id="services-capability" class="services-section">
         <div class="services-intro">
           <p class="label">Capability Development</p>
           <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
@@ -1210,11 +1220,6 @@
             <p>Education and skills for individuals strengthening planning, focus, organisation, and self-regulation.</p>
           </div>
           <div class="service-item">
-            <div class="service-icon">✨</div>
-            <h3>Coaching Services</h3>
-            <p>Strengths-based coaching supporting individuals in building clarity, capability, and confidence.</p>
-          </div>
-          <div class="service-item">
             <div class="service-icon">🏫</div>
             <h3>School &amp; Workplace Awareness</h3>
             <p>Neurodivergence awareness programmes for educators, HR teams, and managers.</p>
@@ -1229,7 +1234,41 @@
 
       <hr class="section-divider" />
 
-      <div class="services-section">
+      <div id="services-coaching" class="services-section">
+        <div class="services-intro">
+          <p class="label">Consultation &amp; Coaching</p>
+          <h2 class="h-sub" style="margin-top:12px">Personalised Support</h2>
+          <p class="body">One-to-one and small-group sessions providing tailored guidance, strategy, and support — helping individuals move forward with clarity and confidence. Full details coming soon.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">🧭</div>
+            <h3>Individual Consultation</h3>
+            <p>Personalised sessions to understand your situation, explore options, and develop a practical way forward.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">✨</div>
+            <h3>Executive Function Coaching</h3>
+            <p>Structured coaching to strengthen planning, organisation, focus, and self-regulation in daily life.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">👪</div>
+            <h3>Parent Coaching</h3>
+            <p>Supportive coaching for parents navigating a child's neurodivergence diagnosis and the challenges that come with it.</p>
+          </div>
+        </div>
+        <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:var(--off-white);border-radius:var(--r-md);border:1.5px dashed var(--border);display:flex;align-items:center;justify-content:space-between;gap:var(--sp4);flex-wrap:wrap">
+          <p style="font-size:15px;color:rgba(0,0,0,0.5);margin:0">Coaching and consultation details will be announced soon. Register your interest and we'll be in touch.</p>
+          <button class="btn btn-outline" onclick="showPage('contact')" style="white-space:nowrap;flex-shrink:0">Register Interest</button>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div id="services-psychoed" class="services-section">
         <div class="services-intro">
           <p class="label">Psychoeducation</p>
           <h2 class="h-sub" style="margin-top:12px">Understanding that Empowers</h2>
