@@ -698,6 +698,21 @@
     .upcoming-event-details { display: flex; gap: var(--sp3); flex-wrap: wrap; font-size: 12px; color: var(--muted); }
     .upcoming-event-btn { flex-shrink: 0; align-self: center; }
     @media (max-width: 680px) { .past-events-grid { grid-template-columns: 1fr; } .upcoming-event-item { flex-wrap: wrap; } .upcoming-event-btn { width: 100%; } .speaking-topics-2col { grid-template-columns: 1fr !important; } }
+    /* ── Speaker enquiry multi-step form ── */
+    .sf-card { background: var(--white); border-radius: var(--r-md); border-top: 4px solid var(--teal); box-shadow: 0 2px 28px rgba(0,0,0,0.08); padding: var(--sp6); max-width: 600px; margin: var(--sp7) auto 0; }
+    .sf-steps { display: flex; margin-bottom: var(--sp6); border-bottom: 1px solid var(--border); gap: 0; }
+    .sf-step { flex: 1; text-align: center; padding-bottom: 12px; font-size: 11px; font-family: var(--mono); font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: rgba(0,0,0,0.25); margin-bottom: -1px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .sf-step.sf-active { color: var(--teal); border-bottom-color: var(--teal); }
+    .sf-step.sf-done { color: rgba(0,0,0,0.45); border-bottom-color: rgba(31,138,138,0.35); }
+    .sf-panel { display: none; flex-direction: column; gap: var(--sp3); }
+    .sf-panel.sf-active { display: flex; }
+    .sf-field { display: flex; flex-direction: column; gap: 6px; }
+    .sf-field label { font-size: 13px; font-weight: 500; color: rgba(0,0,0,0.6); }
+    .sf-field input, .sf-field select, .sf-field textarea { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--r-sm); font-size: 14px; font-family: var(--font); width: 100%; transition: border-color .15s; background: var(--white); }
+    .sf-field input:focus, .sf-field select:focus, .sf-field textarea:focus { border-color: var(--teal); outline: none; }
+    .sf-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp2); }
+    .sf-actions { display: flex; gap: var(--sp2); justify-content: flex-end; padding-top: var(--sp2); border-top: 1px solid var(--border); margin-top: var(--sp2); }
+    @media (max-width: 560px) { .sf-row { grid-template-columns: 1fr; } .sf-step { font-size: 10px; letter-spacing: 0; } }
     /* ── Media page ── */
     .media-body { padding: var(--sp10) 0; }
     .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); margin-top: var(--sp6); }
@@ -1945,36 +1960,78 @@
   </section>
 
   <!-- Speaker Enquiry -->
-  <section style="padding:var(--sp10) 0;background:var(--black)">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp10);align-items:start" class="speaking-topics-2col">
-        <div>
-          <p class="label" style="color:rgba(255,255,255,.55)">Book Moonlake</p>
-          <h2 class="h-sub" style="color:var(--white);margin-top:12px">Speaker Enquiry</h2>
-          <p class="body" style="color:rgba(255,255,255,.6);margin-top:var(--sp3)">Moonlake is available for keynotes, workshops, panel discussions, podcast interviews, and facilitation — for corporate, school, community, and media contexts.</p>
-          <p class="body" style="color:rgba(255,255,255,.6);margin-top:var(--sp2)">Every engagement begins with a conversation. Fill in the form and we will be in touch within 3–5 business days to discuss your event and how we can best serve your audience.</p>
-          <ul style="margin-top:var(--sp4);display:flex;flex-direction:column;gap:10px;list-style:none">
-            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Tailored content for your specific audience and context</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Evidence-informed, strengths-based approach</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Lived experience combined with professional expertise</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">✓</span>Engaging, warm, and accessible delivery style</li>
-          </ul>
+  <section style="padding:var(--sp10) 0;background:var(--off-white)">
+    <div class="container" style="max-width:680px">
+      <div style="text-align:center">
+        <p class="label">Work With Us</p>
+        <h2 class="h-sub" style="margin-top:12px">Speaker Enquiry</h2>
+        <p class="body" style="margin-top:var(--sp2);color:rgba(0,0,0,0.55);max-width:460px;margin-left:auto;margin-right:auto">Every engagement starts with a conversation. Tell us about your event and we'll be in touch within 3–5 business days.</p>
+      </div>
+      <div class="sf-card">
+        <div class="sf-steps">
+          <div class="sf-step sf-active" id="sf-step-1">① About You</div>
+          <div class="sf-step" id="sf-step-2">② Your Event</div>
+          <div class="sf-step" id="sf-step-3">③ Details</div>
         </div>
-        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);display:flex;flex-direction:column;gap:var(--sp3)">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2)">
-            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Your Name *</label><input type="text" placeholder="Full name" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
-            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Email Address *</label><input type="email" placeholder="you@organisation.com" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+        <!-- Step 1 -->
+        <div class="sf-panel sf-active" id="sf-panel-1">
+          <div class="sf-row">
+            <div class="sf-field"><label>Your Name *</label><input type="text" id="sf-name" placeholder="Full name" /></div>
+            <div class="sf-field"><label>Email *</label><input type="email" id="sf-email" placeholder="you@organisation.com" /></div>
           </div>
-          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Organisation / Event Name</label><input type="text" placeholder="Company, school, or event name" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2)">
-            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Type of Engagement *</label><select style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);background:var(--white)"><option value="">Select type…</option><option>Keynote Talk</option><option>Workshop</option><option>Panel Discussion</option><option>Facilitation</option><option>Podcast / Media</option><option>Other</option></select></div>
-            <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Proposed Date / Period</label><input type="text" placeholder="e.g. July 2026 or TBD" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
+          <div class="sf-field"><label>Organisation / Event Name</label><input type="text" id="sf-org" placeholder="Company, school, or event name" /></div>
+          <div class="sf-actions"><button class="btn btn-teal" onclick="sfGoto(2)">Continue →</button></div>
+        </div>
+        <!-- Step 2 -->
+        <div class="sf-panel" id="sf-panel-2">
+          <div class="sf-row">
+            <div class="sf-field">
+              <label>Type of Engagement *</label>
+              <select id="sf-type">
+                <option value="">Select type…</option>
+                <option>Keynote Talk</option>
+                <option>Workshop</option>
+                <option>Panel Discussion</option>
+                <option>Podcast / Media</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="sf-field"><label>Proposed Date / Period</label><input type="text" id="sf-date" placeholder="e.g. July 2026 or TBD" /></div>
           </div>
-          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Expected Audience</label><input type="text" placeholder="e.g. HR professionals, parents, educators, ~100 pax" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font)" /></div>
-          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Topic of Interest</label><select style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);background:var(--white)"><option value="">Select a topic (or describe below)…</option><option>ADHD in Adults: Late Diagnosis, Identity &amp; Thriving</option><option>Executive Function: The Missing Manual</option><option>Building Neuro-Inclusive Organisations</option><option>Parenting a Neurodivergent Child</option><option>Relationships &amp; ADHD</option><option>ADHD in Women</option><option>Custom / Other</option></select></div>
-          <div><label style="font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.4px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Tell Us More *</label><textarea rows="3" placeholder="Describe your event, goals, and any specific requirements…" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--font);resize:vertical"></textarea></div>
-          <button class="btn btn-teal btn-lg" style="width:100%" onclick="showPage('contact')">Submit Enquiry →</button>
-          <p style="font-size:12px;color:var(--muted);text-align:center">We respond to all enquiries within 3–5 business days.</p>
+          <div class="sf-field"><label>Expected Audience</label><input type="text" id="sf-audience" placeholder="e.g. HR professionals, parents, ~100 pax" /></div>
+          <div class="sf-actions">
+            <button class="btn btn-outline" onclick="sfGoto(1)">← Back</button>
+            <button class="btn btn-teal" onclick="sfGoto(3)">Continue →</button>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="sf-panel" id="sf-panel-3">
+          <div class="sf-field">
+            <label>Topic of Interest</label>
+            <select id="sf-topic">
+              <option value="">Select a topic (or describe below)…</option>
+              <option>ADHD in Adults: Late Diagnosis, Identity &amp; Thriving</option>
+              <option>Executive Function: The Missing Manual</option>
+              <option>Building Neuro-Inclusive Organisations</option>
+              <option>Parenting a Neurodivergent Child</option>
+              <option>Relationships &amp; ADHD</option>
+              <option>ADHD in Women</option>
+              <option>Custom / Other</option>
+            </select>
+          </div>
+          <div class="sf-field"><label>Tell Us More *</label><textarea id="sf-message" rows="4" placeholder="Describe your event, goals, and any specific requirements…"></textarea></div>
+          <div class="sf-actions">
+            <button class="btn btn-outline" onclick="sfGoto(2)">← Back</button>
+            <button class="btn btn-teal" onclick="sfSubmit()">Submit Enquiry →</button>
+          </div>
+        </div>
+        <!-- Success -->
+        <div class="sf-panel" id="sf-panel-success">
+          <div style="text-align:center;padding:var(--sp6) 0">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(31,138,138,0.1);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto var(--sp4)">✓</div>
+            <h3 style="margin-bottom:var(--sp3)">Enquiry Received</h3>
+            <p style="font-size:15px;color:rgba(0,0,0,0.55);line-height:1.7;max-width:360px;margin:0 auto">Thanks for your speaker enquiry. Please give us at least 3–5 business days to respond.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -2287,6 +2344,23 @@
     btn.disabled = true;
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; e.target.reset(); }, 3000);
   }
+  function sfGoto(step) {
+    for (let i = 1; i <= 3; i++) {
+      const panel = document.getElementById('sf-panel-' + i);
+      const stepEl = document.getElementById('sf-step-' + i);
+      if (panel)  { panel.classList.toggle('sf-active', i === step); }
+      if (stepEl) {
+        stepEl.classList.toggle('sf-active', i === step);
+        stepEl.classList.toggle('sf-done', i < step);
+        stepEl.classList.remove(i > step ? 'sf-done' : '');
+      }
+    }
+  }
+  function sfSubmit() {
+    document.getElementById('sf-panel-3').classList.remove('sf-active');
+    document.getElementById('sf-panel-success').classList.add('sf-active');
+  }
+
   function handleContact(e) {
     e.preventDefault();
     document.getElementById('gf-name').value     = document.getElementById('cf-name').value.trim();
