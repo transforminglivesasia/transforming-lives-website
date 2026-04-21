@@ -2157,14 +2157,17 @@
           <h3>Send Us a Message</h3>
           <form onsubmit="handleContact(event)">
             <div class="form-row">
-              <div class="form-group"><label>First Name *</label><input type="text" placeholder="Jane" required /></div>
-              <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Smith" required /></div>
+              <div class="form-group"><label>First Name *</label><input type="text" id="cf-first" placeholder="Jane" required /></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" id="cf-last" placeholder="Smith" required /></div>
             </div>
-            <div class="form-group"><label>Email *</label><input type="email" placeholder="jane@email.com" required /></div>
-            <div class="form-group"><label>Organisation (optional)</label><input type="text" placeholder="Your school or company" /></div>
+            <div class="form-row">
+              <div class="form-group"><label>Email *</label><input type="email" id="cf-email" placeholder="jane@email.com" required /></div>
+              <div class="form-group"><label>Phone (optional)</label><input type="tel" id="cf-phone" placeholder="+65 9000 0000" /></div>
+            </div>
+            <div class="form-group"><label>Organisation (optional)</label><input type="text" id="cf-org" placeholder="Your school or company" /></div>
             <div class="form-group">
               <label>I am interested in *</label>
-              <select required>
+              <select id="cf-interest" required>
                 <option value="" disabled selected>Select an option</option>
                 <option>Talks &amp; Keynotes</option>
                 <option>Workshops &amp; Training</option>
@@ -2177,10 +2180,23 @@
                 <option>General Enquiry</option>
               </select>
             </div>
-            <div class="form-group"><label>Message *</label><textarea placeholder="Tell us what you're looking for…" required></textarea></div>
+            <div class="form-group"><label>Message *</label><textarea id="cf-message" placeholder="Tell us what you're looking for…" required></textarea></div>
             <button type="submit" class="form-submit">Send Message</button>
           </form>
         </div>
+
+        <!-- Hidden Google Forms submission target -->
+        <iframe name="gf-iframe" style="display:none" aria-hidden="true"></iframe>
+        <form id="gf-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdcW_grxAV6bmWMoN56dviMAaWTeLBRbth20XUSp-z_-S3dbg/formResponse" method="POST" target="gf-iframe" style="display:none">
+          <input name="entry.2005620554" id="gf-name" />
+          <input name="entry.1045781291" id="gf-emailf" />
+          <input name="entry.1065046570" id="gf-phone" />
+          <input name="entry.1124149781" id="gf-msg" />
+          <input name="entry.916076041"  id="gf-interest" />
+          <input name="entry.839337160"  value="Yes I agree" />
+          <input name="entry.916076041_sentinel" value="" />
+          <input name="entry.839337160_sentinel" value="" />
+        </form>
 
       </div>
     </div>
@@ -2277,20 +2293,28 @@
   }
   function handleContact(e) {
     e.preventDefault();
-    const f = e.target;
-    const firstName = f.querySelector('input[placeholder="Jane"]').value;
-    const lastName  = f.querySelector('input[placeholder="Smith"]').value;
-    const email     = f.querySelector('input[type="email"]').value;
-    const org       = f.querySelector('input[placeholder="Your school or company"]').value;
-    const interest  = f.querySelector('select').value;
-    const message   = f.querySelector('textarea').value;
+    const firstName = document.getElementById('cf-first').value.trim();
+    const lastName  = document.getElementById('cf-last').value.trim();
+    const email     = document.getElementById('cf-email').value.trim();
+    const phone     = document.getElementById('cf-phone').value.trim();
+    const org       = document.getElementById('cf-org').value.trim();
+    const interest  = document.getElementById('cf-interest').value;
+    const message   = document.getElementById('cf-message').value.trim();
 
-    const subject = encodeURIComponent(`Enquiry from ${firstName} ${lastName}: ${interest}`);
-    const body    = encodeURIComponent(
-      `Name: ${firstName} ${lastName}\nEmail: ${email}\nOrganisation: ${org || '—'}\nInterest: ${interest}\n\nMessage:\n${message}`
-    );
+    const fullMsg = org ? `Organisation: ${org}\n\n${message}` : message;
 
-    window.location.href = `mailto:contact@transforminglives.asia?subject=${subject}&body=${body}`;
+    document.getElementById('gf-name').value     = `${firstName} ${lastName}`;
+    document.getElementById('gf-emailf').value   = email;
+    document.getElementById('gf-phone').value    = phone;
+    document.getElementById('gf-msg').value      = fullMsg;
+    document.getElementById('gf-interest').value = interest;
+
+    document.getElementById('gf-form').submit();
+
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Message Sent ✓';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; e.target.reset(); }, 4000);
   }
 
   /* ── IntersectionObserver — UseLayouts + TripleD patterns ── */
