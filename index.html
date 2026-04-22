@@ -2315,7 +2315,6 @@
   }
 
   function openSpeakerDrawer() {
-    sfGoto(1);
     document.getElementById('speaker-drawer').classList.add('open');
     document.getElementById('speaker-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2357,140 +2356,12 @@
     <h3>Speaker Enquiry</h3>
     <button class="speaker-drawer-close" onclick="closeSpeakerDrawer()" aria-label="Close">&#x2715;</button>
   </div>
-  <div class="speaker-drawer-body">
-    <p style="font-size:14px;color:rgba(0,0,0,0.55);margin-bottom:var(--sp5);line-height:1.6">Tell us about your event and we'll be in touch within 3–5 business days.</p>
-    <div class="sf-card">
-      <!-- Step indicators -->
-      <div class="sf-steps">
-        <div class="sf-step sf-active" id="sf-step-1">1 · Your Event</div>
-        <div class="sf-step" id="sf-step-2">2 · Your Details</div>
-        <div class="sf-step" id="sf-step-3">3 · Final Notes</div>
-      </div>
-
-      <!-- Step 1: Event details -->
-      <div class="sf-panel sf-active" id="sf-panel-1">
-        <div class="sf-row">
-          <div class="form-group">
-            <label>Organisation / Company *</label>
-            <input type="text" id="sf-org" placeholder="e.g. Ministry of Education" required />
-          </div>
-          <div class="form-group">
-            <label>Event Type *</label>
-            <select id="sf-type" required>
-              <option value="" disabled selected>Select</option>
-              <option>Keynote</option>
-              <option>Panel Discussion</option>
-              <option>Workshop</option>
-              <option>Conference Talk</option>
-              <option>Corporate Training</option>
-              <option>School / Parent Talk</option>
-              <option>Webinar</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="form-group">
-            <label>Event Date *</label>
-            <input type="date" id="sf-date" required />
-          </div>
-          <div class="form-group">
-            <label>Expected Audience Size</label>
-            <select id="sf-size">
-              <option value="" disabled selected>Select</option>
-              <option>Under 50</option>
-              <option>50–150</option>
-              <option>150–500</option>
-              <option>500+</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Format</label>
-          <select id="sf-format">
-            <option value="" disabled selected>Select</option>
-            <option>In-person</option>
-            <option>Virtual / Online</option>
-            <option>Hybrid</option>
-          </select>
-        </div>
-        <div style="margin-top:var(--sp4)">
-          <button class="btn btn-teal" onclick="sfGoto(2)" style="width:100%">Next: Your Details →</button>
-        </div>
-      </div>
-
-      <!-- Step 2: Contact details -->
-      <div class="sf-panel" id="sf-panel-2">
-        <div class="sf-row">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" id="sf-name" placeholder="Jane Smith" required />
-          </div>
-          <div class="form-group">
-            <label>Job Title</label>
-            <input type="text" id="sf-title" placeholder="e.g. HR Director" />
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" id="sf-email" placeholder="jane@company.com" required />
-          </div>
-          <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" id="sf-phone" placeholder="+65 9000 0000" />
-          </div>
-        </div>
-        <div style="display:flex;gap:var(--sp2);margin-top:var(--sp4)">
-          <button class="btn btn-outline" onclick="sfGoto(1)" style="flex:1">← Back</button>
-          <button class="btn btn-teal" onclick="sfGoto(3)" style="flex:2">Next: Final Notes →</button>
-        </div>
-      </div>
-
-      <!-- Step 3: Topic & notes -->
-      <div class="sf-panel" id="sf-panel-3">
-        <div class="form-group">
-          <label>Preferred Topic / Focus Area</label>
-          <select id="sf-topic">
-            <option value="" disabled selected>Select if applicable</option>
-            <option>ADHD Awareness &amp; Understanding</option>
-            <option>Neurodiversity in the Workplace</option>
-            <option>Executive Function &amp; Productivity</option>
-            <option>Parenting Neurodivergent Children</option>
-            <option>Mental Health &amp; Wellbeing</option>
-            <option>Leadership &amp; Coaching</option>
-            <option>Open to Recommendation</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Budget Range (SGD)</label>
-          <select id="sf-budget">
-            <option value="" disabled selected>Select if known</option>
-            <option>Under $2,000</option>
-            <option>$2,000–$5,000</option>
-            <option>$5,000–$10,000</option>
-            <option>$10,000+</option>
-            <option>To be discussed</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Anything else we should know?</label>
-          <textarea id="sf-notes" placeholder="Special requirements, theme, audience background…" style="min-height:90px"></textarea>
-        </div>
-        <div style="display:flex;gap:var(--sp2);margin-top:var(--sp4)">
-          <button class="btn btn-outline" onclick="sfGoto(2)" style="flex:1">← Back</button>
-          <button class="btn btn-teal" onclick="sfSubmit()" style="flex:2">Submit Enquiry</button>
-        </div>
-      </div>
-
-      <!-- Success -->
-      <div class="sf-panel" id="sf-panel-success" style="text-align:center;padding:var(--sp6) 0">
-        <div style="width:52px;height:52px;border-radius:50%;background:rgba(31,138,138,0.1);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto var(--sp4)">✓</div>
-        <h3 style="margin-bottom:var(--sp2)">Enquiry Received</h3>
-        <p style="font-size:14px;color:rgba(0,0,0,0.55);line-height:1.7;max-width:300px;margin:0 auto var(--sp5)">Thanks for reaching out. We'll review your enquiry and be in touch within 3–5 business days.</p>
-        <button class="btn btn-outline" onclick="closeSpeakerDrawer()">Close</button>
-      </div>
-    </div>
+  <div class="speaker-drawer-body" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:var(--sp4)">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(31,138,138,0.1);display:flex;align-items:center;justify-content:center;font-size:26px">🎙️</div>
+    <h3 style="margin:0">Invite Us to Speak</h3>
+    <p style="font-size:15px;color:rgba(0,0,0,0.55);line-height:1.7;max-width:300px;margin:0">Tell us about your event — date, audience, and what you're looking for. We aim to respond within 3–5 business days.</p>
+    <a href="mailto:contact@transforminglives.asia?subject=Speaker%20Enquiry" class="btn btn-teal btn-lg" style="text-decoration:none">contact@transforminglives.asia</a>
+    <p style="font-size:12px;color:rgba(0,0,0,0.35);margin:0">Opens your email app</p>
   </div>
 </div>
 </body>
