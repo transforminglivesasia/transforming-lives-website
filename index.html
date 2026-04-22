@@ -714,7 +714,7 @@
     .sf-actions { display: flex; gap: var(--sp2); justify-content: flex-end; padding-top: var(--sp2); border-top: 1px solid var(--border); margin-top: var(--sp2); }
     @media (max-width: 560px) { .sf-row { grid-template-columns: 1fr; } .sf-step { font-size: 10px; letter-spacing: 0; } }
     /* ── Speaker drawer + tab ── */
-    .speaker-tab { position: fixed; right: var(--sp5); bottom: var(--sp5); background: var(--teal); color: var(--white); padding: 14px 22px; font-size: 14px; font-weight: 600; letter-spacing: -0.1px; cursor: pointer; border-radius: 50px; z-index: 190; box-shadow: 0 4px 20px rgba(31,138,138,0.45); transition: background .15s, transform .15s, box-shadow .15s; display: none; user-select: none; white-space: nowrap; }
+    .speaker-tab { position: fixed; right: var(--sp5); bottom: calc(var(--sp5) + env(safe-area-inset-bottom, 0px)); background: var(--teal); color: var(--white); padding: 14px 22px; font-size: 14px; font-weight: 600; letter-spacing: -0.1px; cursor: pointer; border-radius: 50px; z-index: 210; box-shadow: 0 4px 20px rgba(31,138,138,0.45); transition: background .15s, transform .15s, box-shadow .15s; display: none; user-select: none; white-space: nowrap; touch-action: manipulation; pointer-events: auto; }
     .speaker-tab:hover { background: #177070; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(31,138,138,0.55); }
     .speaker-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 195; opacity: 0; pointer-events: none; transition: opacity .3s; }
     .speaker-overlay.open { opacity: 1; pointer-events: all; }
