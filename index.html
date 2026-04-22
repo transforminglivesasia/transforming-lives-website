@@ -2109,52 +2109,12 @@
           </div>
         </div>
 
-        <div class="contact-form">
-          <h3>Send Us a Message</h3>
-          <form onsubmit="handleContact(event)">
-            <div class="form-group"><label>Name *</label><input type="text" id="cf-name" placeholder="Jane Smith" required /></div>
-            <div class="form-row">
-              <div class="form-group"><label>Email *</label><input type="email" id="cf-email" placeholder="jane@email.com" required /></div>
-              <div class="form-group"><label>Phone</label><input type="tel" id="cf-phone" placeholder="+65 9000 0000" /></div>
-            </div>
-            <div class="form-group">
-              <label>I am interested in *</label>
-              <select id="cf-interest" required>
-                <option value="" disabled selected>Select an option</option>
-                <option>Consultation</option>
-                <option>Talks &amp; Keynotes</option>
-                <option>Workshops &amp; Training</option>
-                <option>Coaching Services</option>
-                <option>Parent Education</option>
-                <option>School Awareness Programmes</option>
-                <option>Workplace Inclusion</option>
-                <option>Books &amp; Publications</option>
-                <option>Collaboration</option>
-                <option>Media Enquiry</option>
-                <option>General Enquiry</option>
-              </select>
-            </div>
-            <div class="form-group"><label>Message *</label><textarea id="cf-message" placeholder="Tell us what you're looking for…" required></textarea></div>
-            <div class="form-consent">
-              <input type="checkbox" id="cf-consent" required onchange="document.getElementById('cf-submit').disabled=!this.checked" />
-              <label for="cf-consent">By providing your contact details in this form, you agree that Transforming Lives Pte Ltd can contact you regarding your enquiry, and also share events and relevant information that may be of interest to you. You may write to contact@transforminglives.asia at any time to be removed from communications.</label>
-            </div>
-            <button type="submit" id="cf-submit" class="form-submit" disabled style="opacity:0.45;cursor:not-allowed">Send Message</button>
-          </form>
+        <div class="contact-form" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:var(--sp4);padding:var(--sp8) var(--sp6)">
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(31,138,138,0.1);display:flex;align-items:center;justify-content:center;font-size:26px">✉️</div>
+          <h3 style="margin:0">Drop Us an Email</h3>
+          <p style="font-size:15px;color:rgba(0,0,0,0.55);line-height:1.7;max-width:320px;margin:0">The best way to reach us right now is by email. We aim to respond within 2 business days.</p>
+          <a href="mailto:contact@transforminglives.asia" class="btn btn-teal btn-lg" style="text-decoration:none">contact@transforminglives.asia</a>
         </div>
-
-        <!-- Hidden Google Forms submission target -->
-        <iframe name="gf-iframe" style="display:none" aria-hidden="true"></iframe>
-        <form id="gf-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdcW_grxAV6bmWMoN56dviMAaWTeLBRbth20XUSp-z_-S3dbg/formResponse" method="POST" target="gf-iframe" style="display:none">
-          <input name="entry.2005620554" id="gf-name" />
-          <input name="entry.1045781291" id="gf-emailf" />
-          <input name="entry.1065046570" id="gf-phone" />
-          <input name="entry.1124149781" id="gf-msg" />
-          <input name="entry.916076041"  id="gf-interest" />
-          <input name="entry.839337160"  value="Yes I agree" />
-          <input name="entry.916076041_sentinel" value="" />
-          <input name="entry.839337160_sentinel" value="" />
-        </form>
 
       </div>
     </div>
@@ -2255,11 +2215,11 @@
     for (let i = 1; i <= 3; i++) {
       const panel = document.getElementById('sf-panel-' + i);
       const stepEl = document.getElementById('sf-step-' + i);
-      if (panel)  { panel.classList.toggle('sf-active', i === step); }
+      if (panel) panel.classList.toggle('sf-active', i === step);
       if (stepEl) {
         stepEl.classList.toggle('sf-active', i === step);
         stepEl.classList.toggle('sf-done', i < step);
-        stepEl.classList.remove(i > step ? 'sf-done' : '');
+        if (i > step) stepEl.classList.remove('sf-done');
       }
     }
   }
