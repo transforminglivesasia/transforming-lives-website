@@ -54,7 +54,7 @@
 
       /* Spacing — 8px base, DESIGN.md scale */
       --sp1: 8px;  --sp2: 16px; --sp3: 24px; --sp4: 32px;
-      --sp5: 40px; --sp6: 48px; --sp8: 64px; --sp10: 80px;
+      --sp5: 40px; --sp6: 48px; --sp8: 48px; --sp10: 56px;
 
       /* Radius — DESIGN.md scale */
       --r-sm:     6px;
@@ -919,6 +919,7 @@
 
     /* ── Responsive ─────────────────────────────────────────── */
     @media (max-width: 960px) {
+      :root { --sp10: 44px; --sp8: 36px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .pillars-grid, .service-grid, .audience-grid,
@@ -929,6 +930,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
+      :root { --sp10: 32px; --sp8: 24px; --sp6: 36px; --sp5: 28px; }
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
       .blog-latest-grid, .blog-topics-grid, .values-grid, .footer-grid { grid-template-columns: 1fr; }
