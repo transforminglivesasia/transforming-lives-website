@@ -961,8 +961,9 @@
       <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
       <a onclick="showPage('products')"  id="nav-products" >Publications</a>
       <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
-      <a onclick="showPage('media')"     id="nav-media"    >Media</a>
-      <a onclick="showPage('contact')"   id="nav-contact"  class="nav-cta">Contact</a>
+      <a onclick="showPage('media')"         id="nav-media"        >Media</a>
+      <a onclick="showPage('testimonials')" id="nav-testimonials" >What People Say</a>
+      <a onclick="showPage('contact')"      id="nav-contact"      class="nav-cta">Contact</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -979,6 +980,7 @@
   <a onclick="showPage('products');closeMenu()">Publications</a>
   <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
   <a onclick="showPage('media');closeMenu()">Media</a>
+  <a onclick="showPage('testimonials');closeMenu()">What People Say</a>
   <a onclick="showPage('contact');closeMenu()">Contact</a>
 </div>
 
@@ -1157,20 +1159,40 @@
     </div>
   </section>
 
-  <section style="background:var(--off-white);padding:var(--sp10) 0">
+  <div class="container" style="padding-top:var(--sp4);padding-bottom:var(--sp4)">
+    <p style="font-size:12px;color:rgba(0,0,0,0.55);line-height:1.65">Transforming Lives is an independent social enterprise. Where it collaborates with charities, schools, employers, or other organisations, such collaborations are separately defined and do not imply organisational affiliation unless expressly stated.</p>
+  </div>
+
+</div><!-- /founder -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════════ -->
+<div id="page-testimonials" class="page">
+
+  <section class="page-hero page-hero-teal">
     <div class="container">
-      <p class="label" style="text-align:center">Voices of Impact</p>
-      <h2 class="h-sub" style="margin-top:12px;text-align:center;max-width:480px;margin-left:auto;margin-right:auto">What People Say</h2>
+      <p class="label">Voices of Impact</p>
+      <h1 class="h-section">What People Say</h1>
+      <p class="body-lg">Real stories from individuals whose lives have been touched by Moonlake's work — through media, advocacy, and coaching.</p>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <p class="label" style="text-align:center">Awareness &amp; Advocacy</p>
+      <h2 class="h-sub" style="margin-top:12px;text-align:center;max-width:480px;margin-left:auto;margin-right:auto">After Watching Moonlake's CNA Feature</h2>
       <div style="display:flex;flex-wrap:wrap;gap:var(--sp4);margin-top:var(--sp6)">
 
-        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+        <div style="background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
           <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
           <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">I just got diagnosed with ADHD in Feb this year at Age 38. I saw your CNA video a few years ago. Thanks to your courage of going public with your story, I finally mustered up mine to get assessed this year. It's been quite a ride, but my quality of life has improved tremendously.</p>
           <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Anonymous</p>
           <p style="font-size:12px;color:var(--muted)">After watching Moonlake's CNA feature</p>
         </div>
 
-        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+        <div style="background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
           <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
           <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Forever grateful to you, Moonlake Lee, for sharing your story on CNA. If not for your interview, I would never have been diagnosed and gotten the help I need to live a more aligned and joyful life.</p>
           <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Late-diagnosed female ADHDer</p>
@@ -1181,11 +1203,31 @@
     </div>
   </section>
 
-  <div class="container" style="padding-top:var(--sp4);padding-bottom:var(--sp4)">
-    <p style="font-size:12px;color:rgba(0,0,0,0.55);line-height:1.65">Transforming Lives is an independent social enterprise. Where it collaborates with charities, schools, employers, or other organisations, such collaborations are separately defined and do not imply organisational affiliation unless expressly stated.</p>
-  </div>
+  <section style="background:var(--off-white);padding:var(--sp10) 0">
+    <div class="container">
+      <p class="label" style="text-align:center">Coaching</p>
+      <h2 class="h-sub" style="margin-top:12px;text-align:center;max-width:480px;margin-left:auto;margin-right:auto">Executive Function Coaching Clients</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp4);margin-top:var(--sp6)">
 
-</div><!-- /founder -->
+        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">I am one of Moonlake's Executive Function Coaching clients. Moonlake's sessions have been life-transforming. She gives practical, actionable tips and follows up to check if I've put them into practice. Furthermore, she's great at challenging assumptions that I've made about myself and my potential. Thanks to her, I've started and maintained an incredibly invigorating fitness routine! I'm excited to see what unfolds in my life as a result of her coaching.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Coaching client</p>
+          <p style="font-size:12px;color:var(--muted)">35-year-old female client with ADHD</p>
+        </div>
+
+        <div style="background:var(--white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Moon was a great coach in the short time that I was able to work with her. She was able to unpack the challenges I was facing, and go below the surface to really understand what I was struggling with. Her openness in sharing her own challenges with ADHD allowed me to connect with her at a more personal level, and to feel at ease throughout the partnership.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Coaching client</p>
+          <p style="font-size:12px;color:var(--muted)">36-year-old male client with ADHD</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /testimonials -->
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -2165,6 +2207,7 @@
           <li><a onclick="showPage('products')">Publications</a></li>
           <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
           <li><a onclick="showPage('media')">Media</a></li>
+          <li><a onclick="showPage('testimonials')">What People Say</a></li>
           <li><a onclick="showPage('contact')">Contact Us</a></li>
         </ul>
       </div>
@@ -2191,10 +2234,10 @@
 
 
 <script>
-  const pages = ['home','about','founder','services','products','resources','blog','speaking','media','contact'];
+  const pages = ['home','about','founder','services','products','resources','blog','speaking','media','testimonials','contact'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/founder': 'founder', '/services': 'services', '/products': 'products', '/resources': 'resources', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/contact': 'contact' };
-  const pageToSlug = { home: '/', about: '/about', founder: '/founder', services: '/services', products: '/products', resources: '/resources', blog: '/blog', speaking: '/speaking', media: '/media', contact: '/contact' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/founder': 'founder', '/services': 'services', '/products': 'products', '/resources': 'resources', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/contact': 'contact' };
+  const pageToSlug = { home: '/', about: '/about', founder: '/founder', services: '/services', products: '/products', resources: '/resources', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', contact: '/contact' };
 
   function showPage(id, pushHistory = true) {
     pages.forEach(p => {
