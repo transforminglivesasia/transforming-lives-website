@@ -1015,17 +1015,17 @@
       <p class="label">Where do you start?</p>
       <h2 class="h-sub">Find what's right for you</h2>
       <div class="audience-grid">
-        <div class="audience-item home-fork-card" onclick="showPage('services')">
+        <div class="audience-item home-fork-card" onclick="scrollToSection('parents')">
           <h4>I'm a parent</h4>
           <p>My child has been diagnosed with ADHD, or I suspect they might be. I want to understand what this means and how to support them well.</p>
           <p class="fork-link">See support for parents →</p>
         </div>
-        <div class="audience-item home-fork-card" onclick="showPage('services')">
+        <div class="audience-item home-fork-card" onclick="scrollToSection('adults')">
           <h4>I have ADHD</h4>
           <p>I'm an adult navigating work, relationships, and daily life with ADHD. I'm looking for practical coaching and strategies that actually work.</p>
           <p class="fork-link">See individual coaching →</p>
         </div>
-        <div class="audience-item home-fork-card" onclick="showPage('speaking')">
+        <div class="audience-item home-fork-card" onclick="scrollToSection('organisations')">
           <h4>I work in a school or organisation</h4>
           <p>I want to build awareness, run training, or bring an expert speaker to my team, school, or event.</p>
           <p class="fork-link">See talks and training →</p>
@@ -1323,8 +1323,9 @@
   <section class="page-hero page-hero-gold">
     <div class="container">
       <p class="label">What We Offer</p>
-      <h1 class="h-section">Our Services</h1>
-      <p class="body-lg">Capability development, specialist coaching, consultation, and psychoeducation — helping individuals and organisations move from understanding to growth.</p>
+      <h1 class="h-section">How we can help</h1>
+      <p class="body-lg">Transforming Lives offers coaching, psychoeducation, and training for individuals, families, and organisations navigating ADHD and neurodivergence. Whether you're a parent trying to support your child, an adult seeking practical strategies, or an organisation building a more inclusive environment — we're here to help.</p>
+      <p class="body-lg" style="margin-top:var(--sp2);font-size:15px;color:rgba(255,255,255,0.65)">Choose the section that best describes you.</p>
     </div>
   </section>
 
@@ -1332,49 +1333,120 @@
     <div class="container">
 
       <div class="services-anchors">
-        <a class="services-anchor-link" href="#services-coaching">Consultation &amp; Coaching</a>
-        <a class="services-anchor-link" href="#services-capability">Workshops &amp; Talks</a>
-        <a class="services-anchor-link" href="#services-psychoed">Psychoeducation</a>
+        <a class="services-anchor-link" href="#" onclick="scrollToSection('parents');return false">For parents</a>
+        <a class="services-anchor-link" href="#" onclick="scrollToSection('adults');return false">For adults with ADHD</a>
+        <a class="services-anchor-link" href="#" onclick="scrollToSection('organisations');return false">For schools &amp; organisations</a>
       </div>
 
-      <div id="services-coaching" class="services-section">
+      <!-- SECTION A: PARENTS -->
+      <div id="parents" class="services-section">
         <div class="services-intro">
-          <p class="label">Consultation &amp; Coaching</p>
-          <h2 class="h-sub" style="margin-top:12px">Structured, Specialist Coaching</h2>
-          <p class="body">Structured one-to-one and small-group support for clients seeking tailored guidance, strategy, and capability-building.</p>
+          <p class="label">For Parents</p>
+          <h2 style="margin-top:12px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(24px,3vw,38px);letter-spacing:-0.3px;line-height:1.2">Your child isn't giving you a hard time.<br>They're having a hard time.</h2>
+          <p class="body" style="margin-top:var(--sp3)">Parenting a child or teenager with ADHD can feel isolating, exhausting, and confusing — especially when the systems around you weren't built with your child in mind. Our work with parents is grounded in lived experience and practical expertise. We help you understand your child's world, strengthen your relationship, and find strategies that actually fit your family.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">💙</div>
+            <h3>Parent Coaching</h3>
+            <p>One-to-one sessions focused on understanding your child's ADHD, improving communication at home, and building strategies that work for your specific situation. Practical, personalised, and grounded in what the research says.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">📖</div>
+            <h3>Psychoeducation Sessions</h3>
+            <p>Structured sessions that help parents understand what ADHD actually is — how it affects attention, emotion, motivation, and behaviour. Knowledge is the first step to connection.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-coming-badge">Coming Soon</div>
+            <div class="service-icon">🏫</div>
+            <h3>School Navigation Support</h3>
+            <p>Help with understanding your child's rights, communicating with teachers and school counsellors, and advocating effectively within the Singapore education system.</p>
+          </div>
+        </div>
+        <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:rgba(31,138,138,0.06);border-left:3px solid var(--teal);border-radius:0 var(--r-md) var(--r-md) 0">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:var(--sp2)">What to expect</h4>
+          <ul style="margin:0;padding-left:var(--sp4);display:flex;flex-direction:column;gap:6px">
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Sessions are conducted via video call or in person (subject to availability)</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Packages are available for ongoing support; single sessions for those just starting out</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">All coaching is tailored — no one-size-fits-all programmes</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Moonlake brings both professional training and her own lived experience as a parent</li>
+          </ul>
+        </div>
+        <div style="margin-top:var(--sp5);background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border)">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">I came in feeling completely overwhelmed. By the third session I had a framework for how to talk to my son that actually worked. For the first time in years, we weren't fighting every morning.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Parent of a 14-year-old with ADHD, Singapore</p>
+        </div>
+        <div style="margin-top:var(--sp5)">
+          <p style="font-size:17px;font-weight:600;letter-spacing:-0.2px;margin-bottom:var(--sp3)">Ready to get started?</p>
+          <div style="display:flex;gap:var(--sp2);flex-wrap:wrap;align-items:center">
+            <button class="btn btn-black" onclick="showPage('contact')">Get in touch</button>
+            <button onclick="showPage('testimonials')" class="btn btn-outline">Read more about what parents say →</button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- SECTION B: ADULTS -->
+      <div id="adults" class="services-section">
+        <div class="services-intro">
+          <p class="label">For Adults with ADHD</p>
+          <h2 style="margin-top:12px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(24px,3vw,38px);letter-spacing:-0.3px;line-height:1.2">You're not lazy or difficult. Your brain works differently — and that changes everything.</h2>
+          <p class="body" style="margin-top:var(--sp3)">Many adults with ADHD spend years developing workarounds, masking their struggles, and wondering why things that seem easy for others feel so hard. Whether you've recently been diagnosed or have known for years, coaching can help you build strategies that work with your brain — not against it. We focus on what's practical, what's sustainable, and what actually moves the needle in your everyday life.</p>
         </div>
         <div class="service-grid">
           <div class="service-item">
             <div class="service-coming-badge">Coming Soon</div>
             <div class="service-icon">✨</div>
             <h3>Executive Function Coaching</h3>
-            <p>Specialist coaching to strengthen planning, organisation, focus, self-regulation, and follow-through in everyday life, study, or work.</p>
+            <p>Support with the everyday challenges that ADHD creates — planning, prioritising, starting tasks, managing time, and following through. Sessions are practical and action-oriented, built around your real life.</p>
           </div>
           <div class="service-item">
             <div class="service-coming-badge">Coming Soon</div>
-            <div class="service-icon">👪</div>
-            <h3>Parent Support Coaching</h3>
-            <p>Structured support for parents navigating neurodivergence, executive function challenges, and family dynamics with greater clarity and confidence.</p>
+            <div class="service-icon">💼</div>
+            <h3>Workplace Strategies</h3>
+            <p>For adults navigating ADHD in professional environments. Whether you're managing a demanding job, running your own business, or returning to work, we help you find systems that fit the way you think.</p>
           </div>
           <div class="service-item">
             <div class="service-coming-badge">Coming Soon</div>
-            <div class="service-icon">💬</div>
-            <h3>Consultation</h3>
-            <p>Need someone to talk to? Consultation sessions cover the roadmap for an ADHD diagnosis, next steps after a recent diagnosis, understanding medication, strategies for daily life, and more.</p>
+            <div class="service-icon">💡</div>
+            <h3>Psychoeducation for Adults</h3>
+            <p>Understanding your own ADHD is transformative. These sessions help you make sense of your history, reframe your experience, and move forward with greater self-awareness and self-compassion.</p>
           </div>
         </div>
-        <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:var(--off-white);border-radius:var(--r-md);border:1.5px dashed var(--border);display:flex;align-items:center;justify-content:space-between;gap:var(--sp4);flex-wrap:wrap">
-          <p style="font-size:15px;color:rgba(0,0,0,0.5);margin:0">Full programme details coming soon. Register your interest and we'll be in touch.</p>
-          <button class="btn btn-outline" onclick="showPage('contact')" style="white-space:nowrap;flex-shrink:0">Register Interest</button>
+        <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:rgba(31,138,138,0.06);border-left:3px solid var(--teal);border-radius:0 var(--r-md) var(--r-md) 0">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:var(--sp2)">What to expect</h4>
+          <ul style="margin:0;padding-left:var(--sp4);display:flex;flex-direction:column;gap:6px">
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Sessions are conducted via video call or in person (subject to availability)</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Flexible packages — short-term focused work or longer-term ongoing support</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Coaching is non-clinical: it complements (but does not replace) medical or psychiatric care</li>
+            <li style="font-size:15px;color:rgba(0,0,0,0.65)">Moonlake is an adult with ADHD herself — the coaching comes from genuine understanding</li>
+          </ul>
+        </div>
+        <div style="margin-top:var(--sp5);background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border)">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Moonlake's sessions have been genuinely transformative. She brings both lived experience and practical tools — and she understands, in a way few people do, what it actually feels like to live with ADHD.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Coaching client, adult with ADHD, Singapore</p>
+        </div>
+        <div style="margin-top:var(--sp5)">
+          <p style="font-size:17px;font-weight:600;letter-spacing:-0.2px;margin-bottom:var(--sp3)">Ready to get started?</p>
+          <div style="display:flex;gap:var(--sp2);flex-wrap:wrap;align-items:center">
+            <button class="btn btn-black" onclick="showPage('contact')">Get in touch</button>
+            <button onclick="showPage('testimonials')" class="btn btn-outline">Read more from people we've worked with →</button>
+          </div>
         </div>
         <p style="font-size:13px;color:rgba(0,0,0,0.65);font-style:italic;line-height:1.7;margin-top:var(--sp3)">Coaching services are provided independently through Transforming Lives and are separate from any charity-based support model unless expressly stated otherwise.</p>
       </div>
 
       <hr class="section-divider" />
 
-      <div id="services-capability" class="services-section">
+      <!-- SECTION C: SCHOOLS & ORGANISATIONS -->
+      <div id="organisations" class="services-section">
         <div class="services-intro">
-          <p class="label">Capability Development</p>
+          <p class="label">For Schools &amp; Organisations</p>
           <h2 class="h-sub" style="margin-top:12px">Building Skills &amp; Confidence</h2>
           <p class="body">Practical, engaging programmes that help professionals, leaders, educators, parents, and organisations develop the skills, mindsets, and behaviours to support growth and inclusion effectively.</p>
         </div>
@@ -1417,7 +1489,7 @@
 
       <hr class="section-divider" />
 
-      <div id="services-psychoed" class="services-section">
+      <div class="services-section">
         <div class="services-intro">
           <p class="label">Psychoeducation</p>
           <h2 class="h-sub" style="margin-top:12px">Understanding that Empowers</h2>
@@ -1444,21 +1516,6 @@
 
     </div>
   </div>
-
-  <section class="audience-section">
-    <div class="container">
-      <p class="label">Who We Serve</p>
-      <h2 class="h-sub" style="margin-top:12px">Who We Serve</h2>
-      <div class="audience-grid">
-        <div class="audience-item"><h4>Individuals &amp; Parents</h4><p>People seeking structured support, strategy, or practical tools for growth and functioning.</p></div>
-        <div class="audience-item"><h4>Schools &amp; Educators</h4><p>Educators and school leaders building more inclusive and effective learning environments.</p></div>
-        <div class="audience-item"><h4>Workplaces &amp; Organisations</h4><p>Employers, HR teams, and leaders seeking practical approaches to neurodiversity, executive function, and people development.</p></div>
-        <div class="audience-item"><h4>Professionals</h4><p>Coaches, therapists, educators, and allied professionals strengthening their understanding and practice.</p></div>
-        <div class="audience-item"><h4>Institutional &amp; Social Impact Partners</h4><p>Organisations seeking training, psychoeducation, or programme support in aligned areas.</p></div>
-      </div>
-    </div>
-  </section>
-
 
 </div><!-- /services -->
 
@@ -2330,6 +2387,14 @@
 
   const slugToPage = { '/': 'home', '/about': 'about', '/founder': 'founder', '/services': 'services', '/products': 'products', '/resources': 'resources', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/contact': 'contact' };
   const pageToSlug = { home: '/', about: '/about', founder: '/founder', services: '/services', products: '/products', resources: '/resources', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', contact: '/contact' };
+
+  function scrollToSection(anchorId) {
+    showPage('services');
+    setTimeout(() => {
+      const el = document.getElementById(anchorId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+  }
 
   function showPage(id, pushHistory = true) {
     pages.forEach(p => {
