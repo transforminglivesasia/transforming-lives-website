@@ -624,6 +624,10 @@
     .audience-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp5) var(--sp4); }
     .audience-item h4 { font-size: 18px; font-weight: 600; color: var(--black); margin-bottom: 10px; letter-spacing: -0.2px; }
     .audience-item p { font-size: 15px; color: rgba(0,0,0,0.6); line-height: 1.65; }
+    .home-fork-card { cursor: pointer; transition: box-shadow .2s, transform .2s; }
+    .home-fork-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .fork-link { margin-top: var(--sp3) !important; font-size: 14px !important; font-weight: 600; color: var(--teal) !important; }
+    .featured-outlet { font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: 0.3px; color: rgba(0,0,0,0.3); text-transform: uppercase; }
 
     /* ═══════════════════════════════════════════════════════════
        PRODUCTS
@@ -993,12 +997,11 @@
   <section class="hero">
     <div class="hero-text">
       <div class="container-left">
-        <h1 class="h-display">Transforming Lives</h1>
-        <p class="hero-tagline">Where Understanding Shapes Growth</p>
-        <p class="body-lg">Bridging capability development and psychoeducation to help individuals, professionals, schools, and organisations grow with greater clarity, capability, and confidence.</p>
+        <h1 class="h-display">Understanding ADHD and neurodivergence — so you can move forward with confidence.</h1>
+        <p class="body-lg" style="max-width:520px">Transforming Lives offers coaching, psychoeducation, and training for individuals, families, schools, and organisations across Asia. Our work is grounded in lived experience, professional expertise, and a genuine commitment to lasting change.</p>
         <div class="hero-actions">
-          <button class="btn btn-white btn-lg" onclick="showPage('services')">Explore Services</button>
-          <button class="btn btn-glass-light btn-lg" onclick="showPage('about')">Our Story</button>
+          <button class="btn btn-white btn-lg" onclick="showPage('services')">Explore our services</button>
+          <button class="btn btn-glass-light btn-lg" onclick="showPage('about')">About Transforming Lives</button>
         </div>
       </div>
     </div>
@@ -1007,6 +1010,88 @@
     </div>
   </section>
 
+  <section class="audience-section">
+    <div class="container">
+      <p class="label">Where do you start?</p>
+      <h2 class="h-sub">Find what's right for you</h2>
+      <div class="audience-grid">
+        <div class="audience-item home-fork-card" onclick="showPage('services')">
+          <h4>I'm a parent</h4>
+          <p>My child has been diagnosed with ADHD, or I suspect they might be. I want to understand what this means and how to support them well.</p>
+          <p class="fork-link">See support for parents →</p>
+        </div>
+        <div class="audience-item home-fork-card" onclick="showPage('services')">
+          <h4>I have ADHD</h4>
+          <p>I'm an adult navigating work, relationships, and daily life with ADHD. I'm looking for practical coaching and strategies that actually work.</p>
+          <p class="fork-link">See individual coaching →</p>
+        </div>
+        <div class="audience-item home-fork-card" onclick="showPage('speaking')">
+          <h4>I work in a school or organisation</h4>
+          <p>I want to build awareness, run training, or bring an expert speaker to my team, school, or event.</p>
+          <p class="fork-link">See talks and training →</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp5) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <p style="text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:0.6px;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:var(--sp3)">As featured in</p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp4);align-items:center;justify-content:center">
+        <span class="featured-outlet">The Straits Times</span>
+        <span class="featured-outlet">CNA</span>
+        <span class="featured-outlet">Vogue Singapore</span>
+        <span class="featured-outlet">Salt &amp; Light</span>
+        <span class="featured-outlet">Rice Media</span>
+        <span class="featured-outlet">Decode HR</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--black);padding:var(--sp10) 0">
+    <div class="container">
+      <div style="display:flex;gap:var(--sp8);align-items:center;flex-wrap:wrap">
+        <div style="flex:0 0 auto;width:clamp(140px,18vw,220px)">
+          <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later book cover" style="width:100%;border-radius:var(--r-md);box-shadow:0 12px 40px rgba(0,0,0,0.4)" />
+        </div>
+        <div style="flex:1;min-width:260px">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:var(--sp3)">
+            <span style="background:var(--gold);color:var(--black);font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px">Launching 9 May 2026</span>
+            <span id="book-countdown" style="font-family:var(--mono);font-size:12px;color:rgba(255,255,255,0.45)"></span>
+          </div>
+          <h2 style="font-size:clamp(20px,2.8vw,32px);font-weight:400;letter-spacing:-0.4px;color:var(--white);line-height:1.25;margin-bottom:var(--sp3)">What does it really feel like to be inside an ADHD teen's mind?</h2>
+          <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:var(--gold);margin-bottom:var(--sp2)">Parent First, ADHD Later</p>
+          <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:var(--sp2)">What makes this book extraordinary is its author — a young person with ADHD, writing from the inside out. Refreshing, evidence-based, and deeply honest, it gives parents a rare window into how their teenager truly thinks, feels, and experiences the world. Alongside real Singaporean family stories, it offers practical tools for parents who want to support — not just manage — their child.</p>
+          <p style="font-size:13px;font-family:var(--mono);color:rgba(255,255,255,0.45);letter-spacing:0.2px;margin-bottom:var(--sp4)">50% of proceeds support Unlocking ADHD and SPARK</p>
+          <div style="display:flex;gap:var(--sp2);flex-wrap:wrap">
+            <a href="https://parentfirstadhdlater.com" target="_blank" rel="noopener" class="btn" style="background:var(--gold);color:var(--black);font-weight:600">Pre-order now</a>
+            <button onclick="showPage('products')" class="btn btn-glass-light">Learn more about the book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <p class="label" style="text-align:center">What People Say</p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp4);margin-top:var(--sp5)">
+        <div style="background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Moonlake's sessions have been genuinely transformative. She brings both lived experience and practical tools — and she understands, in a way few people do, what it actually feels like to live with ADHD.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Coaching client, adult with ADHD, Singapore</p>
+        </div>
+        <div style="background:var(--off-white);border-radius:var(--r-md);padding:var(--sp5);border:1.5px solid var(--border);flex:1;min-width:280px">
+          <p style="font-size:32px;color:var(--teal);line-height:1;margin-bottom:var(--sp2)">&ldquo;</p>
+          <p class="body" style="font-style:italic;color:rgba(0,0,0,0.75);line-height:1.7">Because of your courage in going public, I finally found mine. I got assessed, and it changed everything. You reached me without even knowing it.</p>
+          <p style="margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--black)">Message received after the CNA feature</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:var(--sp5)">
+        <button onclick="showPage('testimonials')" class="btn btn-black">Read more from the people we've worked with →</button>
+      </p>
+    </div>
+  </section>
 
 </div><!-- /home -->
 
@@ -2410,6 +2495,16 @@
       }));
     }
     setTimeout(initReveals, 80);
+
+    const launch = new Date('2026-05-09T00:00:00+08:00');
+    const diff = Math.ceil((launch - new Date()) / 86400000);
+    const cdEl = document.getElementById('book-countdown');
+    if (cdEl) {
+      if (diff > 1) cdEl.textContent = diff + ' days to go';
+      else if (diff === 1) cdEl.textContent = 'Tomorrow!';
+      else if (diff === 0) cdEl.textContent = 'Out today!';
+      else cdEl.style.display = 'none';
+    }
   });
 </script>
 
