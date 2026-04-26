@@ -1054,9 +1054,12 @@
           <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later book cover" style="width:100%;border-radius:var(--r-md);box-shadow:0 12px 40px rgba(0,0,0,0.4)" />
         </div>
         <div style="flex:1;min-width:260px">
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:var(--sp3)">
-            <span style="background:var(--gold);color:var(--black);font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px">Launching 9 May 2026</span>
-            <span id="book-countdown" style="font-family:var(--mono);font-size:12px;color:rgba(255,255,255,0.45)"></span>
+          <div style="margin-bottom:var(--sp4)">
+            <span style="display:inline-block;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;padding:7px 18px;border-radius:4px">📅 Launching 9 May 2026</span>
+            <div id="book-countdown-wrap" style="margin-top:var(--sp3);display:flex;align-items:baseline;gap:10px">
+              <span id="book-countdown" style="font-size:clamp(48px,6vw,72px);font-weight:800;color:var(--white);line-height:1;letter-spacing:-2px"></span>
+              <span id="book-countdown-unit" style="font-family:var(--mono);font-size:13px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.6px"></span>
+            </div>
           </div>
           <h2 style="font-size:clamp(20px,2.8vw,32px);font-weight:400;letter-spacing:-0.4px;color:var(--white);line-height:1.25;margin-bottom:var(--sp3)">What does it really feel like to be inside an ADHD teen's mind?</h2>
           <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:var(--gold);margin-bottom:var(--sp2)">Parent First, ADHD Later</p>
@@ -2511,11 +2514,13 @@
     const launch = new Date('2026-05-09T00:00:00+08:00');
     const diff = Math.ceil((launch - new Date()) / 86400000);
     const cdEl = document.getElementById('book-countdown');
-    if (cdEl) {
-      if (diff > 1) cdEl.textContent = diff + ' days to go';
-      else if (diff === 1) cdEl.textContent = 'Tomorrow!';
-      else if (diff === 0) cdEl.textContent = 'Out today!';
-      else cdEl.style.display = 'none';
+    const cdUnit = document.getElementById('book-countdown-unit');
+    const cdWrap = document.getElementById('book-countdown-wrap');
+    if (cdEl && cdUnit) {
+      if (diff > 1) { cdEl.textContent = diff; cdUnit.textContent = 'days to go'; }
+      else if (diff === 1) { cdEl.textContent = '1'; cdUnit.textContent = 'day to go'; }
+      else if (diff === 0) { cdEl.textContent = 'Out'; cdUnit.textContent = 'today!'; }
+      else if (cdWrap) { cdWrap.style.display = 'none'; }
     }
   });
 </script>
