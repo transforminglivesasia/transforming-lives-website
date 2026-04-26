@@ -627,7 +627,7 @@
     .home-fork-card { cursor: pointer; transition: box-shadow .2s, transform .2s; }
     .home-fork-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
     .fork-link { margin-top: var(--sp3) !important; font-size: 14px !important; font-weight: 600; color: var(--teal) !important; }
-    .featured-outlet { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: rgba(0,0,0,0.55); text-transform: uppercase; }
+    .featured-outlet { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.6px; color: rgba(255,255,255,0.85); text-transform: uppercase; }
 
     /* ═══════════════════════════════════════════════════════════
        PRODUCTS
@@ -1034,9 +1034,9 @@
     </div>
   </section>
 
-  <section style="padding:var(--sp6) 0;background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <section style="padding:var(--sp6) 0;background:var(--teal)">
     <div class="container">
-      <p style="text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:0.6px;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:var(--sp3)">As featured in</p>
+      <p style="text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:var(--sp3)">As featured in</p>
       <div style="display:flex;flex-wrap:wrap;gap:var(--sp5);align-items:center;justify-content:center">
         <span class="featured-outlet">The Straits Times</span>
         <span class="featured-outlet">CNA</span>
@@ -2439,27 +2439,34 @@
 
   /* ── Hero title character stagger — UseLayouts catalogue ── */
   function splitChars(el) {
-    const words = el.textContent.split(' ');
-    el.textContent = '';
+    const nodes = Array.from(el.childNodes);
+    el.innerHTML = '';
     let charIndex = 0;
-    words.forEach((word, wi) => {
-      const wordWrap = document.createElement('span');
-      wordWrap.style.cssText = 'display:inline-block;white-space:nowrap';
-      [...word].forEach(char => {
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.style.setProperty('--i', charIndex++);
-        span.textContent = char;
-        wordWrap.appendChild(span);
-      });
-      el.appendChild(wordWrap);
-      if (wi < words.length - 1) {
-        const space = document.createElement('span');
-        space.className = 'char';
-        space.style.setProperty('--i', charIndex++);
-        space.textContent = '\u00A0';
-        el.appendChild(space);
+    nodes.forEach(node => {
+      if (node.nodeType === 1 && node.tagName === 'BR') {
+        el.appendChild(document.createElement('br')); return;
       }
+      const words = (node.textContent || '').split(' ');
+      words.forEach((word, wi) => {
+        if (!word) return;
+        const wordWrap = document.createElement('span');
+        wordWrap.style.cssText = 'display:inline-block;white-space:nowrap';
+        [...word].forEach(char => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.style.setProperty('--i', charIndex++);
+          span.textContent = char;
+          wordWrap.appendChild(span);
+        });
+        el.appendChild(wordWrap);
+        if (wi < words.length - 1) {
+          const space = document.createElement('span');
+          space.className = 'char';
+          space.style.setProperty('--i', charIndex++);
+          space.textContent = ' ';
+          el.appendChild(space);
+        }
+      });
     });
   }
 
