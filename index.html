@@ -334,7 +334,7 @@
       cursor: pointer; text-decoration: none;
     }
     .nav-logo-img  { height: 44px; width: auto; display: block; }
-    .nav-logo-icon { height: 40px; width: auto; display: none; }
+    .nav-logo-icon { display: none; }
     .nav-links {
       display: flex; align-items: center; gap: 6px;
     }
@@ -924,8 +924,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .nav-logo-img  { display: none; }
-      .nav-logo-icon { display: block; }
+      .nav-logo-img  { height: 34px; }
       :root { --sp10: 32px; --sp8: 24px; --sp6: 36px; --sp5: 28px; }
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
