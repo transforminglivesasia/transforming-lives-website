@@ -26,6 +26,7 @@
     :root {
       /* Interface palette — B&W only, per DESIGN.md */
       --black:        #000000;
+      --charcoal:     #2C2C2C;
       --white:        #ffffff;
       --glass-dark:   rgba(0,0,0,0.08);   /* DESIGN.md Glass Black */
       --glass-light:  rgba(255,255,255,0.16); /* DESIGN.md Glass White */
@@ -886,20 +887,20 @@
        FOOTER
     ═══════════════════════════════════════════════════════════ */
     footer {
-      background: var(--black); color: rgba(255,255,255,0.6);
+      background: var(--charcoal); color: rgba(255,255,255,0.65);
       padding: var(--sp8) 0 var(--sp4);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp5); margin-bottom: var(--sp6); }
-    .footer-brand-name { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; color: var(--white); margin-bottom: 4px; }
-    .footer-brand-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--teal); margin-bottom: var(--sp2); }
-    .footer-brand p { font-size: 13px; line-height: 1.65; max-width: 240px; color: rgba(255,255,255,0.72); }
-    .footer-col h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.54px; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: var(--sp2); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 2fr 1fr; gap: var(--sp5); margin-bottom: var(--sp6); }
+    .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 240px; color: rgba(255,255,255,0.75); }
+    .footer-col h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.54px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: var(--sp2); }
+    .footer-nav-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--sp4); list-style: none; margin: 0; padding: 0; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
     .footer-col li { margin-bottom: 8px; }
-    .footer-col a { font-size: 13px; color: rgba(255,255,255,0.80); cursor: pointer; transition: color .15s; }
+    .footer-col a { font-size: 13px; color: rgba(255,255,255,0.82); cursor: pointer; transition: color .15s; }
     .footer-col a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: var(--sp3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp2); }
-    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.90); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: var(--sp3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp2); }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.85); }
     .socials { display: flex; gap: 10px; }
     .social-btn {
       width: 32px; height: 32px; border-radius: var(--r-circle);
@@ -2616,16 +2617,16 @@
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
-        <ul>
+        <ul class="footer-nav-list">
           <li><a onclick="showPage('home')">Home</a></li>
-          <li><a onclick="showPage('about')">About Us</a></li>
-          <li><a onclick="showPage('founder')">Our Founder</a></li>
-          <li><a onclick="showPage('services')">Services</a></li>
-          <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('products')">Publications</a></li>
+          <li><a onclick="showPage('about')">About Us</a></li>
           <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
+          <li><a onclick="showPage('founder')">Our Founder</a></li>
           <li><a onclick="showPage('media')">Media</a></li>
+          <li><a onclick="showPage('services')">Services</a></li>
           <li><a onclick="showPage('testimonials')">What People Say</a></li>
+          <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('contact')">Contact Us</a></li>
         </ul>
       </div>
