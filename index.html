@@ -441,6 +441,7 @@
     .pillars { padding: var(--sp10) 0; background: var(--white); }
     .pillars-header { margin-bottom: var(--sp6); }
     .pillars-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp3); }
+    #page-about .pillars-grid { grid-template-columns: repeat(3,1fr); }
     .pillar {
       padding: var(--sp4) var(--sp3);
       border: 1px solid var(--border);
@@ -931,6 +932,7 @@
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
       .blog-latest-grid, .blog-topics-grid { grid-template-columns: 1fr 1fr; }
+      #page-about .pillars-grid { grid-template-columns: 1fr 1fr; }
       .about-split, .contact-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -941,6 +943,7 @@
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
       .blog-latest-grid, .blog-topics-grid, .values-grid, .footer-grid { grid-template-columns: 1fr; }
+      #page-about .pillars-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-text { padding: var(--sp8) var(--sp4); }
@@ -1010,6 +1013,15 @@
     </div>
     <div class="hero-photo">
       <img src="images/hero-butterfly.jpg" alt="Hands releasing a butterfly at sunset" />
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0;background:var(--white);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <p class="label">A Social Enterprise for Practical Change</p>
+      <p class="body-lg" style="max-width:760px;margin-top:var(--sp3)">Transforming Lives is a Singapore-based social enterprise helping individuals, families, schools, workplaces, and organisations turn understanding into practical growth.</p>
+      <p class="body-lg" style="max-width:760px;margin-top:var(--sp4)">We work across neurodivergence, executive function, parenting, relationships, and inclusion — creating coaching, training, publications, and psychoeducation that are strengths-based, evidence-informed, and grounded in lived experience.</p>
+      <p class="body-lg" style="max-width:760px;margin-top:var(--sp4)">Our model is commercial, but our purpose is social: to equip more people and systems with the understanding, tools, and confidence to support different ways of thinking, learning, working, and relating.</p>
     </div>
   </section>
 
@@ -1118,10 +1130,12 @@
 
   <section class="about-intro">
     <div class="container">
-      <p class="label">What We Do</p>
-      <h2 class="h-sub" style="margin-top:12px">Bridging Insight and Action</h2>
-      <p class="body-lg" style="margin-top:var(--sp3)">We work primarily in two areas: capability development and psychoeducation.</p>
-      <p class="body-lg" style="margin-top:var(--sp4)">Transforming Lives sits at the intersection of strategy and empathy, education and practical change, and professional credibility and human connection.</p>
+      <p class="label">Why We Exist</p>
+      <h2 class="h-sub" style="margin-top:12px">Why We Exist</h2>
+      <p class="body-lg" style="margin-top:var(--sp3)">Many people do not lack effort, intelligence, or care. They lack the right understanding, tools, and environments.</p>
+      <p class="body-lg" style="margin-top:var(--sp4)">This is especially true for neurodivergent individuals and the families, educators, employers, and professionals around them. Too often, support begins only when things have already broken down — at home, in school, at work, or in relationships.</p>
+      <p class="body-lg" style="margin-top:var(--sp4)">Transforming Lives exists to help close that gap earlier.</p>
+      <p class="body-lg" style="margin-top:var(--sp4)">We provide practical, non-clinical support that helps people understand what is happening, build capability, strengthen relationships, and take the next workable step.</p>
     </div>
   </section>
 
@@ -1137,16 +1151,22 @@
     <div class="container">
       <div class="pillars-header">
         <p class="label">How We Work</p>
-        <h2 class="h-section" style="margin-top:12px;white-space:nowrap">Two Pillars. One Purpose.</h2>
+        <h2 class="h-section" style="margin-top:12px">Our Social Impact Model</h2>
+        <p class="body-lg" style="margin-top:var(--sp3);max-width:680px">Transforming Lives was created to make practical, strengths-based support more available beyond traditional clinical or charity settings.</p>
+        <p class="body-lg" style="margin-top:var(--sp2);max-width:680px">We do this through three pathways:</p>
       </div>
       <div class="pillars-grid stagger">
         <div class="pillar nb">
           <h3>Capability Development</h3>
-          <p>Talks, workshops, coaching, and training that build practical skills and confidence for individuals and organisations.</p>
+          <p>We equip individuals, parents, educators, professionals, and organisations with practical tools for executive function, communication, inclusion, and relational support.</p>
         </div>
         <div class="pillar nb">
-          <h3>Psychoeducation</h3>
-          <p>Books, podcasts, curricula, and accessible content that deepen understanding of how people think, learn, relate, and grow.</p>
+          <h3>Psychoeducation at Scale</h3>
+          <p>Through books, articles, curricula, talks, podcasts, and digital resources, we translate complex ideas about neurodivergence, parenting, relationships, and human development into language people can use.</p>
+        </div>
+        <div class="pillar nb">
+          <h3>Mission-Aligned Collaboration</h3>
+          <p>Where appropriate, we collaborate with charities, schools, employers, professionals, and community partners to extend the reach of practical support. Each collaboration is separately defined and does not imply organisational affiliation unless expressly stated.</p>
         </div>
       </div>
     </div>
@@ -1549,6 +1569,16 @@
       <p class="label">Books &amp; Resources</p>
       <h1 class="h-section">Publications</h1>
       <p class="body-lg">Accessible, evidence-informed books that bring psychoeducation to wider audiences — from families and individuals to professionals and organisations.</p>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp8) 0;background:rgba(31,138,138,0.04);border-bottom:1px solid rgba(31,138,138,0.15)">
+    <div class="container">
+      <p class="label">Why We Publish</p>
+      <h2 class="h-sub" style="margin-top:12px">Publishing as Psychoeducation</h2>
+      <p class="body-lg" style="margin-top:var(--sp3);max-width:720px">Publishing is one of the ways Transforming Lives scales practical support.</p>
+      <p class="body-lg" style="margin-top:var(--sp4);max-width:720px">Our books and resources are designed to make complex topics easier to understand and apply — especially in areas such as neurodivergence, executive function, parenting, relationships, and family communication.</p>
+      <p class="body-lg" style="margin-top:var(--sp4);max-width:720px">We aim to create resources that are accessible, visually clear, emotionally honest, and grounded in real-life challenges.</p>
     </div>
   </section>
 
@@ -2015,6 +2045,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Approach -->
+  <section style="padding:var(--sp10) 0;background:rgba(201,150,58,0.05);border-top:1px solid rgba(201,150,58,0.15);border-bottom:1px solid rgba(201,150,58,0.15)">
+    <div class="container">
+      <p class="label">Our Approach to Speaking &amp; Training</p>
+      <h2 class="h-sub" style="margin-top:12px">From Awareness to Capability</h2>
+      <p class="body-lg" style="margin-top:var(--sp3);max-width:720px">Many talks stop at awareness. Our work is designed to go further.</p>
+      <p class="body-lg" style="margin-top:var(--sp4);max-width:720px">We help audiences understand neurodivergence, executive function, parenting, relationships, and inclusion in ways that are practical, human, and usable. Whether the audience is made up of parents, educators, HR professionals, leaders, or community members, the goal is the same: to move from insight to action.</p>
+    </div>
+  </section>
 
   <!-- Signature Topics -->
   <section style="padding:var(--sp10) 0">
