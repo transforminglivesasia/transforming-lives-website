@@ -424,15 +424,17 @@
     }
     .hero-actions { display: flex; gap: var(--sp2); flex-wrap: wrap; }
     .hero-brand-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: clamp(44px, 5.5vw, 72px);
+      font-family: 'Cormorant Garamond', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      font-size: clamp(44px, 5.5vw, 72px) !important;
       letter-spacing: -0.5px;
       line-height: 1;
-      color: #C9963A;
+      color: #C9963A !important;
       margin-bottom: 20px;
-      display: block;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
 
     /* Pillars */
@@ -997,7 +999,7 @@
   <section class="hero">
     <div class="hero-text">
       <div class="container-left">
-        <span class="hero-brand-name">Transforming Lives</span>
+        <div class="hero-brand-name" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(44px,5.5vw,72px);letter-spacing:-0.5px;line-height:1;color:#C9963A;margin-bottom:20px;display:block;opacity:1;visibility:visible">Transforming Lives</div>
         <h1 class="h-display">Capability development and psychoeducation for neurodivergent lives, families, schools, and workplaces.</h1>
         <p class="body-lg" style="max-width:520px">Practical coaching, training, and resources across executive function, ADHD, parenting, relationships, and inclusion.</p>
         <div class="hero-actions">
