@@ -333,8 +333,7 @@
       display: flex; align-items: center;
       cursor: pointer; text-decoration: none;
     }
-    .nav-logo-img  { height: 44px; width: auto; display: block; }
-    .nav-logo-icon { display: none; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
     .nav-links {
       display: flex; align-items: center; gap: 6px;
     }
@@ -924,7 +923,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .nav-logo-img  { height: 34px; }
+      .nav-logo img { height: 34px; }
       :root { --sp10: 32px; --sp8: 24px; --sp6: 36px; --sp5: 28px; }
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
@@ -945,8 +944,7 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
-      <img class="nav-logo-img" src="images/TL_Color-Tag-Horizontal.png" alt="Transforming Lives — Where Understanding Shapes Growth" />
-      <img class="nav-logo-icon" src="images/TL_Color-Logogram.png" alt="Transforming Lives" />
+      <img src="images/TL_Color-Tag-Horizontal.png" alt="Transforming Lives — Where Understanding Shapes Growth" />
     </a>
     <div class="nav-links">
       <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
