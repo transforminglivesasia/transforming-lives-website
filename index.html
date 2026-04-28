@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Inter as variable font — enables exact DESIGN.md weight stops 320,330,340,450,480,540,700 -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/jpeg" href="images/hero-butterfly.jpg" />
+  <link rel="icon" type="image/png" href="images/TL_Color-Logogram.png" />
 
   <style>
     /* ── Design Tokens — strictly per DESIGN.md ────────────────── */
@@ -329,22 +329,11 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      display: flex; flex-direction: column; gap: 1px;
+      display: flex; align-items: center;
       cursor: pointer; text-decoration: none;
     }
-    .nav-logo-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-size: 20px; font-weight: 600;
-      letter-spacing: -0.3px; color: var(--black);
-      line-height: 1.1;
-    }
-    .nav-logo-tag {
-      font-family: var(--font);
-      font-size: 11px;
-      letter-spacing: -0.1px;
-      color: rgba(0,0,0,0.60);
-    }
+    .nav-logo-img  { height: 44px; width: auto; display: block; }
+    .nav-logo-icon { height: 40px; width: auto; display: none; }
     .nav-links {
       display: flex; align-items: center; gap: 6px;
     }
@@ -934,6 +923,8 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
+      .nav-logo-img  { display: none; }
+      .nav-logo-icon { display: block; }
       :root { --sp10: 32px; --sp8: 24px; --sp6: 36px; --sp5: 28px; }
       .pillars-grid, .service-grid, .audience-grid,
       .distinct-grid, .products-grid, .resources-grid,
@@ -954,8 +945,8 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
-      <span class="nav-logo-name">Transforming Lives</span>
-      <span class="nav-logo-tag">Where Understanding Shapes Growth</span>
+      <img class="nav-logo-img" src="images/TL_Color-Tag-Horizontal.png" alt="Transforming Lives — Where Understanding Shapes Growth" />
+      <img class="nav-logo-icon" src="images/TL_Color-Logogram.png" alt="Transforming Lives" />
     </a>
     <div class="nav-links">
       <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
@@ -2620,8 +2611,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-brand-name">Transforming Lives</div>
-        <div class="footer-brand-tag">Where Understanding Shapes Growth</div>
+        <img src="images/TL_Color-Logogram.png" alt="Transforming Lives" style="height:56px;width:auto;display:block;margin-bottom:var(--sp2);opacity:0.9" />
         <p>A social enterprise bridging capability development and psychoeducation — helping individuals and organisations grow with clarity, capability, and confidence.</p>
       </div>
       <div class="footer-col">
