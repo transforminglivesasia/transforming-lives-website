@@ -771,6 +771,7 @@
     .media-card-thumb { display: none; }
     @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 560px) { .media-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .swiss-binding-grid { grid-template-columns: 1fr; } }
     .speaking-photos { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
     .speaking-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
     .speaking-photo img { width: 100%; display: block; object-fit: cover; height: 360px; object-position: top center; }
@@ -1647,6 +1648,32 @@
 
     </div>
   </div>
+
+  <!-- Swiss Binding Section -->
+  <section style="background:var(--off-white);padding:var(--sp10) 0;border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="label">Book Design</p>
+      <h2 class="h-sub" style="margin-top:12px">Swiss Binding — Designed to Lie Flat</h2>
+      <p class="body-lg" style="margin-top:var(--sp3);max-width:680px">Unlike standard paperbacks, <em>Parent First, ADHD Later</em> is produced with Swiss binding — a premium binding technique that allows the book to open completely flat without straining the spine.</p>
+      <p class="body" style="margin-top:var(--sp2);max-width:680px;color:rgba(0,0,0,0.6)">This makes it easier to read alongside the flowcharts, work through the toolkits, and refer back to both pages at once — exactly the kind of practical, accessible design the content deserves.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4);margin-top:var(--sp6)" class="swiss-binding-grid">
+        <div>
+          <img src="images/p1al-swiss-binding-1.jpg" alt="Parent First, ADHD Later — Swiss binding showing colourful page edges" style="width:100%;border-radius:var(--r-md);box-shadow:0 4px 20px rgba(0,0,0,0.1);display:block" />
+        </div>
+        <div>
+          <img src="images/p1al-swiss-binding-2.jpg" alt="Parent First, ADHD Later — book lying completely flat when open" style="width:100%;border-radius:var(--r-md);box-shadow:0 4px 20px rgba(0,0,0,0.1);display:block" />
+        </div>
+      </div>
+
+      <div style="margin-top:var(--sp5);max-width:680px">
+        <p class="label" style="margin-bottom:var(--sp2)">See it in action</p>
+        <video controls style="width:100%;border-radius:var(--r-md);box-shadow:0 4px 20px rgba(0,0,0,0.1);display:block;background:#000">
+          <source src="images/p1al-swiss-binding.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
 
   <div class="container" style="padding-bottom:var(--sp6)">
     <p style="font-size:13px;color:rgba(0,0,0,0.65);font-style:italic;line-height:1.7">This publication is published by Transforming Lives. Named charity beneficiaries are referenced for donation purposes only and do not imply charity ownership or organisational affiliation unless expressly stated.</p>
