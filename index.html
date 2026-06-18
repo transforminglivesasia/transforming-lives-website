@@ -968,7 +968,7 @@
     <div class="nav-links">
       <a onclick="showPage('home')"      id="nav-home"      class="active">Home</a>
       <a onclick="showPage('about')"     id="nav-about"    >About Us</a>
-      <a onclick="showPage('founder')"   id="nav-founder"  >Our Founder</a>
+      <a onclick="showPage('team')"     id="nav-team"     >Our Team</a>
       <a onclick="showPage('services')"  id="nav-services" >Services</a>
       <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
       <a onclick="showPage('products')"  id="nav-products" >Publications</a>
@@ -986,7 +986,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="showPage('home');closeMenu()">Home</a>
   <a onclick="showPage('about');closeMenu()">About Us</a>
-  <a onclick="showPage('founder');closeMenu()">Our Founder</a>
+  <a onclick="showPage('team');closeMenu()">Our Team</a>
   <a onclick="showPage('services');closeMenu()">Services</a>
   <a onclick="showPage('blog');closeMenu()">Blog</a>
   <a onclick="showPage('products');closeMenu()">Publications</a>
@@ -1229,11 +1229,11 @@
 <!-- ══════════════════════════════════════════════════════════
      FOUNDER
 ══════════════════════════════════════════════════════════ -->
-<div id="page-founder" class="page">
+<div id="page-moonlakelee" class="page">
 
   <section class="page-hero page-hero-teal">
     <div class="container">
-      <p class="label">Meet the Founder &amp; CEO</p>
+      <p class="label">Founder &amp; CEO</p>
       <h1 class="h-section">Moonlake Lee</h1>
       <p class="body-lg">Bringing lived experience, professional expertise, and a strengths-based lens to everything she does.</p>
     </div>
@@ -1273,7 +1273,98 @@
     <p style="font-size:13px;color:rgba(0,0,0,0.5);line-height:1.7">Transforming Lives is independent from Unlocking ADHD, while sharing a broader commitment to strengthening support for neurodivergent individuals and families.</p>
   </div>
 
-</div><!-- /founder -->
+</div><!-- /moonlakelee -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     TEAM
+══════════════════════════════════════════════════════════ -->
+<div id="page-team" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">The People Behind the Work</p>
+      <h1 class="h-section">Our Team</h1>
+      <p class="body-lg">A small, committed team bringing together lived experience, professional expertise, and a passion for meaningful impact.</p>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <div style="display:flex;gap:var(--sp5);flex-wrap:wrap;justify-content:center">
+
+        <!-- Moonlake card -->
+        <div style="flex:0 1 300px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0">
+            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center top" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
+          <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:var(--sp2)">Founder / CEO</p>
+          <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-black" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
+        </div>
+
+        <!-- Raven card -->
+        <div style="flex:0 1 300px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0">
+            <img src="images/raven-lim.jpg" alt="Raven Lim" style="width:100%;height:100%;object-fit:cover;object-position:center top" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Raven Lim</h3>
+          <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:var(--sp2)">Communications &amp; Learning Design Manager</p>
+          <a href="https://www.linkedin.com/in/ravenlim/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-black" style="width:100%;margin-top:auto" onclick="showPage('ravenlim')">View Profile</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /team -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     RAVEN LIM PROFILE
+══════════════════════════════════════════════════════════ -->
+<div id="page-ravenlim" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Communications &amp; Learning Design Manager</p>
+      <h1 class="h-section">Raven Lim</h1>
+      <p class="body-lg">Translating ideas into experiences that inform, connect and empower.</p>
+    </div>
+  </section>
+
+  <section class="about-body" style="padding:var(--sp10) 0">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-col-left">
+          <div class="about-img">
+            <img src="images/raven-lim.jpg" alt="Raven Lim, Communications &amp; Learning Design Manager at Transforming Lives" />
+          </div>
+          <div class="founder-attribution">
+            <p class="founder-name">Raven Lim</p>
+            <p class="founder-role">Communications &amp; Learning Design Manager</p>
+            <p class="founder-org">Transforming Lives</p>
+            <a class="founder-linkedin" href="https://www.linkedin.com/in/ravenlim/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="label">Her Story</p>
+          <h2 class="h-sub" style="margin-top:12px">Background &amp; Experience</h2>
+          <p class="body" style="margin-top:var(--sp3)">Raven Lim is the Communications &amp; Learning Design Manager at Transforming Lives. She translates psychoeducational concepts, content and frameworks into communications and capability-building initiatives that support education, growth, and impact. Across every project, she combines creativity, strategy and empathy to create experiences that inform, connect and empower.</p>
+          <p class="body">Raven is a communications strategist, learning designer, producer and educator who creates content, learning experiences and community initiatives that help people navigate change, build skills, and make informed decisions. Her career spans media, finance, education, sports, social impact and professional development, with expertise in content strategy, learning design, podcast production, teaching and audience engagement.</p>
+          <p class="body">She previously served as Senior Producer at The Financial Coconut, where she produced flagship shows including Wise &amp; Shine, Chills with TFC, and The Business Show. Her work helped shape conversations around careers, personal finance, retirement, business and the future of work, while contributing to significant audience growth across digital platforms.</p>
+          <p class="body">A pioneer of Singapore's podcasting industry, Raven has played an active role in growing the early podcast ecosystem across Singapore and Asia. She has organised industry events, conducted podcasting workshops and helped launch Asia's first podcast summit and awards platform.</p>
+          <p class="body">Beyond production, Raven is an adjunct lecturer with institutions including Republic Polytechnic and Kaplan. She has designed and delivered workshops and training programmes for organisations such as *SCAPE, CreativesAtWork, IMDA and NTUC, mentoring creatives, freelancers, students and professionals in storytelling, personal branding, podcasting and media production. She has also facilitated career-readiness programmes for graduating students and recently developed a podcast production module for Republic Polytechnic's Diploma in Music and Sound Production.</p>
+          <p class="body">Raven holds a Bachelor of Digital Media from The University of New South Wales (UNSW), Australia, and a WSQ Advanced Certificate in Learning &amp; Performance (ACLP) from the Singapore University of Social Sciences.</p>
+          <button class="btn btn-black" style="margin-top:var(--sp4)" onclick="showPage('contact')">Get in Touch</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /ravenlim -->
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -2590,7 +2681,7 @@
           <li><a onclick="showPage('products')">Publications</a></li>
           <li><a onclick="showPage('about')">About Us</a></li>
           <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
-          <li><a onclick="showPage('founder')">Our Founder</a></li>
+          <li><a onclick="showPage('team')">Our Team</a></li>
           <li><a onclick="showPage('media')">Media</a></li>
           <li><a onclick="showPage('services')">Services</a></li>
           <li><a onclick="showPage('testimonials')">What People Say</a></li>
@@ -2618,10 +2709,10 @@
 
 
 <script>
-  const pages = ['home','about','founder','services','products','blog','speaking','media','testimonials','contact','privacy','terms'];
+  const pages = ['home','about','team','moonlakelee','ravenlim','services','products','blog','speaking','media','testimonials','contact','privacy','terms'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/founder': 'founder', '/services': 'services', '/products': 'products', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
-  const pageToSlug = { home: '/', about: '/about', founder: '/founder', services: '/services', products: '/products', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', contact: '/contact', privacy: '/privacy', terms: '/terms' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/founder': 'moonlakelee', '/services': 'services', '/products': 'products', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
+  const pageToSlug = { home: '/', about: '/about', team: '/team', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', services: '/services', products: '/products', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', contact: '/contact', privacy: '/privacy', terms: '/terms' };
 
   function scrollToSection(anchorId) {
     showPage('services');
