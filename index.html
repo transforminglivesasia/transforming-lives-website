@@ -206,6 +206,8 @@
     .btn:active { transform: translateY(0); opacity: 1; }
     .btn-black  { background: var(--black); color: var(--white); }
     .btn-charcoal { background: var(--charcoal); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--black); border: 1.5px solid rgba(0,0,0,0.28); }
+    .btn-outline:hover { border-color: var(--black); }
     .btn-teal   { background: var(--teal); color: var(--white); }
     .btn-teal:hover { background: var(--teal-dark); opacity: 1; }
     .btn-white  { background: var(--white); color: var(--black); }
@@ -1275,7 +1277,7 @@
       <div class="about-split">
         <div class="about-col-left">
           <div class="about-img">
-            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" />
+            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" style="object-position:center 5%;transform:scale(1.2);transform-origin:center 15%" />
           </div>
           <div class="founder-attribution">
             <p class="founder-name">Moonlake Lee</p>
@@ -1322,29 +1324,33 @@
 
   <section style="padding:var(--sp10) 0">
     <div class="container">
-      <p class="body" style="max-width:680px;margin:0 auto var(--sp8);text-align:center;font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65)">The Transforming Lives team brings together expertise in psychoeducation, communications, and capability development — grounded in lived experience and a genuine commitment to impact. Between them, Moonlake and Raven draw on backgrounds spanning law, journalism, healthcare, social enterprise leadership, media production, learning design, and education. What unites them is a shared belief: that when people truly understand themselves and the world around them, they are better equipped to grow, connect, and thrive.</p>
+      <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
+        <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65);margin-bottom:var(--sp3)">The Transforming Lives team brings together expertise in psychoeducation, communications, and capability development — grounded in lived experience and a genuine commitment to impact.</p>
+        <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65);margin-bottom:var(--sp3)">Between them, Moonlake and Raven draw on backgrounds spanning law, journalism, healthcare, social enterprise leadership, media production, learning design, and education.</p>
+        <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65)">What unites them is a shared belief: that when people truly understand themselves and the world around them, they are better equipped to grow, connect, and thrive.</p>
+      </div>
       <div style="display:flex;gap:var(--sp5);flex-wrap:wrap;justify-content:center">
 
         <!-- Moonlake card -->
         <div style="flex:0 1 300px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
           <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border)">
-            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 15%" />
+            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;transform:scale(1.35);transform-origin:center 20%" />
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Founder / CEO</p>
           <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-charcoal" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
         </div>
 
         <!-- Raven card -->
         <div style="flex:0 1 300px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
           <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border)">
-            <img src="images/raven-lim.jpg" alt="Raven Lim" style="width:100%;height:100%;object-fit:cover;object-position:center 15%" />
+            <img src="images/raven-lim.jpg" alt="Raven Lim" style="width:100%;height:100%;object-fit:cover;object-position:center 35%" />
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Raven Lim</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Communications &amp; Learning Design Manager</p>
           <a href="https://www.linkedin.com/in/ravenlim/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-charcoal" style="width:100%;margin-top:auto" onclick="showPage('ravenlim')">View Profile</button>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('ravenlim')">View Profile</button>
         </div>
 
       </div>
@@ -1382,7 +1388,7 @@
       <div class="about-split">
         <div class="about-col-left">
           <div class="about-img">
-            <img src="images/raven-lim.jpg" alt="Raven Lim, Communications &amp; Learning Design Manager at Transforming Lives" />
+            <img src="images/raven-lim.jpg" alt="Raven Lim, Communications &amp; Learning Design Manager at Transforming Lives" style="object-position:center 25%" />
           </div>
           <div class="founder-attribution">
             <p class="founder-name">Raven Lim</p>
