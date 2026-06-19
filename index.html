@@ -2763,6 +2763,23 @@
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (pushHistory) history.pushState({ page: id }, '', pageToSlug[id] || '/');
+    const titles = {
+      home: 'Transforming Lives | Where Understanding Shapes Growth',
+      about: 'About Us | Transforming Lives',
+      team: 'Our Team | Transforming Lives',
+      moonlakelee: 'Moonlake Lee | Transforming Lives',
+      ravenlim: 'Raven Lim | Transforming Lives',
+      services: 'Services | Transforming Lives',
+      products: 'Publications | Transforming Lives',
+      blog: 'Blog | Transforming Lives',
+      speaking: 'Speaking & Events | Transforming Lives',
+      media: 'Media | Transforming Lives',
+      testimonials: 'What People Say | Transforming Lives',
+      contact: 'Contact Us | Transforming Lives',
+      privacy: 'Privacy Policy | Transforming Lives',
+      terms: 'Terms of Use | Transforming Lives',
+    };
+    document.title = titles[id] || 'Transforming Lives';
     const tab = document.getElementById('speaker-tab');
     if (tab) tab.style.display = (id === 'speaking') ? 'flex' : 'none';
     setTimeout(initReveals, 50);
