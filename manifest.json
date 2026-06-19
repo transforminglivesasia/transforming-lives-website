@@ -1,0 +1,21 @@
+{
+  "name": "Transforming Lives",
+  "short_name": "Transforming Lives",
+  "description": "Where Understanding Shapes Growth",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#1F8A8A",
+  "icons": [
+    {
+      "src": "/images/TL_favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/TL_Color-Logogram.png",
+      "sizes": "1182x1418",
+      "type": "image/png"
+    }
+  ]
+}
