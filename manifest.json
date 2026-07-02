@@ -8,13 +8,13 @@
   "theme_color": "#1F8A8A",
   "icons": [
     {
-      "src": "/images/TL_favicon.png",
-      "sizes": "128x128",
+      "src": "/images/TL_Color-Logogram-WhiteBackground.png",
+      "sizes": "3375x3375",
       "type": "image/png"
     },
     {
-      "src": "/images/TL_Color-Logogram.png",
-      "sizes": "1182x1418",
+      "src": "/images/TL_favicon.png",
+      "sizes": "128x128",
       "type": "image/png"
     }
   ]
