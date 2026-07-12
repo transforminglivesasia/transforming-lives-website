@@ -3083,6 +3083,45 @@
       terms: 'Terms of Use | Transforming Lives',
     };
     document.title = titles[id] || 'Transforming Lives';
+
+    // Dynamic SEO meta tags per page
+    const descriptions = {
+      home:         'Transforming Lives is a Singapore social enterprise providing coaching, psychoeducation, and neuroinclusion support — for individuals, families, schools, and workplaces.',
+      about:        'Learn about Transforming Lives — our mission, values, and approach to supporting neurodivergent individuals, families, and organisations in Singapore.',
+      team:         'Meet the Transforming Lives team — coaches, educators, and advocates with lived experience across neurodivergence, executive function, and family support.',
+      moonlakelee:  'Moonlake Lee is the Founder & CEO of Transforming Lives — advocate, author, and psychoeducator on neurodivergence, executive function, and family resilience in Singapore.',
+      ravenlim:     'Raven Lim is a parent coach and psychoeducator at Transforming Lives, supporting families navigating neurodivergence and parent-youth relationships in Singapore.',
+      teresachua:   'Teresa Chua is a parent coach and executive function specialist at Transforming Lives, drawing on lived experience to support families navigating neurodivergence.',
+      candicelim:   'Candice Lim is a leadership and ADHD coach at Transforming Lives, bringing strengths-based coaching and two decades of organisational experience to neurodivergent professionals.',
+      services:     'Coaching and psychoeducation services from Transforming Lives — for parents, adults, schools, and organisations navigating executive function, neurodivergence, and neuroinclusion.',
+      products:     'Publications from Transforming Lives, including Parent First, ADHD Later — practical resources for families, parents, and educators navigating neurodivergence in Singapore.',
+      blog:         'ADHD Life & Musings — a newsletter on executive function, neurodivergence, parenting, resilience, and growth by Transforming Lives.',
+      speaking:     'Transforming Lives offers talks, panels, and facilitation on neurodivergence, executive function, and neuroinclusion for organisations, schools, and communities.',
+      media:        'Media coverage featuring Transforming Lives — print, broadcast, and digital features on neurodivergence, parenting, and leadership across Singapore and beyond.',
+      testimonials: 'What people say about Transforming Lives — stories from individuals, families, and professionals who have experienced our coaching and psychoeducation.',
+      contact:      'Get in touch with Transforming Lives — for coaching enquiries, speaking requests, partnership opportunities, or general questions.',
+      privacy:      'Privacy Policy for the Transforming Lives website — how we collect, use, and protect your personal data.',
+      terms:        'Terms of Use for the Transforming Lives website.',
+    };
+    const base = 'https://www.transforminglives.asia';
+    const slug = pageToSlug[id] || '/';
+    const pageUrl = base + (slug === '/' ? '/' : slug);
+    const desc = descriptions[id] || descriptions.home;
+    const mDesc = document.querySelector('meta[name="description"]');
+    if (mDesc) mDesc.setAttribute('content', desc);
+    const mCanon = document.querySelector('link[rel="canonical"]');
+    if (mCanon) mCanon.setAttribute('href', pageUrl);
+    const mOgTitle = document.querySelector('meta[property="og:title"]');
+    if (mOgTitle) mOgTitle.setAttribute('content', titles[id] || titles.home);
+    const mOgDesc = document.querySelector('meta[property="og:description"]');
+    if (mOgDesc) mOgDesc.setAttribute('content', desc);
+    const mOgUrl = document.querySelector('meta[property="og:url"]');
+    if (mOgUrl) mOgUrl.setAttribute('content', pageUrl);
+    const mTwTitle = document.querySelector('meta[name="twitter:title"]');
+    if (mTwTitle) mTwTitle.setAttribute('content', titles[id] || titles.home);
+    const mTwDesc = document.querySelector('meta[name="twitter:description"]');
+    if (mTwDesc) mTwDesc.setAttribute('content', desc);
+
     const tab = document.getElementById('speaker-tab');
     if (tab) tab.style.display = (id === 'speaking') ? 'flex' : 'none';
     setTimeout(initReveals, 50);
