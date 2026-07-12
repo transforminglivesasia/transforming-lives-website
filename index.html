@@ -990,6 +990,8 @@
       .hero-photo { min-height: 50vw; }
       .hero .body-lg { max-width: 100%; }
       .home-cta { flex-direction: column; }
+      .team-cards { flex-wrap: wrap !important; overflow-x: visible !important; }
+      .team-cards > div { flex: 0 0 calc(50% - 8px) !important; min-width: 0 !important; max-width: calc(50% - 8px); }
     }
   </style>
 </head>
@@ -1290,7 +1292,7 @@
       <div class="about-split">
         <div class="about-col-left">
           <div class="about-img">
-            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" style="object-position:center 15%" />
+            <img src="images/founder.jpg" alt="Moonlake Lee, Founder &amp; CEO of Transforming Lives" style="object-position:center 12%;transform:scale(1.35);transform-origin:center 12%" />
           </div>
           <div class="founder-attribution">
             <p class="founder-name">Moonlake Lee</p>
@@ -1342,7 +1344,7 @@
         <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65);margin-bottom:var(--sp3)">Among them, Moonlake, Raven, Teresa and Candice draw on backgrounds spanning law, journalism, healthcare, social enterprise leadership, media production, learning design, education, banking, organisational development, and ADHD and executive function coaching.</p>
         <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65)">What unites them is a shared belief: that when people truly understand themselves and the world around them, they are better equipped to grow, connect, and thrive.</p>
       </div>
-      <div style="display:flex;gap:var(--sp4);flex-wrap:nowrap;justify-content:center;overflow-x:auto">
+      <div class="team-cards" style="display:flex;gap:var(--sp4);flex-wrap:nowrap;justify-content:center;overflow-x:auto">
 
         <!-- Moonlake card -->
         <div style="flex:1 1 220px;min-width:180px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
