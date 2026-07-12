@@ -1,29 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transforming Lives | Where Understanding Shapes Growth</title>
+  <title>Transforming Lives | ADHD Coaching &amp; Neurodiversity Support Singapore</title>
 
   <!-- SEO: Core meta -->
-  <meta name="description" content="Transforming Lives is a Singapore social enterprise providing strengths-based coaching, psychoeducation, and practical support for neurodivergent individuals, families, schools, and workplaces." />
+  <meta name="description" content="Transforming Lives is a Singapore social enterprise specialising in ADHD coaching, executive function coaching, neurodiversity psychoeducation, and neuroinclusion — for individuals, families, schools, and workplaces. Founded by Moonlake Lee." />
+  <meta name="keywords" content="ADHD Singapore, ADHD coaching Singapore, neurodivergent, neurodiversity, neurodivergence, neuroinclusion, executive function coaching, AuDHD, inclusion, DEI, Moonlake Lee, ADHD support Singapore, ADHD psychoeducation Singapore, ADHD coach Singapore" />
+  <meta name="author" content="Transforming Lives" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.transforminglives.asia/" />
+
+  <!-- SEO: Geographic targeting -->
+  <meta name="geo.region" content="SG" />
+  <meta name="geo.placename" content="Singapore" />
 
   <!-- SEO: Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.transforminglives.asia/" />
-  <meta property="og:title" content="Transforming Lives | Where Understanding Shapes Growth" />
-  <meta property="og:description" content="A Singapore social enterprise providing strengths-based coaching, psychoeducation, and practical support for neurodivergent individuals, families, schools, and workplaces." />
+  <meta property="og:title" content="Transforming Lives | ADHD Coaching &amp; Neurodiversity Support Singapore" />
+  <meta property="og:description" content="Singapore social enterprise specialising in ADHD coaching, executive function coaching, neurodiversity psychoeducation, and neuroinclusion — for individuals, families, schools, and workplaces." />
   <meta property="og:image" content="https://www.transforminglives.asia/images/hero-butterfly.jpg" />
   <meta property="og:site_name" content="Transforming Lives" />
   <meta property="og:locale" content="en_SG" />
 
   <!-- SEO: Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Transforming Lives | Where Understanding Shapes Growth" />
-  <meta name="twitter:description" content="A Singapore social enterprise providing strengths-based coaching, psychoeducation, and practical support for neurodivergent individuals, families, schools, and workplaces." />
+  <meta name="twitter:title" content="Transforming Lives | ADHD Coaching &amp; Neurodiversity Support Singapore" />
+  <meta name="twitter:description" content="Singapore social enterprise specialising in ADHD coaching, executive function coaching, neurodiversity psychoeducation, and neuroinclusion — for individuals, families, schools, and workplaces." />
   <meta name="twitter:image" content="https://www.transforminglives.asia/images/hero-butterfly.jpg" />
+
+  <!-- SEO: JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.transforminglives.asia/#organization",
+        "name": "Transforming Lives",
+        "alternateName": "Transforming Lives Pte Ltd",
+        "url": "https://www.transforminglives.asia",
+        "logo": "https://www.transforminglives.asia/images/TL_Color-Logogram-WhiteBackground.png",
+        "description": "A Singapore social enterprise specialising in ADHD coaching, executive function coaching, neurodiversity psychoeducation, and neuroinclusion support for individuals, families, schools, and workplaces.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SG",
+          "addressLocality": "Singapore"
+        },
+        "areaServed": "Singapore",
+        "knowsAbout": ["ADHD", "Neurodivergence", "Neurodiversity", "Executive Function Coaching", "AuDHD", "Neuroinclusion", "DEI", "Inclusion", "ADHD Coaching"],
+        "sameAs": [
+          "https://www.linkedin.com/company/transforminglivesasia/"
+        ],
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.transforminglives.asia/moonlakelee#person",
+          "name": "Moonlake Lee"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.transforminglives.asia/#website",
+        "url": "https://www.transforminglives.asia",
+        "name": "Transforming Lives",
+        "publisher": { "@id": "https://www.transforminglives.asia/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.transforminglives.asia/moonlakelee#person",
+        "name": "Moonlake Lee",
+        "jobTitle": "Founder & CEO, ADHD Coach",
+        "url": "https://www.transforminglives.asia/moonlakelee",
+        "worksFor": { "@id": "https://www.transforminglives.asia/#organization" },
+        "knowsAbout": ["ADHD", "Executive Function Coaching", "Neurodivergence", "AuDHD", "Leadership Coaching", "Neuroinclusion"],
+        "sameAs": ["https://www.linkedin.com/in/moonlakelee/"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.transforminglives.asia/services#service",
+        "name": "ADHD &amp; Executive Function Coaching",
+        "description": "Strengths-based ADHD coaching and executive function coaching for adults, parents, and young people in Singapore.",
+        "provider": { "@id": "https://www.transforminglives.asia/#organization" },
+        "areaServed": "Singapore",
+        "serviceType": ["ADHD Coaching", "Executive Function Coaching", "Neurodiversity Coaching", "Parent Coaching"]
+      }
+    ]
+  }
+  </script>
   <!--
     Design systems applied:
     1. DESIGN.md (Figma-inspired) — B&W chrome, pill buttons, variable font, negative tracking
@@ -3000,20 +3065,20 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (pushHistory) history.pushState({ page: id }, '', pageToSlug[id] || '/');
     const titles = {
-      home: 'Transforming Lives | Where Understanding Shapes Growth',
-      about: 'About Us | Transforming Lives',
-      team: 'Our Team | Transforming Lives',
-      moonlakelee: 'Moonlake Lee | Transforming Lives',
+      home: 'Transforming Lives | ADHD Coaching & Neurodiversity Support Singapore',
+      about: 'About Us | ADHD & Neurodivergence Social Enterprise Singapore | Transforming Lives',
+      team: 'Our Team | ADHD & Neurodiversity Coaches Singapore | Transforming Lives',
+      moonlakelee: 'Moonlake Lee | ADHD Coach & Advocate Singapore | Transforming Lives',
       ravenlim: 'Raven Lim | Transforming Lives',
       teresachua: 'Teresa Chua | Transforming Lives',
-      candicelim: 'Candice Lim | Transforming Lives',
-      services: 'Services | Transforming Lives',
-      products: 'Publications | Transforming Lives',
-      blog: 'Blog | Transforming Lives',
-      speaking: 'Speaking & Events | Transforming Lives',
-      media: 'Media | Transforming Lives',
-      testimonials: 'What People Say | Transforming Lives',
-      contact: 'Contact Us | Transforming Lives',
+      candicelim: 'Candice Lim | ADHD Coach Singapore | Transforming Lives',
+      services: 'ADHD Coaching & Executive Function Services Singapore | Transforming Lives',
+      products: 'Publications | ADHD & Neurodivergence Resources Singapore | Transforming Lives',
+      blog: 'ADHD Life & Musings | Newsletter & Blog | Transforming Lives',
+      speaking: 'ADHD & Neurodiversity Speaking, Panels & Events | Transforming Lives',
+      media: 'Media Coverage | ADHD & Neurodivergence Singapore | Transforming Lives',
+      testimonials: 'What People Say | ADHD Coaching Testimonials | Transforming Lives',
+      contact: 'Contact Us | Transforming Lives Singapore',
       privacy: 'Privacy Policy | Transforming Lives',
       terms: 'Terms of Use | Transforming Lives',
     };
