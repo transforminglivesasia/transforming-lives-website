@@ -1056,8 +1056,7 @@
       .hero-photo { min-height: 50vw; }
       .hero .body-lg { max-width: 100%; }
       .home-cta { flex-direction: column; }
-      .team-cards { flex-wrap: wrap !important; overflow-x: visible !important; }
-      .team-cards > div { flex: 0 0 calc(50% - 8px) !important; min-width: 0 !important; max-width: calc(50% - 8px); }
+      .team-cards { grid-template-columns: repeat(2, 1fr) !important; }
     }
   </style>
 </head>
@@ -1410,7 +1409,7 @@
         <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65);margin-bottom:var(--sp3)">Among them, Moonlake, Raven, Dasiyah, Teresa, Candice and Genie draw on backgrounds spanning law, journalism, healthcare, social enterprise leadership, media production, learning design, education, banking, human resources, hospitality, corporate partnerships, organisational development, and executive function and neurodivergence coaching.</p>
         <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65)">What unites them is a shared belief: that when people truly understand themselves and the world around them, they are better equipped to grow, connect, and thrive.</p>
       </div>
-      <div class="team-cards" style="display:flex;gap:var(--sp4);flex-wrap:nowrap;justify-content:center;overflow-x:auto">
+      <div class="team-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4)">
 
         <!-- Moonlake card -->
         <div style="flex:1 1 220px;min-width:180px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
@@ -1437,7 +1436,7 @@
         <!-- Dasiyah card -->
         <div style="flex:1 1 220px;min-width:180px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
           <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border)">
-            <img src="images/dasiyah-de-zwart.jpg" alt="Dasiyah de Zwart" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.2);transform-origin:center 15%" />
+            <img src="images/dasiyah-de-zwart.jpg" alt="Dasiyah de Zwart" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.6);transform-origin:center 15%" />
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Dasiyah de Zwart</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Corporate Partnerships Lead</p>
