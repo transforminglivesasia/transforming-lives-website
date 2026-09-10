@@ -2058,11 +2058,11 @@
     </div>
   </section>
 
-  <!-- Urgency banner -->
-  <div style="background:var(--gold-dark);padding:var(--sp4) var(--sp4)">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:var(--sp3);flex-wrap:wrap;text-align:center">
-      <p style="font-size:clamp(15px,2vw,20px);font-weight:700;color:#fff;letter-spacing:-0.2px;margin:0;line-height:1.4">⚡ Copies of the Charity Edition Are Running Out — Get Yours Today</p>
-      <a href="https://bit.ly/charityedition" target="_blank" rel="noopener" style="display:inline-block;background:#fff;color:var(--gold-dark);font-size:14px;font-weight:700;padding:10px 20px;border-radius:var(--r-sm);text-decoration:none;white-space:nowrap;flex-shrink:0">Order Now ↗</a>
+  <!-- Sold out / impact banner -->
+  <div style="background:var(--teal);padding:var(--sp4) var(--sp4)">
+    <div class="container" style="text-align:center">
+      <p style="font-size:clamp(15px,2vw,20px);font-weight:700;color:#fff;letter-spacing:-0.2px;margin:0;line-height:1.4">★ Sold Out — Thank You for Your Support</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.88);margin:8px 0 0;line-height:1.6">S$4,785.66 has been donated to <strong style="color:#fff">Unlocking ADHD</strong> and <strong style="color:#fff">SPARK Singapore</strong> through book sales.</p>
     </div>
   </div>
 
@@ -2074,15 +2074,16 @@
 
         <!-- Covers -->
         <div class="pub-covers">
-          <div class="pub-cover-front nb">
+          <div class="pub-cover-front nb" style="position:relative">
             <img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later — front cover" />
+            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%) rotate(-10deg);background:#B22222;color:#fff;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 22px;border-radius:3px;box-shadow:0 4px 16px rgba(0,0,0,0.3);white-space:nowrap">Sold Out</div>
           </div>
         </div>
 
         <!-- Details -->
         <div class="pub-details">
           <div class="pub-launch-badge">
-            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border:1px solid rgba(201,150,58,0.3);border-radius:4px;padding:4px 10px">★ Charity Edition</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border:1px solid rgba(201,150,58,0.3);border-radius:4px;padding:4px 10px">★ Charity Edition — Sold Out</span>
           </div>
           <h2 class="pub-title">Parent First,<br>ADHD Later</h2>
           <p class="book-subtitle" style="margin-top:8px">The Support Seldom Talked About</p>
@@ -2100,11 +2101,14 @@
 
           <p>Also included: sections on ADHD, parenting, and support resources contributed by a parent of an ADHD youth.</p>
           <div style="margin-top:var(--sp3);padding:var(--sp3) var(--sp4);background:rgba(201,150,58,0.07);border-left:4px solid var(--gold);border-radius:0 var(--r-md) var(--r-md) 0">
-            <p style="font-size:14px;font-weight:600;color:var(--gold-dark);margin-bottom:4px">★ Charity Edition — Limited Stocks</p>
-            <p style="font-size:14px;color:rgba(0,0,0,0.65);line-height:1.6;margin:0">50% of net proceeds are donated to two Singapore ADHD charities — <strong>Unlocking ADHD</strong> and <strong>SPARK</strong>. Limited copies available — order early to avoid disappointment.</p>
+            <p style="font-size:14px;font-weight:600;color:var(--gold-dark);margin-bottom:4px">★ Charity Edition — Sold Out</p>
+            <p style="font-size:14px;color:rgba(0,0,0,0.65);line-height:1.6;margin:0">Through book sales, <strong>S$4,785.66</strong> has been donated to two Singapore ADHD charities — <strong>Unlocking ADHD</strong> and <strong>SPARK Singapore</strong>. Thank you to everyone who supported this edition.</p>
           </div>
 
-          <a href="https://bit.ly/charityedition" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="margin-top:var(--sp5)">Order Now ↗</a>
+          <div style="margin-top:var(--sp4);padding:var(--sp3) var(--sp4);background:rgba(31,138,138,0.06);border-left:4px solid var(--teal);border-radius:0 var(--r-md) var(--r-md) 0">
+            <p style="font-size:14px;font-weight:600;color:var(--teal);margin-bottom:4px">📚 Available at the Library</p>
+            <p style="font-size:14px;color:rgba(0,0,0,0.65);line-height:1.6;margin:0">10 copies have been donated to the library — you can borrow a copy and loan it out to others. Ask at your local branch.</p>
+          </div>
         </div>
 
       </div>
@@ -2134,7 +2138,6 @@
         <img src="images/speaking-book-sharing-2.jpg" alt="Parent First ADHD Later — parent sharing session July 4" style="width:100%;height:240px;object-fit:cover;border-radius:var(--r-md);box-shadow:0 4px 20px rgba(0,0,0,0.1);display:block" />
       </div>
       <div style="margin-top:var(--sp5);display:flex;gap:var(--sp3);flex-wrap:wrap;align-items:center">
-        <a href="https://bit.ly/charityedition" target="_blank" rel="noopener" class="btn btn-teal">Order the Book ↗</a>
         <button onclick="showPage('speaking')" class="btn btn-outline">See All Events →</button>
       </div>
     </div>
@@ -2161,7 +2164,7 @@
   </section>
 
   <div class="container" style="padding-bottom:var(--sp6)">
-    <p style="font-size:13px;color:rgba(0,0,0,0.65);font-style:italic;line-height:1.7">Published by Transforming Lives. 50% of net proceeds from the charity edition are donated to named beneficiaries.</p>
+    <p style="font-size:13px;color:rgba(0,0,0,0.65);font-style:italic;line-height:1.7">Published by Transforming Lives. The Charity Edition is sold out. S$4,785.66 was donated to Unlocking ADHD and SPARK Singapore through book sales.</p>
   </div>
 
 </div><!-- /products -->
