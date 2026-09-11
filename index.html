@@ -3266,8 +3266,14 @@
       candicelim:     'images/candice-lim.jpg',
       geniehoe:       'images/genie-hoe.png',
     };
-    const faviconHref = (pageFavicons[id] || 'images/TL_favicon.png') + '?v=6';
-    document.querySelectorAll('link[rel*="icon"]').forEach(el => { el.href = faviconHref; });
+    const faviconHref = (pageFavicons[id] || 'images/TL_favicon.png') + '?fv=' + id;
+    // Remove existing icon links and re-append to force browsers to re-render the tab icon
+    document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
+    const newIcon = document.createElement('link');
+    newIcon.rel = 'icon';
+    newIcon.type = 'image/png';
+    newIcon.href = faviconHref;
+    document.head.appendChild(newIcon);
 
     // Dynamic SEO meta tags per page
     const descriptions = {
