@@ -3257,6 +3257,18 @@
     };
     document.title = titles[id] || 'Transforming Lives';
 
+    // Swap favicon per page — team profile pages show the person's photo
+    const pageFavicons = {
+      moonlakelee:    'images/founder.jpg',
+      ravenlim:       'images/raven-lim.jpg',
+      dasiyahdezwart: 'images/dasiyah-de-zwart.jpg',
+      teresachua:     'images/teresa-chua.png',
+      candicelim:     'images/candice-lim.jpg',
+      geniehoe:       'images/genie-hoe.png',
+    };
+    const faviconHref = (pageFavicons[id] || 'images/TL_favicon.png') + '?v=6';
+    document.querySelectorAll('link[rel*="icon"]').forEach(el => { el.href = faviconHref; });
+
     // Dynamic SEO meta tags per page
     const descriptions = {
       home:         'Transforming Lives is a Singapore social enterprise providing coaching, psychoeducation, and neuroinclusion support — for individuals, families, schools, and workplaces.',
