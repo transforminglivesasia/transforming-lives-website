@@ -443,7 +443,37 @@
     }
     .nav-links a:hover { background: var(--subtle); color: var(--black); }
     .nav-links a.active { color: var(--black); font-weight: var(--w-semi); background: var(--subtle); }
-    .nav-links .nav-cta { padding: 7px 18px; color: var(--teal); font-weight: 600; }
+    .nav-links .nav-cta {
+      padding: 8px 20px;
+      background: var(--teal);
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: var(--r-pill);
+      margin-left: 6px;
+      text-decoration: none;
+    }
+    .nav-links .nav-cta:hover { background: #167474 !important; color: #fff !important; }
+    /* Floating enquiry button */
+    .float-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 998;
+      background: var(--teal);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: var(--r-pill);
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(31,138,138,0.35);
+      transition: transform .18s ease, box-shadow .18s ease, background .15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .float-cta:hover { background: #167474; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(31,138,138,0.4); }
 
     .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 6px; border-radius: 8px; }
     .hamburger span { width: 20px; height: 1.5px; background: var(--black); border-radius: 2px; transition: transform .25s cubic-bezier(0.34,1.56,0.64,1), opacity .2s; }
@@ -1078,7 +1108,7 @@
       <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
       <a onclick="showPage('media')"         id="nav-media"        >Media</a>
       <a onclick="showPage('testimonials')" id="nav-testimonials" >What People Say</a>
-      <a onclick="showPage('contact')"      id="nav-contact"      class="nav-cta">Contact</a>
+      <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" id="nav-contact" class="nav-cta">Get in Touch ↗</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -1096,7 +1126,7 @@
   <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
   <a onclick="showPage('media');closeMenu()">Media</a>
   <a onclick="showPage('testimonials');closeMenu()">What People Say</a>
-  <a onclick="showPage('contact');closeMenu()">Contact</a>
+  <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener">Get in Touch ↗</a>
 </div>
 
 
@@ -3527,5 +3557,11 @@
     <p style="font-size:12px;color:rgba(0,0,0,0.35);margin:0">Opens your email app</p>
   </div>
 </div>
+<!-- Floating enquiry button — always visible on every page -->
+<a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="float-cta" aria-label="Open enquiry form">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  Get in Touch
+</a>
+
 </body>
 </html>
