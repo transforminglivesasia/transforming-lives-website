@@ -32,6 +32,11 @@ const PROFILES = {
     desc: 'Candice Lim is the Coaching & Capability Build Lead at Transforming Lives, bringing strengths-based coaching and two decades of organisational experience to individuals and organisations.',
     image: `${BASE}/images/candice-lim.jpg`,
   },
+  '/alisacheng': {
+    title: 'Alisa Cheng | Executive Function Coaching Associate | Transforming Lives',
+    desc: 'Alisa Cheng is an Executive Function Coaching Associate at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
+    image: `${BASE}/images/alisa-cheng.jpg`,
+  },
   '/geniehoe': {
     title: 'Genie Hoe | Operations Administrator | Transforming Lives',
     desc: 'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
