@@ -1889,9 +1889,9 @@
       <!-- Poster + card layout -->
       <div style="display:grid;grid-template-columns:320px 1fr;gap:var(--sp6);margin-top:var(--sp6);align-items:start" class="swiss-binding-grid">
 
-        <!-- Poster column -->
-        <div style="position:sticky;top:24px">
-          <img src="images/opportunities-intern-poster.webp?v=1" alt="Social Media &amp; Content Intern — Transforming Lives" style="width:100%;border-radius:var(--r-md);box-shadow:0 4px 24px rgba(0,0,0,0.10);display:block" loading="eager" />
+        <!-- Poster column — show headline section only -->
+        <div style="position:sticky;top:24px;border-radius:var(--r-md);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10)">
+          <img src="images/opportunities-intern-poster.webp?v=1" alt="Social Media &amp; Content Intern — Transforming Lives" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block" loading="eager" />
         </div>
 
         <!-- Job card column -->
@@ -1908,8 +1908,19 @@
           </div>
         </div>
 
+        <!-- Intro -->
+        <div style="padding:var(--sp5) var(--sp6) 0">
+          <p style="font-size:16px;color:rgba(0,0,0,0.75);line-height:1.7;margin-bottom:var(--sp3)">Transforming Lives is looking for a creative intern to support our social media, communications and event coverage.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 var(--sp3);display:flex;flex-direction:column;gap:8px">
+            <li style="display:flex;gap:10px;font-size:15px;color:rgba(0,0,0,0.7);line-height:1.5"><span style="color:var(--teal);flex-shrink:0;margin-top:2px">◆</span>Enjoy turning ideas and information into clear, visually appealing content?</li>
+            <li style="display:flex;gap:10px;font-size:15px;color:rgba(0,0,0,0.7);line-height:1.5"><span style="color:var(--teal);flex-shrink:0;margin-top:2px">◆</span>Want to gain hands-on experience in social media and communications within a growing social-impact organisation?</li>
+          </ul>
+          <p style="font-size:15px;font-weight:700;color:var(--teal);margin-bottom:var(--sp5)">Send in your application TODAY!</p>
+          <hr style="border:none;border-top:1px solid var(--border);margin:0 0 var(--sp5)" />
+        </div>
+
         <!-- Card body -->
-        <div style="padding:var(--sp6);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6)">
+        <div style="padding:0 var(--sp6) var(--sp6);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6)">
 
           <!-- Left col -->
           <div>
