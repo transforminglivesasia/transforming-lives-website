@@ -33,8 +33,8 @@ const PROFILES = {
     image: `${BASE}/images/candice-lim.jpg`,
   },
   '/alisacheng': {
-    title: 'Alisa Cheng | Executive Function Coaching Associate | Transforming Lives',
-    desc: 'Alisa Cheng is an Executive Function Coaching Associate at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
+    title: 'Alisa Cheng | Executive Function Associate Coach | Transforming Lives',
+    desc: 'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
     image: `${BASE}/images/alisa-cheng.jpg`,
   },
   '/geniehoe': {
