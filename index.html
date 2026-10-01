@@ -876,6 +876,7 @@
     @media (max-width: 560px) { .media-grid { grid-template-columns: 1fr; } }
     @media (max-width: 560px) { .swiss-binding-grid { grid-template-columns: 1fr; } }
     @media (max-width: 700px) { .internship-body-grid { grid-template-columns: 1fr !important; } }
+    @media (max-width: 700px) { .podcast-grid { grid-template-columns: 1fr !important; } }
     .speaking-photos { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); }
     .speaking-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
     .speaking-photo img { width: 100%; display: block; object-fit: cover; height: 360px; object-position: top center; }
@@ -2910,69 +2911,160 @@
     </div>
   </section>
 
-  <!-- Past Events -->
-  <section style="padding:var(--sp10) 0">
+  <!-- Events Tab Nav -->
+  <div style="background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:64px;z-index:20">
     <div class="container">
-      <p class="label">A Track Record of Impact</p>
-      <h2 class="h-sub" style="margin-top:12px">Past Events &amp; Appearances</h2>
-
-      <div style="display:flex;flex-direction:column;gap:var(--sp4);margin-top:var(--sp6)">
-
-        <!-- Event 1: Book Sharing (July 2026) -->
-        <div class="past-event-card" style="flex-direction:column;gap:0">
-          <div style="display:flex;gap:var(--sp3)">
-            <span class="past-event-year" style="flex-shrink:0">Jul 2026</span>
-            <div>
-              <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
-                <span class="past-event-type">Book Sharing</span>
-                <span class="past-event-org">· Singapore</span>
-              </div>
-              <h3 class="past-event-title">Parent First, ADHD Later — Charity Edition Book Sharing</h3>
-              <p class="past-event-desc">Over 40 parents of ADHD teens gathered for a sharing session around the principles in the recently launched Charity Edition of "Parent First, ADHD Later". The session centred around the voices of our youth — and what they wish parents could understand.</p>
-              <p class="past-event-location">📍 Singapore · 40+ parents attended</p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2);margin-top:var(--sp3)">
-            <img src="images/speaking-book-sharing-1.jpg" alt="Parent First ADHD Later book sharing session — parents gathered" style="width:100%;height:220px;object-fit:cover;border-radius:var(--r-md);display:block" />
-            <img src="images/speaking-book-sharing-2.jpg" alt="Parent First ADHD Later book sharing session" style="width:100%;height:220px;object-fit:cover;border-radius:var(--r-md);display:block" />
-          </div>
-        </div>
-
-        <!-- Event 2: Sunway University (June 2026) -->
-        <div class="past-event-card" style="flex-direction:column;gap:0">
-          <div style="display:flex;gap:var(--sp3)">
-            <span class="past-event-year" style="flex-shrink:0">Jun 2026</span>
-            <div>
-              <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
-                <span class="past-event-type">Invited Talk</span>
-                <span class="past-event-org">· Sunway Education Group, Malaysia</span>
-              </div>
-              <h3 class="past-event-title">Understanding ADHD</h3>
-              <p class="past-event-desc">An invited speaker session at Sunway Education sharing about "Understanding ADHD" to over 80 educators and administrators from the Sunway Education Group. Co-presenter Alisa Cheng did an excellent job sharing her journey and answering questions from the youth perspective.</p>
-              <p class="past-event-location">📍 Sunway University, Malaysia · 80+ educators and administrators</p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2);margin-top:var(--sp3)">
-            <img src="images/speaking-sunway-uni-1.jpg" alt="Moonlake Lee speaking at Sunway University on Understanding ADHD" style="width:100%;height:360px;object-fit:cover;object-position:center top;border-radius:var(--r-md);display:block" />
-            <img src="images/speaking-sunway-uni-2.jpg" alt="Moonlake Lee and Alisa Cheng at Sunway Education event" style="width:100%;height:360px;object-fit:cover;object-position:center top;border-radius:var(--r-md);display:block" />
-          </div>
-        </div>
-
+      <div style="display:flex;gap:0;overflow-x:auto">
+        <button id="evtab-upcoming" onclick="showEventsTab('upcoming')" style="padding:16px 28px;font-size:15px;font-weight:700;border:none;background:none;cursor:pointer;border-bottom:3px solid var(--teal);color:var(--teal);white-space:nowrap;transition:color 0.15s,border-color 0.15s">Upcoming Events</button>
+        <button id="evtab-past" onclick="showEventsTab('past')" style="padding:16px 28px;font-size:15px;font-weight:700;border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;color:rgba(0,0,0,0.4);white-space:nowrap;transition:color 0.15s,border-color 0.15s">Past Events</button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Upcoming Events -->
-  <section style="padding:var(--sp10) 0;background:var(--off-white)">
-    <div class="container">
-      <p class="label">What's Coming Up</p>
-      <h2 class="h-sub" style="margin-top:12px">Upcoming Events</h2>
-      <div style="margin-top:var(--sp6);padding:var(--sp6) var(--sp5);background:var(--white);border:1.5px dashed var(--border);border-radius:var(--r-md);text-align:center">
-        <p style="font-size:15px;color:rgba(0,0,0,0.45);margin:0">Upcoming events to be updated soon — check back shortly.</p>
+  <!-- UPCOMING EVENTS PANEL -->
+  <div id="evpanel-upcoming">
+
+    <!-- Webinars -->
+    <section style="padding:var(--sp10) 0">
+      <div class="container">
+        <p class="label">Webinars</p>
+        <h2 class="h-sub" style="margin-top:12px">October 2026</h2>
+        <p class="body" style="margin-top:var(--sp3);max-width:680px">Join us for two free Zoom webinars this October — register using the links below.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6);margin-top:var(--sp6)" class="swiss-binding-grid">
+
+          <!-- Webinar 1: Dr Nadeau -->
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+            <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women and Mature Adults — Webinar with Dr Kathleen G. Nadeau" style="width:100%;display:block;object-fit:cover" loading="lazy" />
+            <div style="padding:var(--sp5);display:flex;flex-direction:column;flex:1;gap:var(--sp3)">
+              <div>
+                <span style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--teal)">Webinar · Free · Zoom</span>
+                <h3 style="font-size:clamp(17px,2vw,21px);font-weight:700;letter-spacing:-0.3px;margin:8px 0 6px;line-height:1.3">ADHD Across the Lifespan: Girls, Women &amp; Mature Adults</h3>
+                <p style="font-size:14px;color:rgba(0,0,0,0.6);line-height:1.6;margin:0">In conversation with Dr Kathleen G. Nadeau, Clinical Psychologist and leading authority on ADHD in women and girls.</p>
+              </div>
+              <p style="font-size:14px;font-weight:600;color:var(--black);margin:0">8 October 2026 · 8:00 pm – 9:00 pm SGT</p>
+              <a href="https://bit.ly/webinar-drnadeau" target="_blank" rel="noopener" class="btn btn-teal" style="align-self:flex-start;margin-top:auto">Register Now →</a>
+            </div>
+          </div>
+
+          <!-- Webinar 2: Ready to Launch -->
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+            <img src="images/webinar-ready-to-launch.jpg" alt="Ready to Launch — Preparing Young Adults for the Next Stage of Life" style="width:100%;display:block;object-fit:cover" loading="lazy" />
+            <div style="padding:var(--sp5);display:flex;flex-direction:column;flex:1;gap:var(--sp3)">
+              <div>
+                <span style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--teal)">Webinar · Free · Zoom</span>
+                <h3 style="font-size:clamp(17px,2vw,21px);font-weight:700;letter-spacing:-0.3px;margin:8px 0 6px;line-height:1.3">Ready to Launch: Preparing Your Young Adult for the Next Stage of Life</h3>
+                <p style="font-size:14px;color:rgba(0,0,0,0.6);line-height:1.6;margin:0">With Seraphine Ann Chia — Founder of With SERA, Personal Alignment Coach, and Education &amp; Future Readiness Consultant.</p>
+              </div>
+              <p style="font-size:14px;font-weight:600;color:var(--black);margin:0">15 October 2026 · 8:00 pm – 9:00 pm SGT</p>
+              <a href="https://bit.ly/ready2launchwebinar" target="_blank" rel="noopener" class="btn btn-teal" style="align-self:flex-start;margin-top:auto">Register Now →</a>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Podcast Series -->
+    <section style="padding:var(--sp10) 0;background:var(--off-white);border-top:1px solid var(--border)">
+      <div class="container">
+        <p class="label">Podcast Series</p>
+        <h2 class="h-sub" style="margin-top:12px">Wired to LIVE Differently</h2>
+        <p class="body" style="margin-top:var(--sp3);max-width:680px">A podcast series by Transforming Lives exploring what it means to live, work, learn, and connect as a neurodivergent person — and the people who support them.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp5);margin-top:var(--sp6)" class="podcast-grid">
+
+          <!-- Wired to WORK -->
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+            <img src="images/podcast-wired-work.webp" alt="Wired to WORK Differently — a Wired to LIVE Differently series" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover" loading="lazy" />
+            <div style="padding:var(--sp4);flex:1;display:flex;flex-direction:column;gap:var(--sp2)">
+              <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;background:rgba(31,138,138,0.1);color:var(--teal);padding:3px 10px;border-radius:var(--r-pill);align-self:flex-start">Season 1 · Launching 9 Oct 2026</span>
+              <h3 style="font-size:18px;font-weight:700;letter-spacing:-0.2px;margin:0;line-height:1.3">Wired to WORK Differently</h3>
+              <p style="font-size:14px;color:rgba(0,0,0,0.6);line-height:1.6;margin:0">Conversations about neurodivergence, ADHD, and executive function in the workplace.</p>
+            </div>
+          </div>
+
+          <!-- Wired to LEARN -->
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+            <img src="images/podcast-wired-learn.webp" alt="Wired to LEARN Differently — a Wired to LIVE Differently series" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover" loading="lazy" />
+            <div style="padding:var(--sp4);flex:1;display:flex;flex-direction:column;gap:var(--sp2)">
+              <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.45);padding:3px 10px;border-radius:var(--r-pill);align-self:flex-start">Upcoming</span>
+              <h3 style="font-size:18px;font-weight:700;letter-spacing:-0.2px;margin:0;line-height:1.3">Wired to LEARN Differently</h3>
+              <p style="font-size:14px;color:rgba(0,0,0,0.6);line-height:1.6;margin:0">Exploring how neurodivergent learners thrive — in school, at home, and beyond.</p>
+            </div>
+          </div>
+
+          <!-- Wired to CONNECT -->
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+            <img src="images/podcast-wired-connect.png" alt="Wired to CONNECT Differently — a Wired to LIVE Differently series" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover" loading="lazy" />
+            <div style="padding:var(--sp4);flex:1;display:flex;flex-direction:column;gap:var(--sp2)">
+              <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.45);padding:3px 10px;border-radius:var(--r-pill);align-self:flex-start">Upcoming</span>
+              <h3 style="font-size:18px;font-weight:700;letter-spacing:-0.2px;margin:0;line-height:1.3">Wired to CONNECT Differently</h3>
+              <p style="font-size:14px;color:rgba(0,0,0,0.6);line-height:1.6;margin:0">Relationships, family dynamics, and community through the neurodivergent lens.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /evpanel-upcoming -->
+
+  <!-- PAST EVENTS PANEL -->
+  <div id="evpanel-past" style="display:none">
+
+    <section style="padding:var(--sp10) 0">
+      <div class="container">
+        <p class="label">A Track Record of Impact</p>
+        <h2 class="h-sub" style="margin-top:12px">Past Events &amp; Appearances</h2>
+
+        <div style="display:flex;flex-direction:column;gap:var(--sp4);margin-top:var(--sp6)">
+
+          <!-- Event 1: Book Sharing (July 2026) -->
+          <div class="past-event-card" style="flex-direction:column;gap:0">
+            <div style="display:flex;gap:var(--sp3)">
+              <span class="past-event-year" style="flex-shrink:0">Jul 2026</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                  <span class="past-event-type">Book Sharing</span>
+                  <span class="past-event-org">· Singapore</span>
+                </div>
+                <h3 class="past-event-title">Parent First, ADHD Later — Charity Edition Book Sharing</h3>
+                <p class="past-event-desc">Over 40 parents of ADHD teens gathered for a sharing session around the principles in the recently launched Charity Edition of "Parent First, ADHD Later". The session centred around the voices of our youth — and what they wish parents could understand.</p>
+                <p class="past-event-location">📍 Singapore · 40+ parents attended</p>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2);margin-top:var(--sp3)">
+              <img src="images/speaking-book-sharing-1.jpg" alt="Parent First ADHD Later book sharing session — parents gathered" style="width:100%;height:220px;object-fit:cover;border-radius:var(--r-md);display:block" />
+              <img src="images/speaking-book-sharing-2.jpg" alt="Parent First ADHD Later book sharing session" style="width:100%;height:220px;object-fit:cover;border-radius:var(--r-md);display:block" />
+            </div>
+          </div>
+
+          <!-- Event 2: Sunway University (June 2026) -->
+          <div class="past-event-card" style="flex-direction:column;gap:0">
+            <div style="display:flex;gap:var(--sp3)">
+              <span class="past-event-year" style="flex-shrink:0">Jun 2026</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                  <span class="past-event-type">Invited Talk</span>
+                  <span class="past-event-org">· Sunway Education Group, Malaysia</span>
+                </div>
+                <h3 class="past-event-title">Understanding ADHD</h3>
+                <p class="past-event-desc">An invited speaker session at Sunway Education sharing about "Understanding ADHD" to over 80 educators and administrators from the Sunway Education Group. Co-presenter Alisa Cheng did an excellent job sharing her journey and answering questions from the youth perspective.</p>
+                <p class="past-event-location">📍 Sunway University, Malaysia · 80+ educators and administrators</p>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp2);margin-top:var(--sp3)">
+              <img src="images/speaking-sunway-uni-1.jpg" alt="Moonlake Lee speaking at Sunway University on Understanding ADHD" style="width:100%;height:360px;object-fit:cover;object-position:center top;border-radius:var(--r-md);display:block" />
+              <img src="images/speaking-sunway-uni-2.jpg" alt="Moonlake Lee and Alisa Cheng at Sunway Education event" style="width:100%;height:360px;object-fit:cover;object-position:center top;border-radius:var(--r-md);display:block" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /evpanel-past -->
 
 </div><!-- /speaking -->
 
@@ -3521,6 +3613,28 @@
       const el = document.getElementById(anchorId);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 120);
+  }
+
+  function showEventsTab(tab) {
+    var upcoming = document.getElementById('evpanel-upcoming');
+    var past = document.getElementById('evpanel-past');
+    var tabUp = document.getElementById('evtab-upcoming');
+    var tabPast = document.getElementById('evtab-past');
+    if (tab === 'upcoming') {
+      upcoming.style.display = '';
+      past.style.display = 'none';
+      tabUp.style.borderBottomColor = 'var(--teal)';
+      tabUp.style.color = 'var(--teal)';
+      tabPast.style.borderBottomColor = 'transparent';
+      tabPast.style.color = 'rgba(0,0,0,0.4)';
+    } else {
+      upcoming.style.display = 'none';
+      past.style.display = '';
+      tabPast.style.borderBottomColor = 'var(--teal)';
+      tabPast.style.color = 'var(--teal)';
+      tabUp.style.borderBottomColor = 'transparent';
+      tabUp.style.color = 'rgba(0,0,0,0.4)';
+    }
   }
 
   function showPage(id, pushHistory = true) {
