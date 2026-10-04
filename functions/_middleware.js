@@ -1,8 +1,5 @@
-// Cloudflare Pages middleware — serves correct og:image for social link previews
-// Bots (WhatsApp, LinkedIn, Telegram, Slack, iMessage, etc.) read og:image from HTML;
-// they don't execute JavaScript, so the SPA's dynamic meta updates never reach them.
-// This middleware detects bot user-agents and returns a minimal HTML page with the
-// correct og tags per profile URL. Human visitors fall through to the normal SPA.
+// Link-preview crawlers (WhatsApp, LinkedIn, etc.) don't run JavaScript, so the SPA's
+// per-page title/og tags must be written into the HTML itself for every request.
 
 const BASE = 'https://www.transforminglives.asia';
 
@@ -52,45 +49,48 @@ const PROFILES = {
   },
 };
 
-const BOT_UA = /facebookexternalhit|facebookcatalog|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot|discordbot|applebot|googlebot|bingbot|yandex|pinterest|vkshare|iframely|embedly|w3c_validator|rogerbot|screaming.frog/i;
+class SetAttr {
+  constructor(attr, val) { this.attr = attr; this.val = val; }
+  element(el) { el.setAttribute(this.attr, this.val); }
+}
 
-function escape(str) {
-  return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+class SetText {
+  constructor(content) { this.content = content; }
+  element(el) { el.setInnerContent(this.content); }
+}
+
+class AppendHead {
+  constructor(markup) { this.markup = markup; }
+  element(el) { el.append(this.markup, { html: true }); }
 }
 
 export async function onRequest({ request, next }) {
   const url = new URL(request.url);
-  const ua = request.headers.get('User-Agent') || '';
-  const profile = PROFILES[url.pathname];
+  const page = PROFILES[url.pathname.replace(/\/+$/, '')];
+  const response = await next();
+  if (!page || !(response.headers.get('Content-Type') || '').includes('text/html')) return response;
 
-  if (profile && BOT_UA.test(ua)) {
-    const t = escape(profile.title);
-    const d = escape(profile.desc);
-    const img = escape(profile.image);
-    const pageUrl = escape(url.href);
-    return new Response(
-      `<!DOCTYPE html><html><head>
-<meta charset="utf-8">
-<link rel="icon" type="image/png" href="${profile.icon || '/images/TL_favicon.png'}">
-<link rel="shortcut icon" href="/favicon.ico">
-<title>${t}</title>
-<meta name="description" content="${d}">
-<meta property="og:type" content="${profile.type || 'profile'}">
-<meta property="og:title" content="${t}">
-<meta property="og:description" content="${d}">
-<meta property="og:image" content="${img}">
-<meta property="og:image:width" content="${profile.imageSize || 800}">
-<meta property="og:image:height" content="${profile.imageSize || 800}">
-<meta property="og:url" content="${pageUrl}">
-<meta property="og:site_name" content="Transforming Lives">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${t}">
-<meta name="twitter:description" content="${d}">
-<meta name="twitter:image" content="${img}">
-</head><body></body></html>`,
-      { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'public,max-age=3600' } }
-    );
+  const pageUrl = BASE + url.pathname.replace(/\/+$/, '');
+  const size = String(page.imageSize || 800);
+  let rw = new HTMLRewriter()
+    .on('title', new SetText(page.title))
+    .on('meta[name="description"]', new SetAttr('content', page.desc))
+    .on('link[rel="canonical"]', new SetAttr('href', pageUrl))
+    .on('meta[property="og:type"]', new SetAttr('content', page.type || 'profile'))
+    .on('meta[property="og:url"]', new SetAttr('content', pageUrl))
+    .on('meta[property="og:title"]', new SetAttr('content', page.title))
+    .on('meta[property="og:description"]', new SetAttr('content', page.desc))
+    .on('meta[property="og:image"]', new SetAttr('content', page.image))
+    .on('meta[name="twitter:title"]', new SetAttr('content', page.title))
+    .on('meta[name="twitter:description"]', new SetAttr('content', page.desc))
+    .on('meta[name="twitter:image"]', new SetAttr('content', page.image))
+    .on('head', new AppendHead(`<meta property="og:image:width" content="${size}"><meta property="og:image:height" content="${size}">`));
+  if (page.icon) {
+    rw = rw.on('link[rel="icon"]', new SetAttr('href', page.icon))
+           .on('link[rel="shortcut icon"]', new SetAttr('href', page.icon));
   }
 
-  return next();
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+  return rw.transform(new Response(response.body, { status: response.status, headers }));
 }
