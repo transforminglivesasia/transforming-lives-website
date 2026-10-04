@@ -37,7 +37,7 @@ const PROFILES = {
   '/coaching': {
     type: 'website',
     title: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
-    desc: 'Parent and executive function coaching from people who get it, at a price within reach.',
+    desc: 'Parent and executive function coaching from people who get it, at a fee within reach.',
     image: `${BASE}/images/coaching-share.png`,
     imageSize: 600,
     icon: '/images/coaching-favicon.png',
