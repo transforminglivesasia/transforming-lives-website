@@ -63,6 +63,8 @@ export async function onRequest({ request, next }) {
     return new Response(
       `<!DOCTYPE html><html><head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="/images/TL_favicon.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <title>${t}</title>
 <meta name="description" content="${d}">
 <meta property="og:type" content="profile">
