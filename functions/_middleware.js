@@ -37,7 +37,7 @@ const PROFILES = {
   '/coaching': {
     type: 'website',
     title: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
-    desc: 'Parent coaching and executive function coaching in Singapore from Transforming Lives — meet our coaches and see our social-enterprise coaching fees.',
+    desc: 'Parent and executive function coaching from people who get it, at a price within reach.',
     image: `${BASE}/images/coaching-share.png`,
     imageSize: 600,
     icon: '/images/coaching-favicon.png',
