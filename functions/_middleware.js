@@ -37,6 +37,14 @@ const PROFILES = {
     desc: 'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
     image: `${BASE}/images/alisa-cheng.jpg`,
   },
+  '/coaching': {
+    type: 'website',
+    title: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
+    desc: 'Parent coaching and executive function coaching in Singapore from Transforming Lives — meet our coaches and see our social-enterprise coaching fees.',
+    image: `${BASE}/images/coaching-share.png`,
+    imageSize: 600,
+    icon: '/images/coaching-favicon.png',
+  },
   '/geniehoe': {
     title: 'Genie Hoe | Operations Administrator | Transforming Lives',
     desc: 'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
@@ -63,16 +71,16 @@ export async function onRequest({ request, next }) {
     return new Response(
       `<!DOCTYPE html><html><head>
 <meta charset="utf-8">
-<link rel="icon" type="image/png" href="/images/TL_favicon.png">
+<link rel="icon" type="image/png" href="${profile.icon || '/images/TL_favicon.png'}">
 <link rel="shortcut icon" href="/favicon.ico">
 <title>${t}</title>
 <meta name="description" content="${d}">
-<meta property="og:type" content="profile">
+<meta property="og:type" content="${profile.type || 'profile'}">
 <meta property="og:title" content="${t}">
 <meta property="og:description" content="${d}">
 <meta property="og:image" content="${img}">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="800">
+<meta property="og:image:width" content="${profile.imageSize || 800}">
+<meta property="og:image:height" content="${profile.imageSize || 800}">
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:site_name" content="Transforming Lives">
 <meta name="twitter:card" content="summary_large_image">
