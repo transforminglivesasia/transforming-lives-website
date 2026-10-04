@@ -38,8 +38,10 @@ const PROFILES = {
     type: 'website',
     title: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
     desc: 'Parent and executive function coaching from people who get it, at a fee within reach.',
-    image: `${BASE}/images/coaching-share.png`,
-    imageSize: 600,
+    shareTitle: 'Coaching | Transforming Lives',
+    image: `${BASE}/images/coaching-share-wide.png`,
+    imageWidth: 1200,
+    imageHeight: 630,
     icon: '/images/coaching-favicon.png',
   },
   '/geniehoe': {
@@ -71,20 +73,21 @@ export async function onRequest({ request, next }) {
   if (!page || !(response.headers.get('Content-Type') || '').includes('text/html')) return response;
 
   const pageUrl = BASE + url.pathname.replace(/\/+$/, '');
-  const size = String(page.imageSize || 800);
+  const shareTitle = page.shareTitle || page.title;
   let rw = new HTMLRewriter()
     .on('title', new SetText(page.title))
     .on('meta[name="description"]', new SetAttr('content', page.desc))
     .on('link[rel="canonical"]', new SetAttr('href', pageUrl))
     .on('meta[property="og:type"]', new SetAttr('content', page.type || 'profile'))
     .on('meta[property="og:url"]', new SetAttr('content', pageUrl))
-    .on('meta[property="og:title"]', new SetAttr('content', page.title))
+    .on('meta[property="og:title"]', new SetAttr('content', shareTitle))
     .on('meta[property="og:description"]', new SetAttr('content', page.desc))
     .on('meta[property="og:image"]', new SetAttr('content', page.image))
-    .on('meta[name="twitter:title"]', new SetAttr('content', page.title))
+    .on('meta[name="twitter:title"]', new SetAttr('content', shareTitle))
     .on('meta[name="twitter:description"]', new SetAttr('content', page.desc))
     .on('meta[name="twitter:image"]', new SetAttr('content', page.image))
-    .on('head', new AppendHead(`<meta property="og:image:width" content="${size}"><meta property="og:image:height" content="${size}">`));
+    .on('meta[name="twitter:card"]', new SetAttr('content', page.imageWidth > page.imageHeight ? 'summary_large_image' : 'summary'))
+    .on('head', new AppendHead(`<meta property="og:image:width" content="${page.imageWidth || 800}"><meta property="og:image:height" content="${page.imageHeight || 800}">`));
   if (page.icon) {
     rw = rw.on('link[rel="icon"]', new SetAttr('href', page.icon))
            .on('link[rel="shortcut icon"]', new SetAttr('href', page.icon));
