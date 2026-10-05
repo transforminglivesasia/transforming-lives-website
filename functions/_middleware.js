@@ -17,7 +17,7 @@ const PROFILES = {
   '/dasiyahdezwart': {
     title: 'Dasiyah de Zwart | Corporate Partnerships Lead | Transforming Lives',
     desc: 'Dasiyah de Zwart is the Corporate Partnerships Lead at Transforming Lives, building meaningful partnerships that advance neurodiversity, inclusion, and social impact.',
-    image: `${BASE}/images/dasiyah-de-zwart.jpg`,
+    image: `${BASE}/images/dasiyah-de-zwart-2026.jpg`,
   },
   '/teresachua': {
     title: 'Teresa Chua | Transforming Lives',
