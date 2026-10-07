@@ -4028,21 +4028,41 @@
 </a>
 
 <!-- Webinar pop-up — home page only, until 15 Oct 2026 8:00 pm SGT -->
-<div id="webinar-popup" role="dialog" aria-modal="true" aria-label="Upcoming webinars" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)closeWebinarPopup()">
-  <div style="background:var(--white);border-radius:var(--r-md);max-width:880px;width:100%;max-height:calc(100vh - 32px);overflow-y:auto;padding:var(--sp5);position:relative;box-shadow:0 12px 48px rgba(0,0,0,0.3)">
-    <button onclick="closeWebinarPopup()" aria-label="Close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:rgba(0,0,0,0.5);line-height:1">&#x2715;</button>
+<style>
+  #webinar-popup { display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; padding:16px; }
+  .wp-box { background:var(--white); border-radius:var(--r-md); max-width:760px; width:100%; max-height:calc(100dvh - 32px); overflow-y:auto; padding:var(--sp5); position:relative; box-shadow:0 12px 48px rgba(0,0,0,0.3); }
+  .wp-close { position:absolute; top:8px; right:8px; width:44px; height:44px; border-radius:50%; border:none; background:rgba(0,0,0,0.06); color:rgba(0,0,0,0.7); font-size:20px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .wp-close:hover { background:rgba(0,0,0,0.12); }
+  .wp-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp4); }
+  .wp-item { display:flex; flex-direction:column; gap:var(--sp3); }
+  .wp-item img { width:100%; display:block; border-radius:var(--r-md); }
+  .wp-item .btn { text-decoration:none; text-align:center; justify-content:center; }
+  .wp-skip { display:block; margin:var(--sp4) auto 0; background:none; border:none; color:rgba(0,0,0,0.55); font-size:15px; text-decoration:underline; cursor:pointer; padding:10px 16px; }
+  @media (max-width: 600px) {
+    .wp-box { padding:16px; padding-top:20px; }
+    .wp-box .h-sub { font-size:20px; margin:4px 0 12px !important; padding-right:44px; }
+    .wp-grid { gap:10px; }
+    .wp-item { gap:8px; }
+    .wp-item .btn { font-size:13px; padding:10px 6px; }
+    .wp-skip { margin-top:8px; }
+  }
+</style>
+<div id="webinar-popup" role="dialog" aria-modal="true" aria-label="Upcoming webinars" onclick="if(event.target===this)closeWebinarPopup()">
+  <div class="wp-box">
+    <button class="wp-close" onclick="closeWebinarPopup()" aria-label="Close">&#x2715;</button>
     <p class="label" style="margin:0">Free Zoom Webinars</p>
     <h2 class="h-sub" style="margin:8px 0 var(--sp4)">Join us this October</h2>
-    <div class="swiss-binding-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)">
-      <div style="display:flex;flex-direction:column;gap:var(--sp3)">
-        <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women &amp; Mature Adults — 8 October 2026" style="width:100%;display:block;border-radius:var(--r-md)" />
-        <a href="https://bit.ly/webinar-drnadeau" target="_blank" rel="noopener" class="btn btn-teal" style="text-decoration:none;text-align:center">Register — 8 Oct →</a>
+    <div class="wp-grid">
+      <div class="wp-item">
+        <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women &amp; Mature Adults — 8 October 2026" />
+        <a href="https://bit.ly/webinar-drnadeau" target="_blank" rel="noopener" class="btn btn-teal">Register — 8 Oct →</a>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--sp3)">
-        <img src="images/webinar-ready-to-launch.webp" alt="Ready to Launch — 15 October 2026" style="width:100%;display:block;border-radius:var(--r-md)" />
-        <a href="https://bit.ly/ready2launchwebinar" target="_blank" rel="noopener" class="btn btn-teal" style="text-decoration:none;text-align:center">Register — 15 Oct →</a>
+      <div class="wp-item">
+        <img src="images/webinar-ready-to-launch.webp" alt="Ready to Launch — 15 October 2026" />
+        <a href="https://bit.ly/ready2launchwebinar" target="_blank" rel="noopener" class="btn btn-teal">Register — 15 Oct →</a>
       </div>
     </div>
+    <button class="wp-skip" onclick="closeWebinarPopup()">Continue to website</button>
   </div>
 </div>
 <script>
