@@ -4037,6 +4037,8 @@
   .wp-item { display:flex; flex-direction:column; gap:var(--sp3); }
   .wp-item img { width:100%; display:block; border-radius:var(--r-md); }
   .wp-item .btn { text-decoration:none; text-align:center; justify-content:center; }
+  .wp-grid.wp-single { grid-template-columns:1fr; max-width:340px; margin:0 auto; }
+  .wp-box:has(.wp-single) { max-width:440px; }
   .wp-skip { display:block; margin:var(--sp4) auto 0; background:none; border:none; color:rgba(0,0,0,0.55); font-size:15px; text-decoration:underline; cursor:pointer; padding:10px 16px; }
   @media (max-width: 600px) {
     .wp-box { padding:16px; padding-top:20px; }
@@ -4045,6 +4047,7 @@
     .wp-item { gap:8px; }
     .wp-item .btn { font-size:13px; padding:10px 6px; }
     .wp-skip { margin-top:8px; }
+    .wp-grid.wp-single { max-width:280px; }
   }
 </style>
 <div id="webinar-popup" role="dialog" aria-modal="true" aria-label="Upcoming webinars" onclick="if(event.target===this)closeWebinarPopup()">
@@ -4053,11 +4056,11 @@
     <p class="label" style="margin:0">Free Zoom Webinars</p>
     <h2 class="h-sub" style="margin:8px 0 var(--sp4)">Join us this October</h2>
     <div class="wp-grid">
-      <div class="wp-item">
+      <div class="wp-item" data-until="2026-10-08T21:00:00+08:00">
         <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women &amp; Mature Adults — 8 October 2026" />
         <a href="https://bit.ly/webinar-drnadeau" target="_blank" rel="noopener" class="btn btn-teal">Register — 8 Oct →</a>
       </div>
-      <div class="wp-item">
+      <div class="wp-item" data-until="2026-10-15T20:00:00+08:00">
         <img src="images/webinar-ready-to-launch.webp" alt="Ready to Launch — 15 October 2026" />
         <a href="https://bit.ly/ready2launchwebinar" target="_blank" rel="noopener" class="btn btn-teal">Register — 15 Oct →</a>
       </div>
@@ -4076,6 +4079,13 @@
     if (Date.now() >= deadline) return;
     try { if (sessionStorage.getItem('webinarPopupSeen')) return; } catch (e) {}
     if (!document.getElementById('page-home').classList.contains('active')) return;
+    var items = document.querySelectorAll('#webinar-popup .wp-item');
+    var live = 0;
+    items.forEach(function (el) {
+      if (Date.now() >= Date.parse(el.getAttribute('data-until'))) el.remove(); else live++;
+    });
+    if (!live) return;
+    if (live === 1) document.querySelector('#webinar-popup .wp-grid').classList.add('wp-single');
     setTimeout(function () {
       if (document.getElementById('page-home').classList.contains('active')) {
         document.getElementById('webinar-popup').style.display = 'flex';
