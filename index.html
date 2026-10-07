@@ -2986,16 +2986,16 @@
   <div id="evpanel-upcoming">
 
     <!-- Webinars -->
-    <section style="padding:var(--sp10) 0">
+    <section id="ev-webinars" style="padding:var(--sp10) 0">
       <div class="container">
         <p class="label">Webinars</p>
         <h2 class="h-sub" style="margin-top:12px">October 2026</h2>
-        <p class="body" style="margin-top:var(--sp3);max-width:680px">Join us for two free Zoom webinars this October — register using the links below.</p>
+        <p class="body" id="ev-webinar-intro" style="margin-top:var(--sp3);max-width:680px">Join us for two free Zoom webinars this October — register using the links below.</p>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6);margin-top:var(--sp6)" class="swiss-binding-grid">
+        <div id="ev-webinar-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6);margin-top:var(--sp6)" class="swiss-binding-grid">
 
           <!-- Webinar 1: Dr Nadeau -->
-          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+          <div class="ev-webinar" data-until="2026-10-08T21:00:00+08:00" style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
             <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women & Mature Adults — Free Webinar with Dr Kathleen G. Nadeau" style="width:100%;display:block" />
             <div style="padding:var(--sp5);display:flex;flex-direction:column;flex:1;gap:var(--sp3)">
               <div>
@@ -3009,7 +3009,7 @@
           </div>
 
           <!-- Webinar 2: Ready to Launch -->
-          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
+          <div class="ev-webinar" data-until="2026-10-15T21:00:00+08:00" style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column">
             <img src="images/webinar-ready-to-launch.webp" alt="Ready to Launch: Preparing Young Adults for the Next Stage of Life — Free Webinar with Seraphine Ann Chia" style="width:100%;display:block" />
             <div style="padding:var(--sp5);display:flex;flex-direction:column;flex:1;gap:var(--sp3)">
               <div>
@@ -3059,6 +3059,37 @@
 
         <div style="display:flex;flex-direction:column;gap:var(--sp4);margin-top:var(--sp6)">
 
+          <!-- Webinars: shown here automatically once each has ended -->
+          <div class="past-event-card ev-past-webinar" data-from="2026-10-15T21:00:00+08:00" style="flex-direction:column;gap:0;display:none">
+            <div style="display:flex;gap:var(--sp3)">
+              <span class="past-event-year" style="flex-shrink:0">Oct 2026</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                  <span class="past-event-type">Webinar</span>
+                  <span class="past-event-org">· Transforming Lives</span>
+                </div>
+                <h3 class="past-event-title">Ready to Launch: Preparing Your Young Adult for the Next Stage of Life</h3>
+                <p class="past-event-desc">A free webinar with Seraphine Ann Chia — Founder of With SERA, Personal Alignment Coach, and Education &amp; Future Readiness Consultant — in conversation with Moonlake Lee.</p>
+                <p class="past-event-location">📍 Online (Zoom) · 15 October 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="past-event-card ev-past-webinar" data-from="2026-10-08T21:00:00+08:00" style="flex-direction:column;gap:0;display:none">
+            <div style="display:flex;gap:var(--sp3)">
+              <span class="past-event-year" style="flex-shrink:0">Oct 2026</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                  <span class="past-event-type">Webinar</span>
+                  <span class="past-event-org">· Transforming Lives</span>
+                </div>
+                <h3 class="past-event-title">ADHD in Girls, Women &amp; Mature Adults</h3>
+                <p class="past-event-desc">A free webinar with Dr Kathleen G. Nadeau, Clinical Psychologist and leading authority on ADHD in women and girls, in conversation with Moonlake Lee.</p>
+                <p class="past-event-location">📍 Online (Zoom) · 8 October 2026</p>
+              </div>
+            </div>
+          </div>
+
           <!-- Event 1: Book Sharing (July 2026) -->
           <div class="past-event-card" style="flex-direction:column;gap:0">
             <div style="display:flex;gap:var(--sp3)">
@@ -3103,6 +3134,27 @@
     </section>
 
   </div><!-- /evpanel-past -->
+<script>
+  (function () {
+    var now = Date.now();
+    var left = 0;
+    document.querySelectorAll('.ev-webinar').forEach(function (el) {
+      if (now >= Date.parse(el.getAttribute('data-until'))) el.style.display = 'none'; else left++;
+    });
+    document.querySelectorAll('.ev-past-webinar').forEach(function (el) {
+      if (now >= Date.parse(el.getAttribute('data-from'))) el.style.display = 'flex';
+    });
+    var intro = document.getElementById('ev-webinar-intro');
+    if (left === 0) {
+      document.getElementById('ev-webinars').style.display = 'none';
+    } else if (left === 1) {
+      var grid = document.getElementById('ev-webinar-grid');
+      grid.style.gridTemplateColumns = '1fr';
+      grid.style.maxWidth = '480px';
+      intro.textContent = 'Join us for a free Zoom webinar this October — register using the link below.';
+    }
+  })();
+</script>
 
   <!-- Approach -->
   <section style="padding:var(--sp10) 0;background:rgba(201,150,58,0.05);border-top:1px solid rgba(201,150,58,0.15);border-bottom:1px solid rgba(201,150,58,0.15)">
