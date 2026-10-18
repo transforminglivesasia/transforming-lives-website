@@ -808,8 +808,13 @@
     .speaking-topic-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(31,138,138,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
     /* Past events */
     .past-events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin-top: var(--sp6); }
-    .psy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp5); margin-top:var(--sp6); }
-    @media (max-width: 900px) { .psy-grid { grid-template-columns:1fr; max-width:520px; margin-left:auto; margin-right:auto; } }
+    .psy-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp5); margin-top:var(--sp6); max-width:1000px; margin-left:auto; margin-right:auto; }
+    @media (max-width: 760px) { .psy-grid { grid-template-columns:1fr; max-width:520px; } }
+    .psy-series { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+    .psy-series li { display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:14px; border-top:1px solid var(--border); padding-top:8px; }
+    .psy-series li strong { color:var(--black); font-weight:600; }
+    .psy-series li span { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; white-space:nowrap; color:rgba(0,0,0,0.45); }
+    .psy-series li span.now { color:var(--teal); }
     .psy-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
     .psy-media { aspect-ratio:16/10; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
     .psy-media img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -2446,7 +2451,7 @@
     <div class="container">
       <p class="label">Learn With Us</p>
       <h1 class="h-section">Psychoeducation</h1>
-      <p class="body-lg">Accessible, practical resources that make neurodivergence, executive function, parenting and relationships easier to understand and apply — through webinars, our newsletter and our books.</p>
+      <p class="body-lg">Accessible, practical resources that make neurodivergence, executive function, parenting and relationships easier to understand and apply — through webinars, podcasts, our newsletter and our books.</p>
     </div>
   </section>
 
@@ -2489,6 +2494,24 @@
             <p>Our book for parents of ADHD teens and young adults — practical, honest and grounded in real family life.</p>
             <div class="psy-actions">
               <button class="btn btn-teal" onclick="showPage('products')">About the Book →</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="psy-card" id="psy-podcasts">
+          <div class="psy-media" style="background:#005f8e"><img src="images/podcast-wired-work-800.jpg" alt="Wired to Work Differently — a Wired to LIVE Differently podcast series" style="object-fit:contain" /></div>
+          <div class="psy-body">
+            <p class="label" style="margin:0">Podcasts</p>
+            <h3>Wired to LIVE Differently</h3>
+            <p>Our podcast series on how different minds live, work, learn and connect — bringing together lived experience, workplace perspectives and practical insights.</p>
+            <ul class="psy-series">
+              <li><strong>Wired to WORK Differently</strong><span class="now">Season 1 · 8 episodes</span></li>
+              <li><strong>Wired to LEARN Differently</strong><span>Coming soon</span></li>
+              <li><strong>Wired to CONNECT Differently</strong><span>Coming soon</span></li>
+            </ul>
+            <div class="psy-actions" id="psy-podcast-links">
+              <span style="font-size:13px;color:rgba(0,0,0,0.45)">Listening links coming soon.</span>
             </div>
           </div>
         </div>
@@ -3942,7 +3965,7 @@
       alisacheng: 'Alisa Cheng | Executive Function Associate Coach | Transforming Lives',
       geniehoe: 'Genie Hoe | Operations Administrator | Transforming Lives',
       services: 'Coaching & Psychoeducation Services | Transforming Lives',
-      psychoeducation: 'Psychoeducation | Webinars, Newsletter & Books | Transforming Lives',
+      psychoeducation: 'Psychoeducation | Webinars, Podcasts, Newsletter & Books | Transforming Lives',
       products: 'Parent First, ADHD Later | Psychoeducation | Transforming Lives',
       blog: 'ADHD Life & Musings | Psychoeducation | Transforming Lives',
       speaking: 'Speaking & Events | Transforming Lives',
@@ -3989,7 +4012,7 @@
       alisacheng:   'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
       geniehoe:     'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
       services:     'Coaching and psychoeducation services from Transforming Lives — for parents, adults, schools, and organisations navigating executive function, neurodivergence, and neuroinclusion.',
-      psychoeducation: 'Psychoeducation from Transforming Lives — free webinars, the ADHD Life & Musings newsletter, and the book Parent First, ADHD Later.',
+      psychoeducation: 'Psychoeducation from Transforming Lives — free webinars, the Wired to LIVE Differently podcasts, the ADHD Life & Musings newsletter, and the book Parent First, ADHD Later.',
       products:     'Publications from Transforming Lives, including Parent First, ADHD Later — practical resources for families, parents, and educators navigating neurodivergence in Singapore.',
       blog:         'ADHD Life & Musings — a newsletter on executive function, neurodivergence, parenting, resilience, and growth by Transforming Lives.',
       speaking:     'Transforming Lives offers talks, panels, and facilitation on neurodivergence, executive function, and neuroinclusion for organisations, schools, and communities.',
