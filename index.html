@@ -822,6 +822,8 @@
     .wb-thumb { position:relative; display:block; border-radius:6px; overflow:hidden; aspect-ratio:16/9; border:1px solid var(--border); }
     .wb-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s; }
     .wb-thumb::after { content:''; position:absolute; left:50%; top:50%; width:34px; height:34px; margin:-17px 0 0 -17px; border-radius:50%; background:rgba(0,0,0,0.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z' fill='white'/%3E%3C/svg%3E") center/18px no-repeat; }
+    .wb-item[style*='64px'] .wb-thumb::after { width:24px; height:24px; margin:-12px 0 0 -12px; background-size:13px; }
+    @media (max-width: 480px) { .wb-item[style*='64px'] { grid-template-columns:64px 1fr !important; } }
     .wb-item:hover .wb-thumb img { transform:scale(1.04); }
     .wb-text { display:flex; flex-direction:column; gap:4px; }
     .wb-text strong { font-size:14px; line-height:1.4; color:var(--black); font-weight:600; }
@@ -2501,6 +2503,10 @@
                 <span class="wb-thumb"><img src="images/webinar-thumb-adhd-lifespan.jpg" alt="" loading="lazy" /></span>
                 <span class="wb-text"><strong>ADHD Across the Lifespan: Girls, Women &amp; Mature Adults</strong><span>With Dr Kathleen G. Nadeau · Watch ↗</span></span>
               </a>
+              <a class="wb-item" href="https://bit.ly/readytolaunch-webinar" target="_blank" rel="noopener">
+                <span class="wb-thumb"><img src="images/webinar-thumb-ready-to-launch.jpg" alt="" loading="lazy" /></span>
+                <span class="wb-text"><strong>Ready to Launch: Preparing Young Adults for the Next Stage of Life</strong><span>With Seraphine Ann Chia · Watch ↗</span></span>
+              </a>
             </div>
           </div>
         </div>
@@ -2516,6 +2522,17 @@
               <li><strong>Wired to LEARN Differently</strong><span>Coming soon</span></li>
               <li><strong>Wired to CONNECT Differently</strong><span>Coming soon</span></li>
             </ul>
+            <p style="margin:6px 0 0;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:rgba(0,0,0,0.45)">Latest episodes</p>
+            <div class="wb-list" style="margin-top:0">
+              <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E1" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
+                <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e1-ong-mian-li.jpg" alt="" loading="lazy" /></span>
+                <span class="wb-text"><strong>Ep 1 · What Does Neurodivergence Look Like at Work?</strong><span>Dr Ong Mian Li · Listen ↗</span></span>
+              </a>
+              <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E2" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
+                <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e2-wendy-yeo.jpg" alt="" loading="lazy" /></span>
+                <span class="wb-text"><strong>Ep 2 · When Your Working Styles Clash</strong><span>Wendy Yeo · Listen ↗</span></span>
+              </a>
+            </div>
             <div class="psy-actions">
               <button class="btn btn-teal" onclick="showPage('podcasts')">Listen to the Episodes →</button>
             </div>
