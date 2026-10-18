@@ -2985,6 +2985,49 @@
   <!-- UPCOMING EVENTS PANEL -->
   <div id="evpanel-upcoming">
 
+    <!-- Workshop: Ready to Launch (28 Nov 2026) -->
+    <section data-hide-after="2026-11-28T17:00:00+08:00" style="padding:var(--sp10) 0">
+      <div class="container">
+        <p class="label">Workshop for Parents</p>
+        <h2 class="h-sub" style="margin-top:12px">Ready to Launch Workshop</h2>
+        <p class="body" style="margin-top:var(--sp3);max-width:680px">Preparing young adults for the next stage of life — an in-person workshop for parents. Limited seats.</p>
+
+        <div class="swiss-binding-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6);margin-top:var(--sp6);align-items:start">
+          <img src="images/workshop-ready-to-launch.webp" alt="Ready to Launch Workshop — Preparing Young Adults for the Next Stage of Life, Saturday 28 November 2026" style="width:100%;display:block;border-radius:var(--r-md);box-shadow:0 2px 16px rgba(0,0,0,0.08)" />
+          <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);box-shadow:0 2px 16px rgba(0,0,0,0.06);padding:var(--sp5);display:flex;flex-direction:column;gap:var(--sp4)">
+            <div>
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--teal)">Workshop · In person · Singapore</span>
+              <h3 style="font-size:clamp(17px,2vw,21px);font-weight:700;letter-spacing:-0.3px;margin:8px 0 0;line-height:1.3">Ready to Launch: Preparing Young Adults for the Next Stage of Life</h3>
+            </div>
+            <div style="font-size:15px;line-height:1.65;color:rgba(0,0,0,0.7)">
+              <p style="margin:0"><strong style="color:var(--black)">Date:</strong> Saturday, 28 November 2026</p>
+              <p style="margin:0"><strong style="color:var(--black)">Time:</strong> 2:00 pm – 5:00 pm</p>
+              <p style="margin:0"><strong style="color:var(--black)">Venue:</strong> Burlington Square Office, 175A Bencoolen Street (Rochor MRT)</p>
+            </div>
+            <div style="font-size:15px;line-height:1.65;color:rgba(0,0,0,0.7);border-top:1px solid var(--border);padding-top:var(--sp3)">
+              <p style="margin:0"><strong style="color:var(--black)">Workshop fee:</strong> S$169 per person</p>
+              <p style="margin:0"><strong style="color:var(--teal)">Early bird:</strong> S$129 per person (first 10 to register)</p>
+              <p style="margin:0"><strong style="color:var(--black)">Spouses:</strong> S$260 per couple</p>
+            </div>
+            <div style="font-size:15px;line-height:1.65;color:rgba(0,0,0,0.7);border-top:1px solid var(--border);padding-top:var(--sp3)">
+              <p style="margin:0 0 6px;font-weight:700;color:var(--black)">What you will take home</p>
+              <p style="margin:0;font-weight:600;color:var(--black)">A plan for your young adult</p>
+              <ul style="margin:2px 0 8px;padding-left:20px;list-style:disc">
+                <li>Identify readiness gaps</li>
+                <li>A support and skills-equipping plan</li>
+              </ul>
+              <p style="margin:0;font-weight:600;color:var(--black)">Support</p>
+              <ul style="margin:2px 0 0;padding-left:20px;list-style:disc">
+                <li>Resources to close the gap</li>
+                <li>A community of parents to support and journey together</li>
+              </ul>
+            </div>
+            <a href="https://bit.ly/ReadyToLaunchWorkshop" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="align-self:flex-start;text-decoration:none">Register Now →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Webinars -->
     <section id="ev-webinars" style="padding:var(--sp10) 0">
       <div class="container">
@@ -3058,6 +3101,21 @@
         <h2 class="h-sub" style="margin-top:12px">Past Events &amp; Appearances</h2>
 
         <div style="display:flex;flex-direction:column;gap:var(--sp4);margin-top:var(--sp6)">
+
+          <div class="past-event-card" data-show-after="2026-11-28T17:00:00+08:00" style="flex-direction:column;gap:0;display:none">
+            <div style="display:flex;gap:var(--sp3)">
+              <span class="past-event-year" style="flex-shrink:0">Nov 2026</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                  <span class="past-event-type">Workshop</span>
+                  <span class="past-event-org">· Transforming Lives</span>
+                </div>
+                <h3 class="past-event-title">Ready to Launch Workshop: Preparing Young Adults for the Next Stage of Life</h3>
+                <p class="past-event-desc">An in-person workshop helping parents identify their young adult's readiness gaps and leave with a support and skills-equipping plan, resources, and a community of parents to journey with.</p>
+                <p class="past-event-location">📍 Burlington Square, Singapore · 28 November 2026</p>
+              </div>
+            </div>
+          </div>
 
           <!-- Webinars: shown here automatically once each has ended -->
           <div class="past-event-card ev-past-webinar" data-from="2026-10-15T21:00:00+08:00" style="flex-direction:column;gap:0;display:none">
@@ -3138,6 +3196,12 @@
   (function () {
     var now = Date.now();
     var left = 0;
+    document.querySelectorAll('[data-hide-after]').forEach(function (el) {
+      if (now >= Date.parse(el.getAttribute('data-hide-after'))) el.style.display = 'none';
+    });
+    document.querySelectorAll('[data-show-after]').forEach(function (el) {
+      if (now >= Date.parse(el.getAttribute('data-show-after'))) el.style.display = 'flex';
+    });
     document.querySelectorAll('.ev-webinar').forEach(function (el) {
       if (now >= Date.parse(el.getAttribute('data-until'))) el.style.display = 'none'; else left++;
     });
@@ -4089,7 +4153,7 @@
   .wp-item { display:flex; flex-direction:column; gap:var(--sp3); }
   .wp-item img { width:100%; display:block; border-radius:var(--r-md); }
   .wp-item .btn { text-decoration:none; text-align:center; justify-content:center; }
-  .wp-grid.wp-single { grid-template-columns:1fr; max-width:340px; margin:0 auto; }
+  .wp-grid.wp-single { grid-template-columns:1fr; max-width:min(340px, calc((100dvh - 390px) * 0.71)); margin:0 auto; }
   .wp-box:has(.wp-single) { max-width:440px; }
   .wp-skip { display:block; margin:var(--sp4) auto 0; background:none; border:none; color:rgba(0,0,0,0.55); font-size:15px; text-decoration:underline; cursor:pointer; padding:10px 16px; }
   @media (max-width: 600px) {
@@ -4099,22 +4163,18 @@
     .wp-item { gap:8px; }
     .wp-item .btn { font-size:13px; padding:10px 6px; }
     .wp-skip { margin-top:8px; }
-    .wp-grid.wp-single { max-width:280px; }
+    .wp-grid.wp-single { max-width:min(280px, calc((100dvh - 250px) * 0.71)); }
   }
 </style>
-<div id="webinar-popup" role="dialog" aria-modal="true" aria-label="Upcoming webinars" onclick="if(event.target===this)closeWebinarPopup()">
+<div id="webinar-popup" role="dialog" aria-modal="true" aria-label="Upcoming event" onclick="if(event.target===this)closeWebinarPopup()">
   <div class="wp-box">
     <button class="wp-close" onclick="closeWebinarPopup()" aria-label="Close">&#x2715;</button>
-    <p class="label" style="margin:0">Free Zoom Webinars</p>
-    <h2 class="h-sub" style="margin:8px 0 var(--sp4)">Join us this October</h2>
+    <p class="label" style="margin:0">Workshop for Parents · 28 Nov</p>
+    <h2 class="h-sub" style="margin:8px 0 var(--sp4)">Ready to Launch Workshop</h2>
     <div class="wp-grid">
-      <div class="wp-item" data-until="2026-10-08T21:00:00+08:00">
-        <img src="images/webinar-adhd-nadeau.webp" alt="ADHD in Girls, Women &amp; Mature Adults — 8 October 2026" />
-        <a href="https://bit.ly/webinar-drnadeau" target="_blank" rel="noopener" class="btn btn-teal">Register — 8 Oct →</a>
-      </div>
-      <div class="wp-item" data-until="2026-10-15T20:00:00+08:00">
-        <img src="images/webinar-ready-to-launch.webp" alt="Ready to Launch — 15 October 2026" />
-        <a href="https://bit.ly/ready2launchwebinar" target="_blank" rel="noopener" class="btn btn-teal">Register — 15 Oct →</a>
+      <div class="wp-item" data-until="2026-11-28T14:00:00+08:00">
+        <img src="images/workshop-ready-to-launch.webp" alt="Ready to Launch Workshop — Saturday 28 November 2026, 2pm to 5pm" />
+        <a href="https://bit.ly/ReadyToLaunchWorkshop" target="_blank" rel="noopener" class="btn btn-teal">Register — Sat 28 Nov →</a>
       </div>
     </div>
     <button class="wp-skip" onclick="closeWebinarPopup()">Continue to website</button>
@@ -4127,8 +4187,6 @@
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeWebinarPopup(); });
   document.addEventListener('DOMContentLoaded', function () {
-    var deadline = Date.parse('2026-10-15T20:00:00+08:00');
-    if (Date.now() >= deadline) return;
     try { if (sessionStorage.getItem('webinarPopupSeen')) return; } catch (e) {}
     if (!document.getElementById('page-home').classList.contains('active')) return;
     var items = document.querySelectorAll('#webinar-popup .wp-item');
