@@ -44,6 +44,15 @@ const PROFILES = {
     imageHeight: 630,
     icon: '/images/coaching-favicon.png',
   },
+  '/podcasts': {
+    type: 'website',
+    title: 'Wired to WORK Differently | Podcast | Transforming Lives',
+    shareTitle: 'Wired to WORK Differently | Podcast',
+    desc: 'How different minds navigate work. Listen on YouTube and Spotify.',
+    image: `${BASE}/images/podcast-wired-work-800.jpg`,
+    imageWidth: 800,
+    imageHeight: 800,
+  },
   '/geniehoe': {
     title: 'Genie Hoe | Operations Administrator | Transforming Lives',
     desc: 'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
