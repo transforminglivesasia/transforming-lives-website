@@ -808,7 +808,7 @@
     .speaking-topic-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(31,138,138,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
     /* Past events */
     .past-events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin-top: var(--sp6); }
-    .psy-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp5); margin-top:var(--sp6); max-width:1000px; margin-left:auto; margin-right:auto; }
+    .psy-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp4); max-width:1000px; margin-left:auto; margin-right:auto; }
     @media (max-width: 760px) { .psy-grid { grid-template-columns:1fr; max-width:520px; } }
     .psy-series { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
     .psy-series li { display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:14px; border-top:1px solid var(--border); padding-top:8px; }
@@ -843,12 +843,12 @@
     .btn-sp { background:#1DB954; color:#fff; }
     .btn-sp:hover { background:#18a34a; opacity:1; }
     .psy-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
-    .psy-media { aspect-ratio:16/10; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
+    .psy-media { aspect-ratio:2/1; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
     .psy-media img { width:100%; height:100%; object-fit:cover; display:block; }
-    .psy-body { padding:var(--sp5); display:flex; flex-direction:column; gap:var(--sp3); flex:1; }
+    .psy-body { padding:24px 28px 28px; display:flex; flex-direction:column; gap:12px; flex:1; }
     .psy-body h3 { font-size:clamp(19px,2vw,22px); font-weight:700; letter-spacing:-0.3px; margin:0; line-height:1.3; }
     .psy-body p { font-size:15px; color:rgba(0,0,0,0.62); line-height:1.7; margin:0; }
-    .psy-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; padding-top:var(--sp2); }
+    .psy-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; padding-top:4px; }
     .past-event-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); display: flex; gap: var(--sp3); }
     .past-event-year { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--teal); background: rgba(31,138,138,0.08); border-radius: 6px; padding: 4px 8px; height: fit-content; white-space: nowrap; flex-shrink: 0; }
     .past-event-type { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--teal); }
@@ -2482,7 +2482,7 @@
     </div>
   </section>
 
-  <section style="padding:var(--sp10) 0">
+  <section style="padding:var(--sp6) 0 var(--sp8)">
     <div class="container">
       <div class="psy-grid">
 
@@ -2501,6 +2501,23 @@
                 <span class="wb-thumb"><img src="images/webinar-thumb-adhd-lifespan.jpg" alt="" loading="lazy" /></span>
                 <span class="wb-text"><strong>ADHD Across the Lifespan: Girls, Women &amp; Mature Adults</strong><span>With Dr Kathleen G. Nadeau · Watch ↗</span></span>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="psy-card" id="psy-podcasts">
+          <div class="psy-media" style="background:#005f8e"><img src="images/podcast-wired-work-800.jpg" alt="Wired to Work Differently — a Wired to LIVE Differently podcast series" style="object-fit:contain" /></div>
+          <div class="psy-body">
+            <p class="label" style="margin:0">Podcasts</p>
+            <h3>Wired to LIVE Differently</h3>
+            <p>Our podcast series on how different minds live, work, learn and connect — bringing together lived experience, workplace perspectives and practical insights.</p>
+            <ul class="psy-series">
+              <li><strong>Wired to WORK Differently</strong><span class="now">Season 1 · Now streaming</span></li>
+              <li><strong>Wired to LEARN Differently</strong><span>Coming soon</span></li>
+              <li><strong>Wired to CONNECT Differently</strong><span>Coming soon</span></li>
+            </ul>
+            <div class="psy-actions">
+              <button class="btn btn-teal" onclick="showPage('podcasts')">Listen to the Episodes →</button>
             </div>
           </div>
         </div>
@@ -2526,24 +2543,6 @@
             <p>Our book for parents of ADHD teens and young adults — practical, honest and grounded in real family life.</p>
             <div class="psy-actions">
               <button class="btn btn-teal" onclick="showPage('products')">About the Book →</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="psy-card" id="psy-podcasts">
-          <div class="psy-media" style="background:#005f8e"><img src="images/podcast-wired-work-800.jpg" alt="Wired to Work Differently — a Wired to LIVE Differently podcast series" style="object-fit:contain" /></div>
-          <div class="psy-body">
-            <p class="label" style="margin:0">Podcasts</p>
-            <h3>Wired to LIVE Differently</h3>
-            <p>Our podcast series on how different minds live, work, learn and connect — bringing together lived experience, workplace perspectives and practical insights.</p>
-            <ul class="psy-series">
-              <li><strong>Wired to WORK Differently</strong><span class="now">Season 1 · Now streaming</span></li>
-              <li><strong>Wired to LEARN Differently</strong><span>Coming soon</span></li>
-              <li><strong>Wired to CONNECT Differently</strong><span>Coming soon</span></li>
-            </ul>
-            <div class="psy-actions">
-              <button class="btn btn-teal" onclick="showPage('podcasts')">Listen to the Episodes →</button>
             </div>
           </div>
         </div>
