@@ -815,6 +815,23 @@
     .psy-series li strong { color:var(--black); font-weight:600; }
     .psy-series li span { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; white-space:nowrap; color:rgba(0,0,0,0.45); }
     .psy-series li span.now { color:var(--teal); }
+    .psy-series li a { font-size:13px; font-weight:600; color:var(--teal); white-space:nowrap; text-decoration:none; }
+    .psy-series li a:hover { text-decoration:underline; }
+    .ep-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp5); margin-top:var(--sp6); max-width:1000px; }
+    @media (max-width: 760px) { .ep-grid { grid-template-columns:1fr; max-width:520px; } }
+    .ep-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
+    .ep-card img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
+    .ep-body { padding:var(--sp5); display:flex; flex-direction:column; gap:var(--sp2); flex:1; }
+    .ep-num { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:var(--teal); }
+    .ep-body h3 { font-size:clamp(19px,2vw,22px); font-weight:700; letter-spacing:-0.3px; margin:0; line-height:1.3; }
+    .ep-guest { font-size:15px; color:rgba(0,0,0,0.62); margin:0; line-height:1.6; }
+    .ep-guest strong { color:var(--black); font-weight:600; }
+    .ep-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; padding-top:var(--sp3); }
+    .ep-links .btn { text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+    .btn-yt { background:#FF0000; color:#fff; }
+    .btn-yt:hover { background:#d90000; opacity:1; }
+    .btn-sp { background:#1DB954; color:#fff; }
+    .btn-sp:hover { background:#18a34a; opacity:1; }
     .psy-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
     .psy-media { aspect-ratio:16/10; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
     .psy-media img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -2466,10 +2483,11 @@
           <div class="psy-body">
             <p class="label" style="margin:0">Watch &amp; Listen</p>
             <h3>Webinars</h3>
-            <p>Recordings of our free webinars on ADHD, executive function, parenting and the transition to adulthood, with guest experts and lived-experience voices.</p>
-            <div class="psy-actions" id="psy-webinar-links">
-              <span style="font-size:13px;color:rgba(0,0,0,0.45)">YouTube and Spotify links coming soon.</span>
-            </div>
+            <p>Recordings of our free webinars on ADHD, executive function and parenting, with guest experts and lived-experience voices.</p>
+            <ul class="psy-series" style="margin-top:auto">
+              <li><strong>Understanding Executive Function: Helping Teens Move from Knowing to Doing</strong><a href="https://bit.ly/EFwebinar-parents" target="_blank" rel="noopener">Watch ↗</a></li>
+              <li><strong>ADHD Across the Lifespan: Girls, Women &amp; Mature Adults</strong><a href="https://bit.ly/ADHDgirlswomenseniors-DrNadeau" target="_blank" rel="noopener">Watch ↗</a></li>
+            </ul>
           </div>
         </div>
 
@@ -2506,12 +2524,12 @@
             <h3>Wired to LIVE Differently</h3>
             <p>Our podcast series on how different minds live, work, learn and connect — bringing together lived experience, workplace perspectives and practical insights.</p>
             <ul class="psy-series">
-              <li><strong>Wired to WORK Differently</strong><span class="now">Season 1 · 8 episodes</span></li>
+              <li><strong>Wired to WORK Differently</strong><span class="now">Season 1 · Now streaming</span></li>
               <li><strong>Wired to LEARN Differently</strong><span>Coming soon</span></li>
               <li><strong>Wired to CONNECT Differently</strong><span>Coming soon</span></li>
             </ul>
-            <div class="psy-actions" id="psy-podcast-links">
-              <span style="font-size:13px;color:rgba(0,0,0,0.45)">Listening links coming soon.</span>
+            <div class="psy-actions">
+              <button class="btn btn-teal" onclick="showPage('podcasts')">Listen to the Episodes →</button>
             </div>
           </div>
         </div>
@@ -2521,6 +2539,73 @@
   </section>
 
 </div><!-- /psychoeducation -->
+
+<!-- ══════════════════════════════════════════════════════════
+     PODCASTS — Wired to WORK Differently
+══════════════════════════════════════════════════════════ -->
+<div id="page-podcasts" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Psychoeducation · Podcasts</p>
+      <h1 class="h-section">Wired to WORK Differently</h1>
+      <p class="body-lg">A Wired to LIVE Differently podcast series by Transforming Lives.</p>
+    </div>
+  </section>
+
+  <div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:12px 0">
+    <div class="container" style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap">
+      <a onclick="showPage('psychoeducation')" style="color:rgba(0,0,0,0.5);cursor:pointer;text-decoration:none">← Psychoeducation</a>
+    </div>
+  </div>
+
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <div class="swiss-binding-grid" style="display:grid;grid-template-columns:280px 1fr;gap:var(--sp6);align-items:center;max-width:1000px">
+        <img src="images/podcast-wired-work-800.jpg" alt="Wired to Work Differently — a Wired to LIVE Differently series" style="width:100%;max-width:280px;border-radius:var(--r-md);display:block" />
+        <div>
+          <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.7);margin:0">Wired to Work Differently explores how different minds navigate work. The series looks at everyday workplace experiences, from managing competing demands and different working styles to communication, strengths and workplace expectations, while also exploring neurodivergence and how organisations can create environments where different minds can thrive.</p>
+          <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.7);margin:var(--sp3) 0 0">The podcast brings together workplace perspectives, lived experience and practical insights, with the aim of making conversations around executive function and neurodivergence easier to understand and apply at work.</p>
+        </div>
+      </div>
+
+      <h2 class="h-sub" style="margin-top:var(--sp10)">Season 1</h2>
+      <p class="body" style="margin-top:var(--sp2);color:rgba(0,0,0,0.6)">8 episodes · new episodes are added as they are released.</p>
+      <div class="ep-grid">
+        <div class="ep-card">
+          <img src="images/wtwd-s1e1-ong-mian-li.jpg" alt="Wired to WORK Differently, Season 1 Episode 1 — Dr Ong Mian Li, Founder &amp; Clinical Psychologist" loading="lazy" />
+          <div class="ep-body">
+            <span class="ep-num">Season 1 · Episode 1</span>
+            <h3>What Does Neurodivergence Look Like at Work?</h3>
+            <p class="ep-guest">Guest: <strong>Dr Ong Mian Li</strong>, Founder &amp; Clinical Psychologist</p>
+            <div class="ep-links">
+              <a href="https://bit.ly/WTWDYoutube-S1E1" target="_blank" rel="noopener" class="btn btn-yt"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> YouTube</a>
+              <a href="https://bit.ly/WTWDSpotify-S1E1" target="_blank" rel="noopener" class="btn btn-sp"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 9.5c3.5-1 7-.6 10 1M7.5 12.5c3-.8 6-.4 8.5 1M8 15.4c2.4-.6 4.6-.3 6.6.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Spotify</a>
+            </div>
+          </div>
+        </div>
+        <div class="ep-card">
+          <img src="images/wtwd-s1e2-wendy-yeo.jpg" alt="Wired to WORK Differently, Season 1 Episode 2 — Wendy Yeo, People Consultant &amp; Fractional HR Leader" loading="lazy" />
+          <div class="ep-body">
+            <span class="ep-num">Season 1 · Episode 2</span>
+            <h3>When Your Working Styles Clash</h3>
+            <p class="ep-guest">Guest: <strong>Wendy Yeo</strong>, People Consultant &amp; Fractional HR Leader</p>
+            <div class="ep-links">
+              <a href="https://bit.ly/WTWDYoutube-S1E2" target="_blank" rel="noopener" class="btn btn-yt"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> YouTube</a>
+              <a href="https://bit.ly/WTWDSpotify-S1E2" target="_blank" rel="noopener" class="btn btn-sp"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 9.5c3.5-1 7-.6 10 1M7.5 12.5c3-.8 6-.4 8.5 1M8 15.4c2.4-.6 4.6-.3 6.6.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Spotify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--sp10);border-top:1px solid var(--border);padding-top:var(--sp6);max-width:1000px">
+        <p class="label">Coming Soon</p>
+        <p class="body" style="margin-top:var(--sp2);color:rgba(0,0,0,0.65)">More Wired to LIVE Differently series are on the way: <strong>Wired to LEARN Differently</strong> and <strong>Wired to CONNECT Differently</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /podcasts -->
 
 <!-- ══════════════════════════════════════════════════════════
      PRODUCTS
@@ -3905,10 +3990,10 @@
 
 
 <script>
-  const pages = ['home','about','team','coaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','candicelim','alisacheng','services','psychoeducation','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
+  const pages = ['home','about','team','coaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','candicelim','alisacheng','services','psychoeducation','podcasts','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/candicelim': 'candicelim', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
-  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', candicelim: '/candicelim', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/candicelim': 'candicelim', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/podcasts': 'podcasts', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
+  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', candicelim: '/candicelim', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', podcasts: '/podcasts', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
 
   function scrollToSection(anchorId) {
     showPage('services');
@@ -3947,7 +4032,7 @@
       if (n) n.classList.remove('active');
     });
     document.getElementById('page-' + id).classList.add('active');
-    const navParent = { products: 'psychoeducation', blog: 'psychoeducation' };
+    const navParent = { products: 'psychoeducation', blog: 'psychoeducation', podcasts: 'psychoeducation' };
     const n = document.getElementById('nav-' + (navParent[id] || id));
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3966,6 +4051,7 @@
       geniehoe: 'Genie Hoe | Operations Administrator | Transforming Lives',
       services: 'Coaching & Psychoeducation Services | Transforming Lives',
       psychoeducation: 'Psychoeducation | Webinars, Podcasts, Newsletter & Books | Transforming Lives',
+      podcasts: 'Wired to WORK Differently | Podcast | Transforming Lives',
       products: 'Parent First, ADHD Later | Psychoeducation | Transforming Lives',
       blog: 'ADHD Life & Musings | Psychoeducation | Transforming Lives',
       speaking: 'Speaking & Events | Transforming Lives',
@@ -4012,6 +4098,7 @@
       alisacheng:   'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
       geniehoe:     'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
       services:     'Coaching and psychoeducation services from Transforming Lives — for parents, adults, schools, and organisations navigating executive function, neurodivergence, and neuroinclusion.',
+      podcasts: 'Wired to WORK Differently — a podcast by Transforming Lives on how different minds navigate work. Listen on YouTube and Spotify.',
       psychoeducation: 'Psychoeducation from Transforming Lives — free webinars, the Wired to LIVE Differently podcasts, the ADHD Life & Musings newsletter, and the book Parent First, ADHD Later.',
       products:     'Publications from Transforming Lives, including Parent First, ADHD Later — practical resources for families, parents, and educators navigating neurodivergence in Singapore.',
       blog:         'ADHD Life & Musings — a newsletter on executive function, neurodivergence, parenting, resilience, and growth by Transforming Lives.',
