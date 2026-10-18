@@ -808,6 +808,15 @@
     .speaking-topic-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(31,138,138,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
     /* Past events */
     .past-events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin-top: var(--sp6); }
+    .psy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp5); margin-top:var(--sp6); }
+    @media (max-width: 900px) { .psy-grid { grid-template-columns:1fr; max-width:520px; margin-left:auto; margin-right:auto; } }
+    .psy-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
+    .psy-media { aspect-ratio:16/10; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
+    .psy-media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .psy-body { padding:var(--sp5); display:flex; flex-direction:column; gap:var(--sp3); flex:1; }
+    .psy-body h3 { font-size:clamp(19px,2vw,22px); font-weight:700; letter-spacing:-0.3px; margin:0; line-height:1.3; }
+    .psy-body p { font-size:15px; color:rgba(0,0,0,0.62); line-height:1.7; margin:0; }
+    .psy-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; padding-top:var(--sp2); }
     .past-event-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp4); display: flex; gap: var(--sp3); }
     .past-event-year { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--teal); background: rgba(31,138,138,0.08); border-radius: 6px; padding: 4px 8px; height: fit-content; white-space: nowrap; flex-shrink: 0; }
     .past-event-type { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--teal); }
@@ -1106,8 +1115,7 @@
       <a onclick="showPage('team')"     id="nav-team"     >Our Team</a>
       <a onclick="showPage('services')"  id="nav-services" >Services</a>
       <a onclick="showPage('coaching')"  id="nav-coaching" >Coaching</a>
-      <a onclick="showPage('blog')"      id="nav-blog"     >Blog</a>
-      <a onclick="showPage('products')"  id="nav-products" >Publications</a>
+      <a onclick="showPage('psychoeducation')" id="nav-psychoeducation">Psychoeducation</a>
       <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
       <a onclick="showPage('media')"         id="nav-media"        >Media</a>
       <a onclick="showPage('testimonials')" id="nav-testimonials" >What People Say</a>
@@ -1126,8 +1134,7 @@
   <a onclick="showPage('team');closeMenu()">Our Team</a>
   <a onclick="showPage('services');closeMenu()">Services</a>
   <a onclick="showPage('coaching');closeMenu()">Coaching</a>
-  <a onclick="showPage('blog');closeMenu()">Blog</a>
-  <a onclick="showPage('products');closeMenu()">Publications</a>
+  <a onclick="showPage('psychoeducation');closeMenu()">Psychoeducation</a>
   <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
   <a onclick="showPage('media');closeMenu()">Media</a>
   <a onclick="showPage('testimonials');closeMenu()">What People Say</a>
@@ -2431,17 +2438,84 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
+     PSYCHOEDUCATION (hub: webinars, newsletter, books)
+══════════════════════════════════════════════════════════ -->
+<div id="page-psychoeducation" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Learn With Us</p>
+      <h1 class="h-section">Psychoeducation</h1>
+      <p class="body-lg">Accessible, practical resources that make neurodivergence, executive function, parenting and relationships easier to understand and apply — through webinars, our newsletter and our books.</p>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0">
+    <div class="container">
+      <div class="psy-grid">
+
+        <div class="psy-card" id="psy-webinars">
+          <div class="psy-media" style="background:linear-gradient(135deg,#0E4F52,#1F8A8A)">
+            <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="rgba(255,255,255,0.15)"/><path d="M29 23l22 13-22 13z" fill="#fff"/></svg>
+          </div>
+          <div class="psy-body">
+            <p class="label" style="margin:0">Watch &amp; Listen</p>
+            <h3>Webinars</h3>
+            <p>Recordings of our free webinars on ADHD, executive function, parenting and the transition to adulthood, with guest experts and lived-experience voices.</p>
+            <div class="psy-actions" id="psy-webinar-links">
+              <span style="font-size:13px;color:rgba(0,0,0,0.45)">YouTube and Spotify links coming soon.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="psy-card">
+          <div class="psy-media"><img src="images/adhd-life-musings-cover.png" alt="ADHD Life &amp; Musings newsletter" /></div>
+          <div class="psy-body">
+            <p class="label" style="margin:0">LinkedIn Newsletter</p>
+            <h3>ADHD Life &amp; Musings</h3>
+            <p>A newsletter by Moonlake Lee on ADHD, executive function, resilience, relationships and growth — with articles organised by topic.</p>
+            <div class="psy-actions">
+              <button class="btn btn-teal" onclick="showPage('blog')">Read the Articles →</button>
+              <a href="https://www.linkedin.com/newsletters/adhd-life-musings-7379802972484116480/" target="_blank" rel="noopener" class="btn btn-outline" style="text-decoration:none">Subscribe ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="psy-card">
+          <div class="psy-media" style="background:#F5F4F1"><img src="images/parent-first-adhd-later.png" alt="Parent First, ADHD Later — book cover" style="object-fit:contain;padding:16px;box-sizing:border-box" /></div>
+          <div class="psy-body">
+            <p class="label" style="margin:0">Books</p>
+            <h3>Parent First, ADHD Later</h3>
+            <p>Our book for parents of ADHD teens and young adults — practical, honest and grounded in real family life.</p>
+            <div class="psy-actions">
+              <button class="btn btn-teal" onclick="showPage('products')">About the Book →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /psychoeducation -->
+
+<!-- ══════════════════════════════════════════════════════════
      PRODUCTS
 ══════════════════════════════════════════════════════════ -->
 <div id="page-products" class="page">
 
   <section class="page-hero page-hero-teal">
     <div class="container">
-      <p class="label">Books &amp; Resources</p>
+      <p class="label">Psychoeducation · Books</p>
       <h1 class="h-section">Publications</h1>
       <p class="body-lg">Accessible, evidence-informed books that bring psychoeducation to wider audiences — from families and individuals to professionals and organisations.</p>
     </div>
   </section>
+  <div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:12px 0">
+    <div class="container" style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap">
+      <a onclick="showPage('psychoeducation')" style="color:rgba(0,0,0,0.5);cursor:pointer;text-decoration:none">← Psychoeducation</a>
+    </div>
+  </div>
 
   <section style="padding:var(--sp8) 0;background:rgba(31,138,138,0.04);border-bottom:1px solid rgba(31,138,138,0.15)">
     <div class="container">
@@ -2574,12 +2648,17 @@
 
   <section class="page-hero page-hero-gold" style="border-bottom:1px solid var(--border)">
     <div class="container">
-      <p class="label">Personal Newsletter</p>
+      <p class="label">Psychoeducation · LinkedIn Newsletter</p>
       <h1 class="h-section">ADHD Life &amp; Musings</h1>
       <p class="body-lg">A newsletter on ADHD, executive function, resilience, relationships, and growth.</p>
       <a href="https://www.linkedin.com/newsletters/adhd-life-musings-7379802972484116480/" target="_blank" rel="noopener" class="btn btn-black" style="margin-top:var(--sp4);display:inline-block">Subscribe on LinkedIn ↗</a>
     </div>
   </section>
+  <div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:12px 0">
+    <div class="container" style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap">
+      <a onclick="showPage('psychoeducation')" style="color:rgba(0,0,0,0.5);cursor:pointer;text-decoration:none">← Psychoeducation</a>
+    </div>
+  </div>
 
   <div style="background:var(--black);padding:var(--sp3) 0">
     <div class="container" style="text-align:center">
@@ -3773,14 +3852,13 @@
         <h4>Navigate</h4>
         <ul class="footer-nav-list">
           <li><a onclick="showPage('home')">Home</a></li>
-          <li><a onclick="showPage('products')">Publications</a></li>
+          <li><a onclick="showPage('psychoeducation')">Psychoeducation</a></li>
           <li><a onclick="showPage('about')">About Us</a></li>
           <li><a onclick="showPage('speaking')">Speaking &amp; Events</a></li>
           <li><a onclick="showPage('team')">Our Team</a></li>
           <li><a onclick="showPage('media')">Media</a></li>
           <li><a onclick="showPage('services')">Services</a></li>
           <li><a onclick="showPage('testimonials')">What People Say</a></li>
-          <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('contact')">Contact Us</a></li>
         </ul>
       </div>
@@ -3804,10 +3882,10 @@
 
 
 <script>
-  const pages = ['home','about','team','coaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','candicelim','alisacheng','services','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
+  const pages = ['home','about','team','coaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','candicelim','alisacheng','services','psychoeducation','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/candicelim': 'candicelim', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
-  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', candicelim: '/candicelim', alisacheng: '/alisacheng', services: '/services', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/candicelim': 'candicelim', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
+  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', candicelim: '/candicelim', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
 
   function scrollToSection(anchorId) {
     showPage('services');
@@ -3846,7 +3924,8 @@
       if (n) n.classList.remove('active');
     });
     document.getElementById('page-' + id).classList.add('active');
-    const n = document.getElementById('nav-' + id);
+    const navParent = { products: 'psychoeducation', blog: 'psychoeducation' };
+    const n = document.getElementById('nav-' + (navParent[id] || id));
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (pushHistory) history.pushState({ page: id }, '', pageToSlug[id] || '/');
@@ -3863,8 +3942,9 @@
       alisacheng: 'Alisa Cheng | Executive Function Associate Coach | Transforming Lives',
       geniehoe: 'Genie Hoe | Operations Administrator | Transforming Lives',
       services: 'Coaching & Psychoeducation Services | Transforming Lives',
-      products: 'Publications | Transforming Lives',
-      blog: 'ADHD Life & Musings | Transforming Lives',
+      psychoeducation: 'Psychoeducation | Webinars, Newsletter & Books | Transforming Lives',
+      products: 'Parent First, ADHD Later | Psychoeducation | Transforming Lives',
+      blog: 'ADHD Life & Musings | Psychoeducation | Transforming Lives',
       speaking: 'Speaking & Events | Transforming Lives',
       media: 'In the Media | Transforming Lives',
       testimonials: 'What People Say | Transforming Lives',
@@ -3909,6 +3989,7 @@
       alisacheng:   'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
       geniehoe:     'Genie Hoe is the Operations Administrator at Transforming Lives, bringing HR experience and lived experience as a parent of a neurodivergent child to her role.',
       services:     'Coaching and psychoeducation services from Transforming Lives — for parents, adults, schools, and organisations navigating executive function, neurodivergence, and neuroinclusion.',
+      psychoeducation: 'Psychoeducation from Transforming Lives — free webinars, the ADHD Life & Musings newsletter, and the book Parent First, ADHD Later.',
       products:     'Publications from Transforming Lives, including Parent First, ADHD Later — practical resources for families, parents, and educators navigating neurodivergence in Singapore.',
       blog:         'ADHD Life & Musings — a newsletter on executive function, neurodivergence, parenting, resilience, and growth by Transforming Lives.',
       speaking:     'Transforming Lives offers talks, panels, and facilitation on neurodivergence, executive function, and neuroinclusion for organisations, schools, and communities.',
