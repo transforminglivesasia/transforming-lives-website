@@ -24,11 +24,6 @@ const PROFILES = {
     desc: 'Teresa Chua is a parent coach and executive function specialist at Transforming Lives, drawing on lived experience to support families navigating neurodivergence.',
     image: `${BASE}/images/teresa-chua.png`,
   },
-  '/candicelim': {
-    title: 'Candice Lim | Coaching & Capability Build Lead | Transforming Lives',
-    desc: 'Candice Lim is the Coaching & Capability Build Lead at Transforming Lives, bringing strengths-based coaching and two decades of organisational experience to individuals and organisations.',
-    image: `${BASE}/images/candice-lim.jpg`,
-  },
   '/alisacheng': {
     title: 'Alisa Cheng | Executive Function Associate Coach | Transforming Lives',
     desc: 'Alisa Cheng is an Executive Function Associate Coach at Transforming Lives, supporting students and young adults in building practical strategies to plan, prioritise, and follow through.',
