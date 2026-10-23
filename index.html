@@ -842,12 +842,8 @@
     .ep-links { display:flex; gap:8px; flex-wrap:wrap; padding-top:6px; }
     .ep-links .btn { padding:8px 14px; font-size:14px; }
     .ep-links .btn { text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
-    .btn-yt { background:#FF0000; color:#fff; }
-    .btn-yt:hover { background:#d90000; opacity:1; }
-    .btn-sp { background:#1DB954; color:#fff; }
-    .btn-sp:hover { background:#18a34a; opacity:1; }
-    .btn-ap { background:#872EC4; color:#fff; }
-    .btn-ap:hover { background:#7326a8; opacity:1; }
+    .btn-yt, .btn-sp, .btn-ap { background:var(--white); color:var(--teal); border:1.5px solid var(--teal); }
+    .btn-yt:hover, .btn-sp:hover, .btn-ap:hover { background:var(--teal); color:var(--white); border-color:var(--teal); opacity:1; }
     .psy-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r-md); overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); display:flex; flex-direction:column; }
     .psy-media { aspect-ratio:2/1; background:var(--off-white); display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--border); }
     .psy-media img { width:100%; height:100%; object-fit:cover; display:block; }
