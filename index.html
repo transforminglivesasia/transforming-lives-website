@@ -734,7 +734,17 @@
     .services-intro .label { margin-bottom: var(--sp2); }
     .services-intro .h-sub { margin-bottom: var(--sp2); }
     .services-intro .body { max-width: 560px; }
-    #individuals .services-intro .body { max-width: none; }
+    #individuals .services-intro .body, #organisations .services-intro .body, #psy-services .services-intro .body { max-width: none; }
+    .svc-grid-3 { grid-template-columns: repeat(3,1fr); gap: var(--sp4); }
+    .svc-mid:last-child { padding-bottom: 26px; }
+    .svc-link { padding: 16px 28px 24px; }
+    .svc-link a { font-size: 14px; font-weight: 700; color: var(--accent); cursor: pointer; text-decoration: none; }
+    .svc-link a:hover { text-decoration: underline; }
+    .svc-offer.svc-cta { background: linear-gradient(145deg, #146060, #1F8A8A) !important; color: #fff; border: none !important; justify-content: center; padding: 28px !important; gap: 14px; }
+    .svc-cta h3 { color: #fff; font-size: 21px !important; font-weight: 700; margin: 0 !important; }
+    .svc-cta p { color: rgba(255,255,255,0.85) !important; margin: 0; }
+    .svc-cta .btn { align-self: flex-start; background: #fff; color: var(--teal); text-decoration: none; }
+    @media (max-width: 1000px) { .svc-grid-3 { grid-template-columns: repeat(2,1fr); } }
     .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp3); background: transparent; border: none; }
     .service-coming-badge { display: inline-block; font-family: var(--mono); font-size: 9px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(0,0,0,0.4); background: var(--off-white); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; margin-bottom: 10px; }
     .service-item { background: var(--white); padding: var(--sp5) var(--sp4); border: 1px solid var(--border); border-radius: var(--r-md); transition: box-shadow .2s, transform .15s; }
@@ -2324,58 +2334,59 @@
             <img src="images/moonlake-workshop-cafe.jpg" alt="Moonlake Lee facilitating a workshop" />
           </div>
         </div>
-        <div class="service-grid">
-          <div class="service-item">
-            <div class="service-icon">🎤</div>
-            <h3>Talks &amp; Keynotes</h3>
-            <p>Impactful, evidence-informed talks for conferences, organisations, schools, and professional audiences.</p>
+        <div class="service-grid svc-grid-3">
+          <div class="service-item svc-offer" style="--accent:#1F8A8A;--tint:rgba(31,138,138,0.08)">
+            <div class="svc-top"><div class="svc-icon">🎤</div><div><span class="svc-tag">Conferences &amp; events</span><h3>Talks &amp; Keynotes</h3></div></div>
+            <div class="svc-mid"><p>Impactful, evidence-informed talks for conferences, organisations, schools and professional audiences.</p></div>
+            <div class="svc-link"><a onclick="showPage('speaking')">See past talks &amp; events →</a></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">🛠</div>
-            <h3>Workshops &amp; Training</h3>
-            <p>Customised programmes that go beyond awareness into skill-building and practical application.</p>
+          <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
+            <div class="svc-top"><div class="svc-icon">🛠</div><div><span class="svc-tag">Teams &amp; institutions</span><h3>Workshops &amp; Training</h3></div></div>
+            <div class="svc-mid"><p>Customised programmes that go beyond awareness into skill-building and practical application.</p></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">👨‍👩‍👧</div>
-            <h3>Parent Education</h3>
-            <p>Practical programmes for parents navigating neurodivergence, executive function, and family dynamics.</p>
+          <div class="service-item svc-offer" style="--accent:#37474F;--tint:rgba(55,71,79,0.07)">
+            <div class="svc-top"><div class="svc-icon">👨‍👩‍👧</div><div><span class="svc-tag">Schools &amp; communities</span><h3>Parent Education</h3></div></div>
+            <div class="svc-mid"><p>Practical programmes for parents navigating neurodivergence, executive function and family dynamics.</p></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">🧠</div>
-            <h3>Executive Function Skills</h3>
-            <p>Education and skills for individuals strengthening planning, focus, organisation, and self-regulation.</p>
+          <div class="service-item svc-offer" style="--accent:#146060;--tint:rgba(20,96,96,0.08)">
+            <div class="svc-top"><div class="svc-icon">🧠</div><div><span class="svc-tag">Students &amp; staff</span><h3>Executive Function Skills</h3></div></div>
+            <div class="svc-mid"><p>Education and skills for individuals strengthening planning, focus, organisation and self-regulation.</p></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">🏫</div>
-            <h3>School &amp; Workplace Awareness</h3>
-            <p>Neurodivergence awareness programmes for educators, HR teams, and managers.</p>
+          <div class="service-item svc-offer" style="--accent:#1F8A8A;--tint:rgba(31,138,138,0.08)">
+            <div class="svc-top"><div class="svc-icon">🏫</div><div><span class="svc-tag">Educators, HR &amp; managers</span><h3>School &amp; Workplace Awareness</h3></div></div>
+            <div class="svc-mid"><p>Neurodivergence awareness programmes for educators, HR teams and managers.</p></div>
+          </div>
+          <div class="service-item svc-offer svc-cta">
+            <h3>Plan a programme with us</h3>
+            <p>Tell us about your audience and goals, and we'll shape a talk, workshop or series that fits.</p>
+            <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn">Get in Touch →</a>
           </div>
         </div>
       </div>
 
       <hr class="section-divider" />
 
-      <div class="services-section">
+      <div id="psy-services" class="services-section">
         <div class="services-intro">
           <p class="label">Psychoeducation</p>
           <h2 class="h-sub" style="margin-top:12px">Understanding that Empowers</h2>
           <p class="body">Accessible content and resources that build understanding for individuals, parents, professionals, and organisations.</p>
         </div>
-        <div class="service-grid">
-          <div class="service-item">
-            <div class="service-icon">📚</div>
-            <h3>Publishing</h3>
-            <p>Books and written resources that bring psychoeducation to wider audiences — from families and individuals to professionals and organisations.</p>
+        <div class="service-grid svc-grid-3">
+          <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
+            <div class="svc-top"><div class="svc-icon">📚</div><div><span class="svc-tag">Books</span><h3>Publishing</h3></div></div>
+            <div class="svc-mid"><p>Books and written resources that bring psychoeducation to wider audiences — from families and individuals to professionals and organisations.</p></div>
+            <div class="svc-link"><a onclick="showPage('products')">About Parent First, ADHD Later →</a></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">🎙</div>
-            <h3>Webinars &amp; Podcasts</h3>
-            <p>Online sessions and audio content making evidence-informed learning accessible and engaging.</p>
+          <div class="service-item svc-offer" style="--accent:#1F8A8A;--tint:rgba(31,138,138,0.08)">
+            <div class="svc-top"><div class="svc-icon">🎙</div><div><span class="svc-tag">Watch &amp; listen</span><h3>Webinars &amp; Podcasts</h3></div></div>
+            <div class="svc-mid"><p>Online sessions and audio content making evidence-informed learning accessible and engaging.</p></div>
+            <div class="svc-link"><a onclick="showPage('psychoeducation')">Watch &amp; listen →</a></div>
           </div>
-          <div class="service-item">
-            <div class="service-icon">✍️</div>
-            <h3>Blogs</h3>
-            <p>Articles and written content exploring neurodivergence, executive function, relationships, and personal growth.</p>
+          <div class="service-item svc-offer" style="--accent:#37474F;--tint:rgba(55,71,79,0.07)">
+            <div class="svc-top"><div class="svc-icon">✍️</div><div><span class="svc-tag">LinkedIn newsletter</span><h3>Blogs</h3></div></div>
+            <div class="svc-mid"><p>Articles and written content exploring neurodivergence, executive function, relationships and personal growth.</p></div>
+            <div class="svc-link"><a onclick="showPage('blog')">Read ADHD Life &amp; Musings →</a></div>
           </div>
         </div>
       </div>
