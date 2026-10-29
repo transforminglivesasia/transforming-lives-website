@@ -741,12 +741,25 @@
     .service-icon { font-size: 28px; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; background: rgba(31,138,138,0.1); border-radius: 12px; margin-bottom: var(--sp3); }
     .service-item h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 10px; }
     .service-item p { font-size: 15px; color: rgba(0,0,0,0.6); line-height: 1.65; }
-    .svc-grid-2 { grid-template-columns: repeat(2,1fr); }
-    .svc-offer { display: flex; flex-direction: column; }
-    .svc-offer .svc-fee { margin-top: auto; padding-top: var(--sp2); font-size: 16px; font-weight: 700; color: var(--teal); letter-spacing: -0.2px; }
-    .svc-offer .svc-coaches { margin-top: 6px; font-size: 14px; color: rgba(0,0,0,0.6); line-height: 1.6; }
-    .svc-offer .svc-coaches span { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-right: 4px; }
-    .svc-offer .svc-coaches a { color: var(--teal); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+    .svc-grid-2 { grid-template-columns: repeat(2,1fr); gap: var(--sp4); }
+    .svc-offer { display:flex; flex-direction:column; padding:0 !important; overflow:hidden; border:1px solid var(--border) !important; box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+    .svc-offer:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,0.09); }
+    .svc-top { padding:24px 28px 20px; display:flex; gap:16px; align-items:center; border-top:5px solid var(--accent); background:linear-gradient(180deg, var(--tint) 0%, rgba(255,255,255,0) 100%); }
+    .svc-icon { width:52px; height:52px; flex-shrink:0; border-radius:14px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:24px; box-shadow:0 4px 12px rgba(0,0,0,0.12); }
+    .svc-top h3 { margin:0 !important; font-size:20px !important; font-weight:700 !important; line-height:1.25; }
+    .svc-tag { display:block; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+    .svc-mid { padding:0 28px; flex:1; }
+    .svc-mid p { margin:0; }
+    .svc-price { margin:20px 28px 0; padding:14px 18px; border-radius:12px; background:var(--tint); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+    .svc-price strong { font-size:26px; font-weight:800; letter-spacing:-0.6px; color:var(--black); line-height:1; }
+    .svc-price span { font-size:13px; color:rgba(0,0,0,0.55); }
+    .svc-who { padding:16px 28px 24px; }
+    .svc-who > p { margin:0 0 8px !important; font-family:var(--mono); font-size:10px !important; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:rgba(0,0,0,0.45) !important; }
+    .svc-chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .svc-chip { display:inline-flex; align-items:center; gap:8px; padding:4px 12px 4px 4px; border-radius:999px; background:var(--white); border:1px solid var(--border); font-size:13px; font-weight:600; color:var(--black); cursor:pointer; transition:border-color .15s, background .15s; }
+    .svc-chip:hover { border-color:var(--accent); background:var(--tint); }
+    .svc-chip img { width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:center 20%; display:block; }
+    @media (max-width: 600px) { .svc-top { padding:20px 20px 16px; } .svc-mid { padding:0 20px; } .svc-price { margin:16px 20px 0; } .svc-who { padding:14px 20px 20px; } .svc-price strong { font-size:23px; } }
 
     hr.section-divider { border: none; border-top: 1px solid var(--border); margin: var(--sp8) 0; }
 
@@ -2246,36 +2259,32 @@
           <p class="body" style="margin-top:var(--sp3)">Whether you're a parent supporting a neurodivergent child or teen, or an adult navigating executive function, work and life transitions, our non-clinical coaching and psychoeducation help you understand what's going on and build strategies that are practical and sustainable.</p>
         </div>
         <div class="service-grid svc-grid-2">
-          <div class="service-item svc-offer" style="border:2px solid var(--teal)">
-            <div class="service-icon">🗓️</div>
-            <h3>Clarity Consultation</h3>
-            <p>A one-hour non-clinical session to help you understand your situation, identify questions to bring to qualified professionals, and map practical next steps for home, school, work or daily life.</p>
-            <p class="svc-fee">S$120 / 60 minutes</p>
-            <p class="svc-coaches"><span>With</span> <a onclick="showPage('moonlakelee')">Moonlake Lee</a></p>
+          <div class="service-item svc-offer" style="--accent:#1F8A8A;--tint:rgba(31,138,138,0.08)">
+            <div class="svc-top"><div class="svc-icon">🧭</div><div><span class="svc-tag">Start here</span><h3>Clarity Consultation</h3></div></div>
+            <div class="svc-mid"><p>A one-hour non-clinical session to help you understand your situation, identify questions to bring to qualified professionals, and map practical next steps for home, school, work or daily life.</p></div>
+            <div class="svc-price"><strong>S$120</strong><span>per 60-minute session</span></div>
+            <div class="svc-who"><p>Your coach</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
-          <div class="service-item svc-offer">
-            <div class="service-icon">💙</div>
-            <h3>Parent Coaching</h3>
-            <p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p>
-            <p class="svc-fee">From S$100 / 60 minutes</p>
-            <p class="svc-coaches"><span>With</span> <a onclick="showPage('teresachua')">Teresa Chua</a>, <a onclick="showPage('moonlakelee')">Moonlake Lee</a></p>
+          <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
+            <div class="svc-top"><div class="svc-icon">💙</div><div><span class="svc-tag">For parents</span><h3>Parent Coaching</h3></div></div>
+            <div class="svc-mid"><p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p></div>
+            <div class="svc-price"><strong>S$100–120</strong><span>per 60-minute session</span></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
-          <div class="service-item svc-offer">
-            <div class="service-icon">📖</div>
-            <h3>Psychoeducation Sessions</h3>
-            <p>Structured sessions for adults, and for parents and their children, to understand ADHD and neurodivergence — how they affect attention, emotion, motivation and behaviour. For adults, sessions can also cover <strong style="color:var(--black);font-weight:600">workplace strategies</strong> that fit the way you think.</p>
-            <p class="svc-fee">From S$100 / 60 minutes</p>
-            <p class="svc-coaches"><span>With</span> <a onclick="showPage('teresachua')">Teresa Chua</a>, <a onclick="showPage('dasiyahdezwart')">Dasiyah de Zwart</a>, <a onclick="showPage('moonlakelee')">Moonlake Lee</a></p>
+          <div class="service-item svc-offer" style="--accent:#37474F;--tint:rgba(55,71,79,0.07)">
+            <div class="svc-top"><div class="svc-icon">📖</div><div><span class="svc-tag">Adults, parents &amp; children</span><h3>Psychoeducation Sessions</h3></div></div>
+            <div class="svc-mid"><p>Structured sessions for adults, and for parents and their children, to understand ADHD and neurodivergence — how they affect attention, emotion, motivation and behaviour. For adults, sessions can also cover <strong style="color:var(--black);font-weight:600">workplace strategies</strong> that fit the way you think.</p></div>
+            <div class="svc-price"><strong>S$100–120</strong><span>per 60-minute session</span></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
-          <div class="service-item svc-offer">
-            <div class="service-icon">✨</div>
-            <h3>Executive Function Coaching</h3>
-            <p>Practical, non-clinical coaching for planning, prioritising, time management, follow-through, self-advocacy and sustainable routines — for students, young adults and working professionals.</p>
-            <p class="svc-fee">From S$50 / 60 minutes</p>
-            <p class="svc-coaches"><span>With</span> <a onclick="showPage('teresachua')">Teresa Chua</a>, <a onclick="showPage('dasiyahdezwart')">Dasiyah de Zwart</a>, <a onclick="showPage('alisacheng')">Alisa Cheng</a>, <a onclick="showPage('moonlakelee')">Moonlake Lee</a></p>
+          <div class="service-item svc-offer" style="--accent:#146060;--tint:rgba(20,96,96,0.08)">
+            <div class="svc-top"><div class="svc-icon">✨</div><div><span class="svc-tag">Students, young adults &amp; professionals</span><h3>Executive Function Coaching</h3></div></div>
+            <div class="svc-mid"><p>Practical, non-clinical coaching for planning, prioritising, time management, follow-through, self-advocacy and sustainable routines.</p></div>
+            <div class="svc-price"><strong>S$50–120</strong><span>per 60-minute session</span></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('alisacheng')"><img src="images/alisa-cheng.jpg" alt="" />Alisa Cheng</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
         </div>
-        <p style="margin-top:var(--sp3);font-size:14px;color:rgba(0,0,0,0.55)">Fees vary by coach. <a onclick="showPage('coaching')" style="color:var(--teal);cursor:pointer;font-weight:600">See our coaches and coaching fees →</a></p>
+        <p style="margin-top:var(--sp3);font-size:14px;color:rgba(0,0,0,0.55)">Fees vary by coach: associate coaches S$50–60 and coaches S$100–120 per session. <a onclick="showPage('coaching')" style="color:var(--teal);cursor:pointer;font-weight:600">See our coaches and coaching fees →</a></p>
         <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:rgba(31,138,138,0.06);border-left:3px solid var(--teal);border-radius:0 var(--r-md) var(--r-md) 0">
           <h4 style="font-size:14px;font-weight:600;margin-bottom:var(--sp2)">What to expect</h4>
           <ul style="margin:0;padding-left:var(--sp4);display:flex;flex-direction:column;gap:6px">
