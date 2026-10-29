@@ -758,6 +758,7 @@
     .svc-who > p { margin:0 0 8px !important; font-family:var(--mono); font-size:10px !important; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:rgba(0,0,0,0.45) !important; }
     .svc-chips { display:flex; flex-wrap:wrap; gap:8px; }
     .svc-chip { display:inline-flex; align-items:center; gap:8px; padding:4px 12px 4px 4px; border-radius:999px; background:var(--white); border:1px solid var(--border); font-size:13px; font-weight:600; color:var(--black); cursor:pointer; transition:border-color .15s, background .15s; }
+    .svc-chip-break { flex-basis:100%; height:0; }
     .svc-chip:hover { border-color:var(--accent); background:var(--tint); }
     .svc-chip img { width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:center 20%; display:block; }
     @media (max-width: 600px) { .svc-top { padding:20px 20px 16px; } .svc-mid { padding:0 20px; } .svc-price { margin:16px 20px 0; } .svc-who { padding:14px 20px 20px; } .svc-price strong { font-size:23px; } }
@@ -2282,7 +2283,7 @@
             <div class="svc-top"><div class="svc-icon">✨</div><div><span class="svc-tag">Students, young adults &amp; professionals</span><h3>Executive Function Coaching</h3></div></div>
             <div class="svc-mid"><p>Practical, non-clinical coaching for planning, prioritising, time management, follow-through, self-advocacy and sustainable routines.</p></div>
             <div class="svc-price"><strong>S$50–120</strong><span>per 60-minute session</span></div>
-            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('alisacheng')"><img src="images/alisa-cheng.jpg" alt="" />Alisa Cheng</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a><span class="svc-chip-break"></span><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('alisacheng')"><img src="images/alisa-cheng.jpg" alt="" />Alisa Cheng</a></div></div>
           </div>
         </div>
         <p style="margin-top:var(--sp3);font-size:14px;color:rgba(0,0,0,0.55)">Fees vary by coach: associate coaches S$50–60 and coaches S$100–120 per session. <a onclick="showPage('coaching')" style="color:var(--teal);cursor:pointer;font-weight:600">See our coaches and coaching fees →</a></p>
