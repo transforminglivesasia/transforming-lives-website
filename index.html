@@ -453,6 +453,53 @@
       text-decoration: none;
     }
     .nav-links .nav-cta:hover { background: #167474 !important; color: #fff !important; }
+    /* Coaching sub-pages */
+    .nav-dd { position: relative; display: flex; align-items: center; }
+    .nav-dd-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 8px; z-index: 1001; }
+    .nav-dd-menu > div { background: var(--white); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); padding: 6px; display: flex; flex-direction: column; min-width: 250px; }
+    .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { display: block; }
+    .nav-links .nav-dd-menu a { border-radius: 10px; padding: 10px 14px; font-weight: 600; white-space: nowrap; }
+    .nav-dd-caret { font-size: 10px; margin-left: 3px; opacity: .6; }
+    .mobile-subrow { display: flex; gap: 10px; align-items: center; margin-top: calc(-1 * var(--sp3)); color: rgba(0,0,0,0.3); }
+    .mobile-menu a.mobile-sub { font-size: 17px; font-weight: 600; color: var(--teal); }
+    .cx-tabs { background: var(--off-white); border-bottom: 1px solid var(--border); }
+    .cx-tabs .container { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; align-items: center; }
+    .cx-tabs a { font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: var(--r-pill); border: 1px solid var(--border); background: var(--white); color: rgba(0,0,0,0.65); cursor: pointer; text-decoration: none; }
+    .cx-tabs a:hover { border-color: var(--teal); color: var(--teal); }
+    .cx-tabs a.on { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .cx-wrap { max-width: 860px; }
+    .cx-sec { padding: var(--sp8) 0; border-bottom: 1px solid var(--border); }
+    .cx-sec:last-child { border-bottom: none; }
+    .cx-sec h2 { font-size: clamp(22px,2.6vw,28px); font-weight: 700; letter-spacing: -0.4px; margin: 0 0 var(--sp3); }
+    .cx-sec p { font-size: 17px; line-height: 1.75; color: rgba(0,0,0,0.68); margin: 0 0 var(--sp2); }
+    .cx-callout { margin: var(--sp3) 0 0; padding: 20px 24px; border-left: 4px solid var(--accent, var(--teal)); background: var(--tint, rgba(31,138,138,0.07)); border-radius: 0 12px 12px 0; font-size: 18px !important; font-weight: 600; color: var(--black) !important; line-height: 1.6 !important; }
+    .cx-steps { list-style: none; padding: 0; margin: var(--sp3) 0; display: grid; gap: 12px; counter-reset: st; }
+    .cx-steps li { counter-increment: st; display: flex; gap: 16px; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; font-size: 16px; color: var(--black); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+    .cx-steps li::before { content: counter(st); flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+    .cx-compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp3); margin: var(--sp3) 0; }
+    .cx-compare > div { border-radius: 14px; padding: 22px 24px; border-top: 5px solid var(--accent); background: var(--tint); }
+    .cx-compare h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+    .cx-compare p { font-size: 16px !important; margin: 0 !important; }
+    .cx-panel { background: linear-gradient(150deg, #146060, #1F8A8A); color: #fff; border-radius: 18px; padding: clamp(24px,4vw,40px); }
+    .cx-panel h2 { color: #fff; }
+    .cx-panel p { color: rgba(255,255,255,0.88) !important; }
+    .cx-panel p strong { color: #fff; }
+    .cx-badge { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; background: rgba(255,255,255,0.16); padding: 4px 10px; border-radius: 999px; margin-bottom: var(--sp2); }
+    .cx-fit { list-style: none; padding: 0; margin: var(--sp3) 0 0; display: grid; gap: 12px; }
+    .cx-fit li { display: flex; gap: 14px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; font-size: 16px; line-height: 1.6; color: rgba(0,0,0,0.68); }
+    .cx-fit li::before { content: "✕"; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(201,150,58,0.15); color: var(--gold-dark); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .cx-fit li strong { color: var(--black); }
+    .cx-price { display: flex; align-items: center; justify-content: space-between; gap: var(--sp3); flex-wrap: wrap; background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; }
+    .cx-price strong { display: block; font-size: 30px; font-weight: 800; letter-spacing: -0.6px; color: var(--black); line-height: 1.1; margin-bottom: 4px; }
+    .cx-price span { font-size: 14px; color: rgba(0,0,0,0.55); }
+    .cx-price a.fees { font-size: 14px; font-weight: 700; color: var(--teal); cursor: pointer; }
+    .cx-choose { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp4); }
+    .cx-choose a { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; border-radius: 18px; padding: 28px; background: var(--tint); border-top: 6px solid var(--accent); cursor: pointer; transition: transform .15s, box-shadow .15s; }
+    .cx-choose a:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+    .cx-choose h3 { font-size: 22px; font-weight: 700; margin: 0; }
+    .cx-choose p { font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.65); margin: 0; }
+    .cx-choose .go { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--accent); }
+    @media (max-width: 700px) { .cx-compare, .cx-choose { grid-template-columns: 1fr; } .cx-sec { padding: var(--sp6) 0; } }
     /* Floating enquiry button */
     .float-cta {
       position: fixed;
@@ -1183,7 +1230,14 @@
       <a onclick="showPage('about')"     id="nav-about"    >About Us</a>
       <a onclick="showPage('team')"     id="nav-team"     >Our Team</a>
       <a onclick="showPage('services')"  id="nav-services" >Services</a>
-      <a onclick="showPage('coaching')"  id="nav-coaching" >Coaching</a>
+      <div class="nav-dd">
+        <a onclick="showPage('coaching')" id="nav-coaching">Coaching<span class="nav-dd-caret">▾</span></a>
+        <div class="nav-dd-menu"><div>
+          <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+          <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
+          <a onclick="showPage('coaching')">Our Coaches &amp; Fees</a>
+        </div></div>
+      </div>
       <a onclick="showPage('psychoeducation')" id="nav-psychoeducation">Psychoeducation</a>
       <a onclick="showPage('speaking')"  id="nav-speaking" >Speaking &amp; Events</a>
       <a onclick="showPage('media')"         id="nav-media"        >Media</a>
@@ -1203,6 +1257,7 @@
   <a onclick="showPage('team');closeMenu()">Our Team</a>
   <a onclick="showPage('services');closeMenu()">Services</a>
   <a onclick="showPage('coaching');closeMenu()">Coaching</a>
+  <span class="mobile-subrow"><a class="mobile-sub" onclick="showPage('parentcoaching');closeMenu()">Parent</a><span>·</span><a class="mobile-sub" onclick="showPage('efcoaching');closeMenu()">Executive Function</a></span>
   <a onclick="showPage('psychoeducation');closeMenu()">Psychoeducation</a>
   <a onclick="showPage('speaking');closeMenu()">Speaking &amp; Events</a>
   <a onclick="showPage('media');closeMenu()">Media</a>
@@ -1588,95 +1643,32 @@
   <section class="page-hero page-hero-teal">
     <div class="container">
       <p class="label">Coaching &amp; Support</p>
-      <h1 class="h-section">Our Coaching Team</h1>
+      <h1 class="h-section">Coaching</h1>
       <p class="body-lg">Our coaches draw on professional training, lived experience, and a genuine passion for supporting people to understand themselves and build momentum.</p>
     </div>
   </section>
 
-  <div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:12px 0">
-    <div class="container" style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap">
-      <a onclick="showPage('team')" style="color:rgba(0,0,0,0.5);cursor:pointer;text-decoration:none">← Our Team</a>
-    </div>
-  </div>
+  <div class="cx-tabs"><div class="container">
+    <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+    <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
+    <a onclick="showPage('coaching')" class="on">Our Coaches &amp; Fees</a>
+  </div></div>
 
-  <!-- Parent Coaches -->
   <section style="padding:var(--sp10) 0">
-    <div class="container">
-      <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
-        <h2 style="font-size:clamp(20px,2.5vw,26px);font-weight:700;letter-spacing:-0.4px;color:var(--black)">Parent Coaches</h2>
-        <p class="body" style="font-size:16px;color:rgba(0,0,0,0.6);margin-top:var(--sp3);line-height:1.7">Supporting parents of neurodivergent children and teens through a strengths-based, compassionate approach — drawing on lived experience and professional coaching frameworks.</p>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--sp5);justify-content:center">
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);background:#8a8785;">
-            <img src="images/teresa-chua.png" alt="Teresa Chua" style="width:100%;height:100%;object-fit:contain;object-position:center top;transform:scale(1.18);transform-origin:center 35%" />
-          </div>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Teresa Chua</h3>
-          <a href="https://www.linkedin.com/in/teresa-chua/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('teresachua')">View Profile</button>
-        </div>
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
-            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;transform:scale(1.85);transform-origin:center 5%" />
-          </div>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
-          <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Executive Function Coaches -->
-  <section style="padding:var(--sp10) 0;background:var(--off-white);border-top:1px solid var(--border)">
-    <div class="container">
-      <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
-        <h2 style="font-size:clamp(20px,2.5vw,26px);font-weight:700;letter-spacing:-0.4px;color:var(--black)">Executive Function Coaches</h2>
-        <p class="body" style="font-size:16px;color:rgba(0,0,0,0.6);margin-top:var(--sp3);line-height:1.7">Helping students, young adults, and professionals build the planning, organisation, and self-management skills that make everyday life more workable.</p>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--sp5);justify-content:center">
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);background:#8a8785;">
-            <img src="images/teresa-chua.png" alt="Teresa Chua" style="width:100%;height:100%;object-fit:contain;object-position:center top;transform:scale(1.18);transform-origin:center 35%" />
-          </div>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Teresa Chua</h3>
-          <a href="https://www.linkedin.com/in/teresa-chua/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('teresachua')">View Profile</button>
-        </div>
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
-            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;transform:scale(1.85);transform-origin:center 5%" />
-          </div>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
-          <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
-        </div>
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
-            <img src="images/dasiyah-de-zwart-2026.jpg" alt="Dasiyah de Zwart" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.6);transform-origin:48% 14%" />
-          </div>
-          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--teal);background:rgba(31,138,138,0.08);border:1px solid rgba(31,138,138,0.2);border-radius:var(--r-pill);padding:2px 8px;margin-bottom:4px">Associate Coach</span>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Dasiyah de Zwart</h3>
-          <a href="https://www.linkedin.com/in/dasiyahdezwart/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('dasiyahdezwart')">View Profile</button>
-        </div>
-
-        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
-            <img src="images/alisa-cheng.jpg" alt="Alisa Cheng" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.35);transform-origin:48% 4%" />
-          </div>
-          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--teal);background:rgba(31,138,138,0.08);border:1px solid rgba(31,138,138,0.2);border-radius:var(--r-pill);padding:2px 8px;margin-bottom:4px">Associate Coach</span>
-          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Alisa Cheng</h3>
-          <a href="https://www.linkedin.com/in/alisa-c-295601218/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
-          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('alisacheng')">View Profile</button>
-        </div>
-
+    <div class="container" style="max-width:1000px">
+      <div class="cx-choose">
+        <a onclick="showPage('parentcoaching')" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">
+          <span class="svc-tag" style="color:var(--gold-dark)">For parents</span>
+          <h3>Parent Coaching</h3>
+          <p>Coaching for parents of neurodivergent children and teens — understanding your child's needs, strengthening communication and building a supportive home environment.</p>
+          <span class="go" style="color:var(--gold-dark)">Explore parent coaching →</span>
+        </a>
+        <a onclick="showPage('efcoaching')" style="--accent:var(--teal);--tint:rgba(31,138,138,0.08)">
+          <span class="svc-tag" style="color:var(--teal)">Students, young adults &amp; professionals</span>
+          <h3>Executive Function Coaching</h3>
+          <p>Practical coaching for planning, prioritising, time management, follow-through and sustainable routines.</p>
+          <span class="go">Explore executive function coaching →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1738,6 +1730,243 @@
   </section>
 
 </div><!-- /coaching -->
+
+<!-- ══════════════════════════════════════════════════════════
+     PARENT COACHING
+══════════════════════════════════════════════════════════ -->
+<div id="page-parentcoaching" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Coaching</p>
+      <h1 class="h-section">Parent Coaching</h1>
+      <p class="body-lg">Helping parents better understand their children's needs, navigate everyday challenges and explore different parenting approaches.</p>
+    </div>
+  </section>
+  <div class="cx-tabs"><div class="container">
+    <a onclick="showPage('parentcoaching')" class="on">Parent Coaching</a>
+    <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
+    <a onclick="showPage('coaching')">Our Coaches &amp; Fees</a>
+  </div></div>
+
+  <div class="container cx-wrap">
+
+    <div class="cx-sec">
+      <h2>What Is Parent Coaching?</h2>
+      <p>Parent coaching is a collaborative process that helps parents better understand their children's needs, navigate everyday challenges and explore different parenting approaches.</p>
+      <p class="cx-callout">Unlike child or youth coaching, the parent is the coaching client, with sessions focused on their experiences, goals and approaches.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>Why Parent Coaching?</h2>
+      <p>Parents play a significant role in shaping the environment in which their children grow and develop.</p>
+      <p>While a child or youth may spend an hour a week with a coach, parents are present throughout everyday life. How they communicate, respond to challenges and provide support can influence their child's development and relationships.</p>
+      <p class="cx-callout" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">Change can begin with parents. By better understanding their child's needs and reflecting on their own approaches, parents can create a more supportive environment, strengthen relationships and encourage age-appropriate independence.</p>
+      <p style="margin-top:var(--sp3)">Parent coaching can be a valuable first step, whether or not the child is ready for coaching themselves. It can also complement child or youth coaching, helping parents create a supportive home environment while their child develops their own skills and independence.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>How Does It Work?</h2>
+      <p>Through one-to-one coaching, parents:</p>
+      <ol class="cx-steps">
+        <li>Explore their parenting challenges and goals.</li>
+        <li>Better understand their child's strengths and needs.</li>
+        <li>Reflect on their communication and interactions.</li>
+        <li>Explore practical approaches to try at home.</li>
+        <li>Review what works and make adjustments.</li>
+      </ol>
+      <p>Coaching involves active participation, reflection and a willingness to try different approaches, rather than expecting prescribed solutions.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>Collaborative &amp; Proactive Solutions (CPS)</h2>
+      <p class="cx-callout" style="margin-top:0;margin-bottom:var(--sp3);--accent:#37474F;--tint:rgba(55,71,79,0.07)">One approach that may be incorporated into parent coaching is Collaborative &amp; Proactive Solutions (CPS), developed by Dr Ross Greene.</p>
+      <p>CPS helps parents understand their child's concerns and identify difficulties that may be getting in the way of meeting expectations. It encourages parents and children to work together towards solutions that address both perspectives, while strengthening communication and relationships.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>Parent Coaching or Child/Youth Coaching?</h2>
+      <div class="cx-compare">
+        <div style="--accent:var(--teal);--tint:rgba(31,138,138,0.08)"><h3>Child or youth coaching</h3><p>Focuses on helping the young person develop skills and independence.</p></div>
+        <div style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)"><h3>Parent coaching</h3><p>Focuses on helping parents support their child's development through everyday interactions.</p></div>
+      </div>
+      <p>Both approaches can complement each other, while parent coaching can also be beneficial on its own.</p>
+    </div>
+
+    <div class="cx-sec">
+      <div class="cx-panel">
+        <span class="cx-badge">Our recommendation</span>
+        <h2>Why Parent Coaching <span style="color:#F3D08A">Together</span> with Youth Coaching Is Important</h2>
+        <p><strong>Transforming Lives strongly recommends that in the situation where the youth is below 18 years of age, BOTH parent and youth receive coaching support from our parent coach and youth coach respectively.</strong> This is to ensure that the whole family is aligned and on the same page when it comes to understanding what supports are needed at home for executive function and/or the neurodivergent wiring.</p>
+        <p>If the youth is younger, just focusing on coaching for the youth may not be as sustainable if there is lack of alignment and further reinforcement or support on the homefront. When both parent and youth are coached, it is a team approach to ensuring the youth gets the best opportunity to thrive in life.</p>
+        <p><strong>We also know that when it comes to neurodivergence, there is a strong genetic link</strong>, i.e. if a child has ADHD, ASD or dyslexia, there is a good chance that one or both parents may also have the condition without being aware of this. When the symptoms are unsupported, it is much more challenging to manage oneself, family members and everyday life.</p>
+        <p style="margin-bottom:0"><strong>Our accessible coaching rates make it possible for BOTH parent and youth to have executive function coaching support at the same time for less than the fees charged by private providers.</strong> This is one of the areas that is close to the heart of Transforming Lives, as a social enterprise.</p>
+      </div>
+    </div>
+
+    <div class="cx-sec">
+      <h2>When Might Parent Coaching Not Be the Right Fit?</h2>
+      <p>Parent coaching may not be the best fit if:</p>
+      <ul class="cx-fit">
+        <li><span><strong>You're looking exclusively for direct coaching for your child.</strong> Parent coaching works with you as the parent, rather than providing individual coaching to your child.</span></li>
+        <li><span><strong>You're expecting someone to change or “fix” your child's behaviour.</strong> Coaching helps you explore what you can influence through your own responses, interactions and approaches.</span></li>
+        <li><span><strong>You're looking for immediate solutions or prescribed parenting rules.</strong> Coaching is a collaborative process that involves reflection, experimentation and developing strategies suited to your family's needs.</span></li>
+        <li><span><strong>You're seeking clinical or therapeutic intervention.</strong> Parent coaching does not replace psychological assessment, diagnosis, counselling or mental health treatment, although it may complement these services.</span></li>
+      </ul>
+    </div>
+
+    <div class="cx-sec">
+      <div class="cx-price">
+        <div><strong>S$100–120</strong><span>per 60-minute session · with Teresa Chua or Moonlake Lee</span></div>
+        <a class="fees" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">How our fees work →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <section style="padding:var(--sp10) 0;background:var(--off-white);border-top:1px solid var(--border)">
+    <div class="container">
+      <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
+        <h2 style="font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-0.4px;color:var(--black)">Our Parent Coaches</h2>
+        <p class="body" style="font-size:16px;color:rgba(0,0,0,0.6);margin-top:var(--sp3);line-height:1.7">Supporting parents of neurodivergent children and teens through a strengths-based, compassionate approach — drawing on lived experience and professional coaching frameworks.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp5);justify-content:center">
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);background:#8a8785;">
+            <img src="images/teresa-chua.png" alt="Teresa Chua" style="width:100%;height:100%;object-fit:contain;object-position:center top;transform:scale(1.18);transform-origin:center 35%" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Teresa Chua</h3>
+          <a href="https://www.linkedin.com/in/teresa-chua/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('teresachua')">View Profile</button>
+        </div>
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
+            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;transform:scale(1.85);transform-origin:center 5%" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
+          <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0;text-align:center;background:var(--off-white);border-top:1px solid var(--border)">
+    <div class="container">
+      <h2 class="h-sub">Interested in Parent Coaching?</h2>
+      <p class="body-lg" style="margin:var(--sp3) auto 0;max-width:560px">Tell us a little about your family and what you would like support with, and we will get back to you.</p>
+      <div style="display:flex;gap:var(--sp3);justify-content:center;flex-wrap:wrap;margin-top:var(--sp6)">
+        <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="text-decoration:none">Make an Enquiry →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /parentcoaching -->
+
+<!-- ══════════════════════════════════════════════════════════
+     EXECUTIVE FUNCTION COACHING
+══════════════════════════════════════════════════════════ -->
+<div id="page-efcoaching" class="page">
+
+  <section class="page-hero page-hero-teal">
+    <div class="container">
+      <p class="label">Coaching</p>
+      <h1 class="h-section">Executive Function Coaching</h1>
+      <p class="body-lg">Helping students, young adults and professionals build the planning, organisation and self-management skills that make everyday life more workable.</p>
+    </div>
+  </section>
+  <div class="cx-tabs"><div class="container">
+    <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+    <a onclick="showPage('efcoaching')" class="on">Executive Function Coaching</a>
+    <a onclick="showPage('coaching')">Our Coaches &amp; Fees</a>
+  </div></div>
+
+  <div class="container cx-wrap">
+    <div class="cx-sec">
+      <h2>What We Work On</h2>
+      <p>Practical, non-clinical coaching for the everyday skills that help you plan, start and follow through — especially for neurodivergent students, young adults and working professionals.</p>
+      <ol class="cx-steps">
+        <li>Planning and prioritising</li>
+        <li>Time management</li>
+        <li>Getting started and following through</li>
+        <li>Self-advocacy</li>
+        <li>Sustainable routines</li>
+      </ol>
+      <p class="cx-callout">For young people under 18, we recommend pairing executive function coaching with <a onclick="showPage('parentcoaching')" style="color:var(--teal);cursor:pointer;text-decoration:underline">parent coaching</a>, so the whole family is aligned on the support needed at home.</p>
+    </div>
+    <div class="cx-sec">
+      <div class="cx-price">
+        <div><strong>S$50–120</strong><span>per 60-minute session · associate coaches S$50–60 · coaches S$100–120</span></div>
+        <a class="fees" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">How our fees work →</a>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding:var(--sp10) 0;background:var(--off-white);border-top:1px solid var(--border)">
+    <div class="container">
+      <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
+        <h2 style="font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-0.4px;color:var(--black)">Our Executive Function Coaches</h2>
+        <p class="body" style="font-size:16px;color:rgba(0,0,0,0.6);margin-top:var(--sp3);line-height:1.7">Helping students, young adults, and professionals build the planning, organisation, and self-management skills that make everyday life more workable.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp5);justify-content:center">
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);background:#8a8785;">
+            <img src="images/teresa-chua.png" alt="Teresa Chua" style="width:100%;height:100%;object-fit:contain;object-position:center top;transform:scale(1.18);transform-origin:center 35%" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Teresa Chua</h3>
+          <a href="https://www.linkedin.com/in/teresa-chua/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('teresachua')">View Profile</button>
+        </div>
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
+            <img src="images/founder.jpg" alt="Moonlake Lee" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;transform:scale(1.85);transform-origin:center 5%" />
+          </div>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
+          <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
+        </div>
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
+            <img src="images/dasiyah-de-zwart-2026.jpg" alt="Dasiyah de Zwart" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.6);transform-origin:48% 14%" />
+          </div>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--teal);background:rgba(31,138,138,0.08);border:1px solid rgba(31,138,138,0.2);border-radius:var(--r-pill);padding:2px 8px;margin-bottom:4px">Associate Coach</span>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Dasiyah de Zwart</h3>
+          <a href="https://www.linkedin.com/in/dasiyahdezwart/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('dasiyahdezwart')">View Profile</button>
+        </div>
+
+        <div style="flex:0 0 220px;min-width:180px;max-width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-md);padding:var(--sp5);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+          <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:var(--sp3);flex-shrink:0;border:2px solid var(--border);">
+            <img src="images/alisa-cheng.jpg" alt="Alisa Cheng" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.35);transform-origin:48% 4%" />
+          </div>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--teal);background:rgba(31,138,138,0.08);border:1px solid rgba(31,138,138,0.2);border-radius:var(--r-pill);padding:2px 8px;margin-bottom:4px">Associate Coach</span>
+          <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Alisa Cheng</h3>
+          <a href="https://www.linkedin.com/in/alisa-c-295601218/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
+          <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('alisacheng')">View Profile</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:var(--sp10) 0;text-align:center;background:var(--off-white);border-top:1px solid var(--border)">
+    <div class="container">
+      <h2 class="h-sub">Interested in Executive Function Coaching?</h2>
+      <p class="body-lg" style="margin:var(--sp3) auto 0;max-width:560px">Tell us who the coaching is for and what you would like to work on, and we will match you with a coach.</p>
+      <div style="display:flex;gap:var(--sp3);justify-content:center;flex-wrap:wrap;margin-top:var(--sp6)">
+        <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="text-decoration:none">Make an Enquiry →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /efcoaching -->
+
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -3965,10 +4194,10 @@
 
 
 <script>
-  const pages = ['home','about','team','coaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','alisacheng','services','psychoeducation','podcasts','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
+  const pages = ['home','about','team','coaching','parentcoaching','efcoaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','alisacheng','services','psychoeducation','podcasts','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/podcasts': 'podcasts', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
-  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', podcasts: '/podcasts', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/parent-coaching': 'parentcoaching', '/executive-function-coaching': 'efcoaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/podcasts': 'podcasts', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
+  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', parentcoaching: '/parent-coaching', efcoaching: '/executive-function-coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', podcasts: '/podcasts', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
 
   function scrollToSection(anchorId) {
     showPage('services');
@@ -4007,7 +4236,7 @@
       if (n) n.classList.remove('active');
     });
     document.getElementById('page-' + id).classList.add('active');
-    const navParent = { products: 'psychoeducation', blog: 'psychoeducation', podcasts: 'psychoeducation' };
+    const navParent = { parentcoaching: 'coaching', efcoaching: 'coaching', products: 'psychoeducation', blog: 'psychoeducation', podcasts: 'psychoeducation' };
     const n = document.getElementById('nav-' + (navParent[id] || id));
     if (n) n.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -4017,6 +4246,8 @@
       about: 'About Us | Transforming Lives',
       team: 'Our Team | Transforming Lives',
       coaching: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
+      parentcoaching: 'Parent Coaching | Transforming Lives',
+      efcoaching: 'Executive Function Coaching | Transforming Lives',
       moonlakelee: 'Moonlake Lee | Founder & CEO | Transforming Lives',
       ravenlim: 'Raven Lim | Transforming Lives',
       dasiyahdezwart: 'Dasiyah de Zwart | Corporate Partnerships Lead | Transforming Lives',
@@ -4047,6 +4278,8 @@
       alisacheng:     'images/alisa-cheng.jpg',
       geniehoe:       'images/genie-hoe.png',
       coaching:       'images/coaching-favicon.png',
+      parentcoaching: 'images/coaching-favicon.png',
+      efcoaching:     'images/coaching-favicon.png',
     };
     const faviconHref = (pageFavicons[id] || 'images/TL_favicon.png') + '?fv=' + id;
     // Remove existing icon links and re-append to force browsers to re-render the tab icon
@@ -4061,6 +4294,8 @@
     const descriptions = {
       home:         'Transforming Lives is a Singapore social enterprise providing coaching, psychoeducation, and neuroinclusion support — for individuals, families, schools, and workplaces.',
       about:        'Learn about Transforming Lives — our mission, values, and approach to supporting neurodivergent individuals, families, and organisations in Singapore.',
+      parentcoaching: 'Parent coaching from Transforming Lives — helping parents understand their child\'s needs, strengthen communication and build a supportive home, with accessible social-enterprise fees.',
+      efcoaching:   'Executive function coaching for students, young adults and professionals — planning, time management, follow-through and sustainable routines, at accessible social-enterprise fees.',
       coaching:     'Parent and executive function coaching from people who get it, at a fee within reach.',
       team:         'Meet the Transforming Lives team — coaches, educators, and advocates with lived experience across neurodivergence, executive function, and family support.',
       moonlakelee:  'Moonlake Lee is the Founder & CEO of Transforming Lives — advocate, author, and psychoeducator on neurodivergence, executive function, and family resilience in Singapore.',
