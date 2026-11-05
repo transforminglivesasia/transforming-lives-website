@@ -815,6 +815,8 @@
     .svc-who > p { margin:0 0 8px !important; font-family:var(--mono); font-size:10px !important; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:rgba(0,0,0,0.45) !important; }
     .svc-chips { display:flex; flex-wrap:wrap; gap:8px; }
     .svc-chip { display:inline-flex; align-items:center; gap:8px; padding:4px 12px 4px 4px; border-radius:999px; background:var(--white); border:1px solid var(--border); font-size:13px; font-weight:600; color:var(--black); cursor:pointer; transition:border-color .15s, background .15s; }
+    .svc-more { display:inline-block; margin-top:12px; font-size:14px; font-weight:700; color:var(--accent); cursor:pointer; }
+    .svc-more:hover { text-decoration:underline; }
     .svc-chip-break { flex-basis:100%; height:0; }
     .svc-chip:hover { border-color:var(--accent); background:var(--tint); }
     .svc-chip img { width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:center 20%; display:block; }
@@ -2508,7 +2510,7 @@
           </div>
           <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
             <div class="svc-top"><div class="svc-icon">💙</div><div><span class="svc-tag">For parents</span><h3>Parent Coaching</h3></div></div>
-            <div class="svc-mid"><p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p></div>
+            <div class="svc-mid"><p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p><a class="svc-more" onclick="showPage('parentcoaching')">About parent coaching →</a></div>
             <div class="svc-price"><strong>S$100–120</strong><span>per 60-minute session</span></div>
             <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
@@ -2520,7 +2522,7 @@
           </div>
           <div class="service-item svc-offer" style="--accent:#146060;--tint:rgba(20,96,96,0.08)">
             <div class="svc-top"><div class="svc-icon">✨</div><div><span class="svc-tag">Students, young adults &amp; professionals</span><h3>Executive Function Coaching</h3></div></div>
-            <div class="svc-mid"><p>Practical, non-clinical coaching for planning, prioritising, time management, follow-through, self-advocacy and sustainable routines.</p></div>
+            <div class="svc-mid"><p>Practical, non-clinical coaching for planning, prioritising, time management, follow-through, self-advocacy and sustainable routines.</p><a class="svc-more" onclick="showPage('efcoaching')">About executive function coaching →</a></div>
             <div class="svc-price"><strong>S$50–120</strong><span>per 60-minute session</span></div>
             <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a><span class="svc-chip-break"></span><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('alisacheng')"><img src="images/alisa-cheng.jpg" alt="" />Alisa Cheng</a></div></div>
           </div>
