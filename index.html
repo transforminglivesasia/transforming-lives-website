@@ -500,6 +500,26 @@
     .cx-choose p { font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.65); margin: 0; }
     .cx-choose .go { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--accent); }
     @media (max-width: 700px) { .cx-compare, .cx-choose { grid-template-columns: 1fr; } .cx-sec { padding: var(--sp6) 0; } }
+    .ef-qs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 var(--sp2); }
+    .ef-qs span { background:#0C4A4F; color:#fff; font-weight:700; font-size:16px; padding:10px 18px; border-radius:999px; }
+    .ef-skills { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:var(--sp3); }
+    .ef-skills div { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:16px 14px; font-size:14px; font-weight:600; line-height:1.4; color:var(--black); text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.04); }
+    .ef-skills b { display:block; font-size:24px; margin-bottom:8px; }
+    .ef-tagline { margin-top:var(--sp3) !important; font-size:22px !important; font-weight:800; color:var(--gold-dark) !important; letter-spacing:-0.3px; }
+    .ef-familiar { background:#0C4A4F; padding:var(--sp8) 0; }
+    .ef-familiar h2 { color:#FFD95A; font-size:clamp(24px,3vw,32px); font-weight:800; margin:0 0 var(--sp4); }
+    .ef-cards { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+    .ef-card { background:#01434A; border:1px solid rgba(255,255,255,0.12); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+    .ef-card img { width:100%; aspect-ratio:12/11; object-fit:cover; display:block; }
+    .ef-card div { padding:14px 16px 18px; }
+    .ef-card span { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:#FFD95A; }
+    .ef-card p { color:#fff; font-size:15px; font-weight:600; line-height:1.45; margin:6px 0 0; }
+    .ef-rates { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp3); margin-top:var(--sp3); }
+    .ef-rates div { border-radius:18px; padding:24px; text-align:center; }
+    .ef-rates span { display:block; font-weight:700; font-size:17px; }
+    .ef-rates strong { display:block; font-size:clamp(30px,4vw,40px); font-weight:800; letter-spacing:-1px; margin-top:4px; }
+    @media (max-width: 1000px) { .ef-cards { grid-template-columns:repeat(3,1fr); } .ef-skills { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width: 600px) { .ef-cards { grid-template-columns:1fr 1fr; } .ef-skills { grid-template-columns:1fr 1fr; } .ef-rates { grid-template-columns:1fr; } }
     /* Floating enquiry button */
     .float-cta {
       position: fixed;
@@ -1877,7 +1897,7 @@
     <div class="container">
       <p class="label">Coaching</p>
       <h1 class="h-section">Executive Function Coaching</h1>
-      <p class="body-lg">Helping students, young adults and professionals build the planning, organisation and self-management skills that make everyday life more workable.</p>
+      <p class="body-lg">Running late? Losing things? Putting tasks off? Practical coaching that helps students, young adults and professionals turn intentions into action.</p>
     </div>
   </section>
   <div class="cx-tabs"><div class="container">
@@ -1888,22 +1908,63 @@
 
   <div class="container cx-wrap">
     <div class="cx-sec">
-      <h2>What We Work On</h2>
-      <p>Practical, non-clinical coaching for the everyday skills that help you plan, start and follow through — especially for neurodivergent students, young adults and working professionals.</p>
-      <ol class="cx-steps">
-        <li>Planning and prioritising</li>
-        <li>Time management</li>
-        <li>Getting started and following through</li>
-        <li>Self-advocacy</li>
-        <li>Sustainable routines</li>
-      </ol>
-      <p class="cx-callout">For young people under 18, we recommend pairing executive function coaching with <a onclick="showPage('parentcoaching')" style="color:var(--teal);cursor:pointer;text-decoration:underline">parent coaching</a>, so the whole family is aligned on the support needed at home.</p>
-    </div>
-    <div class="cx-sec">
-      <div class="cx-price">
-        <div><strong>S$50–120</strong><span>per 60-minute session · associate coaches S$50–60 · coaches S$100–120</span></div>
-        <a class="fees" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">How our fees work →</a>
+      <h2>Why do everyday tasks take so much effort?</h2>
+      <div class="ef-qs"><span>⏰ Running late?</span><span>🔑 Losing things?</span><span>📝 Putting tasks off?</span></div>
+      <p class="cx-callout">Executive Function is a set of skills that help us manage our daily life.</p>
+      <div class="ef-skills">
+        <div><b>📁</b>Organise our responsibilities and belongings</div>
+        <div><b>⏱️</b>Manage our time</div>
+        <div><b>💛</b>Regulate our emotions</div>
+        <div><b>▶️</b>Get started on tasks</div>
+        <div><b>🗺️</b>Plan the steps ahead</div>
       </div>
+      <p class="ef-tagline">Turning intentions into action.</p>
+    </div>
+  </div>
+
+  <section class="ef-familiar">
+    <div class="container">
+      <h2>Sound familiar?</h2>
+      <div class="ef-cards">
+        <div class="ef-card"><img src="images/ef-organising.jpg" alt="Illustration of a man searching with a magnifying glass" loading="lazy" /><div><span>Organising</span><p>Do you often lose track of belongings, deadlines or responsibilities?</p></div></div>
+        <div class="ef-card"><img src="images/ef-time.jpg" alt="Illustration of a woman rushing and checking her watch" loading="lazy" /><div><span>Time management</span><p>Are you always running late or underestimating how long things take?</p></div></div>
+        <div class="ef-card"><img src="images/ef-emotions.jpg" alt="Illustration of a parent comforting an overwhelmed child" loading="lazy" /><div><span>Emotional regulation</span><p>Do you feel overwhelmed when things don't go as planned?</p></div></div>
+        <div class="ef-card"><img src="images/ef-starting.jpg" alt="Illustration of a puzzled man between two question marks" loading="lazy" /><div><span>Getting started</span><p>Do you know what needs to be done but struggle to get started?</p></div></div>
+        <div class="ef-card"><img src="images/ef-planning.jpg" alt="Illustration of a person slumped over a laptop holding up a help sign" loading="lazy" /><div><span>Planning</span><p>Are you struggling to break a big task into manageable steps?</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container cx-wrap">
+    <div class="cx-sec">
+      <h2>What Is Executive Function (EF) Coaching?</h2>
+      <p>Coaching is a collaborative process that helps you identify challenges, recognise your potential, and develop practical strategies to achieve your goals.</p>
+      <p>Executive Function Coaching focuses on the skills we use to manage everyday life, such as planning, organising, managing time, regulating emotions, getting started on tasks and following through on goals.</p>
+      <p>Whether you're navigating school, work, relationships or life transitions, EF Coaching helps you develop strategies that work for your unique needs and circumstances.</p>
+      <p>We work with students, young adults, and professionals to build the planning, organisation, and self-management skills that make everyday life more workable.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>Find Strategies That Work for You</h2>
+      <p>Coaching is a collaborative process that helps you:</p>
+      <ol class="cx-steps">
+        <li>Understand your challenges</li>
+        <li>Recognise your strengths</li>
+        <li>Set meaningful goals</li>
+        <li>Develop practical strategies</li>
+      </ol>
+      <p class="cx-callout" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">Coaching isn't about telling you what to do. It's about working together to discover what works for you.</p>
+      <p class="cx-callout" style="--accent:#37474F;--tint:rgba(55,71,79,0.07);font-size:16px !important;font-weight:500">For young people under 18, we recommend pairing executive function coaching with <a onclick="showPage('parentcoaching')" style="color:var(--teal);cursor:pointer;text-decoration:underline;font-weight:700">parent coaching</a>, so the whole family is aligned on the support needed at home.</p>
+    </div>
+
+    <div class="cx-sec">
+      <h2>Rates</h2>
+      <p>We believe everyone deserves access to support. That's why we offer coaching options at different price points, ranging from S$50 to S$120 per 60-minute session.</p>
+      <div class="ef-rates">
+        <div style="background:var(--gold);color:#1a1a1a"><span>Associate Coaches</span><strong>S$50–60</strong></div>
+        <div style="background:#0C4A4F;color:#FFD95A"><span>Coaches</span><strong>S$100–120</strong></div>
+      </div>
+      <p style="font-size:14px !important;margin-top:var(--sp2)">Per 60-minute session. <a class="fees" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)" style="color:var(--teal);font-weight:700;cursor:pointer">How our fees work →</a></p>
     </div>
   </div>
 
@@ -1959,10 +2020,10 @@
 
   <section style="padding:var(--sp10) 0;text-align:center;background:var(--off-white);border-top:1px solid var(--border)">
     <div class="container">
-      <h2 class="h-sub">Interested in Executive Function Coaching?</h2>
-      <p class="body-lg" style="margin:var(--sp3) auto 0;max-width:560px">Tell us who the coaching is for and what you would like to work on, and we will match you with a coach.</p>
+      <h2 class="h-sub">Book a Discovery Call</h2>
+      <p class="body-lg" style="margin:var(--sp3) auto 0;max-width:560px">Reach out to learn more about executive function coaching or book a Discovery Call with us.</p>
       <div style="display:flex;gap:var(--sp3);justify-content:center;flex-wrap:wrap;margin-top:var(--sp6)">
-        <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="text-decoration:none">Make an Enquiry →</a>
+        <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="text-decoration:none">Book a Discovery Call →</a>
       </div>
     </div>
   </section>
