@@ -539,6 +539,75 @@
     .cc-btn { background:var(--accent); color:#fff !important; font-size:15px !important; font-weight:700; padding:12px 22px; border-radius:999px; transition:background .15s; }
     .cx-choose2 > a:hover .cc-btn { background:var(--accent-dark); }
     @media (max-width: 760px) { .cx-choose2 { grid-template-columns:1fr; } .cc-body { padding:22px 20px 24px; } }
+    /* Parent coaching page */
+    .pc-hero { background: linear-gradient(135deg, #0E5458 0%, #1F8A8A 100%); padding: var(--sp10) 0; color: #fff; }
+    .pc-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--sp8); align-items: center; }
+    .pc-lead { font-size: clamp(17px,1.6vw,20px); line-height: 1.6; color: rgba(255,255,255,0.88); margin: var(--sp3) 0 0; max-width: 560px; }
+    .pc-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--sp4); }
+    .pc-facts span { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+    .pc-hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--sp5); }
+    .pc-btn-gold { background: var(--gold); color: #fff; text-decoration: none; }
+    .pc-btn-gold:hover { background: var(--gold-dark); opacity: 1; }
+    .pc-btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.6); cursor: pointer; text-decoration: none; }
+    .pc-btn-ghost:hover { background: rgba(255,255,255,0.12); opacity: 1; }
+    .pc-hero-art { border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.3); border: 6px solid rgba(255,255,255,0.15); }
+    .pc-hero-art img { width: 100%; display: block; }
+    .pc-sec { padding: var(--sp10) 0; }
+    .pc-alt { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .pc-narrow { max-width: 900px; }
+    .pc-center { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .pc-h2 { font-size: clamp(24px,3vw,34px); font-weight: 800; letter-spacing: -0.6px; line-height: 1.2; margin: 10px 0 var(--sp3); }
+    .pc-p { font-size: 17px; line-height: 1.75; color: rgba(0,0,0,0.68); margin: 0 0 var(--sp2); }
+    .pc-note { text-align: center; font-size: 16px; color: rgba(0,0,0,0.6); max-width: 680px; margin: var(--sp5) auto 0; font-style: italic; }
+    .pc-two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp8); align-items: center; }
+    .pc-quote-card { position: relative; background: linear-gradient(150deg, #F7EEDB, #F1E2C1); border-radius: 22px; padding: 44px 36px 36px; box-shadow: 0 10px 30px rgba(201,150,58,0.18); }
+    .pc-quote-mark { position: absolute; top: -6px; left: 24px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 110px; line-height: 1; color: var(--gold); }
+    .pc-quote-card p { font-size: 21px; font-weight: 700; line-height: 1.5; color: #3B2A0E; margin: 0; letter-spacing: -0.2px; }
+    .pc-pull { margin: var(--sp5) 0; padding: 28px 32px; background: var(--white); border-left: 6px solid var(--gold); border-radius: 0 18px 18px 0; box-shadow: 0 6px 24px rgba(0,0,0,0.06); font-size: 19px; line-height: 1.65; color: rgba(0,0,0,0.75); }
+    .pc-pull strong { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: clamp(28px,3.4vw,38px); font-weight: 700; color: var(--teal); line-height: 1.15; margin-bottom: 10px; }
+    .pc-steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; margin-top: var(--sp6); counter-reset: none; }
+    .pc-steps > div { position: relative; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 30px 18px 22px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+    .pc-steps > div:nth-child(odd) { border-top: 5px solid var(--teal); }
+    .pc-steps > div:nth-child(even) { border-top: 5px solid var(--gold); }
+    .pc-num { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 36px; height: 36px; border-radius: 50%; background: var(--black); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+    .pc-steps b { display: block; font-size: 32px; margin-bottom: 10px; }
+    .pc-steps p { font-size: 15px; font-weight: 600; line-height: 1.45; color: var(--black); margin: 0; }
+    .pc-cps { display: flex; gap: var(--sp4); align-items: flex-start; background: var(--white); border-radius: 22px; padding: 34px; box-shadow: 0 8px 28px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+    .pc-cps-icon { flex-shrink: 0; width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(145deg, #37474F, #546E7A); display: flex; align-items: center; justify-content: center; font-size: 34px; }
+    .pc-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin-top: var(--sp4); }
+    .pc-compare > div:not(.pc-plus) { background: var(--tint); border-top: 6px solid var(--accent); border-radius: 18px; padding: 26px; text-align: center; }
+    .pc-compare b { display: block; font-size: 36px; margin-bottom: 8px; }
+    .pc-compare h3 { font-size: 19px; font-weight: 800; margin: 0 0 8px; }
+    .pc-compare p { font-size: 16px; line-height: 1.6; color: rgba(0,0,0,0.68); margin: 0; }
+    .pc-plus { align-self: center; width: 46px; height: 46px; border-radius: 50%; background: var(--black); color: #fff; font-size: 26px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .pc-panel { padding: clamp(28px,4vw,48px) !important; }
+    .pc-panel h2 { font-size: clamp(24px,3vw,32px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.25; margin: 0 0 var(--sp4); }
+    .pc-panel p { font-size: 17px; line-height: 1.75; margin: 0 0 var(--sp2); }
+    .pc-highlights { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: var(--sp4); }
+    .pc-highlights div { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; }
+    .pc-highlights b { font-size: 26px; }
+    .pc-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: var(--sp5); max-width: 1000px; margin-left: auto; margin-right: auto; }
+    .pc-fit > div { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 26px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+    .pc-fit b { display: inline-flex; width: 48px; height: 48px; border-radius: 14px; background: rgba(201,150,58,0.14); align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px; }
+    .pc-fit h3 { font-size: 17px; font-weight: 800; line-height: 1.4; margin: 0 0 8px; color: var(--black); }
+    .pc-fit p { font-size: 15px; line-height: 1.65; color: rgba(0,0,0,0.65); margin: 0; }
+    .pc-price { background: linear-gradient(135deg, #0E5458, #1F8A8A); color: #fff; padding: var(--sp8) 0; }
+    .pc-price-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp4); flex-wrap: wrap; }
+    .pc-price strong { display: block; font-size: clamp(36px,5vw,52px); font-weight: 800; letter-spacing: -1.2px; line-height: 1; }
+    .pc-price span { display: block; margin-top: 8px; font-size: 15px; color: rgba(255,255,255,0.8); }
+    @media (max-width: 1000px) { .pc-steps { grid-template-columns: repeat(3,1fr); row-gap: 30px; } }
+    @media (max-width: 760px) {
+      .pc-hero-grid, .pc-two { grid-template-columns: 1fr; gap: var(--sp5); }
+      .pc-hero-art { max-width: 420px; }
+      .pc-steps { grid-template-columns: 1fr 1fr; }
+      .pc-compare { grid-template-columns: 1fr; }
+      .pc-plus { justify-self: center; }
+      .pc-highlights { grid-template-columns: 1fr; }
+      .pc-fit { grid-template-columns: 1fr; }
+      .pc-cps { flex-direction: column; padding: 24px; }
+      .pc-quote-card p { font-size: 19px; }
+      .pc-sec { padding: var(--sp8) 0; }
+    }
     /* Floating enquiry button */
     .float-cta {
       position: fixed;
@@ -1835,11 +1904,19 @@
 ══════════════════════════════════════════════════════════ -->
 <div id="page-parentcoaching" class="page">
 
-  <section class="page-hero page-hero-teal">
-    <div class="container">
-      <p class="label">Coaching</p>
-      <h1 class="h-section">Parent Coaching</h1>
-      <p class="body-lg">Helping parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
+  <section class="pc-hero">
+    <div class="container pc-hero-grid">
+      <div>
+        <p class="label" style="color:rgba(255,255,255,0.75)">Coaching</p>
+        <h1 class="h-section" style="color:#fff">Parent Coaching</h1>
+        <p class="pc-lead">Helping parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
+        <div class="pc-facts"><span>👥 One-to-one</span><span>⏱️ 60-minute sessions</span><span>💛 S$100–120</span></div>
+        <div class="pc-hero-btns">
+          <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-lg pc-btn-gold">Book a Discovery Call →</a>
+          <a class="btn btn-lg pc-btn-ghost" onclick="document.getElementById('pc-coaches').scrollIntoView({behavior:'smooth'})">Meet the coaches</a>
+        </div>
+      </div>
+      <div class="pc-hero-art"><img src="images/parent-coaching-mum-teen-v3.jpg" alt="Illustration of a mum and her teenager sitting together on a sofa, talking" /></div>
     </div>
   </section>
   <div class="cx-tabs"><div class="container">
@@ -1847,82 +1924,120 @@
     <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
   </div></div>
 
-  <div class="container cx-wrap">
-
-    <div class="cx-sec">
-      <h2>What Is Parent Coaching?</h2>
-      <p>Parent coaching is a collaborative process that helps parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
-      <p class="cx-callout">Unlike coaching for the teen or young adult, the parent is the coaching client, with sessions focused on their experiences, goals and approaches.</p>
-    </div>
-
-    <div class="cx-sec">
-      <h2>Why Parent Coaching?</h2>
-      <p>Parents play a significant role in shaping the environment in which their teens and young adults grow and develop.</p>
-      <p>While a teen or young adult may spend an hour a week with a coach, parents are present throughout everyday life. How they communicate, respond to challenges and provide support can influence their teen or young adult's development and relationships.</p>
-      <p class="cx-callout" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">Change can begin with parents. By better understanding their teen or young adult's needs and reflecting on their own approaches, parents can create a more supportive environment, strengthen relationships and encourage age-appropriate independence.</p>
-      <p style="margin-top:var(--sp3)">Parent coaching can be a valuable first step, whether or not the teen or young adult is ready for coaching themselves. It can also complement coaching for the teen or young adult, helping parents create a supportive home environment while their teen or young adult develops their own skills and independence.</p>
-    </div>
-
-    <div class="cx-sec">
-      <h2>How Does It Work?</h2>
-      <p>Through one-to-one coaching, parents:</p>
-      <ol class="cx-steps">
-        <li>Explore their parenting challenges and goals.</li>
-        <li>Better understand their teen or young adult's strengths and needs.</li>
-        <li>Reflect on their communication and interactions.</li>
-        <li>Explore practical approaches to try at home.</li>
-        <li>Review what works and make adjustments.</li>
-      </ol>
-      <p>Coaching involves active participation, reflection and a willingness to try different approaches, rather than expecting prescribed solutions.</p>
-    </div>
-
-    <div class="cx-sec">
-      <h2>Collaborative &amp; Proactive Solutions (CPS)</h2>
-      <p class="cx-callout" style="margin-top:0;margin-bottom:var(--sp3);--accent:#37474F;--tint:rgba(55,71,79,0.07)">One approach that may be incorporated into parent coaching is Collaborative &amp; Proactive Solutions (CPS), developed by Dr Ross Greene.</p>
-      <p>CPS helps parents understand their teen or young adult's concerns and identify difficulties that may be getting in the way of meeting expectations. It encourages parents and their teens or young adults to work together towards solutions that address both perspectives, while strengthening communication and relationships.</p>
-    </div>
-
-    <div class="cx-sec">
-      <h2>Parent Coaching or Teen/Young Adult Coaching?</h2>
-      <div class="cx-compare">
-        <div style="--accent:var(--teal);--tint:rgba(31,138,138,0.08)"><h3>Teen or young adult coaching</h3><p>Focuses on helping the young person develop skills and independence.</p></div>
-        <div style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)"><h3>Parent coaching</h3><p>Focuses on helping parents support their teen or young adult's development through everyday interactions.</p></div>
+  <section class="pc-sec">
+    <div class="container pc-two">
+      <div>
+        <p class="label">The basics</p>
+        <h2 class="pc-h2">What Is Parent Coaching?</h2>
+        <p class="pc-p">Parent coaching is a collaborative process that helps parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
       </div>
-      <p>Both approaches can complement each other, while parent coaching can also be beneficial on its own.</p>
+      <div class="pc-quote-card">
+        <span class="pc-quote-mark">“</span>
+        <p>Unlike coaching for the teen or young adult, the parent is the coaching client, with sessions focused on their experiences, goals and approaches.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="cx-sec">
-      <div class="cx-panel">
+  <section class="pc-sec pc-alt">
+    <div class="container pc-narrow">
+      <p class="label">Why it matters</p>
+      <h2 class="pc-h2">Why Parent Coaching?</h2>
+      <p class="pc-p">Parents play a significant role in shaping the environment in which their teens and young adults grow and develop.</p>
+      <p class="pc-p">While a teen or young adult may spend an hour a week with a coach, parents are present throughout everyday life. How they communicate, respond to challenges and provide support can influence their teen or young adult's development and relationships.</p>
+      <blockquote class="pc-pull"><strong>Change can begin with parents.</strong> By better understanding their teen or young adult's needs and reflecting on their own approaches, parents can create a more supportive environment, strengthen relationships and encourage age-appropriate independence.</blockquote>
+      <p class="pc-p">Parent coaching can be a valuable first step, whether or not the teen or young adult is ready for coaching themselves. It can also complement coaching for the teen or young adult, helping parents create a supportive home environment while their teen or young adult develops their own skills and independence.</p>
+    </div>
+  </section>
+
+  <section class="pc-sec">
+    <div class="container">
+      <div class="pc-center">
+        <p class="label">The process</p>
+        <h2 class="pc-h2">How Does It Work?</h2>
+        <p class="pc-p">Through one-to-one coaching, parents:</p>
+      </div>
+      <div class="pc-steps">
+        <div><span class="pc-num">1</span><b>🎯</b><p>Explore their parenting challenges and goals.</p></div>
+        <div><span class="pc-num">2</span><b>🌱</b><p>Better understand their teen or young adult's strengths and needs.</p></div>
+        <div><span class="pc-num">3</span><b>💬</b><p>Reflect on their communication and interactions.</p></div>
+        <div><span class="pc-num">4</span><b>🏠</b><p>Explore practical approaches to try at home.</p></div>
+        <div><span class="pc-num">5</span><b>🔄</b><p>Review what works and make adjustments.</p></div>
+      </div>
+      <p class="pc-note">Coaching involves active participation, reflection and a willingness to try different approaches, rather than expecting prescribed solutions.</p>
+    </div>
+  </section>
+
+  <section class="pc-sec pc-alt">
+    <div class="container pc-narrow">
+      <div class="pc-cps">
+        <div class="pc-cps-icon">🤝</div>
+        <div>
+          <p class="label" style="margin-bottom:6px">An approach we draw on</p>
+          <h2 class="pc-h2" style="margin-top:0">Collaborative &amp; Proactive Solutions (CPS)</h2>
+          <p class="pc-p"><strong style="color:var(--black)">One approach that may be incorporated into parent coaching is Collaborative &amp; Proactive Solutions (CPS), developed by Dr Ross Greene.</strong></p>
+          <p class="pc-p" style="margin-bottom:0">CPS helps parents understand their teen or young adult's concerns and identify difficulties that may be getting in the way of meeting expectations. It encourages parents and their teens or young adults to work together towards solutions that address both perspectives, while strengthening communication and relationships.</p>
+        </div>
+      </div>
+
+      <h2 class="pc-h2 pc-center" style="margin-top:var(--sp10)">Parent Coaching or Teen/Young Adult Coaching?</h2>
+      <div class="pc-compare">
+        <div style="--accent:var(--teal);--tint:rgba(31,138,138,0.09)"><b>🧑‍🎓</b><h3>Teen or young adult coaching</h3><p>Focuses on helping the young person develop skills and independence.</p></div>
+        <div class="pc-plus">+</div>
+        <div style="--accent:var(--gold);--tint:rgba(201,150,58,0.12)"><b>👪</b><h3>Parent coaching</h3><p>Focuses on helping parents support their teen or young adult's development through everyday interactions.</p></div>
+      </div>
+      <p class="pc-note">Both approaches can complement each other, while parent coaching can also be beneficial on its own.</p>
+    </div>
+  </section>
+
+  <section class="pc-sec">
+    <div class="container pc-narrow">
+      <div class="cx-panel pc-panel">
         <span class="cx-badge">Our recommendation</span>
         <h2>Why Parent Coaching <span style="color:#F3D08A">Together</span> with Youth Coaching Is Important</h2>
+        <div class="pc-highlights">
+          <div><b>🧭</b><span>Whole-family alignment</span></div>
+          <div><b>🧬</b><span>A strong genetic link</span></div>
+          <div><b>💛</b><span>Accessible rates for both</span></div>
+        </div>
         <p><strong>Transforming Lives strongly recommends that in the situation where the youth is below 18 years of age, BOTH parent and youth receive coaching support from our parent coach and youth coach respectively.</strong> This is to ensure that the whole family is aligned and on the same page when it comes to understanding what supports are needed at home for executive function and/or the neurodivergent wiring.</p>
         <p>If the youth is younger, just focusing on coaching for the youth may not be as sustainable if there is lack of alignment and further reinforcement or support on the homefront. When both parent and youth are coached, it is a team approach to ensuring the youth gets the best opportunity to thrive in life.</p>
         <p><strong>We also know that when it comes to neurodivergence, there is a strong genetic link</strong>, i.e. if a teen or young adult has ADHD, ASD or dyslexia, there is a good chance that one or both parents may also have the condition without being aware of this. When the symptoms are unsupported, it is much more challenging to manage oneself, family members and everyday life.</p>
         <p style="margin-bottom:0"><strong>Our accessible coaching rates make it possible for BOTH parent and youth to have executive function coaching support at the same time for less than the fees charged by private providers.</strong> This is one of the areas that is close to the heart of Transforming Lives, as a social enterprise.</p>
       </div>
     </div>
+  </section>
 
-    <div class="cx-sec">
-      <h2>When Might Parent Coaching Not Be the Right Fit?</h2>
-      <p>Parent coaching may not be the best fit if:</p>
-      <ul class="cx-fit">
-        <li><span><strong>You're looking exclusively for direct coaching for your teen or young adult.</strong> Parent coaching works with you as the parent, rather than providing individual coaching to your teen or young adult.</span></li>
-        <li><span><strong>You're expecting someone to change or “fix” your teen or young adult's behaviour.</strong> Coaching helps you explore what you can influence through your own responses, interactions and approaches.</span></li>
-        <li><span><strong>You're looking for immediate solutions or prescribed parenting rules.</strong> Coaching is a collaborative process that involves reflection, experimentation and developing strategies suited to your family's needs.</span></li>
-        <li><span><strong>You're seeking clinical or therapeutic intervention.</strong> Parent coaching does not replace psychological assessment, diagnosis, counselling or mental health treatment, although it may complement these services.</span></li>
-      </ul>
-    </div>
-
-    <div class="cx-sec">
-      <div class="cx-price">
-        <div><strong>S$100–120</strong><span>per 60-minute session · with Teresa Chua or Moonlake Lee</span></div>
-        <a class="fees" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">How our fees work →</a>
+  <section class="pc-sec pc-alt">
+    <div class="container">
+      <div class="pc-center">
+        <p class="label">Is it right for you?</p>
+        <h2 class="pc-h2">When Might Parent Coaching Not Be the Right Fit?</h2>
+        <p class="pc-p">Parent coaching may not be the best fit if:</p>
+      </div>
+      <div class="pc-fit">
+        <div><b>🎯</b><h3>You're looking exclusively for direct coaching for your teen or young adult.</h3><p>Parent coaching works with you as the parent, rather than providing individual coaching to your teen or young adult.</p></div>
+        <div><b>🛠️</b><h3>You're expecting someone to change or “fix” your teen or young adult's behaviour.</h3><p>Coaching helps you explore what you can influence through your own responses, interactions and approaches.</p></div>
+        <div><b>⚡</b><h3>You're looking for immediate solutions or prescribed parenting rules.</h3><p>Coaching is a collaborative process that involves reflection, experimentation and developing strategies suited to your family's needs.</p></div>
+        <div><b>🩺</b><h3>You're seeking clinical or therapeutic intervention.</h3><p>Parent coaching does not replace psychological assessment, diagnosis, counselling or mental health treatment, although it may complement these services.</p></div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <section class="pc-price">
+    <div class="container pc-price-inner">
+      <div>
+        <p class="label" style="color:rgba(255,255,255,0.7);margin-bottom:6px">Fees</p>
+        <strong>S$100–120</strong>
+        <span>per 60-minute session · with Teresa Chua or Moonlake Lee</span>
+      </div>
+      <div class="pc-hero-btns" style="margin-top:0">
+        <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-lg pc-btn-gold">Book a Discovery Call →</a>
+        <a class="btn btn-lg pc-btn-ghost" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">How our fees work</a>
+      </div>
+    </div>
+  </section>
 
-  <section style="padding:var(--sp10) 0;background:var(--off-white);border-top:1px solid var(--border)">
+  <section id="pc-coaches" style="padding:var(--sp10) 0;background:var(--white);border-top:1px solid var(--border)">
     <div class="container">
       <div style="max-width:680px;margin:0 auto var(--sp8);text-align:center">
         <h2 style="font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-0.4px;color:var(--black)">Our Parent Coaches</h2>
