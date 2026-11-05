@@ -51,7 +51,7 @@ const PROFILES = {
   '/parent-coaching': {
     type: 'website',
     title: 'Parent Coaching | Transforming Lives',
-    desc: 'Helping parents understand their child\'s needs, strengthen communication and build a supportive home.',
+    desc: 'Helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home.',
     image: `${BASE}/images/coaching-share-wide.png`,
     imageWidth: 1200,
     imageHeight: 630,
