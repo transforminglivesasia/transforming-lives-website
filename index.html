@@ -520,6 +520,25 @@
     .ef-rates strong { display:block; font-size:clamp(30px,4vw,40px); font-weight:800; letter-spacing:-1px; margin-top:4px; }
     @media (max-width: 1000px) { .ef-cards { grid-template-columns:repeat(3,1fr); } .ef-skills { grid-template-columns:repeat(3,1fr); } }
     @media (max-width: 600px) { .ef-cards { grid-template-columns:1fr 1fr; } .ef-skills { grid-template-columns:1fr 1fr; } .ef-rates { grid-template-columns:1fr; } }
+    .cx-choose2 { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp5); }
+    .cx-choose2 > a { display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--white); border-radius:22px; overflow:hidden; border:1px solid var(--border); box-shadow:0 8px 30px rgba(0,0,0,0.07); cursor:pointer; transition:transform .2s, box-shadow .2s; }
+    .cx-choose2 > a:hover { transform:translateY(-5px); box-shadow:0 18px 44px rgba(0,0,0,0.13); }
+    .cc-img { position:relative; background:#01434A; aspect-ratio:16/9; overflow:hidden; border-bottom:6px solid var(--accent); }
+    .cc-img img { width:100%; height:100%; object-fit:contain; display:block; padding-top:44px; box-sizing:border-box; transition:transform .35s; }
+    .cx-choose2 > a:hover .cc-img img { transform:scale(1.05); }
+    .cc-badge { position:absolute; left:16px; top:16px; background:var(--accent); color:#fff; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; padding:6px 12px; border-radius:999px; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+    .cc-body { padding:26px 28px 28px; display:flex; flex-direction:column; gap:14px; flex:1; }
+    .cc-body h3 { font-size:24px; font-weight:800; letter-spacing:-0.5px; margin:0; }
+    .cc-body > p { font-size:16px; line-height:1.65; color:rgba(0,0,0,0.65); margin:0; }
+    .cc-body ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+    .cc-body li { display:flex; gap:10px; align-items:flex-start; font-size:15px; font-weight:600; line-height:1.45; color:var(--black); }
+    .cc-body li::before { content:"✓"; flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--tint); color:var(--accent-dark); font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+    .cc-foot { margin-top:auto; padding-top:16px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .cc-foot strong { display:block; font-size:24px; font-weight:800; letter-spacing:-0.5px; color:var(--black); line-height:1.1; }
+    .cc-foot span { font-size:13px; color:rgba(0,0,0,0.5); }
+    .cc-btn { background:var(--accent); color:#fff !important; font-size:15px !important; font-weight:700; padding:12px 22px; border-radius:999px; transition:background .15s; }
+    .cx-choose2 > a:hover .cc-btn { background:var(--accent-dark); }
+    @media (max-width: 760px) { .cx-choose2 { grid-template-columns:1fr; } .cc-body { padding:22px 20px 24px; } }
     /* Floating enquiry button */
     .float-cta {
       position: fixed;
@@ -1733,18 +1752,32 @@
 
   <section style="padding:var(--sp10) 0">
     <div class="container" style="max-width:1000px">
-      <div class="cx-choose">
-        <a onclick="showPage('parentcoaching')" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">
-          <span class="svc-tag" style="color:var(--gold-dark)">For parents</span>
-          <h3>Parent Coaching</h3>
-          <p>Coaching for parents of neurodivergent children and teens — understanding your child's needs, strengthening communication and building a supportive home environment.</p>
-          <span class="go" style="color:var(--gold-dark)">Explore parent coaching →</span>
+      <div class="cx-choose2">
+        <a onclick="showPage('parentcoaching')" style="--accent:#C9963A;--accent-dark:#9C7020;--tint:rgba(201,150,58,0.10)">
+          <div class="cc-img"><img src="images/ef-emotions.jpg" alt="Illustration of a parent comforting an overwhelmed child" /><span class="cc-badge">For parents</span></div>
+          <div class="cc-body">
+            <h3>Parent Coaching</h3>
+            <p>Coaching for parents of neurodivergent children and teens, so you can better understand your child's needs and build a supportive home environment.</p>
+            <ul>
+              <li>Understand your child's strengths and needs</li>
+              <li>Strengthen communication and relationships at home</li>
+              <li>Practical approaches to try, including Collaborative &amp; Proactive Solutions</li>
+            </ul>
+            <div class="cc-foot"><div><strong>S$100–120</strong><span>per 60-minute session</span></div><span class="cc-btn">Explore →</span></div>
+          </div>
         </a>
-        <a onclick="showPage('efcoaching')" style="--accent:var(--teal);--tint:rgba(31,138,138,0.08)">
-          <span class="svc-tag" style="color:var(--teal)">Students, young adults &amp; professionals</span>
-          <h3>Executive Function Coaching</h3>
-          <p>Practical coaching for planning, prioritising, time management, follow-through and sustainable routines.</p>
-          <span class="go">Explore executive function coaching →</span>
+        <a onclick="showPage('efcoaching')" style="--accent:#1F8A8A;--accent-dark:#146060;--tint:rgba(31,138,138,0.08)">
+          <div class="cc-img"><img src="images/ef-starting.jpg" alt="Illustration of a puzzled man between two question marks" /><span class="cc-badge">Students, young adults &amp; professionals</span></div>
+          <div class="cc-body">
+            <h3>Executive Function Coaching</h3>
+            <p>Practical coaching for the everyday skills that help you plan, start and follow through, turning intentions into action.</p>
+            <ul>
+              <li>Planning, organising and managing time</li>
+              <li>Getting started on tasks and following through</li>
+              <li>Regulating emotions when things don't go as planned</li>
+            </ul>
+            <div class="cc-foot"><div><strong>S$50–120</strong><span>per 60-minute session</span></div><span class="cc-btn">Explore →</span></div>
+          </div>
         </a>
       </div>
     </div>
