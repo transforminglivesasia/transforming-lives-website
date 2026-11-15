@@ -1006,7 +1006,9 @@
     .psy-series li span.now { color:var(--teal); }
     .psy-series li a { font-size:13px; font-weight:600; color:var(--teal); white-space:nowrap; text-decoration:none; }
     .psy-series li a:hover { text-decoration:underline; }
-    .wb-list { display:flex; flex-direction:column; gap:12px; margin-top:auto; }
+    .wb-list { display:flex; flex-direction:column; gap:12px; }
+    .psy-listhead { margin:6px 0 0 !important; font-family:var(--mono); font-size:10px !important; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:rgba(0,0,0,0.45) !important; }
+    @media (min-width: 761px) { #psy-webinars .psy-body > p:nth-of-type(2), #psy-podcasts .psy-body > p:nth-of-type(2) { min-height:104px; } }
     .wb-item { display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:center; text-decoration:none; color:inherit; border-top:1px solid var(--border); padding-top:12px; }
     .wb-thumb { position:relative; display:block; border-radius:6px; overflow:hidden; aspect-ratio:16/9; border:1px solid var(--border); }
     .wb-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s; }
@@ -2910,6 +2912,7 @@
             <p class="label" style="margin:0">Watch &amp; Listen</p>
             <h3>Webinars</h3>
             <p>Recordings of our free webinars on ADHD, executive function and parenting, with guest experts and lived-experience voices.</p>
+            <p class="psy-listhead">Recordings</p>
             <div class="wb-list">
               <a class="wb-item" href="https://bit.ly/EFwebinar-parents" target="_blank" rel="noopener">
                 <span class="wb-thumb"><img src="images/webinar-thumb-ef-teens.jpg" alt="" loading="lazy" /></span>
@@ -2933,7 +2936,7 @@
             <p class="label" style="margin:0">Podcasts</p>
             <h3>Wired to WORK Differently</h3>
             <p>Our podcast on how different minds navigate work — bringing together lived experience, workplace perspectives and practical insights. Season 1 is now streaming on YouTube, Spotify and Apple Podcasts.</p>
-            <p style="margin:6px 0 0;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:rgba(0,0,0,0.45)">Latest episodes</p>
+            <p class="psy-listhead">Latest episodes</p>
             <div class="wb-list" style="margin-top:0">
               <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E5" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
                 <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e5-amrun-hisyam-v3.jpg" alt="" loading="lazy" /></span>
@@ -2946,14 +2949,6 @@
               <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E3" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
                 <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e3-himanshu.jpg" alt="" loading="lazy" /></span>
                 <span class="wb-text"><strong>Ep 3 · Why Can't I Just Get Started?</strong><span>Himanshu · Listen ↗</span></span>
-              </a>
-              <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E2" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
-                <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e2-wendy-yeo.jpg" alt="" loading="lazy" /></span>
-                <span class="wb-text"><strong>Ep 2 · When Your Working Styles Clash</strong><span>Wendy Yeo · Listen ↗</span></span>
-              </a>
-              <a class="wb-item" href="https://bit.ly/WTWDSpotify-S1E1" target="_blank" rel="noopener" style="grid-template-columns:64px 1fr">
-                <span class="wb-thumb" style="aspect-ratio:1/1"><img src="images/wtwd-s1e1-ong-mian-li.jpg" alt="" loading="lazy" /></span>
-                <span class="wb-text"><strong>Ep 1 · What Does Neurodivergence Look Like at Work?</strong><span>Dr Ong Mian Li · Listen ↗</span></span>
               </a>
             </div>
             <div class="psy-actions">
