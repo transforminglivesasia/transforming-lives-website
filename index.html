@@ -540,6 +540,14 @@
     .cx-choose2 > a:hover .cc-btn { background:var(--accent-dark); }
     @media (max-width: 760px) { .cx-choose2 { grid-template-columns:1fr; } .cc-body { padding:22px 20px 24px; } }
     /* Parent coaching page */
+    .pc-incl { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:var(--sp5); }
+    .pc-incl > div { background:var(--white); border:1px solid var(--border); border-radius:18px; padding:24px 22px; box-shadow:0 6px 20px rgba(0,0,0,0.05); border-top:5px solid var(--teal); }
+    .pc-incl > div:nth-child(even) { border-top-color:var(--gold); }
+    .pc-incl h3 { font-size:18px; font-weight:800; margin:0 0 8px; }
+    .pc-incl p { font-size:15px; line-height:1.6; color:rgba(0,0,0,0.65); margin:0; }
+    @media (max-width: 1000px) { .pc-incl { grid-template-columns:1fr 1fr; } }
+    @media (max-width: 560px) { .pc-incl { grid-template-columns:1fr; } }
+
     .pc-hero { background: linear-gradient(135deg, #0E5458 0%, #1F8A8A 100%); padding: var(--sp10) 0; color: #fff; }
     .pc-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--sp8); align-items: center; }
     .pc-lead { font-size: clamp(17px,1.6vw,20px); line-height: 1.6; color: rgba(255,255,255,0.88); margin: var(--sp3) 0 0; max-width: 560px; }
@@ -1352,7 +1360,7 @@
       <div class="nav-dd">
         <a onclick="showPage('coaching')" id="nav-coaching">Coaching<span class="nav-dd-caret">▾</span></a>
         <div class="nav-dd-menu"><div>
-          <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+          <a onclick="showPage('parentcoaching')">Parent Support</a>
           <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
         </div></div>
       </div>
@@ -1793,7 +1801,7 @@
 
       </div>
       <div style="display:flex;gap:var(--sp2);justify-content:center;flex-wrap:wrap;margin-top:var(--sp6)">
-        <button class="btn btn-teal" onclick="showPage('parentcoaching')">Parent Coaching →</button>
+        <button class="btn btn-teal" onclick="showPage('parentcoaching')">Parent Support →</button>
         <button class="btn btn-teal" onclick="showPage('efcoaching')">Executive Function Coaching →</button>
         <button class="btn btn-outline" onclick="showPage('coaching');setTimeout(function(){document.getElementById('coaching-fees').scrollIntoView({behavior:'smooth'})},150)">Coaching Fees</button>
       </div>
@@ -1817,7 +1825,7 @@
   </section>
 
   <div class="cx-tabs"><div class="container">
-    <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+    <a onclick="showPage('parentcoaching')">Parent Support</a>
     <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
   </div></div>
 
@@ -1827,8 +1835,8 @@
         <a onclick="showPage('parentcoaching')" style="--accent:#C9963A;--accent-dark:#9C7020;--tint:rgba(201,150,58,0.10)">
           <div class="cc-img"><img src="images/parent-coaching-mum-teen-v3.jpg" alt="Illustration of a parent and a teenager sitting together on a sofa, talking" /><span class="cc-badge">For parents</span></div>
           <div class="cc-body">
-            <h3>Parent Coaching</h3>
-            <p>Coaching for parents of neurodivergent teens and young adults, so you can better understand your teen or young adult's needs and build a supportive home environment.</p>
+            <h3>Parent Support</h3>
+            <p>Coaching, consultation, psychoeducation and small-group support for parents of neurodivergent teens and young adults, so you can better understand your teen or young adult's needs and build a supportive home environment.</p>
             <ul>
               <li>Understand your teen or young adult's strengths and needs</li>
               <li>Strengthen communication and relationships at home</li>
@@ -1910,7 +1918,7 @@
     <div class="container pc-hero-grid">
       <div>
         <p class="label" style="color:rgba(255,255,255,0.75)">Coaching</p>
-        <h1 class="h-section" style="color:#fff">Parent Coaching</h1>
+        <h1 class="h-section" style="color:#fff">Parent Support</h1>
         <p class="pc-lead">Helping parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
         <div class="pc-facts"><span>One-to-one</span><span>60-minute sessions</span><span>S$100–120</span></div>
         <div class="pc-hero-btns">
@@ -1922,7 +1930,7 @@
     </div>
   </section>
   <div class="cx-tabs"><div class="container">
-    <a onclick="showPage('parentcoaching')" class="on">Parent Coaching</a>
+    <a onclick="showPage('parentcoaching')" class="on">Parent Support</a>
     <a onclick="showPage('efcoaching')">Executive Function Coaching</a>
   </div></div>
 
@@ -1930,24 +1938,40 @@
     <div class="container pc-two">
       <div>
         <p class="label">The basics</p>
-        <h2 class="pc-h2">What Is Parent Coaching?</h2>
-        <p class="pc-p">Parent coaching is a collaborative process that helps parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
+        <h2 class="pc-h2">What Is Parent Support?</h2>
+        <p class="pc-p">Parent support is a collaborative process that helps parents better understand their teen or young adult's needs, navigate everyday challenges and explore different parenting approaches.</p>
       </div>
       <div class="pc-quote-card">
         <span class="pc-quote-mark">“</span>
-        <p>Unlike coaching for the teen or young adult, the parent is the coaching client, with sessions focused on their experiences, goals and approaches.</p>
+        <p>The parent is the client, with sessions focused on their experiences, goals and approaches.</p>
       </div>
     </div>
   </section>
 
   <section class="pc-sec pc-alt">
+    <div class="container">
+      <div class="pc-center">
+        <p class="label">What's included</p>
+        <h2 class="pc-h2">Parent Support Includes</h2>
+        <p class="pc-p">Coaching is one part of parent support, alongside consultation, psychoeducation and small groups.</p>
+      </div>
+      <div class="pc-incl">
+        <div><h3>Coaching</h3><p>One-to-one sessions focused on your experiences, goals and approaches as a parent.</p></div>
+        <div><h3>Consultation</h3><p>A focused session to understand your situation and map practical next steps.</p></div>
+        <div><h3>Psychoeducation</h3><p>Understanding ADHD, executive function and neurodivergence in teens and young adults.</p></div>
+        <div><h3>Small Groups</h3><p>Connecting with other parents for support, shared learning and encouragement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-sec">
     <div class="container pc-narrow">
       <p class="label">Why it matters</p>
-      <h2 class="pc-h2">Why Parent Coaching?</h2>
+      <h2 class="pc-h2">Why Parent Support?</h2>
       <p class="pc-p">Parents play a significant role in shaping the environment in which their teens and young adults grow and develop.</p>
       <p class="pc-p">While a teen or young adult may spend an hour a week with a coach, parents are present throughout everyday life. How they communicate, respond to challenges and provide support can influence their teen or young adult's development and relationships.</p>
       <blockquote class="pc-pull"><strong>Change can begin with parents.</strong> By better understanding their teen or young adult's needs and reflecting on their own approaches, parents can create a more supportive environment, strengthen relationships and encourage age-appropriate independence.</blockquote>
-      <p class="pc-p">Parent coaching can be a valuable first step, whether or not the teen or young adult is ready for coaching themselves. It can also complement coaching for the teen or young adult, helping parents create a supportive home environment while their teen or young adult develops their own skills and independence.</p>
+      <p class="pc-p">Parent support can be a valuable first step, whether or not the teen or young adult is ready for coaching themselves. It can also complement coaching for the teen or young adult, helping parents create a supportive home environment while their teen or young adult develops their own skills and independence.</p>
     </div>
   </section>
 
@@ -1975,18 +1999,18 @@
         <div>
           <p class="label" style="margin-bottom:6px">An approach we draw on</p>
           <h2 class="pc-h2" style="margin-top:0">Collaborative &amp; Proactive Solutions (CPS)</h2>
-          <p class="pc-p"><strong style="color:var(--black)">One approach that may be incorporated into parent coaching is Collaborative &amp; Proactive Solutions (CPS), developed by Dr Ross Greene.</strong></p>
+          <p class="pc-p"><strong style="color:var(--black)">One approach that may be incorporated into parent support is Collaborative &amp; Proactive Solutions (CPS), developed by Dr Ross Greene.</strong></p>
           <p class="pc-p" style="margin-bottom:0">CPS helps parents understand their teen or young adult's concerns and identify difficulties that may be getting in the way of meeting expectations. It encourages parents and their teens or young adults to work together towards solutions that address both perspectives, while strengthening communication and relationships.</p>
         </div>
       </div>
 
-      <h2 class="pc-h2 pc-center" style="margin-top:var(--sp10)">Parent Coaching or Teen/Young Adult Coaching?</h2>
+      <h2 class="pc-h2 pc-center" style="margin-top:var(--sp10)">Parent Support or Teen/Young Adult Coaching?</h2>
       <div class="pc-compare">
         <div style="--accent:var(--teal);--tint:rgba(31,138,138,0.09)"><h3>Teen or young adult coaching</h3><p>Focuses on helping the young person develop skills and independence.</p></div>
         <div class="pc-plus">+</div>
-        <div style="--accent:var(--gold);--tint:rgba(201,150,58,0.12)"><h3>Parent coaching</h3><p>Focuses on helping parents support their teen or young adult's development through everyday interactions.</p></div>
+        <div style="--accent:var(--gold);--tint:rgba(201,150,58,0.12)"><h3>Parent support</h3><p>Focuses on helping parents support their teen or young adult's development through everyday interactions.</p></div>
       </div>
-      <p class="pc-note">Both approaches can complement each other, while parent coaching can also be beneficial on its own.</p>
+      <p class="pc-note">Both approaches can complement each other, while parent support can also be beneficial on its own.</p>
     </div>
   </section>
 
@@ -1994,7 +2018,7 @@
     <div class="container pc-narrow">
       <div class="cx-panel pc-panel">
         <span class="cx-badge">Our recommendation</span>
-        <h2>Why Parent Coaching <span style="color:#F3D08A">Together</span> with Youth Coaching Is Important</h2>
+        <h2>Why Parent Support <span style="color:#F3D08A">Together</span> with Youth Coaching Is Important</h2>
         <div class="pc-highlights">
           <div><span>Whole-family alignment</span></div>
           <div><span>A strong genetic link</span></div>
@@ -2012,14 +2036,14 @@
     <div class="container">
       <div class="pc-center">
         <p class="label">Is it right for you?</p>
-        <h2 class="pc-h2">When Might Parent Coaching Not Be the Right Fit?</h2>
-        <p class="pc-p">Parent coaching may not be the best fit if:</p>
+        <h2 class="pc-h2">When Might Parent Support Not Be the Right Fit?</h2>
+        <p class="pc-p">Parent support may not be the best fit if:</p>
       </div>
       <div class="pc-fit">
-        <div><h3>You're looking exclusively for direct coaching for your teen or young adult.</h3><p>Parent coaching works with you as the parent, rather than providing individual coaching to your teen or young adult.</p></div>
+        <div><h3>You're looking exclusively for direct coaching for your teen or young adult.</h3><p>Parent support works with you as the parent, rather than providing individual coaching to your teen or young adult.</p></div>
         <div><h3>You're expecting someone to change or “fix” your teen or young adult's behaviour.</h3><p>Coaching helps you explore what you can influence through your own responses, interactions and approaches.</p></div>
         <div><h3>You're looking for immediate solutions or prescribed parenting rules.</h3><p>Coaching is a collaborative process that involves reflection, experimentation and developing strategies suited to your family's needs.</p></div>
-        <div><h3>You're seeking clinical or therapeutic intervention.</h3><p>Parent coaching does not replace psychological assessment, diagnosis, counselling or mental health treatment, although it may complement these services.</p></div>
+        <div><h3>You're seeking clinical or therapeutic intervention.</h3><p>Parent support does not replace psychological assessment, diagnosis, counselling or mental health treatment, although it may complement these services.</p></div>
       </div>
     </div>
   </section>
@@ -2072,7 +2096,7 @@
 
   <section style="padding:var(--sp10) 0;text-align:center;background:var(--off-white);border-top:1px solid var(--border)">
     <div class="container">
-      <h2 class="h-sub">Interested in Parent Coaching?</h2>
+      <h2 class="h-sub">Interested in Parent Support?</h2>
       <p class="body-lg" style="margin:var(--sp3) auto 0;max-width:560px">Tell us a little about your family and what you would like support with, and we will get back to you.</p>
       <div style="display:flex;gap:var(--sp3);justify-content:center;flex-wrap:wrap;margin-top:var(--sp6)">
         <a href="https://bit.ly/TL-enquiry" target="_blank" rel="noopener" class="btn btn-teal btn-lg" style="text-decoration:none">Make an Enquiry →</a>
@@ -2095,7 +2119,7 @@
     </div>
   </section>
   <div class="cx-tabs"><div class="container">
-    <a onclick="showPage('parentcoaching')">Parent Coaching</a>
+    <a onclick="showPage('parentcoaching')">Parent Support</a>
     <a onclick="showPage('efcoaching')" class="on">Executive Function Coaching</a>
   </div></div>
 
@@ -2147,7 +2171,7 @@
         <li>Develop practical strategies</li>
       </ol>
       <p class="cx-callout" style="--accent:var(--gold);--tint:rgba(201,150,58,0.10)">Coaching isn't about telling you what to do. It's about working together to discover what works for you.</p>
-      <p class="cx-callout" style="--accent:#37474F;--tint:rgba(55,71,79,0.07);font-size:16px !important;font-weight:500">For young people under 18, we recommend pairing executive function coaching with <a onclick="showPage('parentcoaching')" style="color:var(--teal);cursor:pointer;text-decoration:underline;font-weight:700">parent coaching</a>, so the whole family is aligned on the support needed at home.</p>
+      <p class="cx-callout" style="--accent:#37474F;--tint:rgba(55,71,79,0.07);font-size:16px !important;font-weight:500">For young people under 18, we recommend pairing executive function coaching with <a onclick="showPage('parentcoaching')" style="color:var(--teal);cursor:pointer;text-decoration:underline;font-weight:700">parent support</a>, so the whole family is aligned on the support needed at home.</p>
     </div>
 
     <div class="cx-sec">
@@ -2770,8 +2794,8 @@
             <div class="svc-who"><p>Your coach</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
           <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
-            <div class="svc-top"><div class="svc-icon">💙</div><div><span class="svc-tag">For parents</span><h3>Parent Coaching</h3></div></div>
-            <div class="svc-mid"><p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p><a class="svc-more" onclick="showPage('parentcoaching')">About parent coaching →</a></div>
+            <div class="svc-top"><div class="svc-icon">💙</div><div><span class="svc-tag">For parents</span><h3>Parent Support</h3></div></div>
+            <div class="svc-mid"><p>One-to-one coaching focused on communication, executive function support, routines, emotional regulation and practical family strategies, especially where neurodivergence or ADHD is part of the picture.</p><a class="svc-more" onclick="showPage('parentcoaching')">About parent support →</a></div>
             <div class="svc-price"><strong>S$100–120</strong><span>per 60-minute session</span></div>
             <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
@@ -4553,8 +4577,8 @@
 <script>
   const pages = ['home','about','team','coaching','parentcoaching','efcoaching','moonlakelee','ravenlim','dasiyahdezwart','geniehoe','teresachua','alisacheng','services','psychoeducation','podcasts','products','blog','speaking','media','testimonials','opportunities','contact','privacy','terms'];
 
-  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/parent-coaching': 'parentcoaching', '/executive-function-coaching': 'efcoaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/podcasts': 'podcasts', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
-  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', parentcoaching: '/parent-coaching', efcoaching: '/executive-function-coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', podcasts: '/podcasts', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
+  const slugToPage = { '/': 'home', '/about': 'about', '/team': 'team', '/coaching': 'coaching', '/parent-coaching': 'parentcoaching', '/parent-support': 'parentcoaching', '/executive-function-coaching': 'efcoaching', '/moonlakelee': 'moonlakelee', '/ravenlim': 'ravenlim', '/dasiyahdezwart': 'dasiyahdezwart', '/geniehoe': 'geniehoe', '/teresachua': 'teresachua', '/alisacheng': 'alisacheng', '/founder': 'moonlakelee', '/services': 'services', '/publications': 'products', '/products': 'products', '/blog': 'blog', '/psychoeducation': 'psychoeducation', '/podcasts': 'podcasts', '/speaking': 'speaking', '/media': 'media', '/testimonials': 'testimonials', '/opportunities': 'opportunities', '/contact': 'contact', '/privacy': 'privacy', '/terms': 'terms' };
+  const pageToSlug = { home: '/', about: '/about', team: '/team', coaching: '/coaching', parentcoaching: '/parent-support', efcoaching: '/executive-function-coaching', moonlakelee: '/moonlakelee', ravenlim: '/ravenlim', dasiyahdezwart: '/dasiyahdezwart', geniehoe: '/geniehoe', teresachua: '/teresachua', alisacheng: '/alisacheng', services: '/services', psychoeducation: '/psychoeducation', podcasts: '/podcasts', products: '/publications', blog: '/blog', speaking: '/speaking', media: '/media', testimonials: '/testimonials', opportunities: '/opportunities', contact: '/contact', privacy: '/privacy', terms: '/terms' };
 
   function scrollToSection(anchorId) {
     showPage('services');
@@ -4603,7 +4627,7 @@
       about: 'About Us | Transforming Lives',
       team: 'Our Team | Transforming Lives',
       coaching: 'Parent & Executive Function Coaching | Our Coaches & Fees | Transforming Lives',
-      parentcoaching: 'Parent Coaching | Transforming Lives',
+      parentcoaching: 'Parent Support | Transforming Lives',
       efcoaching: 'Executive Function Coaching | Transforming Lives',
       moonlakelee: 'Moonlake Lee | Founder & CEO | Transforming Lives',
       ravenlim: 'Raven Lim | Transforming Lives',
@@ -4651,7 +4675,7 @@
     const descriptions = {
       home:         'Transforming Lives is a Singapore social enterprise providing coaching, psychoeducation, and neuroinclusion support — for individuals, families, schools, and workplaces.',
       about:        'Learn about Transforming Lives — our mission, values, and approach to supporting neurodivergent individuals, families, and organisations in Singapore.',
-      parentcoaching: 'Parent coaching from Transforming Lives — helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home, with accessible social-enterprise fees.',
+      parentcoaching: 'Parent support from Transforming Lives — coaching, consultation, psychoeducation and small groups, helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home, with accessible social-enterprise fees.',
       efcoaching:   'Executive function coaching for students, young adults and professionals — planning, time management, follow-through and sustainable routines, at accessible social-enterprise fees.',
       coaching:     'Parent and executive function coaching from people who get it, at a fee within reach.',
       team:         'Meet the Transforming Lives team — coaches, educators, and advocates with lived experience across neurodivergence, executive function, and family support.',
