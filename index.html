@@ -796,7 +796,8 @@
       font-weight: 600;
     }
     .page-hero .body-lg { max-width: 560px; color: rgba(0,0,0,0.55); }
-    #page-about .page-hero .body-lg { max-width: 900px; }
+    #page-about .page-hero .body-lg, #page-services .page-hero .body-lg, #page-coaching .page-hero .body-lg { max-width: 900px; }
+    .svc-choose { display:inline-block; margin:var(--sp4) 0 0; background:var(--gold); color:#fff; font-weight:700; font-size:17px; padding:12px 22px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.15); }
     #page-about .page-hero .h-section {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
@@ -934,7 +935,7 @@
     .svc-price { margin:20px 28px 0; padding:14px 18px; border-radius:12px; background:var(--tint); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
     .svc-price strong { font-size:26px; font-weight:800; letter-spacing:-0.6px; color:var(--black); line-height:1; }
     .svc-price span { font-size:13px; color:rgba(0,0,0,0.55); }
-    .svc-family { margin-top:var(--sp4); max-width:820px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.28); border-left:5px solid #fff; border-radius:0 14px 14px 0; padding:18px 22px; }
+    .svc-family { margin-top:var(--sp4); max-width:900px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.28); border-left:5px solid #fff; border-radius:0 14px 14px 0; padding:18px 22px; }
     .svc-family p { margin:0; font-size:17px; line-height:1.65; color:#fff; }
     .svc-family strong { font-size:19px; }
     .svc-price-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:14px 18px; }
@@ -1864,7 +1865,7 @@
         <a onclick="showPage('parentcoaching')" style="--accent:#C9963A;--accent-dark:#9C7020;--tint:rgba(201,150,58,0.10)">
           <div class="cc-img"><img src="images/parent-coaching-mum-teen-v3.jpg" alt="Illustration of a parent and a teenager sitting together on a sofa, talking" /><span class="cc-badge">For parents</span></div>
           <div class="cc-body">
-            <h3>Parent Support</h3>
+            <h3>Family Support</h3>
             <p>Coaching, consultation, psychoeducation and small-group support for parents of neurodivergent teens and young adults, so you can better understand your teen or young adult's needs and build a supportive home environment.</p>
             <ul>
               <li>Understand your teen or young adult's strengths and needs</li>
@@ -1882,7 +1883,7 @@
   <section id="coaching-fees" style="padding:var(--sp10) 0;border-top:1px solid var(--border)">
     <div class="container" style="max-width:820px">
       <div style="text-align:center">
-        <p class="label">Coaching Fees</p>
+        <p class="label" style="font-size:18px;letter-spacing:1.2px">Coaching Fees</p>
         <h2 class="h-sub" style="margin-top:12px">Support from people who get it, at a fee within reach.</h2>
         <p class="body" style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.65);margin:var(--sp4) auto 0;max-width:620px">As a social enterprise, we believe the right support shouldn't depend on how much you can pay. That's why our coaching is priced below market rates.</p>
       </div>
@@ -2224,6 +2225,7 @@
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Teresa Chua</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Parent &amp; Executive Function Coach</p>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border-radius:999px;padding:3px 10px;margin:2px 0 8px">Workplace / Families</span>
           <a href="https://www.linkedin.com/in/teresa-chua/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
           <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('teresachua')">View Profile</button>
         </div>
@@ -2234,6 +2236,7 @@
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Moonlake Lee</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Parent &amp; Executive Function Coach</p>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border-radius:999px;padding:3px 10px;margin:2px 0 8px">Workplace / Families</span>
           <a href="https://www.linkedin.com/in/moonlakelee/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
           <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('moonlakelee')">View Profile</button>
         </div>
@@ -2244,6 +2247,7 @@
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Dasiyah de Zwart</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Associate Executive Function Coach</p>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border-radius:999px;padding:3px 10px;margin:2px 0 8px">Workplace</span>
           <a href="https://www.linkedin.com/in/dasiyahdezwart/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
           <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('dasiyahdezwart')">View Profile</button>
         </div>
@@ -2254,6 +2258,7 @@
           </div>
           <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:6px">Alisa Cheng</h3>
           <p style="font-size:13px;color:rgba(0,0,0,0.55);margin-bottom:4px">Associate Executive Function Coach</p>
+          <span style="display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-dark);background:rgba(201,150,58,0.12);border-radius:999px;padding:3px 10px;margin:2px 0 8px">Youth</span>
           <a href="https://www.linkedin.com/in/alisa-c-295601218/" target="_blank" rel="noopener" style="font-size:13px;color:var(--teal);margin-bottom:var(--sp3)">LinkedIn ↗</a>
           <button class="btn btn-outline" style="width:100%;margin-top:auto" onclick="showPage('alisacheng')">View Profile</button>
         </div>
@@ -2787,7 +2792,7 @@
 ══════════════════════════════════════════════════════════ -->
 <div id="page-services" class="page">
 
-  <section class="page-hero page-hero-gold">
+  <section class="page-hero page-hero-teal">
     <div class="container">
       <p class="label">What We Offer</p>
       <h1 class="h-section">How we can help</h1>
@@ -2795,7 +2800,7 @@
       <div class="svc-family">
         <p><strong>The family is a system.</strong> It is important that the individuals who make up the family system get the support they need. This is why Transforming Lives offers both parent and youth support, and strongly recommends that parents are also involved in sessions with the coach — so that everyone is on the same page in understanding and supporting the needs of the family.</p>
       </div>
-      <p class="body-lg" style="margin-top:var(--sp3);font-size:15px;color:rgba(255,255,255,0.65)">Choose the section that best describes you.</p>
+      <p class="svc-choose">Choose the section that best describes you ↓</p>
     </div>
   </section>
 
@@ -2831,7 +2836,7 @@
             <div class="svc-top"><div class="svc-icon">📖</div><div><span class="svc-tag">Adults, parents &amp; children</span><h3>Psychoeducation Sessions</h3></div></div>
             <div class="svc-mid"><p>Structured sessions for adults, and for parents and their children, to understand ADHD and neurodivergence — how they affect attention, emotion, motivation and behaviour. For adults, sessions can also cover <strong style="color:var(--black);font-weight:600">workplace strategies</strong> that fit the way you think.</p></div>
             <div class="svc-price"><strong>S$100–120</strong><span>per 60-minute session</span></div>
-            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('dasiyahdezwart')"><img src="images/dasiyah-de-zwart-2026.jpg" alt="" />Dasiyah de Zwart</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
           <div class="service-item svc-offer" style="--accent:#C9963A;--tint:rgba(201,150,58,0.10)">
             <div class="svc-top"><div class="svc-icon">💙</div><div><span class="svc-tag">For parents</span><h3>Parent Support</h3></div></div>
