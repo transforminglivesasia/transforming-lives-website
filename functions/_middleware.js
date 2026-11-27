@@ -50,7 +50,7 @@ const PROFILES = {
   },
   '/parent-coaching': {
     type: 'website',
-    title: 'Parent Support | Transforming Lives',
+    title: 'Family Support | Transforming Lives',
     desc: 'Helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home.',
     image: `${BASE}/images/coaching-share-wide.png`,
     imageWidth: 1200,
@@ -59,7 +59,16 @@ const PROFILES = {
   },
   '/parent-support': {
     type: 'website',
-    title: 'Parent Support | Transforming Lives',
+    title: 'Family Support | Transforming Lives',
+    desc: 'Helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home.',
+    image: `${BASE}/images/coaching-share-wide.png`,
+    imageWidth: 1200,
+    imageHeight: 630,
+    icon: '/images/coaching-favicon.png',
+  },
+  '/family-support': {
+    type: 'website',
+    title: 'Family Support | Transforming Lives',
     desc: 'Helping parents understand their teen or young adult\'s needs, strengthen communication and build a supportive home.',
     image: `${BASE}/images/coaching-share-wide.png`,
     imageWidth: 1200,
