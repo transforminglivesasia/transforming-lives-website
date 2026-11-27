@@ -929,6 +929,12 @@
     .svc-price { margin:20px 28px 0; padding:14px 18px; border-radius:12px; background:var(--tint); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
     .svc-price strong { font-size:26px; font-weight:800; letter-spacing:-0.6px; color:var(--black); line-height:1; }
     .svc-price span { font-size:13px; color:rgba(0,0,0,0.55); }
+    .svc-family { margin-top:var(--sp4); max-width:820px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.28); border-left:5px solid #fff; border-radius:0 14px 14px 0; padding:18px 22px; }
+    .svc-family p { margin:0; font-size:17px; line-height:1.65; color:#fff; }
+    .svc-family strong { font-size:19px; }
+    .svc-price-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:14px 18px; }
+    .svc-price-2 > div { display:flex; flex-direction:column; gap:4px; }
+    .svc-price-2 > div + div { border-left:1px solid rgba(0,0,0,0.1); padding-left:14px; }
     .svc-who { padding:16px 28px 24px; }
     .svc-who > p { margin:0 0 8px !important; font-family:var(--mono); font-size:10px !important; font-weight:700; letter-spacing:0.7px; text-transform:uppercase; color:rgba(0,0,0,0.45) !important; }
     .svc-chips { display:flex; flex-wrap:wrap; gap:8px; }
@@ -2777,7 +2783,10 @@
       <p class="label">What We Offer</p>
       <h1 class="h-section">How we can help</h1>
       <p class="body-lg">Transforming Lives offers non-clinical coaching, psychoeducation, and training for individuals, families, schools, and organisations seeking practical support with executive function, neurodivergence, relationships, and inclusion. Whether you're a parent trying to support your child, an adult seeking practical strategies, or an organisation building a more inclusive environment — we're here to help.</p>
-      <p class="body-lg" style="margin-top:var(--sp2);font-size:15px;color:rgba(255,255,255,0.65)">Choose the section that best describes you.</p>
+      <div class="svc-family">
+        <p><strong>The family is a system.</strong> It is important that the individuals who make up the family system get the support they need. This is why Transforming Lives offers both parent and youth support, and strongly recommends that parents are also involved in sessions with the coach — so that everyone is on the same page in understanding and supporting the needs of the family.</p>
+      </div>
+      <p class="body-lg" style="margin-top:var(--sp3);font-size:15px;color:rgba(255,255,255,0.65)">Choose the section that best describes you.</p>
     </div>
   </section>
 
@@ -2798,10 +2807,10 @@
         </div>
         <div class="service-grid svc-grid-2">
           <div class="service-item svc-offer" style="--accent:#1F8A8A;--tint:rgba(31,138,138,0.08)">
-            <div class="svc-top"><div class="svc-icon">🧭</div><div><span class="svc-tag">Start here</span><h3>Clarity Consultation</h3></div></div>
-            <div class="svc-mid"><p>A one-hour non-clinical session to help you understand your situation, identify questions to bring to qualified professionals, and map practical next steps for home, school, work or daily life.</p></div>
-            <div class="svc-price"><strong>S$120</strong><span>per 60-minute session</span></div>
-            <div class="svc-who"><p>Your coach</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
+            <div class="svc-top"><div class="svc-icon">🧭</div><div><span class="svc-tag">Start here</span><h3>Consultation</h3></div></div>
+            <div class="svc-mid"><p>A one-hour non-clinical session to help you understand your situation, identify questions to bring to qualified professionals, and map practical next steps for home, school, work or daily life.</p><p style="margin-top:10px">Or choose a <strong style="color:var(--black)">30-minute Short Consultation</strong> to understand the issues and access support in navigating next steps.</p></div>
+            <div class="svc-price svc-price-2"><div><strong>S$120</strong><span>Consultation<br>60 minutes</span></div><div><strong>S$60</strong><span>Short Consultation<br>30 minutes</span></div></div>
+            <div class="svc-who"><p>Your coaches</p><div class="svc-chips"><a class="svc-chip" onclick="showPage('teresachua')"><img src="images/teresa-chua.png" alt="" />Teresa Chua</a><a class="svc-chip" onclick="showPage('moonlakelee')"><img src="images/founder.jpg" alt="" />Moonlake Lee</a></div></div>
           </div>
           <div class="service-item svc-offer" style="--accent:#146060;--tint:rgba(20,96,96,0.08)">
             <div class="svc-top"><div class="svc-icon">✨</div><div><span class="svc-tag">Students, young adults &amp; professionals</span><h3>Executive Function Coaching</h3></div></div>
